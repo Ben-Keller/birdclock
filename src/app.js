@@ -13,8 +13,10 @@ import {
 import { clockSVG, handsMarkup, escapeHTML as esc } from './clock.js';
 import { download, safeFilename, dataURL, canvasBlob } from './downloads.js';
 import { openBirdDownloads } from './bird-downloads.js';
+import { attachClockTooltips } from './clock-tooltip.js';
 const $ = (s, root = document) => root.querySelector(s),
   $$ = (s, root = document) => [...root.querySelectorAll(s)];
+const clockTooltip = attachClockTooltips($('#clock'), $('#clock-tooltip'));
 const DRAFT = 'woodland-hours.draft.v1';
 let local, session;
 try {
@@ -91,6 +93,7 @@ function commit(fn, message) {
   if (message) toast(message);
 }
 function renderClock() {
+  clockTooltip.hide();
   const wrap = $('#clock');
   const hadFocus = wrap.contains(document.activeElement);
   wrap.innerHTML = clockSVG(config, allBirds(), { selected });
@@ -224,6 +227,7 @@ function selectBird(id) {
   closeModal();
 }
 function showModal(kind, html) {
+  clockTooltip.hide();
   if (!modal.open) lastFocus = document.activeElement;
   modalKind = kind;
   $('#modal-content').innerHTML = html;

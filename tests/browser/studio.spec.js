@@ -424,6 +424,62 @@ test('mobile editor, bird library and download panel fit without horizontal over
   await noOverflow();
 });
 
+test('clock tooltips support hover, keyboard navigation and dismissal', async ({
+  page,
+}) => {
+  const tooltip = page.getByRole('tooltip');
+  const draft = await page.evaluate(() =>
+    localStorage.getItem('woodland-hours.draft.v1'),
+  );
+  await page.locator('#clock [data-hour="8"] .slice-hit').hover();
+  await expect(tooltip).toHaveText('9 o’clock: Common loon, Cherry');
+  await expect(page.locator('#clock [data-hour="8"]')).toHaveAttribute(
+    'aria-describedby',
+    'clock-tooltip',
+  );
+  await tooltip.hover();
+  // Allow the pointer-leave grace period to elapse while hovering the tooltip.
+  await page.waitForTimeout(180);
+  await expect(tooltip).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(tooltip).toBeHidden();
+  await page.locator('#clock [data-hour="9"] .slice-hit').hover();
+  await expect(tooltip).toHaveText('10 o’clock: Bald eagle, Maple');
+  await page.mouse.move(0, 0);
+  await expect(tooltip).toBeHidden();
+
+  await page.locator('#clock [data-hour="2"]').focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(tooltip).toHaveText('4 o’clock: Anna’s hummingbird, Cherry');
+  await expect(page.locator('#clock [data-hour="3"]')).toBeFocused();
+  await page.keyboard.press('Escape');
+  await expect(tooltip).toBeHidden();
+  await expect(page.locator('#clock [data-hour="3"]')).toBeFocused();
+  await page.keyboard.press('ArrowRight');
+  await expect(tooltip).toContainText('5 o’clock: Pileated woodpecker');
+  expect(
+    await page.evaluate(() => localStorage.getItem('woodland-hours.draft.v1')),
+  ).toBe(draft);
+
+  await page.getByRole('button', { name: 'Choose Maple for hour 5' }).click();
+  await page.locator('#clock [data-hour="4"] .slice-hit').hover();
+  await expect(tooltip).toHaveText('5 o’clock: Pileated woodpecker, Maple');
+  await page.getByRole('button', { name: 'Save & share' }).click();
+  await expect(tooltip).toBeHidden();
+  await page.getByRole('button', { name: 'Close dialog' }).click();
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator('#clock').scrollIntoViewIfNeeded();
+  await page.locator('#clock [data-hour="11"] .slice-hit').hover();
+  await expect(tooltip).toContainText('12 o’clock');
+  const bounds = await tooltip.boundingBox();
+  expect(bounds.x).toBeGreaterThanOrEqual(12);
+  expect(bounds.y).toBeGreaterThanOrEqual(12);
+  expect(bounds.x + bounds.width).toBeLessThanOrEqual(378);
+  expect(bounds.y + bounds.height).toBeLessThanOrEqual(832);
+  await page.screenshot({ path: 'test-results/clock-tooltip-mobile.png' });
+});
+
 test('desktop preview, dialog keyboard focus and fullscreen live hands work together', async ({
   page,
 }) => {

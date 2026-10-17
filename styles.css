@@ -302,6 +302,20 @@ main {
 .bird-image {
   pointer-events: none;
 }
+.clock-tooltip {
+  position: fixed;
+  z-index: 20;
+  max-width: min(240px, calc(100vw - 24px));
+  padding: 10px 14px;
+  border: 1px solid #ffffff26;
+  border-radius: 6px;
+  background: var(--green);
+  color: #fffaf0;
+  box-shadow: 0 4px 16px #322d2626;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
 .editor {
   border-left: 1px solid var(--line);
   background: var(--card);

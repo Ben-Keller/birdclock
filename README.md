@@ -25,6 +25,7 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 ## What you can customize
 
 - Each of 12 hours: bird, maple/mahogany/cherry, bird size, position, rotation, and flip.
+- Hover a clock slice or focus it with the keyboard to see its hour, bird, and wood. Press Escape to dismiss the tooltip.
 - Choose among 48 realistic-style bird illustrations. Combine bird-group, region, and clock-use filters; search common names, scientific names, regions, and groups, with accents and punctuation handled automatically. Upload up to eight personal PNG, JPEG, or WebP images per design.
 - Choosing a bird already used swaps the two hours, keeping each bird distinct by default.
 - Keep adjacent woods different, including the 12-to-1 join. Manual selection adjusts as few other pieces as possible. Shuffle produces four pieces of each wood with no matching neighbors.
