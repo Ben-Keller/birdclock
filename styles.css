@@ -326,42 +326,6 @@ main {
 #panel {
   padding: 24px 27px;
 }
-.panel-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 18px;
-}
-.panel-heading h2 {
-  font-size: 29px;
-  line-height: 1;
-}
-.panel-heading .subtle {
-  font-size: 10px;
-  color: var(--muted);
-}
-.hour-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 4px;
-  margin-bottom: 23px;
-}
-.hour-button {
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  height: 31px;
-  font-size: 11px;
-  padding: 0;
-  background: #f6f2e9;
-}
-.hour-button:hover {
-  border-color: var(--green);
-}
-.hour-button.active {
-  color: #fff;
-  background: var(--green);
-  border-color: var(--green);
-}
 .field-label {
   display: flex;
   justify-content: space-between;
@@ -909,9 +873,6 @@ dialog::backdrop {
   #panel {
     padding: 28px 32px;
   }
-  .hour-button {
-    height: 34px;
-  }
 }
 @media (max-width: 1100px) {
   .save-status {
@@ -925,12 +886,6 @@ dialog::backdrop {
   }
   .clock-wrap {
     padding: 12px 2px;
-  }
-  .hour-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-  .hour-button {
-    height: 28px;
   }
   #panel {
     padding: 22px 20px;
@@ -989,13 +944,6 @@ dialog::backdrop {
     min-height: 0;
     padding: 23px;
   }
-  .hour-grid {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 5px;
-  }
-  .hour-button {
-    height: 34px;
-  }
   .bird-choice {
     padding: 14px 18px;
     gap: 20px;
@@ -1036,13 +984,6 @@ dialog::backdrop {
   }
   .clock-wrap {
     padding: 9px 0;
-  }
-  .hour-grid {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 6px;
-  }
-  .hour-button {
-    height: 32px;
   }
   #panel {
     padding: 21px 18px;
@@ -1342,7 +1283,6 @@ dialog::backdrop {
     min-height: 46px;
   }
   .bird-card-download,
-  .hour-button,
   .mini-button {
     min-height: 40px;
   }

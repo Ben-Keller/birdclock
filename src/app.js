@@ -106,13 +106,6 @@ function renderPanel() {
     bird = birdById(s.bird),
     f = config.face;
   $('#panel').innerHTML = `
-    <div class="panel-heading">
-      <h2>Make an hour your own.</h2>
-      <span class="subtle">${String(selected + 1).padStart(2, '0')} / 12</span>
-    </div>
-    <div class="hour-grid" aria-label="Choose an hour">
-      ${config.slices.map((_, i) => `<button class="hour-button ${i === selected ? 'active' : ''}" data-select-hour="${i}" aria-label="Edit hour ${i + 1}" aria-pressed="${i === selected}">${i + 1}</button>`).join('')}
-    </div>
     <div class="field-label">THE BIRD <span>Hour ${selected + 1}</span></div>
     <button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}">
       <img src="${esc(bird.asset)}" alt="${esc(bird.name)}">
@@ -537,11 +530,6 @@ async function uploadBird(file) {
   }
 }
 document.addEventListener('click', (e) => {
-  const hour = e.target.closest('[data-select-hour]');
-  if (hour) {
-    chooseHour(+hour.dataset.selectHour);
-    return;
-  }
   const slice = e.target.closest('.clock-slice');
   if (slice && $('#clock').contains(slice)) {
     chooseHour(+slice.dataset.hour);
