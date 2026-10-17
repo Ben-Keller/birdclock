@@ -282,21 +282,26 @@ main {
 .clock-slice {
   cursor: pointer;
 }
-.clock-slice .selection-outline {
+.slice-highlight {
   pointer-events: none;
-  opacity: 0.8;
-  transition: opacity 0.2s;
 }
-.clock-slice:hover .slice-hit {
-  fill: #ffffff;
-  fill-opacity: 0.13;
+.clock-slice.selected .slice-highlight {
+  opacity: 0.08;
+}
+.clock-slice:hover .slice-highlight {
+  opacity: 0.14;
+}
+.clock-slice.selected .selection-dot {
+  opacity: 1;
 }
 .clock-slice:focus {
   outline: none;
 }
-.clock-slice:focus-visible .selection-outline {
-  stroke: #fff;
-  stroke-width: 5;
+.clock-slice:focus-visible .slice-highlight {
+  opacity: 0.18;
+}
+.clock-slice:focus-visible .selection-dot,
+.clock-slice:focus-visible .selection-focus {
   opacity: 1;
 }
 .bird-image {

@@ -81,13 +81,14 @@ export function clockSVG(
       hour = i + 1,
       p = point(hour * 30, 352),
       np = point(hour * 30, 460),
+      selectionPoint = point(hour * 30 + 8, 450),
       size = 168 * s.scale * f.birdScale,
       x = p[0] + s.x,
       y = p[1] + s.y,
       d = slicePath(hour, f.shape),
       label = `${hour} o’clock: ${bird?.name || 'Bird'}, ${w.name}`;
     parts.push(
-      `<g class="clock-slice${selected === i ? ' selected' : ''}" data-hour="${i}" ${interactive ? `role="button" tabindex="${selected === i ? '0' : '-1'}" aria-label="${escapeHTML(label)}" aria-pressed="${selected === i}"` : ''}><path class="wood-base" d="${d}" fill="${w.color}"/><path d="${d}" fill="url(#grain-${i})" opacity="${f.grain}"/><path d="${d}" fill="none" stroke="${f.rimColor}" stroke-width="${f.seam}"/>`,
+      `<g class="clock-slice${selected === i ? ' selected' : ''}" data-hour="${i}" ${interactive ? `role="button" tabindex="${selected === i ? '0' : '-1'}" aria-label="${escapeHTML(label)}" aria-pressed="${selected === i}"` : ''}><path class="wood-base" d="${d}" fill="${w.color}"/><path d="${d}" fill="url(#grain-${i})" opacity="${f.grain}"/>${interactive ? `<path class="slice-highlight" d="${d}" fill="#fff6db" opacity="0"/>` : ''}<path d="${d}" fill="none" stroke="${f.rimColor}" stroke-width="${f.seam}"/>`,
     );
     parts.push(
       `<g clip-path="url(#clip-${i})"><image class="bird-image" href="${escapeHTML(birdData[s.bird] || bird?.asset || '')}" x="${x - size / 2}" y="${y - size / 2}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet" transform="translate(${x} ${y}) rotate(${s.rotation}) scale(${s.flip ? -1 : 1} 1) translate(${-x} ${-y})"/></g>`,
@@ -102,7 +103,7 @@ export function clockSVG(
       );
     if (interactive)
       parts.push(
-        `<path class="slice-hit" d="${d}" fill="transparent"/><path class="selection-outline" d="${d}" fill="none" stroke="#fcf1ce" stroke-width="${selected === i ? 4 : 0}"/>`,
+        `<g class="selection-marker" aria-hidden="true" pointer-events="none"><circle class="selection-focus" cx="${selectionPoint[0]}" cy="${selectionPoint[1]}" r="13" fill="none" stroke="#fffaf0" stroke-width="3" opacity="0"/><circle class="selection-dot" cx="${selectionPoint[0]}" cy="${selectionPoint[1]}" r="7" fill="#46543c" stroke="#fffaf0" stroke-width="2.5" opacity="0"/></g><path class="slice-hit" d="${d}" fill="transparent"/>`,
       );
     parts.push('</g>');
   });
