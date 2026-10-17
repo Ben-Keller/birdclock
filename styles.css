@@ -189,9 +189,7 @@ h3,
   margin-right: 8px;
 }
 main {
-  max-width: 1600px;
-  margin: auto;
-  padding: 28px 4.5% 40px;
+  padding: 0 4.5%;
 }
 .eyebrow {
   font-size: 9px;
@@ -221,14 +219,10 @@ main {
 .workspace {
   display: grid;
   grid-template-columns: minmax(0, 1.48fr) minmax(340px, 1fr);
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  overflow: hidden;
-  background: #f8f5ed;
-  box-shadow: 0 8px 25px #4c3b2010;
+  min-height: calc(100svh - 97px);
 }
 .preview-column {
-  padding: 22px 28px 0;
+  padding: 28px 32px 36px 0;
   min-width: 0;
   position: relative;
 }
@@ -242,11 +236,6 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
-}
-.undo-controls > span {
-  height: 16px;
-  border-left: 1px solid var(--line);
-  margin: 0 4px;
 }
 .icon-button {
   width: 30px;
@@ -262,11 +251,8 @@ main {
   border-color: var(--line);
 }
 .clock-stage {
-  background: var(--paper);
-  margin: 15px -5px 0;
-  border-radius: 6px;
+  margin-top: 15px;
   min-height: 200px;
-  transition: background 0.2s;
 }
 .clock-wrap {
   max-width: 680px;
@@ -366,11 +352,10 @@ main {
 }
 .editor {
   border-left: 1px solid var(--line);
-  background: var(--card);
   min-width: 0;
 }
 #panel {
-  padding: 24px 27px;
+  padding: 28px 0 36px 32px;
 }
 .field-label {
   display: flex;
@@ -485,10 +470,8 @@ main {
   line-height: 1.7;
   margin-top: 10px;
 }
-.divider {
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 22px 0;
+.composition-heading {
+  margin-top: 28px;
 }
 .range-row {
   margin-top: 15px;
@@ -531,9 +514,7 @@ main {
   background: #eceee6;
 }
 .advanced {
-  border-top: 1px solid var(--line);
   margin-top: 21px;
-  padding-top: 15px;
 }
 .advanced summary {
   font-size: 10px;
@@ -553,9 +534,7 @@ main {
   display: none;
 }
 .clock-details {
-  border-top: 1px solid var(--line);
-  margin-top: 22px;
-  padding-top: 22px;
+  margin-top: 32px;
 }
 .clock-details .field-label {
   font-family: var(--sans);
@@ -913,11 +892,10 @@ dialog::backdrop {
     max-width: 710px;
   }
   .preview-column {
-    padding-left: 42px;
     padding-right: 42px;
   }
   #panel {
-    padding: 28px 32px;
+    padding-left: 36px;
   }
 }
 @media (max-width: 1100px) {
@@ -928,13 +906,13 @@ dialog::backdrop {
     grid-template-columns: minmax(0, 1.2fr) minmax(340px, 1fr);
   }
   .preview-column {
-    padding: 19px 18px 0;
+    padding: 24px 24px 28px 0;
   }
   .clock-wrap {
     padding: 12px 2px;
   }
   #panel {
-    padding: 22px 20px;
+    padding: 24px 0 28px 24px;
   }
   .bird-choice img {
     width: 70px;
@@ -949,6 +927,9 @@ dialog::backdrop {
   }
 }
 @media (max-width: 800px) {
+  main {
+    padding: 0 5%;
+  }
   .topbar {
     margin: 0 5%;
     min-height: 79px;
@@ -969,10 +950,10 @@ dialog::backdrop {
   }
   .workspace {
     grid-template-columns: 1fr;
-    overflow: visible;
+    min-height: 0;
   }
   .preview-column {
-    padding: 16px 18px 0;
+    padding: 18px 0 24px;
   }
   .clock-stage {
     margin-top: 10px;
@@ -984,11 +965,10 @@ dialog::backdrop {
   .editor {
     border-left: 0;
     border-top: 1px solid var(--line);
-    border-radius: 0 0 9px 9px;
   }
   #panel {
     min-height: 0;
-    padding: 23px;
+    padding: 28px 0 36px;
   }
   .bird-choice {
     padding: 14px 18px;
@@ -1026,13 +1006,10 @@ dialog::backdrop {
     gap: 7px;
   }
   .preview-column {
-    padding: 12px 12px 0;
+    padding-top: 14px;
   }
   .clock-wrap {
     padding: 9px 0;
-  }
-  #panel {
-    padding: 21px 18px;
   }
   .modal-head {
     padding: 22px 19px 17px;
@@ -1322,10 +1299,6 @@ dialog::backdrop {
   min-height: 32px;
 }
 @media (max-width: 800px) {
-  main {
-    padding-top: 18px;
-    padding-bottom: 24px;
-  }
   .brand img {
     width: 40px;
     height: 40px;

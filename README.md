@@ -32,6 +32,7 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 - Keep adjacent woods different, including the 12-to-1 join. Manual selection adjusts as few other pieces as possible. Shuffle produces four pieces of each wood with no matching neighbors.
 - Twelve-sided triangular face or round face, hour-marker style, and wood-grain intensity. Clock hands always show the current local time, including when reopening older drafts or importing configurations.
 - One panel for hour placement, clock appearance, and randomizing birds or woods, plus undo/redo and a fullscreen clock view.
+- **Reset view**, beside fullscreen, restores the original twelve birds, woods, placements, and clock appearance. Uploaded artwork stays in the library; the reset can be undone or redone.
 - A fullscreen bird field guide: choose a clock slice or browse all 48 species to read sourced descriptions, see occurrence maps, compare sizes, and explore habitat, diet, nesting, movement, taxonomy, and conservation.
 - Automatic session and local-browser saving, portable JSON import/export, configuration links, and 2,400 px PNG image export.
 - Individual bird downloads in PNG, JPEG, WebP, and SVG; ZIP collections for the birds on your clock or the entire library, including uploaded artwork.

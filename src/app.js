@@ -104,7 +104,6 @@ function renderClock() {
   const wrap = $('#clock');
   const hadFocus = wrap.contains(document.activeElement);
   wrap.innerHTML = clockSVG(config, allBirds(), { selected });
-  $('#clock-stage').style.background = config.face.background;
   if (hadFocus)
     $(`[data-hour="${selected}"]`, wrap)?.focus({ preventScroll: true });
 }
@@ -113,6 +112,7 @@ function render() {
   renderPanel();
   $('#undo-button').disabled = !history.length;
   $('#redo-button').disabled = !future.length;
+  $('#reset-view-button').disabled = !catalogue.length;
 }
 function renderPanel() {
   const s = config.slices[selected],
@@ -135,8 +135,7 @@ function renderPanel() {
         ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
       </div>
     </section>
-    <hr class="divider">
-    <div class="field-label">THE COMPOSITION</div>
+    <div class="field-label composition-heading">THE COMPOSITION</div>
     ${range('Bird size', 'slice.scale', s.scale, 0.55, 1.5, 0.05, 'pct')}
     <div class="inline-actions">
       <button class="mini-button ${s.flip ? 'active' : ''}" data-action="flip" aria-pressed="${s.flip}">⇄ Flip bird</button>
@@ -716,6 +715,15 @@ document.addEventListener('keydown', (e) => {
 });
 $('#undo-button').onclick = undo;
 $('#redo-button').onclick = redo;
+$('#reset-view-button').onclick = () => {
+  commit(() => {
+    const customBirds = config.customBirds;
+    config = defaultConfig();
+    config.customBirds = customBirds;
+    selected = 2;
+  }, 'Original clock restored. You can undo this.');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+};
 $('#export-button').onclick = openExport;
 function startFresh() {
   confirmAction(

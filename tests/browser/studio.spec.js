@@ -437,6 +437,73 @@ async function clockDraft(page) {
   );
 }
 
+test('reset view restores the original clock, keeps uploads and supports undo, redo and reload', async ({
+  page,
+}) => {
+  const original = await clockDraft(page);
+  const imported = structuredClone(original);
+  imported.customBirds.push({
+    id: 'custom-reset-test',
+    name: 'My bird',
+    scientificName: 'Your illustration',
+    region: 'Custom',
+    group: 'Custom',
+    asset: `data:image/webp;base64,${(await fs.readFile('assets/birds/american-goldfinch.webp')).toString('base64')}`,
+  });
+  Object.assign(imported.slices[2], {
+    bird: 'custom-reset-test',
+    scale: 1.4,
+    rotation: 25,
+    x: 15,
+    y: -20,
+    flip: true,
+  });
+  imported.slices[0].wood = 'cherry';
+  Object.assign(imported.face, {
+    shape: 'circle',
+    numbers: 'roman',
+    grain: 0.8,
+    background: '#e8dfcc',
+  });
+  await page.locator('#json-input').setInputFiles({
+    name: 'customized-clock.json',
+    mimeType: 'application/json',
+    buffer: Buffer.from(JSON.stringify(imported)),
+  });
+  await expect(
+    page.getByRole('button', { name: 'Change bird for hour 3' }),
+  ).toContainText('My bird');
+  const customized = await clockDraft(page);
+  await page.getByRole('button', { name: 'Reset view', exact: true }).click();
+  const restored = await clockDraft(page);
+  expect(restored).toEqual({
+    ...original,
+    customBirds: customized.customBirds,
+  });
+  await expect(
+    page.getByRole('button', { name: 'Reset view', exact: true }),
+  ).toBeFocused();
+  await expect(
+    page.getByRole('button', { name: 'Change bird for hour 3' }),
+  ).toContainText('Osprey');
+  await page.getByRole('button', { name: 'Undo last change' }).click();
+  expect(await clockDraft(page)).toEqual(customized);
+  await expect(
+    page.getByRole('button', { name: 'Change bird for hour 3' }),
+  ).toContainText('My bird');
+  await page.getByRole('button', { name: 'Redo last change' }).click();
+  expect(await clockDraft(page)).toEqual(restored);
+  await page.reload();
+  await expect(
+    page.getByRole('button', { name: 'Change bird for hour 3' }),
+  ).toContainText('Osprey');
+  expect(await clockDraft(page)).toEqual(restored);
+  await page.getByRole('button', { name: 'Change bird for hour 3' }).click();
+  await expect(
+    page.getByRole('button', { name: 'Choose My bird', exact: true }),
+  ).toBeVisible();
+});
+
 test('dragging birds swaps their placement, preserves woods, and supports undo and reload', async ({
   page,
 }) => {
