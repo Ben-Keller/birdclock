@@ -9,24 +9,31 @@
       content="Design your own wooden bird clock. Choose from 48 illustrated birds, mix three natural woods, and download your artwork."
     />
     <title>Bird Clock — Design your own</title>
-    <link
-      rel="icon"
-      href="assets/birds/american-goldfinch.webp"
-      type="image/webp"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/brand-bird.webp" type="image/webp" />
+    <link rel="modulepreload" href="dist/chunk-QZQGSM2W.js" />
+    <link rel="modulepreload" href="dist/chunk-4RXG2F7F.js" />
+    <link rel="modulepreload" href="dist/chunk-PA4T5X5K.js" />
     <link
       rel="preload"
-      href="assets/fonts/cormorant-400.ttf"
+      as="image"
+      href="assets/previews/woods/maple.webp"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" href="assets/previews/woods/mahogany.webp" />
+    <link rel="preload" as="image" href="assets/previews/woods/cherry.webp" />
+    <link rel="stylesheet" href="dist/styles-9b7761a0d6db.css" />
+    <link
+      rel="preload"
+      href="assets/fonts/cormorant-400.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="assets/fonts/inter-400.ttf"
+      href="assets/fonts/inter-400.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossorigin
     />
   </head>
@@ -34,12 +41,7 @@
     <a class="skip-link" href="#editor">Skip to clock controls</a>
     <header class="topbar">
       <a class="brand" href="./" aria-label="Bird Clock home">
-        <img
-          src="assets/birds/american-goldfinch.webp"
-          alt=""
-          width="48"
-          height="48"
-        />
+        <img src="assets/brand-bird.webp" alt="" width="48" height="48" />
         <span>Bird Clock</span>
       </a>
       <nav aria-label="Design actions">
@@ -154,6 +156,6 @@
         Please enable JavaScript to customize your bird clock.
       </p></noscript
     >
-    <script type="module" src="src/app.js"></script>
+    <script type="module" src="dist/app-VRTYUYQJ.js"></script>
   </body>
 </html>

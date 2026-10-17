@@ -146,6 +146,12 @@ test('catalogue and packaged textures/fonts are complete local assets', () => {
     assert.ok(
       fs.statSync(new URL('../' + b.asset, import.meta.url)).size > 1000,
     );
+    for (const preview of [b.preview, b.previewLarge]) {
+      assert.ok(preview.startsWith('assets/previews/'));
+      const bytes = fs.readFileSync(new URL('../' + preview, import.meta.url));
+      assert.equal(bytes.subarray(8, 12).toString(), 'WEBP');
+      assert.ok(bytes.length > 1000 && bytes.length < 100000);
+    }
   }
   for (const w of WOODS)
     assert.ok(
@@ -159,9 +165,17 @@ test('catalogue and packaged textures/fonts are complete local assets', () => {
     'inter-400',
     'inter-500',
     'inter-600',
-  ])
+  ]) {
     assert.ok(
       fs.statSync(new URL('../assets/fonts/' + font + '.ttf', import.meta.url))
         .size > 10000,
     );
+    for (const suffix of ['', '-ext']) {
+      const bytes = fs.readFileSync(
+        new URL('../assets/fonts/' + font + suffix + '.woff2', import.meta.url),
+      );
+      assert.equal(bytes.subarray(0, 4).toString(), 'wOF2');
+      assert.ok(bytes.length < 26000);
+    }
+  }
 });

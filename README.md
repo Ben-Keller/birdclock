@@ -4,11 +4,11 @@ A browser-based studio for designing a twelve-piece wooden bird clock. Warm pape
 
 ## Launch on GitHub Pages
 
-1. Create a GitHub repository. Upload this project's files to the repository root. `index.html`, `styles.css`, `src`, and `assets` must sit at the root; include `.nojekyll` when committing with Git. Leave out `node_modules`, `test-results`, and `playwright-report`.
+1. Create a GitHub repository. Upload this project's files to the repository root. `index.html`, `dist`, and `assets` must sit at the root; include `.nojekyll` when committing with Git. Leave out `node_modules`, `test-results`, and `playwright-report`.
 2. Open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then **main** and **/(root)**. Save.
 3. Wait for the Pages deployment to finish. GitHub displays your site URL on that page. Share that URL, or use **Save & share → Copy a design link** to share a particular clock.
 
-No build step, API keys, paid service, package installation, or backend is required. Asset paths are relative, so project sites such as `https://username.github.io/woodland-hours/` work without edits.
+The optimized production files are checked in, so deployment needs no build step, API keys, package installation, or backend. After editing sources, run `npm run build` and commit the updated `index.html` and `dist` files with your changes. Asset paths are relative, so project sites such as `https://username.github.io/woodland-hours/` work without edits.
 
 Official instructions: [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
@@ -20,7 +20,7 @@ From this folder:
 python3 -m http.server 8080
 ```
 
-Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` directly with a `file:` URL cannot load the bird catalogue reliably.
+Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` directly with a `file:` URL cannot load JavaScript modules reliably.
 
 ## What you can customize
 
@@ -74,13 +74,18 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 
 ## Project files
 
-- `index.html`, `styles.css`: interface and responsive styling.
+- `src/index.html`, `styles.css`: editable interface template and responsive styling.
+- `index.html`, `dist`: generated, optimized production files served by GitHub Pages.
+- `scripts/build.mjs`: bundles/minifies scripts, splits optional panels, and generates cache-busting filenames and preload links.
+- `scripts/optimize-assets.py`: creates display previews and WOFF2 font subsets; originals remain untouched.
+- `scripts/measure-performance.mjs`: repeatable three-run cold mobile load benchmark.
 - `src/app.js`: interaction, storage, importing, sharing, and exporting.
 - `src/model.js`: configuration validation and wood arrangement rules.
 - `src/clock.js`: reusable SVG clock renderer.
 - `src/clock-view.js`: 3D board geometry and pointer/keyboard perspective controls.
 - `src/bird-explorer.js`: fullscreen field guide, map views, comparisons, and profile loading.
-- `src/downloads.js`: shared image conversion, file downloads, and collection metadata.
+- `src/file-utils.js`: small file/image helpers shared by the editor and exports.
+- `src/downloads.js`: on-demand image conversion and collection metadata.
 - `src/bird-downloads.js`: accessible bird download panel and progress/error handling.
 - `src/zip.js`: small ZIP writer; no external runtime dependencies.
 - `assets/birds.json`: 48-bird catalogue; add entries and corresponding artwork to extend it.
@@ -88,22 +93,27 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 - `assets/maps`: local GBIF occurrence tiles, provenance manifest, and Natural Earth base map.
 - `scripts/update-bird-maps.py`: manual map refresh with exact species matching; see `ASSETS.md` before refreshing.
 - `assets/bird-generation-2026-10.json`: prompt set and species references for the 16 new illustrations.
-- `assets/birds`, `assets/woods`, `assets/fonts`: bundled artwork, textures, and fonts.
+- `assets/birds`, `assets/woods`, `assets/fonts`: original artwork, textures, fonts, and font subsets.
+- `assets/previews`: 256 px display birds, 384 px enlarged birds, and compact wood textures. Downloads and clock PNG exports use the original assets.
 - `tests/*.test.js`: model and export tests, including independent ZIP validation with Python.
 - `tests/browser/studio.spec.js`: real-browser checks for downloads, uploads, saves, editor interactions, and mobile layout.
 - `tests/browser/explorer.spec.js`: all profiles and map assets, keyboard exploration, loading recovery, unchanged drafts, and responsive layout.
 
 ## Development checks
 
-The site runs without installing packages or building. Development tooling requires Node 20+ and Python 3:
+The checked-in site runs without installing packages. Editing sources requires Node 20+; browser tests also require Python 3:
 
 ```sh
 npm ci
+npm run build
+npm run build:check
 npm test
 npm run check
 npm run test:browser
 ```
 
-Browser tests use an isolated headless session of installed Google Chrome and start their own server on port 4173. Alternatively, run `npx playwright install chromium` and then `PLAYWRIGHT_CHANNEL=chromium npm run test:browser`. The formatter is available with `npm run format`. Development dependencies are never loaded by the site.
+Browser tests rebuild the production files first, then use an isolated headless session of installed Google Chrome and start their own server on port 4173. Alternatively, run `npx playwright install chromium` and then `PLAYWRIGHT_CHANNEL=chromium npm run test:browser`. The formatter is available with `npm run format`. Development dependencies are never loaded by the site.
+
+Run `npm run perf -- https://ben-keller.github.io/birdclock/ /tmp/birdclock-performance.json` for three cold-load mobile measurements (4× CPU slowdown, 150 ms latency, 200 kB/s downloads). See `PERFORMANCE.md` for measured results and the startup budget.
 
 See `ASSETS.md` for artwork notes and `TESTING.md` for validation status. This is a visual configurator, with no physical sizing or fabrication template.

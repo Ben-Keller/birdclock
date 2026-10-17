@@ -5,7 +5,9 @@
     "scientificName": "Colaptes auratus",
     "region": "North America",
     "group": "Woodland",
-    "asset": "assets/birds/northern-flicker.webp"
+    "asset": "assets/birds/northern-flicker.webp",
+    "preview": "assets/previews/birds/northern-flicker.webp",
+    "previewLarge": "assets/previews/birds-large/northern-flicker.webp"
   },
   {
     "id": "american-goldfinch",
@@ -13,7 +15,9 @@
     "scientificName": "Spinus tristis",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/american-goldfinch.webp"
+    "asset": "assets/birds/american-goldfinch.webp",
+    "preview": "assets/previews/birds/american-goldfinch.webp",
+    "previewLarge": "assets/previews/birds-large/american-goldfinch.webp"
   },
   {
     "id": "osprey",
@@ -21,7 +25,9 @@
     "scientificName": "Pandion haliaetus",
     "region": "Worldwide",
     "group": "Raptors",
-    "asset": "assets/birds/osprey.webp"
+    "asset": "assets/birds/osprey.webp",
+    "preview": "assets/previews/birds/osprey.webp",
+    "previewLarge": "assets/previews/birds-large/osprey.webp"
   },
   {
     "id": "annas-hummingbird",
@@ -29,7 +35,9 @@
     "scientificName": "Calypte anna",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/annas-hummingbird.webp"
+    "asset": "assets/birds/annas-hummingbird.webp",
+    "preview": "assets/previews/birds/annas-hummingbird.webp",
+    "previewLarge": "assets/previews/birds-large/annas-hummingbird.webp"
   },
   {
     "id": "pileated-woodpecker",
@@ -37,7 +45,9 @@
     "scientificName": "Dryocopus pileatus",
     "region": "North America",
     "group": "Woodland",
-    "asset": "assets/birds/pileated-woodpecker.webp"
+    "asset": "assets/birds/pileated-woodpecker.webp",
+    "preview": "assets/previews/birds/pileated-woodpecker.webp",
+    "previewLarge": "assets/previews/birds-large/pileated-woodpecker.webp"
   },
   {
     "id": "bittern",
@@ -45,7 +55,9 @@
     "scientificName": "Botaurus poiciloptilus",
     "region": "Australasia",
     "group": "Waterbirds",
-    "asset": "assets/birds/bittern.webp"
+    "asset": "assets/birds/bittern.webp",
+    "preview": "assets/previews/birds/bittern.webp",
+    "previewLarge": "assets/previews/birds-large/bittern.webp"
   },
   {
     "id": "bellbird",
@@ -53,7 +65,9 @@
     "scientificName": "Anthornis melanura",
     "region": "New Zealand",
     "group": "Songbirds",
-    "asset": "assets/birds/bellbird.webp"
+    "asset": "assets/birds/bellbird.webp",
+    "preview": "assets/previews/birds/bellbird.webp",
+    "previewLarge": "assets/previews/birds-large/bellbird.webp"
   },
   {
     "id": "kokako",
@@ -61,7 +75,9 @@
     "scientificName": "Callaeas wilsoni",
     "region": "New Zealand",
     "group": "Woodland",
-    "asset": "assets/birds/kokako.webp"
+    "asset": "assets/birds/kokako.webp",
+    "preview": "assets/previews/birds/kokako.webp",
+    "previewLarge": "assets/previews/birds-large/kokako.webp"
   },
   {
     "id": "common-loon",
@@ -69,7 +85,9 @@
     "scientificName": "Gavia immer",
     "region": "North America",
     "group": "Waterbirds",
-    "asset": "assets/birds/common-loon.webp"
+    "asset": "assets/birds/common-loon.webp",
+    "preview": "assets/previews/birds/common-loon.webp",
+    "previewLarge": "assets/previews/birds-large/common-loon.webp"
   },
   {
     "id": "bald-eagle",
@@ -77,7 +95,9 @@
     "scientificName": "Haliaeetus leucocephalus",
     "region": "North America",
     "group": "Raptors",
-    "asset": "assets/birds/bald-eagle.webp"
+    "asset": "assets/birds/bald-eagle.webp",
+    "preview": "assets/previews/birds/bald-eagle.webp",
+    "previewLarge": "assets/previews/birds-large/bald-eagle.webp"
   },
   {
     "id": "wood-duck",
@@ -85,7 +105,9 @@
     "scientificName": "Aix sponsa",
     "region": "North America",
     "group": "Waterbirds",
-    "asset": "assets/birds/wood-duck.webp"
+    "asset": "assets/birds/wood-duck.webp",
+    "preview": "assets/previews/birds/wood-duck.webp",
+    "previewLarge": "assets/previews/birds-large/wood-duck.webp"
   },
   {
     "id": "great-horned-owl",
@@ -93,7 +115,9 @@
     "scientificName": "Bubo virginianus",
     "region": "North America",
     "group": "Raptors",
-    "asset": "assets/birds/great-horned-owl.webp"
+    "asset": "assets/birds/great-horned-owl.webp",
+    "preview": "assets/previews/birds/great-horned-owl.webp",
+    "previewLarge": "assets/previews/birds-large/great-horned-owl.webp"
   },
   {
     "id": "northern-cardinal",
@@ -101,7 +125,9 @@
     "scientificName": "Cardinalis cardinalis",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/northern-cardinal.webp"
+    "asset": "assets/birds/northern-cardinal.webp",
+    "preview": "assets/previews/birds/northern-cardinal.webp",
+    "previewLarge": "assets/previews/birds-large/northern-cardinal.webp"
   },
   {
     "id": "blue-jay",
@@ -109,7 +135,9 @@
     "scientificName": "Cyanocitta cristata",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/blue-jay.webp"
+    "asset": "assets/birds/blue-jay.webp",
+    "preview": "assets/previews/birds/blue-jay.webp",
+    "previewLarge": "assets/previews/birds-large/blue-jay.webp"
   },
   {
     "id": "mourning-dove",
@@ -117,7 +145,9 @@
     "scientificName": "Zenaida macroura",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/mourning-dove.webp"
+    "asset": "assets/birds/mourning-dove.webp",
+    "preview": "assets/previews/birds/mourning-dove.webp",
+    "previewLarge": "assets/previews/birds-large/mourning-dove.webp"
   },
   {
     "id": "black-capped-chickadee",
@@ -125,7 +155,9 @@
     "scientificName": "Poecile atricapillus",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/black-capped-chickadee.webp"
+    "asset": "assets/birds/black-capped-chickadee.webp",
+    "preview": "assets/previews/birds/black-capped-chickadee.webp",
+    "previewLarge": "assets/previews/birds-large/black-capped-chickadee.webp"
   },
   {
     "id": "american-robin",
@@ -133,7 +165,9 @@
     "scientificName": "Turdus migratorius",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/american-robin.webp"
+    "asset": "assets/birds/american-robin.webp",
+    "preview": "assets/previews/birds/american-robin.webp",
+    "previewLarge": "assets/previews/birds-large/american-robin.webp"
   },
   {
     "id": "eastern-bluebird",
@@ -141,7 +175,9 @@
     "scientificName": "Sialia sialis",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/eastern-bluebird.webp"
+    "asset": "assets/birds/eastern-bluebird.webp",
+    "preview": "assets/previews/birds/eastern-bluebird.webp",
+    "previewLarge": "assets/previews/birds-large/eastern-bluebird.webp"
   },
   {
     "id": "cedar-waxwing",
@@ -149,7 +185,9 @@
     "scientificName": "Bombycilla cedrorum",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/cedar-waxwing.webp"
+    "asset": "assets/birds/cedar-waxwing.webp",
+    "preview": "assets/previews/birds/cedar-waxwing.webp",
+    "previewLarge": "assets/previews/birds-large/cedar-waxwing.webp"
   },
   {
     "id": "tufted-titmouse",
@@ -157,7 +195,9 @@
     "scientificName": "Baeolophus bicolor",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/tufted-titmouse.webp"
+    "asset": "assets/birds/tufted-titmouse.webp",
+    "preview": "assets/previews/birds/tufted-titmouse.webp",
+    "previewLarge": "assets/previews/birds-large/tufted-titmouse.webp"
   },
   {
     "id": "red-winged-blackbird",
@@ -165,7 +205,9 @@
     "scientificName": "Agelaius phoeniceus",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/red-winged-blackbird.webp"
+    "asset": "assets/birds/red-winged-blackbird.webp",
+    "preview": "assets/previews/birds/red-winged-blackbird.webp",
+    "previewLarge": "assets/previews/birds-large/red-winged-blackbird.webp"
   },
   {
     "id": "baltimore-oriole",
@@ -173,7 +215,9 @@
     "scientificName": "Icterus galbula",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/baltimore-oriole.webp"
+    "asset": "assets/birds/baltimore-oriole.webp",
+    "preview": "assets/previews/birds/baltimore-oriole.webp",
+    "previewLarge": "assets/previews/birds-large/baltimore-oriole.webp"
   },
   {
     "id": "rose-breasted-grosbeak",
@@ -181,7 +225,9 @@
     "scientificName": "Pheucticus ludovicianus",
     "region": "North America",
     "group": "Songbirds",
-    "asset": "assets/birds/rose-breasted-grosbeak.webp"
+    "asset": "assets/birds/rose-breasted-grosbeak.webp",
+    "preview": "assets/previews/birds/rose-breasted-grosbeak.webp",
+    "previewLarge": "assets/previews/birds-large/rose-breasted-grosbeak.webp"
   },
   {
     "id": "american-kestrel",
@@ -189,7 +235,9 @@
     "scientificName": "Falco sparverius",
     "region": "North America",
     "group": "Raptors",
-    "asset": "assets/birds/american-kestrel.webp"
+    "asset": "assets/birds/american-kestrel.webp",
+    "preview": "assets/previews/birds/american-kestrel.webp",
+    "previewLarge": "assets/previews/birds-large/american-kestrel.webp"
   },
   {
     "id": "peregrine-falcon",
@@ -197,7 +245,9 @@
     "scientificName": "Falco peregrinus",
     "region": "North America",
     "group": "Raptors",
-    "asset": "assets/birds/peregrine-falcon.webp"
+    "asset": "assets/birds/peregrine-falcon.webp",
+    "preview": "assets/previews/birds/peregrine-falcon.webp",
+    "previewLarge": "assets/previews/birds-large/peregrine-falcon.webp"
   },
   {
     "id": "barn-owl",
@@ -205,7 +255,9 @@
     "scientificName": "Tyto furcata",
     "region": "North America",
     "group": "Raptors",
-    "asset": "assets/birds/barn-owl.webp"
+    "asset": "assets/birds/barn-owl.webp",
+    "preview": "assets/previews/birds/barn-owl.webp",
+    "previewLarge": "assets/previews/birds-large/barn-owl.webp"
   },
   {
     "id": "snowy-owl",
@@ -213,7 +265,9 @@
     "scientificName": "Bubo scandiacus",
     "region": "North America",
     "group": "Raptors",
-    "asset": "assets/birds/snowy-owl.webp"
+    "asset": "assets/birds/snowy-owl.webp",
+    "preview": "assets/previews/birds/snowy-owl.webp",
+    "previewLarge": "assets/previews/birds-large/snowy-owl.webp"
   },
   {
     "id": "common-raven",
@@ -221,7 +275,9 @@
     "scientificName": "Corvus corax",
     "region": "North America",
     "group": "Woodland",
-    "asset": "assets/birds/common-raven.webp"
+    "asset": "assets/birds/common-raven.webp",
+    "preview": "assets/previews/birds/common-raven.webp",
+    "previewLarge": "assets/previews/birds-large/common-raven.webp"
   },
   {
     "id": "belted-kingfisher",
@@ -229,7 +285,9 @@
     "scientificName": "Megaceryle alcyon",
     "region": "North America",
     "group": "Waterbirds",
-    "asset": "assets/birds/belted-kingfisher.webp"
+    "asset": "assets/birds/belted-kingfisher.webp",
+    "preview": "assets/previews/birds/belted-kingfisher.webp",
+    "previewLarge": "assets/previews/birds-large/belted-kingfisher.webp"
   },
   {
     "id": "atlantic-puffin",
@@ -237,7 +295,9 @@
     "scientificName": "Fratercula arctica",
     "region": "North Atlantic",
     "group": "Waterbirds",
-    "asset": "assets/birds/atlantic-puffin.webp"
+    "asset": "assets/birds/atlantic-puffin.webp",
+    "preview": "assets/previews/birds/atlantic-puffin.webp",
+    "previewLarge": "assets/previews/birds-large/atlantic-puffin.webp"
   },
   {
     "id": "mallard",
@@ -245,7 +305,9 @@
     "scientificName": "Anas platyrhynchos",
     "region": "North America",
     "group": "Waterbirds",
-    "asset": "assets/birds/mallard.webp"
+    "asset": "assets/birds/mallard.webp",
+    "preview": "assets/previews/birds/mallard.webp",
+    "previewLarge": "assets/previews/birds-large/mallard.webp"
   },
   {
     "id": "tui",
@@ -253,7 +315,9 @@
     "scientificName": "Prosthemadera novaeseelandiae",
     "region": "New Zealand",
     "group": "Songbirds",
-    "asset": "assets/birds/tui.webp"
+    "asset": "assets/birds/tui.webp",
+    "preview": "assets/previews/birds/tui.webp",
+    "previewLarge": "assets/previews/birds-large/tui.webp"
   },
   {
     "id": "european-robin",
@@ -261,7 +325,9 @@
     "scientificName": "Erithacus rubecula",
     "region": "Europe",
     "group": "Songbirds",
-    "asset": "assets/birds/european-robin.webp"
+    "asset": "assets/birds/european-robin.webp",
+    "preview": "assets/previews/birds/european-robin.webp",
+    "previewLarge": "assets/previews/birds-large/european-robin.webp"
   },
   {
     "id": "eurasian-blue-tit",
@@ -269,7 +335,9 @@
     "scientificName": "Cyanistes caeruleus",
     "region": "Europe",
     "group": "Songbirds",
-    "asset": "assets/birds/eurasian-blue-tit.webp"
+    "asset": "assets/birds/eurasian-blue-tit.webp",
+    "preview": "assets/previews/birds/eurasian-blue-tit.webp",
+    "previewLarge": "assets/previews/birds-large/eurasian-blue-tit.webp"
   },
   {
     "id": "common-kingfisher",
@@ -277,7 +345,9 @@
     "scientificName": "Alcedo atthis",
     "region": "Europe",
     "group": "Waterbirds",
-    "asset": "assets/birds/common-kingfisher.webp"
+    "asset": "assets/birds/common-kingfisher.webp",
+    "preview": "assets/previews/birds/common-kingfisher.webp",
+    "previewLarge": "assets/previews/birds-large/common-kingfisher.webp"
   },
   {
     "id": "eurasian-hoopoe",
@@ -285,7 +355,9 @@
     "scientificName": "Upupa epops",
     "region": "Europe",
     "group": "Woodland",
-    "asset": "assets/birds/eurasian-hoopoe.webp"
+    "asset": "assets/birds/eurasian-hoopoe.webp",
+    "preview": "assets/previews/birds/eurasian-hoopoe.webp",
+    "previewLarge": "assets/previews/birds-large/eurasian-hoopoe.webp"
   },
   {
     "id": "lilac-breasted-roller",
@@ -293,7 +365,9 @@
     "scientificName": "Coracias caudatus",
     "region": "Africa",
     "group": "Woodland",
-    "asset": "assets/birds/lilac-breasted-roller.webp"
+    "asset": "assets/birds/lilac-breasted-roller.webp",
+    "preview": "assets/previews/birds/lilac-breasted-roller.webp",
+    "previewLarge": "assets/previews/birds-large/lilac-breasted-roller.webp"
   },
   {
     "id": "african-grey-parrot",
@@ -301,7 +375,9 @@
     "scientificName": "Psittacus erithacus",
     "region": "Africa",
     "group": "Parrots",
-    "asset": "assets/birds/african-grey-parrot.webp"
+    "asset": "assets/birds/african-grey-parrot.webp",
+    "preview": "assets/previews/birds/african-grey-parrot.webp",
+    "previewLarge": "assets/previews/birds-large/african-grey-parrot.webp"
   },
   {
     "id": "grey-crowned-crane",
@@ -309,7 +385,9 @@
     "scientificName": "Balearica regulorum",
     "region": "Africa",
     "group": "Waterbirds",
-    "asset": "assets/birds/grey-crowned-crane.webp"
+    "asset": "assets/birds/grey-crowned-crane.webp",
+    "preview": "assets/previews/birds/grey-crowned-crane.webp",
+    "previewLarge": "assets/previews/birds-large/grey-crowned-crane.webp"
   },
   {
     "id": "secretarybird",
@@ -317,7 +395,9 @@
     "scientificName": "Sagittarius serpentarius",
     "region": "Africa",
     "group": "Raptors",
-    "asset": "assets/birds/secretarybird.webp"
+    "asset": "assets/birds/secretarybird.webp",
+    "preview": "assets/previews/birds/secretarybird.webp",
+    "previewLarge": "assets/previews/birds-large/secretarybird.webp"
   },
   {
     "id": "mandarin-duck",
@@ -325,7 +405,9 @@
     "scientificName": "Aix galericulata",
     "region": "Asia",
     "group": "Waterbirds",
-    "asset": "assets/birds/mandarin-duck.webp"
+    "asset": "assets/birds/mandarin-duck.webp",
+    "preview": "assets/previews/birds/mandarin-duck.webp",
+    "previewLarge": "assets/previews/birds-large/mandarin-duck.webp"
   },
   {
     "id": "red-crowned-crane",
@@ -333,7 +415,9 @@
     "scientificName": "Grus japonensis",
     "region": "Asia",
     "group": "Waterbirds",
-    "asset": "assets/birds/red-crowned-crane.webp"
+    "asset": "assets/birds/red-crowned-crane.webp",
+    "preview": "assets/previews/birds/red-crowned-crane.webp",
+    "previewLarge": "assets/previews/birds-large/red-crowned-crane.webp"
   },
   {
     "id": "indian-peafowl",
@@ -341,7 +425,9 @@
     "scientificName": "Pavo cristatus",
     "region": "Asia",
     "group": "Gamebirds",
-    "asset": "assets/birds/indian-peafowl.webp"
+    "asset": "assets/birds/indian-peafowl.webp",
+    "preview": "assets/previews/birds/indian-peafowl.webp",
+    "previewLarge": "assets/previews/birds-large/indian-peafowl.webp"
   },
   {
     "id": "golden-pheasant",
@@ -349,7 +435,9 @@
     "scientificName": "Chrysolophus pictus",
     "region": "Asia",
     "group": "Gamebirds",
-    "asset": "assets/birds/golden-pheasant.webp"
+    "asset": "assets/birds/golden-pheasant.webp",
+    "preview": "assets/previews/birds/golden-pheasant.webp",
+    "previewLarge": "assets/previews/birds-large/golden-pheasant.webp"
   },
   {
     "id": "rainbow-lorikeet",
@@ -357,7 +445,9 @@
     "scientificName": "Trichoglossus moluccanus",
     "region": "Australasia",
     "group": "Parrots",
-    "asset": "assets/birds/rainbow-lorikeet.webp"
+    "asset": "assets/birds/rainbow-lorikeet.webp",
+    "preview": "assets/previews/birds/rainbow-lorikeet.webp",
+    "previewLarge": "assets/previews/birds-large/rainbow-lorikeet.webp"
   },
   {
     "id": "laughing-kookaburra",
@@ -365,7 +455,9 @@
     "scientificName": "Dacelo novaeguineae",
     "region": "Australasia",
     "group": "Woodland",
-    "asset": "assets/birds/laughing-kookaburra.webp"
+    "asset": "assets/birds/laughing-kookaburra.webp",
+    "preview": "assets/previews/birds/laughing-kookaburra.webp",
+    "previewLarge": "assets/previews/birds-large/laughing-kookaburra.webp"
   },
   {
     "id": "galah",
@@ -373,7 +465,9 @@
     "scientificName": "Eolophus roseicapilla",
     "region": "Australasia",
     "group": "Parrots",
-    "asset": "assets/birds/galah.webp"
+    "asset": "assets/birds/galah.webp",
+    "preview": "assets/previews/birds/galah.webp",
+    "previewLarge": "assets/previews/birds-large/galah.webp"
   },
   {
     "id": "new-zealand-fantail",
@@ -381,6 +475,8 @@
     "scientificName": "Rhipidura fuliginosa",
     "region": "New Zealand",
     "group": "Songbirds",
-    "asset": "assets/birds/new-zealand-fantail.webp"
+    "asset": "assets/birds/new-zealand-fantail.webp",
+    "preview": "assets/previews/birds/new-zealand-fantail.webp",
+    "previewLarge": "assets/previews/birds-large/new-zealand-fantail.webp"
   }
 ]

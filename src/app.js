@@ -11,11 +11,10 @@ import {
   decodeConfig,
 } from './model.js';
 import { clockSVG, handsMarkup, escapeHTML as esc } from './clock.js';
-import { download, safeFilename, dataURL, canvasBlob } from './downloads.js';
-import { openBirdDownloads } from './bird-downloads.js';
+import { download, safeFilename, dataURL, canvasBlob } from './file-utils.js';
 import { attachClockTooltips } from './clock-tooltip.js';
 import { attachBirdDrag } from './clock-drag.js';
-import { openBirdExplorer } from './bird-explorer.js';
+import initialCatalogue from '../assets/birds.json' with { type: 'json' };
 import { attachClockView, clockViewMarkup } from './clock-view.js';
 const $ = (s, root = document) => root.querySelector(s),
   $$ = (s, root = document) => [...root.querySelectorAll(s)];
@@ -49,6 +48,7 @@ let catalogue = [],
   future = [],
   rangeBefore = null,
   modalKind = '',
+  modalRevision = 0,
   modalCleanup = null,
   lastFocus = null,
   toastTimer,
@@ -143,7 +143,7 @@ function renderPanel() {
       <summary aria-label="Bird customization"><span><span class="settings-title">Bird</span><span class="settings-context">${esc(bird.name)} · Hour ${selected + 1}</span></span></summary>
       <div class="settings-body">
         <button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}">
-          <img src="${esc(bird.asset)}" alt="${esc(bird.name)}">
+          <img src="${esc(bird.preview || bird.asset)}" decoding="async" alt="${esc(bird.name)}">
           <span>
             <span class="name">${esc(bird.name)}</span>
             <span class="latin">${esc(bird.scientificName)}</span>
@@ -173,7 +173,7 @@ function renderPanel() {
       <summary aria-label="Wood and clock customization"><span><span class="settings-title">Wood &amp; clock</span><span class="settings-context">${esc(wood.name)} · Hour ${selected + 1}</span></span></summary>
       <div class="settings-body">
         <div class="wood-options">
-          ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
+          ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/previews/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
         </div>
         <div class="clock-appearance">
           <div class="field-label">Clock appearance <span>All twelve hours</span></div>
@@ -203,7 +203,14 @@ function renderPanel() {
 }
 function chooseHour(i) {
   selected = (i + 12) % 12;
-  renderClock();
+  clockDrag.cancel();
+  clockTooltip.hide();
+  $$('.clock-slice', $('#clock')).forEach((slice) => {
+    const active = +slice.dataset.hour === selected;
+    slice.classList.toggle('selected', active);
+    slice.setAttribute('aria-pressed', String(active));
+    slice.setAttribute('tabindex', active ? '0' : '-1');
+  });
   renderPanel();
 }
 function setValue(key, value) {
@@ -276,6 +283,7 @@ function swapBirds(from, to) {
   );
 }
 function showModal(kind, html) {
+  modalRevision++;
   modalCleanup?.();
   modalCleanup = null;
   clockDrag.cancel();
@@ -294,6 +302,7 @@ function closeModal() {
   modal.close();
 }
 modal.addEventListener('close', () => {
+  modalRevision++;
   modalCleanup?.();
   modalCleanup = null;
   document.body.style.overflow = '';
@@ -390,7 +399,7 @@ function renderBirdGrid() {
     ? birds
         .map((b) => {
           const used = config.slices.findIndex((s) => s.bird === b.id);
-          return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(b.asset)}" alt="" loading="lazy"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button></article>`;
+          return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(b.preview || b.asset)}" alt="" loading="lazy" decoding="async" width="128" height="128"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button></article>`;
         })
         .join('')
     : '<div class="empty-state"><p>No birds match these filters.</p><button class="quiet-link" data-action="clear-bird-filters">Clear filters</button></div>';
@@ -484,10 +493,10 @@ async function exportPNG(button) {
       textureData,
       background: true,
     });
-    const font = await dataURL('assets/fonts/cormorant-500.ttf');
+    const font = await dataURL('assets/fonts/cormorant-500.woff2');
     svg = svg.replace(
       '<defs>',
-      `<defs><style>@font-face{font-family:'Cormorant Garamond';src:url(${font}) format('truetype');font-weight:500}</style>`,
+      `<defs><style>@font-face{font-family:'Cormorant Garamond';src:url(${font}) format('woff2');font-weight:500}</style>`,
     );
     const img = new Image(),
       url = URL.createObjectURL(
@@ -612,15 +621,8 @@ document.addEventListener('click', (e) => {
   if (!a) return;
   const action = a.dataset.action;
   if (action === 'bird-downloads')
-    openBirdDownloads({
-      config,
-      birds: allBirds(),
-      selectedId: config.slices[selected].bird,
-      scope: a.dataset.scope || 'single',
-      showModal,
-      modalHeader,
-      toast,
-    });
+    openDownloadPanel(a.dataset.scope || 'single');
+  if (action === 'reload-studio') location.reload();
   if (action === 'close') closeModal();
   if (action === 'import-design') $('#json-input').click();
   if (action === 'start-fresh') startFresh();
@@ -768,22 +770,60 @@ function startFresh() {
     'Start fresh',
   );
 }
-$('#focus-button').onclick = () => {
-  modalCleanup = openBirdExplorer({
-    config,
-    birds: allBirds(),
-    selected,
-    showModal,
-    modalHeader,
-    isOpen: () => modal.open && modalKind === 'fullscreen',
-  });
-};
+async function openLazyPanel(kind, title, loader, open) {
+  showModal(
+    kind,
+    `${modalHeader('', title)}<div class="modal-body"><p role="status">Opening ${kind === 'fullscreen' ? 'the field guide' : 'downloads'}…</p></div>`,
+  );
+  const revision = modalRevision;
+  try {
+    const module = await loader();
+    if (modal.open && modalRevision === revision) open(module);
+  } catch {
+    if (modal.open && modalRevision === revision)
+      $('.modal-body', modal).innerHTML =
+        `<p>This panel couldn’t load. Reload the studio to try again.</p><button class="button" data-action="reload-studio">Reload studio</button>`;
+  }
+}
+function openDownloadPanel(scope) {
+  return openLazyPanel(
+    'bird-downloads',
+    'Bird downloads',
+    () => import('./bird-downloads.js'),
+    ({ openBirdDownloads }) => {
+      openBirdDownloads({
+        config,
+        birds: allBirds(),
+        selectedId: config.slices[selected].bird,
+        scope,
+        showModal,
+        modalHeader,
+        toast,
+      });
+    },
+  );
+}
+function openFullscreen() {
+  return openLazyPanel(
+    'fullscreen',
+    'Bird field guide',
+    () => import('./bird-explorer.js'),
+    ({ openBirdExplorer }) => {
+      modalCleanup = openBirdExplorer({
+        config,
+        birds: allBirds(),
+        selected,
+        showModal,
+        modalHeader,
+        isOpen: () => modal.open && modalKind === 'fullscreen',
+      });
+    },
+  );
+}
+$('#focus-button').onclick = openFullscreen;
 async function init() {
   try {
-    const r = await fetch('assets/birds.json');
-    if (!r.ok)
-      throw new Error('The bird library could not be loaded. Please refresh.');
-    catalogue = await r.json();
+    catalogue = initialCatalogue;
     let warning = '',
       shared = false,
       priorDraft = null;

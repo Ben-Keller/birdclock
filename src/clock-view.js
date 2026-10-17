@@ -16,7 +16,7 @@ export function clockViewMarkup(config, birds, options = {}) {
       const b = vertices[(i + 1) % count];
       const angle = (Math.atan2(b[1] - a[1], b[0] - a[0]) * 180) / Math.PI;
       const wood = config.slices[Math.floor(i / (count / 12))].wood;
-      return `<div class="clock-edge" data-edge-angle="${angle}" aria-hidden="true" style="left:${percent((a[0] + b[0]) / 2)}%;top:${percent((a[1] + b[1]) / 2)}%;width:calc(${percent(Math.hypot(b[0] - a[0], b[1] - a[1]))}% + .4px);background-image:linear-gradient(#21170c33,#21170c55),url('assets/woods/${escapeHTML(wood)}.webp');transform:translate(-50%,-50%) translateZ(calc(var(--clock-depth) / -2)) rotateZ(${angle}deg) rotateX(90deg)"></div>`;
+      return `<div class="clock-edge" data-edge-angle="${angle}" aria-hidden="true" style="left:${percent((a[0] + b[0]) / 2)}%;top:${percent((a[1] + b[1]) / 2)}%;width:calc(${percent(Math.hypot(b[0] - a[0], b[1] - a[1]))}% + .4px);background-image:linear-gradient(#21170c33,#21170c55),url('assets/previews/woods/${escapeHTML(wood)}.webp');transform:translate(-50%,-50%) translateZ(calc(var(--clock-depth) / -2)) rotateZ(${angle}deg) rotateX(90deg)"></div>`;
     })
     .join('');
   return `<div class="clock-object"><div class="clock-back" aria-hidden="true" style="clip-path:polygon(${outline})"></div>${edges}<div class="clock-face">${clockSVG(config, birds, options)}</div></div>`;

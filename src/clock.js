@@ -71,7 +71,7 @@ export function clockSVG(
   );
   config.slices.forEach((s, i) =>
     parts.push(
-      `<pattern id="grain-${i}" width="520" height="520" patternUnits="userSpaceOnUse" patternTransform="rotate(${(i + 1) * 30 + s.grain} 520 520)"><image href="${escapeHTML(textureData[s.wood] || `assets/woods/${s.wood}.webp`)}" width="520" height="520" preserveAspectRatio="xMidYMid slice"/></pattern><clipPath id="clip-${i}"><path d="${slicePath(i + 1, f.shape)}"/></clipPath>`,
+      `<pattern id="grain-${i}" width="520" height="520" patternUnits="userSpaceOnUse" patternTransform="rotate(${(i + 1) * 30 + s.grain} 520 520)"><image href="${escapeHTML(textureData[s.wood] || `assets/previews/woods/${s.wood}.webp`)}" width="520" height="520" preserveAspectRatio="xMidYMid slice"/></pattern><clipPath id="clip-${i}"><path d="${slicePath(i + 1, f.shape)}"/></clipPath>`,
     ),
   );
   parts.push(
@@ -93,7 +93,7 @@ export function clockSVG(
       `<g class="clock-slice${selected === i ? ' selected' : ''}" data-hour="${i}" ${interactive ? `role="button" tabindex="${selected === i ? '0' : '-1'}" aria-label="${escapeHTML(label)}" aria-pressed="${selected === i}"` : ''}><path class="wood-base" d="${d}" fill="${w.color}"/><path d="${d}" fill="url(#grain-${i})" opacity="${f.grain}"/>${interactive ? `<path class="slice-highlight" d="${d}" fill="#fff6db" opacity="0"/>` : ''}<path d="${d}" fill="none" stroke="${f.rimColor}" stroke-width="${f.seam}"/>`,
     );
     parts.push(
-      `<g clip-path="url(#clip-${i})"><image class="bird-image" href="${escapeHTML(birdData[s.bird] || bird?.asset || '')}" x="${x - size / 2}" y="${y - size / 2}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet" transform="translate(${x} ${y}) rotate(${s.rotation}) scale(${s.flip ? -1 : 1} 1) translate(${-x} ${-y})"/></g>`,
+      `<g clip-path="url(#clip-${i})"><image class="bird-image" href="${escapeHTML(birdData[s.bird] || (size > 190 && bird?.previewLarge) || bird?.preview || bird?.asset || '')}" x="${x - size / 2}" y="${y - size / 2}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet" transform="translate(${x} ${y}) rotate(${s.rotation}) scale(${s.flip ? -1 : 1} 1) translate(${-x} ${-y})"/></g>`,
     );
     if (f.numbers === 'dots')
       parts.push(

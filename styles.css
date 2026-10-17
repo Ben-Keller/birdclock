@@ -1,38 +1,86 @@
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('assets/fonts/cormorant-400.ttf') format('truetype');
+  src: url('assets/fonts/cormorant-400.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-22FF;
 }
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('assets/fonts/cormorant-500.ttf') format('truetype');
-  font-weight: 500;
+  src: url('assets/fonts/cormorant-400-ext.woff2') format('woff2');
+  font-weight: 400;
   font-display: swap;
+  unicode-range: U+0100-024F;
 }
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('assets/fonts/cormorant-600.ttf') format('truetype');
-  font-weight: 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: Inter;
-  src: url('assets/fonts/inter-400.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: Inter;
-  src: url('assets/fonts/inter-500.ttf') format('truetype');
+  src: url('assets/fonts/cormorant-500.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-22FF;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/cormorant-500-ext.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+0100-024F;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/cormorant-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-22FF;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/cormorant-600-ext.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0100-024F;
 }
 @font-face {
   font-family: Inter;
-  src: url('assets/fonts/inter-600.ttf') format('truetype');
+  src: url('assets/fonts/inter-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-22FF;
+}
+@font-face {
+  font-family: Inter;
+  src: url('assets/fonts/inter-400-ext.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0100-024F;
+}
+@font-face {
+  font-family: Inter;
+  src: url('assets/fonts/inter-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-22FF;
+}
+@font-face {
+  font-family: Inter;
+  src: url('assets/fonts/inter-500-ext.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+0100-024F;
+}
+@font-face {
+  font-family: Inter;
+  src: url('assets/fonts/inter-600.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+20A0-20CF, U+2190-22FF;
+}
+@font-face {
+  font-family: Inter;
+  src: url('assets/fonts/inter-600-ext.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0100-024F;
 }
 :root {
   --paper: #f4f0e6;
@@ -255,6 +303,7 @@ main {
   min-height: 200px;
 }
 .clock-wrap {
+  aspect-ratio: 1;
   max-width: 680px;
   margin: auto;
   padding: 17px 14px 10px;
@@ -284,7 +333,7 @@ main {
   transform: translateZ(0);
 }
 .clock-back {
-  background: #865338 url('assets/woods/mahogany.webp') center / cover;
+  background: #865338 url('assets/previews/woods/mahogany.webp') center / cover;
   transform: translateZ(calc(-1 * var(--clock-depth))) rotateY(180deg);
 }
 .clock-edge {
