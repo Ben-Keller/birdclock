@@ -37,6 +37,22 @@ The clock, selected-bird card, and picker now use dedicated 128 px WebPs, each u
 
 The benchmark now records the first clock-artwork request, the last image response, and the later of image completion and SVG insertion. The last metric indicates when both the clock DOM and downloaded artwork are available; it is not a directly measured paint or decode event. A normal LCP measurement alone does not tell us when every SVG bird has appeared.
 
+Three-run live comparison using the same synthetic mobile settings:
+
+| Measurement                                     | Before thumbnails | After thumbnails |
+| ----------------------------------------------- | ----------------: | ---------------: |
+| First bird request                              |            1.51 s |           0.60 s |
+| All twelve birds downloaded                     |            2.90 s |           1.47 s |
+| Clock DOM and downloaded artwork both available |            2.90 s |           1.64 s |
+| Clock artwork bytes                             |           184,814 |           59,078 |
+| Total transferred bytes                         |           346,203 |          223,301 |
+| Page load event                                 |            2.92 s |           2.32 s |
+| Largest contentful paint                        |            1.56 s |           1.70 s |
+
+All twelve bird images finished downloading **before the clock DOM was inserted in all three after runs**, removing the empty-bird waiting stage. Bird download completion was 49% sooner; the clock and its artwork were available together 43% sooner. LCP and the controls-only metric did not improve in this comparison: prioritizing artwork shifts bandwidth earlier, and the clock can now appear complete. The before runs included an 11.30 s image-completion outlier; after runs ranged from 1.22 to 1.62 s. These are lab results on a throttled connection, not an instant-load guarantee.
+
+Raw results: [thumbnail baseline](performance/2026-10-17-clock-thumbnails-before.json) and [thumbnail result](performance/2026-10-17-clock-thumbnails-after.json). A separate DevTools Slow 4G trace also confirmed requests for the new clock-specific WebPs and reduced LCP from 6.09 to 2.76 s, but that single trace uses different conditions from the three-run benchmark.
+
 ## Changes
 
 - Bundled and minified startup JavaScript, with the catalogue included and shared modules preloaded. Optional field-guide and bird-download code loads when opened.
