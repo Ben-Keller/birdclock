@@ -64,10 +64,14 @@ function autosave() {
   const a = session.set(DRAFT, config),
     b = local.set(DRAFT, config);
   const status = $('#save-status');
-  status.classList.toggle('error', !b);
-  status.innerHTML = `<i></i>${b ? 'Saved in this browser' : a ? 'Saved for this session' : 'Storage unavailable — export your design'}`;
+  status.hidden = b;
+  status.textContent = b
+    ? ''
+    : a
+      ? 'Saved for this session'
+      : 'Storage unavailable — export your design';
   status.title = b
-    ? 'Your current design is saved automatically on this device.'
+    ? ''
     : a
       ? 'Persistent storage is unavailable. Export JSON to keep this design.'
       : 'Your browser blocked local storage. Use Download JSON to save.';
@@ -753,6 +757,7 @@ async function init() {
     $('#clock').innerHTML =
       `<div class="empty-state"><h2>The studio couldn’t open.</h2><p>${esc(e.message)}</p><p>Run this folder through a local server or GitHub Pages, then refresh.</p></div>`;
     $('#save-status').textContent = 'Studio unavailable';
+    $('#save-status').hidden = false;
   }
 }
 // Update only the hands, preserving editor focus and slice selection.

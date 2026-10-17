@@ -185,24 +185,8 @@ h3,
 }
 .save-status {
   font-size: 10px;
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-right: 8px;
-}
-.save-status i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #768069;
-  display: inline-block;
-}
-.save-status.error {
   color: #9c4534;
-}
-.save-status.error i {
-  background: #9c4534;
+  margin-right: 8px;
 }
 main {
   max-width: 1600px;
