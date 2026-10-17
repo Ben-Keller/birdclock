@@ -41,7 +41,6 @@ let catalogue = [],
 const modal = $('#modal');
 const allBirds = () => [...catalogue, ...config.customBirds];
 const birdById = (id) => allBirds().find((b) => b.id === id);
-const woodById = (id) => WOODS.find((w) => w.id === id);
 const settingLabel = (value, type) =>
   type === 'pct'
     ? `${Math.round(value * 100)}%`
@@ -121,7 +120,7 @@ function renderPanel() {
       <span class="arrow" aria-hidden="true">↗</span>
     </button>
     <section class="control-section">
-      <div class="field-label">THE WOOD <span>${woodById(s.wood).note}</span></div>
+      <div class="field-label">THE WOOD</div>
       <div class="wood-options">
         ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
       </div>
