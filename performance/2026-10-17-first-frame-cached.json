@@ -1,0 +1,254 @@
+{
+  "url": "https://ben-keller.github.io/birdclock/",
+  "measuredAt": "2026-10-17T18:34:51.470Z",
+  "conditions": {
+    "viewport": "390×844 @2x",
+    "cpuSlowdown": 1,
+    "latencyMs": 0,
+    "downloadBytesPerSecond": null,
+    "cache": "enabled; one priming visit, then a fresh navigation in the same context per run"
+  },
+  "median": {
+    "fcp": 36,
+    "lcp": 56,
+    "clockReady": 12.700000002980232,
+    "clockFirstFrame": 52.20000000298023,
+    "studioInteractive": 15.300000004470348,
+    "documentResponseStart": 0.8000000044703484,
+    "documentResponseEnd": 1.6000000014901161,
+    "clockWithArtworkReady": 52.20000000298023,
+    "clockArtworkDownloaded": 1.6000000014901161,
+    "clockArtworkBytes": 59078,
+    "clockArtworkStart": 0,
+    "load": 18.200000002980232,
+    "bytes": 4292,
+    "requests": 2,
+    "cls": 0,
+    "longTasks": 0
+  },
+  "runs": [
+    {
+      "lcp": 40,
+      "cls": 0,
+      "longTasks": 0,
+      "clockReady": 10.700000002980232,
+      "clockFirstFrame": 45.400000005960464,
+      "studioInteractive": 13.100000001490116,
+      "documentResponseStart": 0.6000000014901161,
+      "documentResponseEnd": 1.2000000029802322,
+      "clockWithArtworkReady": 45.400000005960464,
+      "clockArtworkDownloaded": 1.2000000029802322,
+      "clockArtworkBytes": 59078,
+      "clockArtworkStart": 0,
+      "fcp": 24,
+      "load": 15.900000005960464,
+      "bytes": 4292,
+      "requests": 2,
+      "resources": [
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-QZQGSM2W.js",
+          "transferSize": 0,
+          "startTime": 4.800000004470348,
+          "responseEnd": 4.800000004470348
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-C44GIIZM.js",
+          "transferSize": 0,
+          "startTime": 4.800000004470348,
+          "responseEnd": 4.800000004470348
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-N7TCWZOE.js",
+          "transferSize": 0,
+          "startTime": 4.800000004470348,
+          "responseEnd": 4.800000004470348
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/app-WLI2OIAP.js",
+          "transferSize": 0,
+          "startTime": 4.800000004470348,
+          "responseEnd": 4.800000004470348
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 4292,
+          "startTime": 18.5,
+          "responseEnd": 209.80000000447035
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/fonts-bcf5c3d45fd2.css",
+          "transferSize": 0,
+          "startTime": 45.600000001490116,
+          "responseEnd": 45.600000001490116
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-400.woff2",
+          "transferSize": 0,
+          "startTime": 45.900000005960464,
+          "responseEnd": 45.900000005960464
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-400.woff2",
+          "transferSize": 0,
+          "startTime": 46.100000001490116,
+          "responseEnd": 46.100000001490116
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-500.woff2",
+          "transferSize": 0,
+          "startTime": 46.100000001490116,
+          "responseEnd": 46.100000001490116
+        }
+      ]
+    },
+    {
+      "lcp": 56,
+      "cls": 0,
+      "longTasks": 0,
+      "clockReady": 12.700000002980232,
+      "clockFirstFrame": 52.20000000298023,
+      "studioInteractive": 15.300000004470348,
+      "documentResponseStart": 0.8000000044703484,
+      "documentResponseEnd": 1.6000000014901161,
+      "clockWithArtworkReady": 52.20000000298023,
+      "clockArtworkDownloaded": 1.6000000014901161,
+      "clockArtworkBytes": 59078,
+      "clockArtworkStart": 0,
+      "fcp": 36,
+      "load": 18.200000002980232,
+      "bytes": 4292,
+      "requests": 2,
+      "resources": [
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-QZQGSM2W.js",
+          "transferSize": 0,
+          "startTime": 6,
+          "responseEnd": 6
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-C44GIIZM.js",
+          "transferSize": 0,
+          "startTime": 6.100000001490116,
+          "responseEnd": 6.100000001490116
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-N7TCWZOE.js",
+          "transferSize": 0,
+          "startTime": 6.200000002980232,
+          "responseEnd": 6.200000002980232
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/app-WLI2OIAP.js",
+          "transferSize": 0,
+          "startTime": 6.200000002980232,
+          "responseEnd": 6.200000002980232
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 4292,
+          "startTime": 28.30000000447035,
+          "responseEnd": 123.80000000447035
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/fonts-bcf5c3d45fd2.css",
+          "transferSize": 0,
+          "startTime": 52.5,
+          "responseEnd": 52.5
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-400.woff2",
+          "transferSize": 0,
+          "startTime": 52.600000001490116,
+          "responseEnd": 52.600000001490116
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-400.woff2",
+          "transferSize": 0,
+          "startTime": 52.80000000447035,
+          "responseEnd": 52.80000000447035
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-500.woff2",
+          "transferSize": 0,
+          "startTime": 52.80000000447035,
+          "responseEnd": 52.80000000447035
+        }
+      ]
+    },
+    {
+      "lcp": 148,
+      "cls": 0,
+      "longTasks": 0,
+      "clockReady": 14.899999998509884,
+      "clockFirstFrame": 133.60000000149012,
+      "studioInteractive": 17.899999998509884,
+      "documentResponseStart": 1.5,
+      "documentResponseEnd": 2.399999998509884,
+      "clockWithArtworkReady": 133.60000000149012,
+      "clockArtworkDownloaded": 2.399999998509884,
+      "clockArtworkBytes": 59078,
+      "clockArtworkStart": 0,
+      "fcp": 148,
+      "load": 23,
+      "bytes": 0,
+      "requests": 1,
+      "resources": [
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-QZQGSM2W.js",
+          "transferSize": 0,
+          "startTime": 8.700000002980232,
+          "responseEnd": 8.700000002980232
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-C44GIIZM.js",
+          "transferSize": 0,
+          "startTime": 8.899999998509884,
+          "responseEnd": 8.899999998509884
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-N7TCWZOE.js",
+          "transferSize": 0,
+          "startTime": 8.899999998509884,
+          "responseEnd": 8.899999998509884
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/app-WLI2OIAP.js",
+          "transferSize": 0,
+          "startTime": 8.899999998509884,
+          "responseEnd": 8.899999998509884
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/fonts-bcf5c3d45fd2.css",
+          "transferSize": 0,
+          "startTime": 133.80000000447035,
+          "responseEnd": 133.80000000447035
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-400.woff2",
+          "transferSize": 0,
+          "startTime": 134.10000000149012,
+          "responseEnd": 134.10000000149012
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-400.woff2",
+          "transferSize": 0,
+          "startTime": 134.20000000298023,
+          "responseEnd": 134.20000000298023
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-500.woff2",
+          "transferSize": 0,
+          "startTime": 134.30000000447035,
+          "responseEnd": 134.30000000447035
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 0,
+          "startTime": 142.10000000149012,
+          "responseEnd": 142.89999999850988
+        }
+      ]
+    }
+  ],
+  "siteCommit": "9f9b660b825136c205d464d0518fa4f5b16565f2"
+}

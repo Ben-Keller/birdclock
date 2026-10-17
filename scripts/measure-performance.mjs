@@ -4,6 +4,7 @@ import { writeFile } from 'node:fs/promises';
 const url = process.argv[2] || 'http://127.0.0.1:8080/';
 const output = process.argv[3];
 const unthrottled = process.argv.includes('--unthrottled');
+const warm = process.argv.includes('--warm');
 const browser = await chromium.launch({
   channel: process.env.PLAYWRIGHT_CHANNEL || 'chrome',
 });
@@ -19,7 +20,7 @@ try {
     const page = await context.newPage();
     const client = await context.newCDPSession(page);
     await client.send('Network.enable');
-    await client.send('Network.setCacheDisabled', { cacheDisabled: true });
+    await client.send('Network.setCacheDisabled', { cacheDisabled: !warm });
     if (!unthrottled)
       await client.send('Network.emulateNetworkConditions', {
         offline: false,
@@ -53,6 +54,14 @@ try {
       });
       observer.observe(document, { subtree: true, childList: true });
     });
+    if (warm) {
+      await page.goto(url, { waitUntil: 'load', timeout: 60000 });
+      await page.waitForFunction(
+        () => document.documentElement.dataset.fontsReady === 'true',
+      );
+      await page.evaluate(() => document.fonts.ready);
+      await page.goto('about:blank');
+    }
     await page.goto(url, { waitUntil: 'load', timeout: 60000 });
     await page.waitForSelector('#clock .clock-slice');
     if (await page.evaluate(() => !!globalThis.__birdClockBoot))
@@ -81,6 +90,8 @@ try {
         studioInteractive:
           performance.getEntriesByName('studio-interactive')[0]?.startTime ??
           null,
+        documentResponseStart: navigation.responseStart,
+        documentResponseEnd: navigation.responseEnd,
         clockWithArtworkReady:
           clockFirstFrame ??
           Math.max(
@@ -128,6 +139,8 @@ try {
     'clockReady',
     'clockFirstFrame',
     'studioInteractive',
+    'documentResponseStart',
+    'documentResponseEnd',
     'clockWithArtworkReady',
     'clockArtworkDownloaded',
     'clockArtworkBytes',
@@ -147,7 +160,9 @@ try {
       cpuSlowdown: unthrottled ? 1 : 4,
       latencyMs: unthrottled ? 0 : 150,
       downloadBytesPerSecond: unthrottled ? null : 200000,
-      cache: 'disabled; fresh context per run',
+      cache: warm
+        ? 'enabled; one priming visit, then a fresh navigation in the same context per run'
+        : 'disabled; fresh context per run',
     },
     median,
     runs,
