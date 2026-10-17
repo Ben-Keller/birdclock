@@ -318,48 +318,13 @@ main {
 .bird-image {
   pointer-events: none;
 }
-.wood-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  display: inline-block;
-  background-color: var(--wood);
-  background-size: cover;
-}
 .editor {
   border-left: 1px solid var(--line);
   background: var(--card);
   min-width: 0;
 }
-.editor-tabs {
-  display: flex;
-  border-bottom: 1px solid var(--line);
-  height: 65px;
-  padding: 0 25px;
-  gap: 25px;
-}
-.editor-tabs button {
-  position: relative;
-  font-size: 12px;
-  color: var(--muted);
-  padding: 0 1px;
-}
-.editor-tabs button.active {
-  color: var(--green);
-  font-weight: 600;
-}
-.editor-tabs button.active:after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--green);
-}
 #panel {
   padding: 24px 27px;
-  min-height: 620px;
 }
 .panel-heading {
   display: flex;
@@ -510,48 +475,6 @@ main {
   line-height: 1.7;
   margin-top: 10px;
 }
-.toggle-row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: space-between;
-  margin: 14px 0;
-  font-size: 11px;
-}
-.toggle-row input[type='checkbox'] {
-  appearance: none;
-  width: 29px;
-  height: 17px;
-  border-radius: 20px;
-  background: #d3ccbe;
-  position: relative;
-  cursor: pointer;
-  flex-shrink: 0;
-  margin: 0;
-}
-.toggle-row input:before {
-  content: '';
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  width: 11px;
-  height: 11px;
-  top: 3px;
-  left: 3px;
-  transition: transform 0.2s;
-}
-.toggle-row input:checked {
-  background: var(--green);
-}
-.toggle-row input:checked:before {
-  transform: translateX(12px);
-}
-.toggle-row small {
-  display: block;
-  color: var(--muted);
-  font-size: 9px;
-  margin-top: 3px;
-}
 .divider {
   border: 0;
   border-top: 1px solid var(--line);
@@ -619,6 +542,18 @@ main {
 .advanced summary::-webkit-details-marker {
   display: none;
 }
+.clock-details {
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-top: 22px;
+}
+.clock-details .field-label {
+  font-family: var(--sans);
+  font-weight: 400;
+}
+.clock-details .select-field {
+  margin-top: 0;
+}
 .two-controls {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -641,49 +576,6 @@ main {
   color: var(--ink);
   font-size: 12px;
   margin-top: 6px;
-}
-.register-list {
-  display: grid;
-  gap: 5px;
-}
-.register-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  width: 100%;
-  text-align: left;
-}
-.register-item:hover {
-  background: var(--soft);
-}
-.register-item .hour {
-  width: 22px;
-  color: var(--muted);
-  font-size: 10px;
-}
-.register-item img {
-  width: 41px;
-  height: 41px;
-  object-fit: contain;
-}
-.register-item .register-name {
-  font-size: 11px;
-  display: block;
-}
-.register-item small {
-  font-size: 9px;
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 3px;
-}
-.register-item .arrow {
-  margin-left: auto;
-  color: var(--muted);
 }
 .loading {
   font: 24px var(--serif);
@@ -1014,9 +906,6 @@ dialog::backdrop {
     padding-left: 42px;
     padding-right: 42px;
   }
-  .editor-tabs {
-    gap: 38px;
-  }
   #panel {
     padding: 28px 32px;
   }
@@ -1042,10 +931,6 @@ dialog::backdrop {
   }
   .hour-button {
     height: 28px;
-  }
-  .editor-tabs {
-    gap: 20px;
-    padding: 0 20px;
   }
   #panel {
     padding: 22px 20px;
@@ -1099,11 +984,6 @@ dialog::backdrop {
     border-left: 0;
     border-top: 1px solid var(--line);
     border-radius: 0 0 9px 9px;
-  }
-  .editor-tabs {
-    height: 57px;
-    justify-content: space-around;
-    gap: 16px;
   }
   #panel {
     min-height: 0;

@@ -30,7 +30,6 @@ try {
 let catalogue = [],
   config = defaultConfig(),
   selected = 2,
-  tab = 'slice',
   history = [],
   future = [],
   rangeBefore = null,
@@ -53,12 +52,8 @@ const settingLabel = (value, type) =>
         : String(value);
 const range = (label, key, value, min, max, step = 1, type = '') =>
   `<label class="range-row"><span class="range-head"><span>${label}</span><output>${settingLabel(value, type)}</output></span><input type="range" min="${min}" max="${max}" step="${step}" value="${value}" data-key="${key}" data-format="${type}" aria-label="${label}"></label>`;
-const toggle = (label, key, checked, note = '') =>
-  `<label class="toggle-row"><span>${label}${note ? `<small>${note}</small>` : ''}</span><input type="checkbox" data-key="${key}" ${checked ? 'checked' : ''}></label>`;
 const selectField = (label, key, value, options) =>
   `<label class="select-field">${label}<select data-key="${key}" aria-label="${label}">${options.map(([id, name]) => `<option value="${id}" ${id === value ? 'selected' : ''}>${name}</option>`).join('')}</select></label>`;
-const dot = (wood) =>
-  `<i class="wood-dot" style="--wood:${woodById(wood).color};background-image:url('assets/woods/${wood}.webp')"></i>`;
 function toast(message) {
   clearTimeout(toastTimer);
   $('#toast').textContent = message;
@@ -107,49 +102,73 @@ function render() {
   $('#redo-button').disabled = !future.length;
 }
 function renderPanel() {
-  $$('.editor-tabs button').forEach((b) => {
-    const active = b.dataset.tab === tab;
-    b.classList.toggle('active', active);
-    b.setAttribute('aria-selected', String(active));
-    b.tabIndex = active ? 0 : -1;
-  });
-  $('#panel').setAttribute('aria-labelledby', `tab-${tab}`);
   const s = config.slices[selected],
     bird = birdById(s.bird),
     f = config.face;
-  if (tab === 'slice')
-    $('#panel').innerHTML =
-      `<div class="panel-heading"><h2>Make an hour your own.</h2><span class="subtle">${String(selected + 1).padStart(2, '0')} / 12</span></div><div class="hour-grid" aria-label="Choose an hour">${config.slices.map((_, i) => `<button class="hour-button ${i === selected ? 'active' : ''}" data-select-hour="${i}" aria-label="Edit hour ${i + 1}" aria-pressed="${i === selected}">${i + 1}</button>`).join('')}</div><div class="field-label">THE BIRD <span>Hour ${selected + 1}</span></div><button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}"><img src="${esc(bird.asset)}" alt="${esc(bird.name)}"><span><span class="name">${esc(bird.name)}</span><span class="latin">${esc(bird.scientificName)}</span><span class="change">Explore ${allBirds().length} birds</span></span><span class="arrow" aria-hidden="true">↗</span></button><div class="bird-file-action"><button class="quiet-link" data-action="bird-downloads">Download bird <span aria-hidden="true">↓</span></button></div><section class="control-section"><div class="field-label">THE WOOD <span>${woodById(s.wood).note}</span></div><div class="wood-options">${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}</div></section><hr class="divider"><div class="field-label">THE COMPOSITION <span>This hour only</span></div>${range('Bird size', 'slice.scale', s.scale, 0.55, 1.5, 0.05, 'pct')}<div class="inline-actions"><button class="mini-button ${s.flip ? 'active' : ''}" data-action="flip" aria-pressed="${s.flip}">⇄ Flip bird</button><button class="mini-button" data-action="reset-bird">Reset placement</button></div><details class="advanced"><summary>Fine-tune placement</summary>${range('Rotate bird', 'slice.rotation', s.rotation, -180, 180, 5, 'deg')}<div class="two-controls">${range('Horizontal', 'slice.x', s.x, -65, 65, 1, 'px')}${range('Vertical', 'slice.y', s.y, -65, 65, 1, 'px')}</div><p class="hint">Artwork stays inside its slice. Rotate and move it to find the right fit.</p></details>`;
-  else if (tab === 'face')
-    $('#panel').innerHTML =
-      `<div class="panel-heading"><h2>The finishing touches.</h2></div><div class="two-controls">${selectField(
-        'Clock shape',
-        'face.shape',
-        f.shape,
-        [
+  $('#panel').innerHTML = `
+    <div class="panel-heading">
+      <h2>Make an hour your own.</h2>
+      <span class="subtle">${String(selected + 1).padStart(2, '0')} / 12</span>
+    </div>
+    <div class="hour-grid" aria-label="Choose an hour">
+      ${config.slices.map((_, i) => `<button class="hour-button ${i === selected ? 'active' : ''}" data-select-hour="${i}" aria-label="Edit hour ${i + 1}" aria-pressed="${i === selected}">${i + 1}</button>`).join('')}
+    </div>
+    <div class="field-label">THE BIRD <span>Hour ${selected + 1}</span></div>
+    <button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}">
+      <img src="${esc(bird.asset)}" alt="${esc(bird.name)}">
+      <span>
+        <span class="name">${esc(bird.name)}</span>
+        <span class="latin">${esc(bird.scientificName)}</span>
+        <span class="change">Explore ${allBirds().length} birds</span>
+      </span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </button>
+    <div class="bird-file-action"><button class="quiet-link" data-action="bird-downloads">Download bird <span aria-hidden="true">↓</span></button></div>
+    <section class="control-section">
+      <div class="field-label">THE WOOD <span>${woodById(s.wood).note}</span></div>
+      <div class="wood-options">
+        ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
+      </div>
+    </section>
+    <hr class="divider">
+    <div class="field-label">THE COMPOSITION <span>This hour only</span></div>
+    ${range('Bird size', 'slice.scale', s.scale, 0.55, 1.5, 0.05, 'pct')}
+    <div class="inline-actions">
+      <button class="mini-button ${s.flip ? 'active' : ''}" data-action="flip" aria-pressed="${s.flip}">⇄ Flip bird</button>
+      <button class="mini-button" data-action="reset-bird">Reset placement</button>
+    </div>
+    <details class="advanced">
+      <summary>Fine-tune placement</summary>
+      ${range('Rotate bird', 'slice.rotation', s.rotation, -180, 180, 5, 'deg')}
+      <div class="two-controls">
+        ${range('Horizontal', 'slice.x', s.x, -65, 65, 1, 'px')}
+        ${range('Vertical', 'slice.y', s.y, -65, 65, 1, 'px')}
+      </div>
+      <p class="hint">Artwork stays inside its slice. Rotate and move it to find the right fit.</p>
+    </details>
+    <section class="clock-details" aria-labelledby="clock-details-heading">
+      <h3 id="clock-details-heading" class="field-label">THE CLOCK <span>All twelve hours</span></h3>
+      <div class="two-controls">
+        ${selectField('Clock shape', 'face.shape', f.shape, [
           ['polygon', 'Twelve-sided'],
           ['circle', 'Round'],
-        ],
-      )}${selectField('Hour markers', 'face.numbers', f.numbers, [
-        ['arabic', 'Numbers'],
-        ['roman', 'Roman numerals'],
-        ['dots', 'Small dots'],
-        ['none', 'Birds only'],
-      ])}</div>${range('Wood grain', 'face.grain', f.grain, 0, 1, 0.05, 'pct')}`;
-  else
-    $('#panel').innerHTML =
-      `<div class="panel-heading"><h2>Your hour register.</h2><span class="subtle">12 / 12 birds</span></div><div class="register-list">${config.slices
-        .map((s, i) => {
-          const b = birdById(s.bird);
-          return `<button class="register-item" data-select-hour="${i}" aria-label="Edit hour ${i + 1}, ${esc(b.name)}"><span class="hour">${String(i + 1).padStart(2, '0')}</span><img src="${esc(b.asset)}" alt=""><span><span class="register-name">${esc(b.name)}</span><small>${dot(s.wood)}${woodById(s.wood).name}</small></span><span class="arrow">↗</span></button>`;
-        })
-        .join(
-          '',
-        )}</div><hr class="divider">${toggle('A different bird at every hour', 'uniqueBirds', config.uniqueBirds, 'Choosing a bird already on the clock will swap the two.')}<div class="inline-actions"><button class="mini-button" data-action="shuffle-birds">Shuffle birds</button><button class="mini-button" data-action="shuffle-woods">Shuffle woods</button></div>`;
+        ])}
+        ${selectField('Hour markers', 'face.numbers', f.numbers, [
+          ['arabic', 'Numbers'],
+          ['roman', 'Roman numerals'],
+          ['dots', 'Small dots'],
+          ['none', 'Birds only'],
+        ])}
+      </div>
+      ${range('Wood grain', 'face.grain', f.grain, 0, 1, 0.05, 'pct')}
+      <div class="inline-actions">
+        <button class="mini-button" data-action="shuffle-birds">Randomize birds</button>
+        <button class="mini-button" data-action="shuffle-woods">Randomize woods</button>
+      </div>
+    </section>`;
 }
 function chooseHour(i) {
   selected = (i + 12) % 12;
-  tab = 'slice';
   renderClock();
   renderPanel();
 }
@@ -528,12 +547,6 @@ document.addEventListener('click', (e) => {
     chooseHour(+slice.dataset.hour);
     return;
   }
-  const t = e.target.closest('[data-tab]');
-  if (t) {
-    tab = t.dataset.tab;
-    renderPanel();
-    return;
-  }
   const wood = e.target.closest('[data-wood]');
   if (wood) {
     setWood(wood.dataset.wood);
@@ -636,40 +649,9 @@ document.addEventListener('change', (e) => {
     $('#redo-button').disabled = !future.length;
     return;
   }
-  const value = el.type === 'checkbox' ? el.checked : el.value;
-  commit(() => {
-    setValue(el.dataset.key, value);
-    if (el.dataset.key === 'uniqueBirds' && value) {
-      const used = new Set();
-      for (const s of config.slices) {
-        if (used.has(s.bird))
-          s.bird =
-            allBirds().find(
-              (b) =>
-                !used.has(b.id) && !config.slices.some((x) => x.bird === b.id),
-            )?.id || allBirds().find((b) => !used.has(b.id)).id;
-        used.add(s.bird);
-      }
-    }
-  });
+  commit(() => setValue(el.dataset.key, el.value));
 });
 document.addEventListener('keydown', (e) => {
-  if (
-    e.target.closest('.editor-tabs') &&
-    ['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)
-  ) {
-    e.preventDefault();
-    const tabs = ['slice', 'face', 'register'];
-    tab =
-      e.key === 'Home'
-        ? tabs[0]
-        : e.key === 'End'
-          ? tabs[2]
-          : tabs[(tabs.indexOf(tab) + (e.key === 'ArrowRight' ? 1 : 2)) % 3];
-    renderPanel();
-    $(`[data-tab="${tab}"]`).focus();
-    return;
-  }
   if (e.target.closest('#clock .clock-slice')) {
     if (
       [

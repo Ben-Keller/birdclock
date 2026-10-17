@@ -26,10 +26,10 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 
 - Each of 12 hours: bird, maple/mahogany/cherry, bird size, position, rotation, and flip.
 - Choose among 48 realistic-style bird illustrations. Combine bird-group, region, and clock-use filters; search common names, scientific names, regions, and groups, with accents and punctuation handled automatically. Upload up to eight personal PNG, JPEG, or WebP images per design.
-- Keep all birds different, or allow repeats. Choosing a bird already used swaps the two hours when uniqueness is enabled.
+- Choosing a bird already used swaps the two hours, keeping each bird distinct by default.
 - Keep adjacent woods different, including the 12-to-1 join. Manual selection adjusts as few other pieces as possible. Shuffle produces four pieces of each wood with no matching neighbors.
 - Twelve-sided triangular face or round face, hour-marker style, and wood-grain intensity. Clock hands always show the current local time, including when reopening older drafts or importing configurations.
-- Undo/redo, fullscreen clock view, and hour overview.
+- One panel for hour placement, clock appearance, and randomizing birds or woods, plus undo/redo and a fullscreen clock view.
 - Automatic session and local-browser saving, portable JSON import/export, configuration links, and 2,400 px PNG image export.
 - Individual bird downloads in PNG, JPEG, WebP, and SVG; ZIP collections for the birds on your clock or the entire library, including uploaded artwork.
 
