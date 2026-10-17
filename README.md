@@ -37,7 +37,7 @@ The original arrangement keeps Osprey at 3 and Common loon at 9. The later twelv
 
 ## Download bird artwork
 
-Use **Download bird** beneath the selected bird, **Download** on any library card, or **Save & share → Download bird files**. Choose one bird, the birds on your clock, or the entire library, then choose a format:
+Use **Save & share → Download bird files**. Choose one bird, the birds on your clock, or the entire library, then choose a format:
 
 | Format | What you receive                                                                                                                                         |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |

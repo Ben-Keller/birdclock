@@ -116,7 +116,6 @@ function renderPanel() {
       </span>
       <span class="arrow" aria-hidden="true">↗</span>
     </button>
-    <div class="bird-file-action"><button class="quiet-link" data-action="bird-downloads">Download bird <span aria-hidden="true">↓</span></button></div>
     <section class="control-section">
       <div class="field-label">THE WOOD <span>${woodById(s.wood).note}</span></div>
       <div class="wood-options">
@@ -124,7 +123,7 @@ function renderPanel() {
       </div>
     </section>
     <hr class="divider">
-    <div class="field-label">THE COMPOSITION <span>This hour only</span></div>
+    <div class="field-label">THE COMPOSITION</div>
     ${range('Bird size', 'slice.scale', s.scale, 0.55, 1.5, 0.05, 'pct')}
     <div class="inline-actions">
       <button class="mini-button ${s.flip ? 'active' : ''}" data-action="flip" aria-pressed="${s.flip}">⇄ Flip bird</button>
@@ -288,7 +287,7 @@ function openLibrary() {
           ['unused', 'Not on clock'],
         ])}
       </div>
-      <div class="library-meta"><span id="library-count" role="status"></span><button class="quiet-link" data-action="bird-downloads" data-scope="library">Download bird files ↓</button></div>
+      <div class="library-meta"><span id="library-count" role="status"></span></div>
       <div class="bird-grid" id="bird-grid"></div>
       <div class="library-bottom"><span>${config.uniqueBirds ? 'Already on your clock? Selecting it swaps the two hours.' : 'Birds may appear at more than one hour.'}</span><button class="quiet-link" data-action="upload-bird">Add your own image ↗</button></div>
     </div>`,
@@ -327,7 +326,7 @@ function renderBirdGrid() {
     ? birds
         .map((b) => {
           const used = config.slices.findIndex((s) => s.bird === b.id);
-          return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(b.asset)}" alt="" loading="lazy"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button><button class="bird-card-download" data-action="bird-downloads" data-download-bird="${esc(b.id)}" aria-label="Download ${esc(b.name)}">Download <span aria-hidden="true">↓</span></button></article>`;
+          return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(b.asset)}" alt="" loading="lazy"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button></article>`;
         })
         .join('')
     : '<div class="empty-state"><p>No birds match these filters.</p><button class="quiet-link" data-action="clear-bird-filters">Clear filters</button></div>';
@@ -552,7 +551,7 @@ document.addEventListener('click', (e) => {
     openBirdDownloads({
       config,
       birds: allBirds(),
-      selectedId: a.dataset.downloadBird || config.slices[selected].bird,
+      selectedId: config.slices[selected].bird,
       scope: a.dataset.scope || 'single',
       showModal,
       modalHeader,

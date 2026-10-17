@@ -1081,19 +1081,6 @@ dialog::backdrop {
 [hidden] {
   display: none !important;
 }
-.bird-file-action {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 11px;
-  color: var(--muted);
-  font-size: 10px;
-}
-.bird-file-action .quiet-link {
-  color: var(--green);
-  min-height: 32px;
-}
 .bird-card {
   padding: 0;
   overflow: hidden;
@@ -1108,23 +1095,7 @@ dialog::backdrop {
   padding: 14px 8px 12px;
   flex: 1;
 }
-.bird-card-download {
-  border-top: 1px solid var(--line);
-  width: 100%;
-  min-height: 36px;
-  padding: 8px;
-  font-size: 10px;
-  color: var(--green);
-  background: #faf8f180;
-}
-.bird-card-download span {
-  margin-left: 8px;
-}
-.bird-card-download:hover {
-  background: #e3e7d9;
-}
-.bird-card-select:focus-visible,
-.bird-card-download:focus-visible {
+.bird-card-select:focus-visible {
   outline-offset: -4px;
 }
 .download-fields,
@@ -1282,13 +1253,8 @@ dialog::backdrop {
   .download-footer .button {
     min-height: 46px;
   }
-  .bird-card-download,
   .mini-button {
     min-height: 40px;
-  }
-  .bird-file-action {
-    flex-wrap: wrap;
-    gap: 3px;
   }
 }
 

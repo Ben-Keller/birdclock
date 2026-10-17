@@ -16,6 +16,13 @@ test.afterEach(async ({ page }) => {
   expect(errors.get(page)).toEqual([]);
 });
 
+async function openBirdFiles(page, scope = 'single') {
+  await page.getByRole('button', { name: 'Save & share' }).click();
+  await page.getByRole('button', { name: /Download bird files/ }).click();
+  if (scope !== 'clock')
+    await page.locator('#download-scope').selectOption(scope);
+}
+
 async function getDownload(page, button) {
   const pending = page.waitForEvent('download');
   await button.click();
@@ -88,9 +95,7 @@ for (const [format, extension, mime] of [
   test(`downloads an actual ${format} with original size and correct background`, async ({
     page,
   }) => {
-    await page
-      .getByRole('button', { name: 'Download bird', exact: true })
-      .click();
+    await openBirdFiles(page);
     await page.getByRole('radio', { name: new RegExp(`^${format}`) }).check();
     const { name, bytes } = await getDownload(
       page,
@@ -203,9 +208,9 @@ test('combined library filters and normalized search preserve the clock when dow
   await expect(page.locator('.bird-card')).toContainText('Anna’s hummingbird');
   await page.getByRole('searchbox', { name: 'Search birds' }).fill('Kokako');
   await expect(page.locator('.bird-card')).toHaveCount(1);
-  await page
-    .getByRole('button', { name: 'Download Kōkako', exact: true })
-    .click();
+  await page.getByRole('button', { name: 'Close dialog' }).click();
+  await openBirdFiles(page);
+  await page.locator('#download-bird').selectOption('kokako');
   await expect(page.locator('#download-bird')).toHaveValue('kokako');
   await getDownload(
     page,
@@ -216,16 +221,14 @@ test('combined library filters and normalized search preserve the clock when dow
     page.getByRole('button', { name: 'Change bird for hour 3' }),
   ).toContainText('Osprey');
   await expect(
-    page.getByRole('button', { name: 'Change bird for hour 3' }),
+    page.getByRole('button', { name: 'Save & share' }),
   ).toBeFocused();
 });
 
 test('an image network failure has a useful message and can be retried', async ({
   page,
 }) => {
-  await page
-    .getByRole('button', { name: 'Download bird', exact: true })
-    .click();
+  await openBirdFiles(page);
   await page.route('**/assets/birds/osprey.webp', (route) =>
     route.fulfill({ status: 503, body: 'Unavailable' }),
   );
@@ -273,9 +276,7 @@ test('uploaded rectangular artwork downloads and travels in a JSON backup', asyn
   await expect(page.locator('.bird-card')).toHaveCount(1);
   await expect(page.locator('.bird-card')).toContainText('My custom bird');
   await page.getByRole('button', { name: 'Close dialog' }).click();
-  await page
-    .getByRole('button', { name: 'Download bird', exact: true })
-    .click();
+  await openBirdFiles(page);
   const bird = await getDownload(
     page,
     page.getByRole('button', { name: 'Download PNG', exact: true }),
@@ -403,9 +404,8 @@ test('mobile editor, bird library and download panel fit without horizontal over
   await page.getByRole('button', { name: 'Change bird for hour 3' }).click();
   await noOverflow();
   await page.screenshot({ path: 'test-results/mobile-library.png' });
-  await page
-    .getByRole('button', { name: 'Download Osprey', exact: true })
-    .click();
+  await page.getByRole('button', { name: 'Close dialog' }).click();
+  await openBirdFiles(page);
   await noOverflow();
   await page
     .getByRole('button', { name: 'Download PNG', exact: true })
@@ -437,16 +437,14 @@ test('desktop preview, dialog keyboard focus and fullscreen live hands work toge
     path: 'test-results/desktop-editor.png',
     fullPage: true,
   });
-  await page
-    .getByRole('button', { name: 'Download bird', exact: true })
-    .click();
+  await openBirdFiles(page, 'clock');
   await expect(
     page.getByRole('heading', { name: 'A little bird to take with you.' }),
   ).toBeFocused();
   await page.screenshot({ path: 'test-results/desktop-downloads.png' });
   await page.keyboard.press('Escape');
   await expect(
-    page.getByRole('button', { name: 'Download bird', exact: true }),
+    page.getByRole('button', { name: 'Save & share' }),
   ).toBeFocused();
   await page.getByRole('button', { name: 'View clock fullscreen' }).click();
   const hand = page.locator('.fullscreen-clock .clock-hands path').nth(1);
@@ -459,9 +457,7 @@ test('closing the download dialog cancels the pending bird export', async ({
 }) => {
   const downloads = [];
   page.on('download', (file) => downloads.push(file.suggestedFilename()));
-  await page
-    .getByRole('button', { name: 'Download bird', exact: true })
-    .click();
+  await openBirdFiles(page);
   let releaseNetwork;
   const networkGate = new Promise((resolve) => {
     releaseNetwork = resolve;
