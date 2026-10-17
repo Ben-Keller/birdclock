@@ -132,7 +132,7 @@ function renderPanel() {
     f = config.face;
   if (tab === 'slice')
     $('#panel').innerHTML =
-      `<div class="panel-heading"><h2>Make an hour your own.</h2><span class="subtle">${String(selected + 1).padStart(2, '0')} / 12</span></div><div class="hour-grid" aria-label="Choose an hour">${config.slices.map((_, i) => `<button class="hour-button ${i === selected ? 'active' : ''}" data-select-hour="${i}" aria-label="Edit hour ${i + 1}" aria-pressed="${i === selected}">${i + 1}</button>`).join('')}</div><div class="field-label">THE BIRD <span>Hour ${selected + 1}</span></div><button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}"><img src="${esc(bird.asset)}" alt="${esc(bird.name)}"><span><span class="name">${esc(bird.name)}</span><span class="latin">${esc(bird.scientificName)}</span><span class="change">Explore ${allBirds().length} birds</span></span><span class="arrow" aria-hidden="true">↗</span></button><div class="bird-file-action"><span>Keep a little of the illustration.</span><button class="quiet-link" data-action="bird-downloads">Download bird <span aria-hidden="true">↓</span></button></div><section class="control-section"><div class="field-label">THE WOOD <span>${woodById(s.wood).note}</span></div><div class="wood-options">${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}</div>${toggle('Keep neighboring woods different', 'noAdjacent', config.noAdjacent)}<p class="hint">${config.noAdjacent ? 'Choose any wood. We’ll gently adjust a neighbor if needed, including the join between 12 and 1.' : 'Repeating woods are allowed. You can use any arrangement.'}</p></section><hr class="divider"><div class="field-label">THE COMPOSITION <span>This hour only</span></div>${range('Bird size', 'slice.scale', s.scale, 0.55, 1.5, 0.05, 'pct')}<div class="inline-actions"><button class="mini-button ${s.flip ? 'active' : ''}" data-action="flip" aria-pressed="${s.flip}">⇄ Flip bird</button><button class="mini-button" data-action="reset-bird">Reset placement</button></div><details class="advanced"><summary>Fine-tune placement & grain</summary>${range('Rotate bird', 'slice.rotation', s.rotation, -180, 180, 5, 'deg')}<div class="two-controls">${range('Horizontal', 'slice.x', s.x, -65, 65, 1, 'px')}${range('Vertical', 'slice.y', s.y, -65, 65, 1, 'px')}</div>${range('Grain direction', 'slice.grain', s.grain, -90, 90, 5, 'deg')}<p class="hint">Artwork stays inside its slice. Rotate and move it to find the right fit.</p></details>`;
+      `<div class="panel-heading"><h2>Make an hour your own.</h2><span class="subtle">${String(selected + 1).padStart(2, '0')} / 12</span></div><div class="hour-grid" aria-label="Choose an hour">${config.slices.map((_, i) => `<button class="hour-button ${i === selected ? 'active' : ''}" data-select-hour="${i}" aria-label="Edit hour ${i + 1}" aria-pressed="${i === selected}">${i + 1}</button>`).join('')}</div><div class="field-label">THE BIRD <span>Hour ${selected + 1}</span></div><button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}"><img src="${esc(bird.asset)}" alt="${esc(bird.name)}"><span><span class="name">${esc(bird.name)}</span><span class="latin">${esc(bird.scientificName)}</span><span class="change">Explore ${allBirds().length} birds</span></span><span class="arrow" aria-hidden="true">↗</span></button><div class="bird-file-action"><button class="quiet-link" data-action="bird-downloads">Download bird <span aria-hidden="true">↓</span></button></div><section class="control-section"><div class="field-label">THE WOOD <span>${woodById(s.wood).note}</span></div><div class="wood-options">${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}</div></section><hr class="divider"><div class="field-label">THE COMPOSITION <span>This hour only</span></div>${range('Bird size', 'slice.scale', s.scale, 0.55, 1.5, 0.05, 'pct')}<div class="inline-actions"><button class="mini-button ${s.flip ? 'active' : ''}" data-action="flip" aria-pressed="${s.flip}">⇄ Flip bird</button><button class="mini-button" data-action="reset-bird">Reset placement</button></div><details class="advanced"><summary>Fine-tune placement & grain</summary>${range('Rotate bird', 'slice.rotation', s.rotation, -180, 180, 5, 'deg')}<div class="two-controls">${range('Horizontal', 'slice.x', s.x, -65, 65, 1, 'px')}${range('Vertical', 'slice.y', s.y, -65, 65, 1, 'px')}</div>${range('Grain direction', 'slice.grain', s.grain, -90, 90, 5, 'deg')}<p class="hint">Artwork stays inside its slice. Rotate and move it to find the right fit.</p></details>`;
   else if (tab === 'face')
     $('#panel').innerHTML =
       `<div class="panel-heading"><h2>The finishing touches.</h2></div><p class="hint" style="margin-top:0">Small details change the whole character of your clock.</p><div class="two-controls">${selectField(
@@ -300,7 +300,7 @@ function renderBirdGrid() {
 function openExport() {
   showModal(
     'export',
-    `${modalHeader('KEEP A LITTLE OF THE WOODS', 'Save it. Share it. Make it yours.')}<div class="modal-body"><div class="export-layout"><div><div class="mini-clock">${clockSVG(config, allBirds(), { interactive: false })}</div><p class="modal-note">${esc(config.name)}</p></div><div class="export-options"><button class="export-option" data-action="save-named"><span class="symbol">♡</span><span><strong>Save to my designs</strong><small>Keep this configuration in your browser</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="share"><span class="symbol">↗</span><span><strong>Copy a design link</strong><small>Let someone open this exact arrangement</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="png"><span class="symbol">↓</span><span><strong>Download clock image</strong><small>A 2,400 px PNG, ready to send or print</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="bird-downloads" data-scope="clock"><span class="symbol">↓</span><span><strong>Download bird files</strong><small>PNG, JPEG, WebP or SVG · one bird or a ZIP collection</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="json"><span class="symbol">⌘</span><span><strong>Download configuration</strong><small>JSON backup, including any uploaded birds</small></span><span class="arrow">↗</span></button></div></div><p class="modal-note">Your design is auto-saved on this device. A JSON download is the safest way to keep a portable copy. Wood textures and bird illustrations are visual references for a finished clock.</p><div id="export-feedback" role="status"></div></div>`,
+    `${modalHeader('KEEP A LITTLE OF THE WOODS', 'Save it. Share it. Make it yours.')}<div class="modal-body"><div class="export-layout"><div><div class="mini-clock">${clockSVG(config, allBirds(), { interactive: false })}</div><p class="modal-note">${esc(config.name)}</p></div><div class="export-options"><button class="export-option" data-action="save-named"><span class="symbol">♡</span><span><strong>Save to my designs</strong><small>Keep this configuration in your browser</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="share"><span class="symbol">↗</span><span><strong>Copy a design link</strong><small>Let someone open this exact arrangement</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="png"><span class="symbol">↓</span><span><strong>Download clock image</strong><small>A 2,400 px PNG, ready to send or print</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="bird-downloads" data-scope="clock"><span class="symbol">↓</span><span><strong>Download bird files</strong><small>PNG, JPEG, WebP or SVG · one bird or a ZIP collection</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="json"><span class="symbol">⌘</span><span><strong>Download configuration</strong><small>JSON backup, including any uploaded birds</small></span><span class="arrow">↗</span></button></div></div><p class="modal-note">Your design is auto-saved on this device. A JSON download is the safest way to keep a portable copy. Wood textures and bird illustrations are visual references for a finished clock.</p><div class="export-utilities" aria-label="More design actions"><button class="quiet-link" data-action="import-design">Import design</button><button class="quiet-link" data-action="start-fresh">Start fresh</button><button class="quiet-link" data-action="about">About the studio</button></div><div id="export-feedback" role="status"></div></div>`,
   );
 }
 function openSaved() {
@@ -606,6 +606,9 @@ document.addEventListener('click', (e) => {
       toast,
     });
   if (action === 'close') closeModal();
+  if (action === 'import-design') $('#json-input').click();
+  if (action === 'start-fresh') startFresh();
+  if (action === 'about') openAbout();
   if (action === 'library') openLibrary();
   if (action === 'flip')
     commit(
@@ -709,14 +712,6 @@ document.addEventListener('change', (e) => {
   }
   commit(() => {
     setValue(el.dataset.key, value);
-    if (el.dataset.key === 'noAdjacent' && value) {
-      const next = assignWood(
-        config.slices,
-        selected,
-        config.slices[selected].wood,
-      );
-      config.slices.forEach((s, i) => (s.wood = next[i]));
-    }
     if (el.dataset.key === 'uniqueBirds' && value) {
       const used = new Set();
       for (const s of config.slices) {
@@ -797,12 +792,7 @@ $('#redo-button').onclick = redo;
 $('#saved-button').onclick = openSaved;
 $('#export-button').onclick = openExport;
 $('#shuffle-button').onclick = shuffleWood;
-$('#about-button').onclick = (e) => {
-  e.preventDefault();
-  openAbout();
-};
-$('#import-button').onclick = () => $('#json-input').click();
-$('#reset-button').onclick = () =>
+function startFresh() {
   confirmAction(
     'Begin with a fresh clock?',
     'Your current design will be replaced by the original twelve birds. You can undo this change or save a copy first.',
@@ -813,6 +803,7 @@ $('#reset-button').onclick = () =>
       }, 'Original clock restored.'),
     'Start fresh',
   );
+}
 $('#focus-button').onclick = () =>
   showModal(
     'fullscreen',

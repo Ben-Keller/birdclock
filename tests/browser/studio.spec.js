@@ -238,7 +238,6 @@ test('uploaded rectangular artwork downloads and travels in a JSON backup', asyn
     page.getByRole('button', { name: /Download configuration/ }),
   );
   expect(JSON.parse(backup.bytes).customBirds).toHaveLength(1);
-  await page.getByRole('button', { name: 'Close dialog' }).click();
   await page.getByRole('button', { name: 'Start fresh' }).click();
   await page.locator('#confirm-action').click();
   await page.locator('#json-input').setInputFiles({

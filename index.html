@@ -8,8 +8,12 @@
       name="description"
       content="Design your own wooden bird clock. Choose from 32 illustrated birds, mix three natural woods, and save your favorite designs."
     />
-    <title>Woodland Hours — Bird Clock Studio</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <title>Bird Clock — Design your own</title>
+    <link
+      rel="icon"
+      href="assets/birds/american-goldfinch.webp"
+      type="image/webp"
+    />
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="preload"
@@ -29,14 +33,15 @@
   <body>
     <a class="skip-link" href="#editor">Skip to clock controls</a>
     <header class="topbar">
-      <a class="brand" href="./" aria-label="Woodland Hours home"
-        ><svg viewBox="0 0 36 36" aria-hidden="true">
-          <path
-            d="M18 2 26 4 32 10 34 18 32 26 26 32 18 34 10 32 4 26 2 18 4 10 10 4Z"
-          />
-          <path d="M18 8V18L25 22" /></svg
-        ><span>Woodland Hours<small>A LITTLE TIME, WELL SPENT.</small></span></a
-      >
+      <a class="brand" href="./" aria-label="Bird Clock home">
+        <img
+          src="assets/birds/american-goldfinch.webp"
+          alt=""
+          width="48"
+          height="48"
+        />
+        <span>Bird Clock</span>
+      </a>
       <nav aria-label="Design actions">
         <span id="save-status" class="save-status"
           ><i></i>Saved in this browser</span
@@ -48,22 +53,10 @@
       </nav>
     </header>
     <main>
-      <section class="intro">
-        <div>
-          <p class="eyebrow">THE BIRD CLOCK STUDIO <span> / </span> NO. 01</p>
-          <h1>Twelve hours. <em>Entirely yours.</em></h1>
-          <p>A bird for every hour. A different grain for every piece.</p>
-        </div>
-        <a class="quiet-link" href="#" id="about-button"
-          >A note on the studio <span aria-hidden="true">↗</span></a
-        >
-      </section>
+      <h1 class="sr-only">Design your bird clock</h1>
       <section class="workspace" aria-label="Clock design workspace">
         <div class="preview-column">
           <div class="preview-top">
-            <div class="preview-label">
-              <span class="status-dot"></span>YOUR CLOCK, AS IT TAKES SHAPE
-            </div>
             <div class="undo-controls">
               <button
                 id="undo-button"
@@ -157,42 +150,7 @@
           <div id="panel" role="tabpanel" aria-labelledby="tab-slice"></div>
         </aside>
       </section>
-      <section class="material-note">
-        <div class="material-mark" aria-hidden="true">✳</div>
-        <div>
-          <h2>Made of small, thoughtful choices.</h2>
-          <p>
-            Thirty-two birds, three natural woods, and a little room to play.
-            Your designs stay in your browser until you choose to share them.
-          </p>
-        </div>
-        <div class="material-mini" aria-label="Maple, mahogany and cherry">
-          <span style="background-image: url('assets/woods/maple.webp')"></span
-          ><span
-            style="background-image: url('assets/woods/mahogany.webp')"
-          ></span
-          ><span
-            style="background-image: url('assets/woods/cherry.webp')"
-          ></span>
-        </div>
-      </section>
     </main>
-    <footer>
-      <span
-        >WOODLAND HOURS <span class="footer-divider">/</span> A clock of your
-        own.</span
-      >
-      <div>
-        <button id="import-button">Import design</button
-        ><button id="reset-button">Start fresh</button
-        ><a
-          href="https://www.figma.com/design/bzVcOwpc5U64Vq2yZNm1SD"
-          target="_blank"
-          rel="noopener"
-          >Original design ↗</a
-        >
-      </div>
-    </footer>
     <dialog id="modal" aria-labelledby="modal-title">
       <div id="modal-content"></div>
     </dialog>
