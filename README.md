@@ -29,7 +29,7 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 - Keep all birds different, or allow repeats. Choosing a bird already used swaps the two hours when uniqueness is enabled.
 - Keep adjacent woods different, including the 12-to-1 join. Manual selection adjusts as few other pieces as possible. Shuffle produces four pieces of each wood with no matching neighbors.
 - Twelve-sided triangular face or round face, number/dot styles, marker size, global bird scale, grain strength, seams, edge width/color, backdrop, hands, center pin, preview time, and live time.
-- Undo/redo, fullscreen clock view, hour overview, and a named design collection.
+- Undo/redo, fullscreen clock view, and hour overview.
 - Automatic session and local-browser saving, portable JSON import/export, configuration links, and 2,400 px PNG image export.
 - Individual bird downloads in PNG, JPEG, WebP, and SVG; ZIP collections for the birds on your clock or the entire library, including uploaded artwork.
 
@@ -54,11 +54,11 @@ All conversion and packaging happens locally in the browser. If a browser cannot
 
 ## Keeping and sharing designs
 
-Your current draft is saved to both `sessionStorage` and `localStorage`. Named designs use `localStorage`. No design is sent to a server. Storage belongs to the browser and website address; changing devices, switching domains, or clearing browser data does not carry it across. The save indicator reports when persistent storage is unavailable.
+Your current draft is saved to both `sessionStorage` and `localStorage`. No design is sent to a server. Storage belongs to the browser and website address; changing devices, switching domains, or clearing browser data does not carry it across. The save indicator reports when persistent storage is unavailable.
 
-Download JSON for a portable backup. It contains all settings and any uploaded artwork. Configurations are versioned and validated before import. Share links contain the configuration in their URL fragment; anyone with the link can open it. Use JSON for designs with uploaded images. Opening a shared design tries to save your previous draft into My designs first.
+Download JSON for a portable backup. It contains all settings and any uploaded artwork. Configurations are versioned and validated before import. Share links contain the configuration in their URL fragment; anyone with the link can open it. Use JSON for designs with uploaded images. Opening a shared design keeps your previous draft in undo history for that visit.
 
-Uploaded images are resized to at most 512 px and encoded locally. If browser storage fills, existing named designs are retained and the app asks you to download a backup. There is no analytics, account system, or remote font dependency.
+Uploaded images are resized to at most 512 px and encoded locally. If browser storage fills, the save indicator asks you to download a backup. There is no analytics, account system, or remote font dependency.
 
 ## Project files
 

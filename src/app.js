@@ -15,9 +15,7 @@ import { download, safeFilename, dataURL, canvasBlob } from './downloads.js';
 import { openBirdDownloads } from './bird-downloads.js';
 const $ = (s, root = document) => root.querySelector(s),
   $$ = (s, root = document) => [...root.querySelectorAll(s)];
-const DRAFT = 'woodland-hours.draft.v1',
-  SAVED = 'woodland-hours.saved.v1',
-  RECOVERY = 'woodland-hours.recovery.v1';
+const DRAFT = 'woodland-hours.draft.v1';
 let local, session;
 try {
   local = storageAdapter(window.localStorage);
@@ -42,8 +40,6 @@ let catalogue = [],
   toastTimer,
   libraryQuery = '',
   libraryGroup = 'All birds';
-let saved = local.get(SAVED, []);
-if (!Array.isArray(saved)) saved = [];
 const modal = $('#modal');
 const allBirds = () => [...catalogue, ...config.customBirds];
 const birdById = (id) => allBirds().find((b) => b.id === id);
@@ -113,7 +109,6 @@ function render() {
   $('#design-name').value = config.name;
   $('#undo-button').disabled = !history.length;
   $('#redo-button').disabled = !future.length;
-  $('#saved-count').textContent = saved.length;
   $('#wood-summary').innerHTML = WOODS.map(
     (w) =>
       `<span>${dot(w.id)}${config.slices.filter((s) => s.wood === w.id).length} ${w.name}</span>`,
@@ -261,7 +256,7 @@ modal.addEventListener('click', (e) => {
   }
 });
 const modalHeader = (eyebrow, title) =>
-  `<div class="modal-head"><div><p class="eyebrow">${eyebrow}</p><h2 id="modal-title" tabindex="-1">${title}</h2></div><button class="modal-close" data-action="close" aria-label="Close dialog">×</button></div>`;
+  `<div class="modal-head"><div>${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ''}<h2 id="modal-title" tabindex="-1">${title}</h2></div><button class="modal-close" data-action="close" aria-label="Close dialog">×</button></div>`;
 function openLibrary() {
   libraryQuery = '';
   libraryGroup = 'All birds';
@@ -300,45 +295,8 @@ function renderBirdGrid() {
 function openExport() {
   showModal(
     'export',
-    `${modalHeader('KEEP A LITTLE OF THE WOODS', 'Save it. Share it. Make it yours.')}<div class="modal-body"><div class="export-layout"><div><div class="mini-clock">${clockSVG(config, allBirds(), { interactive: false })}</div><p class="modal-note">${esc(config.name)}</p></div><div class="export-options"><button class="export-option" data-action="save-named"><span class="symbol">♡</span><span><strong>Save to my designs</strong><small>Keep this configuration in your browser</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="share"><span class="symbol">↗</span><span><strong>Copy a design link</strong><small>Let someone open this exact arrangement</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="png"><span class="symbol">↓</span><span><strong>Download clock image</strong><small>A 2,400 px PNG, ready to send or print</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="bird-downloads" data-scope="clock"><span class="symbol">↓</span><span><strong>Download bird files</strong><small>PNG, JPEG, WebP or SVG · one bird or a ZIP collection</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="json"><span class="symbol">⌘</span><span><strong>Download configuration</strong><small>JSON backup, including any uploaded birds</small></span><span class="arrow">↗</span></button></div></div><p class="modal-note">Your design is auto-saved on this device. A JSON download is the safest way to keep a portable copy. Wood textures and bird illustrations are visual references for a finished clock.</p><div class="export-utilities" aria-label="More design actions"><button class="quiet-link" data-action="import-design">Import design</button><button class="quiet-link" data-action="start-fresh">Start fresh</button><button class="quiet-link" data-action="about">About the studio</button></div><div id="export-feedback" role="status"></div></div>`,
+    `${modalHeader('', 'Downloads')}<div class="modal-body"><div class="export-layout"><div><div class="mini-clock">${clockSVG(config, allBirds(), { interactive: false })}</div></div><div class="export-options"><button class="export-option" data-action="share"><span class="symbol">↗</span><span><strong>Copy a design link</strong><small>Let someone open this exact arrangement</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="png"><span class="symbol">↓</span><span><strong>Download clock image</strong><small>A 2,400 px PNG, ready to send or print</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="bird-downloads" data-scope="clock"><span class="symbol">↓</span><span><strong>Download bird files</strong><small>PNG, JPEG, WebP or SVG · one bird or a ZIP collection</small></span><span class="arrow">↗</span></button><button class="export-option" data-action="json"><span class="symbol">⌘</span><span><strong>Download configuration</strong><small>JSON backup, including any uploaded birds</small></span><span class="arrow">↗</span></button></div></div><div class="export-utilities" aria-label="More design actions"><button class="quiet-link" data-action="import-design">Import design</button><button class="quiet-link" data-action="start-fresh">Start fresh</button><button class="quiet-link" data-action="about">About the studio</button></div><div id="export-feedback" role="status"></div></div>`,
   );
-}
-function openSaved() {
-  const items = saved.filter((item) => {
-    try {
-      validateConfig(
-        item.config,
-        catalogue.map((b) => b.id),
-      );
-      return true;
-    } catch {
-      return false;
-    }
-  });
-  showModal(
-    'saved',
-    `${modalHeader('YOUR COLLECTION', 'A few favorite hours.')}<div class="modal-body"><form id="save-form" class="save-form"><label>Name this design<input class="text-field" name="name" maxlength="80" required value="${esc(config.name)}"></label><button class="button primary" type="submit">Save a copy</button></form><div class="saved-grid">${items.length ? items.map((item) => `<article class="saved-card"><div class="saved-preview">${clockSVG(item.config, [...catalogue, ...item.config.customBirds], { interactive: false })}</div><h3>${esc(item.name)}</h3><p>${new Date(item.updatedAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</p><div class="actions"><button class="mini-button" data-load="${esc(item.id)}">Open design</button><button class="mini-button danger" data-delete="${esc(item.id)}" aria-label="Delete saved design ${esc(item.name)}">×</button></div></article>`).join('') : '<p class="empty-state">Your favorites will live here. Save your first design above.</p>'}</div><p class="modal-note">Saved on this browser and device only. Export JSON for a backup or to move a design to another device.</p></div>`,
-  );
-}
-function saveNamed(name) {
-  const item = {
-    id: crypto.randomUUID?.() || `design-${Date.now()}`,
-    name: name.trim() || 'Untitled clock',
-    updatedAt: new Date().toISOString(),
-    config: clone(config),
-  };
-  item.config.name = item.name;
-  const next = [item, ...saved];
-  if (!local.set(SAVED, next)) {
-    toast(
-      'Browser storage is full or unavailable. Download a JSON backup instead.',
-    );
-    return false;
-  }
-  saved = next;
-  $('#saved-count').textContent = saved.length;
-  toast('Saved to your designs.');
-  return true;
 }
 function confirmAction(title, description, action, label = 'Continue') {
   showModal(
@@ -357,7 +315,7 @@ function confirmAction(title, description, action, label = 'Continue') {
 function openAbout() {
   showModal(
     'about',
-    `${modalHeader('A NOTE ON THE STUDIO', 'A small collection of possibilities.')}<div class="modal-body about-copy"><h3>Twelve birds. Three woods. Your arrangement.</h3><p>This studio began with a twelve-piece wooden clock: 30-degree triangular slices, maple, mahogany and cherry, with a different bird at every hour. The original design keeps the osprey at three and the loon at nine. Every hour is yours to change.</p><h3>Made to stay with you.</h3><p>Changes are saved automatically in this browser. Named designs stay on this device, with no account or server. A share link carries a built-in-bird configuration in the URL; uploaded illustrations travel in JSON backups instead.</p><h3>A visual design, ready to discuss.</h3><p>The birds are AI-generated natural-history illustrations, and the woods are generated texture studies. They are not taxonomic reference plates or exact timber samples. This is a design tool, not a fabrication drawing: confirm dimensions, joinery, material thickness and clock movement with your maker.</p><p>Keyboard tip: Tab to the clock, then use the arrow keys to move between hours. Ctrl/⌘ Z undoes your last change.</p></div>`,
+    `${modalHeader('A NOTE ON THE STUDIO', 'A small collection of possibilities.')}<div class="modal-body about-copy"><h3>Twelve birds. Three woods. Your arrangement.</h3><p>This studio began with a twelve-piece wooden clock: 30-degree triangular slices, maple, mahogany and cherry, with a different bird at every hour. The original design keeps the osprey at three and the loon at nine. Every hour is yours to change.</p><h3>Made to stay with you.</h3><p>Changes are saved automatically in this browser. A share link carries a built-in-bird configuration in the URL; uploaded illustrations travel in JSON backups instead.</p><h3>A visual design, ready to discuss.</h3><p>The birds are AI-generated natural-history illustrations, and the woods are generated texture studies. They are not taxonomic reference plates or exact timber samples. This is a design tool, not a fabrication drawing: confirm dimensions, joinery, material thickness and clock movement with your maker.</p><p>Keyboard tip: Tab to the clock, then use the arrow keys to move between hours. Ctrl/⌘ Z undoes your last change.</p></div>`,
   );
 }
 function exportJSON() {
@@ -558,40 +516,6 @@ document.addEventListener('click', (e) => {
     selectBird(bird.dataset.bird);
     return;
   }
-  const load = e.target.closest('[data-load]');
-  if (load) {
-    const item = saved.find((s) => s.id === load.dataset.load);
-    try {
-      const next = validateConfig(
-        item.config,
-        catalogue.map((b) => b.id),
-      );
-      commit(() => (config = next), 'Saved design opened.');
-      closeModal();
-    } catch (error) {
-      toast(error.message);
-    }
-    return;
-  }
-  const del = e.target.closest('[data-delete]');
-  if (del) {
-    const id = del.dataset.delete,
-      item = saved.find((s) => s.id === id);
-    confirmAction(
-      'Remove this saved design?',
-      `“${item.name}” will be removed from this browser. Your current clock will stay as it is.`,
-      () => {
-        const next = saved.filter((s) => s.id !== id);
-        if (local.set(SAVED, next)) {
-          saved = next;
-          openSaved();
-          $('#saved-count').textContent = saved.length;
-        } else toast('Could not update browser storage.');
-      },
-      'Remove design',
-    );
-    return;
-  }
   const a = e.target.closest('[data-action]');
   if (!a) return;
   const action = a.dataset.action;
@@ -632,7 +556,6 @@ document.addEventListener('click', (e) => {
       const ids = shuffleArray(allBirds().map((b) => b.id)).slice(0, 12);
       config.slices.forEach((s, i) => (s.bird = ids[i]));
     }, 'A new flock for your clock.');
-  if (action === 'save-named') openSaved();
   if (action === 'share') copyShare();
   if (action === 'json') exportJSON();
   if (action === 'png') exportPNG(a);
@@ -726,13 +649,6 @@ document.addEventListener('change', (e) => {
     }
   });
 });
-document.addEventListener('submit', (e) => {
-  if (e.target.id === 'save-form') {
-    e.preventDefault();
-    const name = new FormData(e.target).get('name');
-    if (saveNamed(String(name))) openSaved();
-  }
-});
 document.addEventListener('keydown', (e) => {
   if (
     e.target.closest('.editor-tabs') &&
@@ -789,13 +705,12 @@ document.addEventListener('keydown', (e) => {
 });
 $('#undo-button').onclick = undo;
 $('#redo-button').onclick = redo;
-$('#saved-button').onclick = openSaved;
 $('#export-button').onclick = openExport;
 $('#shuffle-button').onclick = shuffleWood;
 function startFresh() {
   confirmAction(
     'Begin with a fresh clock?',
-    'Your current design will be replaced by the original twelve birds. You can undo this change or save a copy first.',
+    'Your current design will be replaced by the original twelve birds. You can undo this change or download a configuration first.',
     () =>
       commit(() => {
         config = defaultConfig();
@@ -816,14 +731,19 @@ async function init() {
       throw new Error('The bird library could not be loaded. Please refresh.');
     catalogue = await r.json();
     let warning = '',
-      shared = false;
+      shared = false,
+      priorDraft = null;
     const ids = catalogue.map((b) => b.id),
       hash = new URLSearchParams(location.hash.slice(1));
     if (hash.has('design')) {
       try {
         config = validateConfig(decodeConfig(hash.get('design')), ids);
         const prior = session.get(DRAFT) || local.get(DRAFT);
-        if (prior) local.set(RECOVERY, prior);
+        if (prior) {
+          try {
+            priorDraft = validateConfig(prior, ids);
+          } catch {}
+        }
         shared = true;
       } catch (e) {
         warning = `Could not open that link: ${e.message}`;
@@ -840,33 +760,14 @@ async function init() {
         }
       }
     }
+    if (shared && priorDraft) pushHistory(priorDraft);
     startupButtons.forEach((button) => (button.disabled = false));
     render();
     autosave();
     if (shared) {
-      let recovered = false;
-      const prior = local.get(RECOVERY);
-      if (prior) {
-        try {
-          const valid = validateConfig(prior, ids),
-            item = {
-              id: `recovered-${Date.now()}`,
-              name: `${valid.name} (before shared link)`,
-              updatedAt: new Date().toISOString(),
-              config: valid,
-            };
-          const next = [item, ...saved];
-          if (local.set(SAVED, next)) {
-            saved = next;
-            recovered = true;
-            local.remove(RECOVERY);
-            $('#saved-count').textContent = saved.length;
-          }
-        } catch {}
-      }
       toast(
-        recovered
-          ? 'Shared design opened. Your earlier draft is in My designs.'
+        history.length
+          ? 'Shared design opened. Undo restores your previous draft.'
           : 'Shared design opened.',
       );
       window.history.replaceState(

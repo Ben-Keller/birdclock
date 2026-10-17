@@ -254,7 +254,7 @@ test('uploaded rectangular artwork downloads and travels in a JSON backup', asyn
   ).toContainText('My custom bird');
 });
 
-test('name, wood, bird swaps and named saves remain editable and recover on refresh', async ({
+test('name, wood and bird swaps remain editable and recover on refresh', async ({
   page,
 }) => {
   await page.getByRole('textbox', { name: 'Design name' }).fill('Autumn birds');
@@ -275,12 +275,6 @@ test('name, wood, bird swaps and named saves remain editable and recover on refr
     'aria-label',
     /Osprey/,
   );
-  await page.getByRole('button', { name: /My designs/ }).click();
-  await page.getByRole('button', { name: 'Save a copy' }).click();
-  await expect(
-    page.getByRole('heading', { name: 'Autumn birds' }),
-  ).toBeVisible();
-  await page.getByRole('button', { name: 'Close dialog' }).click();
   await page.reload();
   await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
     'Autumn birds',
@@ -292,6 +286,7 @@ test('name, wood, bird swaps and named saves remain editable and recover on refr
 
 test('clock PNG includes the rendered design at 2400 px', async ({ page }) => {
   await page.getByRole('button', { name: 'Save & share' }).click();
+  await page.screenshot({ path: 'test-results/desktop-exports.png' });
   const clock = await getDownload(
     page,
     page.getByRole('button', { name: /Download clock image/ }),
@@ -300,6 +295,40 @@ test('clock PNG includes the rendered design at 2400 px', async ({ page }) => {
   expect(info.width).toBe(2400);
   expect(info.height).toBe(2400);
   expect(info.visible).toBe(true);
+});
+
+test('opening a shared link keeps the previous draft available through undo', async ({
+  page,
+}) => {
+  await page
+    .getByRole('textbox', { name: 'Design name' })
+    .fill('My earlier clock');
+  await page.getByRole('textbox', { name: 'Design name' }).press('Tab');
+  const shared = await page.evaluate(async () => {
+    const { defaultConfig, encodeConfig } = await import('/src/model.js');
+    const config = defaultConfig();
+    config.name = 'Shared birds';
+    return encodeConfig(config);
+  });
+  await page.goto('about:blank');
+  await page.goto(`/#design=${shared}`);
+  await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
+    'Shared birds',
+  );
+  await expect(
+    page.getByRole('button', { name: 'Undo last change' }),
+  ).toBeEnabled();
+  await page.getByRole('button', { name: 'Undo last change' }).click();
+  await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
+    'My earlier clock',
+  );
+  await page.reload();
+  await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
+    'My earlier clock',
+  );
+  expect(
+    await page.evaluate(() => localStorage.getItem('woodland-hours.saved.v1')),
+  ).toBeNull();
 });
 
 test('mobile editor, bird library and download panel fit without horizontal overflow', async ({

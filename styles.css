@@ -183,12 +183,6 @@ h3,
 .ghost {
   background: transparent;
 }
-.button #saved-count {
-  background: #e8e1d3;
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-size: 10px;
-}
 .save-status {
   font-size: 10px;
   color: var(--muted);
@@ -996,60 +990,6 @@ dialog::backdrop {
   color: var(--muted);
   margin-top: 18px;
 }
-.save-form {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 18px;
-  align-items: flex-end;
-}
-.save-form label {
-  flex: 1;
-  font-size: 10px;
-  color: var(--muted);
-}
-.save-form .text-field {
-  margin-top: 6px;
-}
-.saved-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  max-height: 50dvh;
-  overflow: auto;
-}
-.saved-card {
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 12px;
-  min-width: 0;
-}
-.saved-card h3 {
-  font-size: 24px;
-  overflow-wrap: anywhere;
-  margin-top: 8px;
-}
-.saved-card p {
-  font-size: 9px;
-  color: var(--muted);
-}
-.saved-card .actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
-}
-.saved-preview {
-  height: 145px;
-  background: var(--paper);
-  padding: 4px;
-  border-radius: 4px;
-}
-.saved-preview svg {
-  height: 100%;
-  width: 100%;
-}
-.danger {
-  color: #9b4b39;
-}
 .confirm-content {
   max-width: 480px;
   margin: auto;
@@ -1200,17 +1140,6 @@ dialog::backdrop {
     font-size: 11px;
     min-height: 38px;
   }
-  .topbar .ghost {
-    font-size: 0;
-    gap: 5px;
-  }
-  .topbar .ghost:before {
-    content: 'Saved';
-    font-size: 11px;
-  }
-  .topbar #saved-count {
-    font-size: 9px;
-  }
   .eyebrow {
     font-size: 8px;
   }
@@ -1283,9 +1212,6 @@ dialog::backdrop {
   .bird-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .saved-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 @media (max-width: 480px) {
   .topbar {
@@ -1300,9 +1226,6 @@ dialog::backdrop {
     white-space: nowrap;
     padding: 8px 10px;
     gap: 7px;
-  }
-  .topbar #saved-count {
-    display: none;
   }
   .preview-column {
     padding: 12px 12px 0;
@@ -1375,23 +1298,6 @@ dialog::backdrop {
   .export-layout .mini-clock {
     max-width: 180px;
     margin: auto;
-  }
-  .saved-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 9px;
-  }
-  .saved-preview {
-    height: 115px;
-  }
-  .saved-card {
-    padding: 9px;
-  }
-  .saved-card h3 {
-    font-size: 21px;
-  }
-  .save-form {
-    flex-direction: column;
-    align-items: stretch;
   }
   .toast {
     font-size: 11px;
