@@ -11,7 +11,12 @@ export function attachClockTooltips(clock, tooltip) {
   }
 
   function show(slice) {
-    if (!slice || slice === dismissedSlice) return;
+    if (
+      !slice ||
+      slice === dismissedSlice ||
+      clock.classList.contains('dragging-bird')
+    )
+      return;
     hide();
     activeSlice = slice;
     tooltip.textContent = slice.getAttribute('aria-label');

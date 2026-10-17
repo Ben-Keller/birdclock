@@ -279,8 +279,12 @@ main {
   display: block;
   overflow: visible;
 }
-.clock-slice {
-  cursor: pointer;
+#clock {
+  touch-action: none;
+  user-select: none;
+}
+#clock .clock-slice {
+  cursor: grab;
 }
 .slice-highlight {
   pointer-events: none;
@@ -306,6 +310,45 @@ main {
 }
 .bird-image {
   pointer-events: none;
+}
+#clock.dragging-bird,
+#clock.dragging-bird .clock-slice {
+  cursor: grabbing;
+}
+.drag-source .bird-image {
+  opacity: 0.25;
+}
+.clock-slice.drop-target .slice-highlight {
+  fill: var(--green);
+  opacity: 0.2;
+}
+.clock-slice.drop-target .selection-dot {
+  opacity: 1;
+}
+.bird-drag-preview {
+  position: fixed;
+  z-index: 30;
+  pointer-events: none;
+  width: 128px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  box-shadow: 0 6px 24px #322d2633;
+  text-align: center;
+}
+.bird-drag-preview img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 4px;
+  object-fit: contain;
+}
+.bird-drag-preview span {
+  display: block;
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--green);
 }
 .clock-tooltip {
   position: fixed;

@@ -14,9 +14,14 @@ import { clockSVG, handsMarkup, escapeHTML as esc } from './clock.js';
 import { download, safeFilename, dataURL, canvasBlob } from './downloads.js';
 import { openBirdDownloads } from './bird-downloads.js';
 import { attachClockTooltips } from './clock-tooltip.js';
+import { attachBirdDrag } from './clock-drag.js';
 const $ = (s, root = document) => root.querySelector(s),
   $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const clockTooltip = attachClockTooltips($('#clock'), $('#clock-tooltip'));
+const clockDrag = attachBirdDrag($('#clock'), {
+  onStart: () => clockTooltip.hide(),
+  onSwap: swapBirds,
+});
 const DRAFT = 'woodland-hours.draft.v1';
 let local, session;
 try {
@@ -93,6 +98,7 @@ function commit(fn, message) {
   if (message) toast(message);
 }
 function renderClock() {
+  clockDrag.cancel();
   clockTooltip.hide();
   const wrap = $('#clock');
   const hadFocus = wrap.contains(document.activeElement);
@@ -226,7 +232,21 @@ function selectBird(id) {
   );
   closeModal();
 }
+function swapBirds(from, to) {
+  if (from === to || !config.slices[from] || !config.slices[to]) return;
+  commit(
+    () => {
+      const a = config.slices[from],
+        b = config.slices[to];
+      for (const key of ['bird', 'scale', 'rotation', 'x', 'y', 'flip'])
+        [a[key], b[key]] = [b[key], a[key]];
+      selected = to;
+    },
+    `Swapped birds at hours ${from + 1} and ${to + 1}.`,
+  );
+}
 function showModal(kind, html) {
+  clockDrag.cancel();
   clockTooltip.hide();
   if (!modal.open) lastFocus = document.activeElement;
   modalKind = kind;
@@ -647,6 +667,14 @@ document.addEventListener('change', (e) => {
 });
 document.addEventListener('keydown', (e) => {
   if (e.target.closest('#clock .clock-slice')) {
+    if (e.shiftKey && ['ArrowLeft', 'ArrowRight'].includes(e.key)) {
+      e.preventDefault();
+      swapBirds(selected, (selected + (e.key === 'ArrowRight' ? 1 : 11)) % 12);
+      $(`[data-hour="${selected}"]`, $('#clock')).focus({
+        preventScroll: true,
+      });
+      return;
+    }
     if (
       [
         'ArrowLeft',

@@ -65,7 +65,7 @@ export function clockSVG(
     byId = new Map(birds.map((b) => [b.id, b])),
     parts = [];
   parts.push(
-    `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1040 1040" width="1040" height="1040" ${interactive ? 'aria-label="Your customizable bird clock" role="group"' : 'role="img" aria-label="Bird clock design"'}><defs><filter id="clockShadow" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#443425" flood-opacity=".2"/></filter><filter id="handShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity=".22"/></filter>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1040 1040" width="1040" height="1040" ${interactive ? 'aria-label="Your customizable bird clock" aria-describedby="clock-controls-help" role="group"' : 'role="img" aria-label="Bird clock design"'}><defs><filter id="clockShadow" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#443425" flood-opacity=".2"/></filter><filter id="handShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity=".22"/></filter>`,
   );
   config.slices.forEach((s, i) =>
     parts.push(

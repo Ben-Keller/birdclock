@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "check": "node --check src/app.js && node --check src/model.js && node --check src/clock.js && node --check src/clock-tooltip.js && node --check src/downloads.js && node --check src/bird-downloads.js && node --check src/zip.js",
+    "check": "node --check src/app.js && node --check src/model.js && node --check src/clock.js && node --check src/clock-tooltip.js && node --check src/clock-drag.js && node --check src/downloads.js && node --check src/bird-downloads.js && node --check src/zip.js",
     "serve": "python3 -m http.server 8080",
     "test:browser": "playwright test",
     "format": "prettier --write ."

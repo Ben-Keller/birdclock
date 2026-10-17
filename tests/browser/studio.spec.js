@@ -424,6 +424,180 @@ test('mobile editor, bird library and download panel fit without horizontal over
   await noOverflow();
 });
 
+async function birdPoint(page, hour) {
+  const box = await page
+    .locator(`#clock [data-hour="${hour - 1}"] .bird-image`)
+    .boundingBox();
+  return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+}
+
+async function clockDraft(page) {
+  return page.evaluate(() =>
+    JSON.parse(localStorage.getItem('woodland-hours.draft.v1')),
+  );
+}
+
+test('dragging birds swaps their placement, preserves woods, and supports undo and reload', async ({
+  page,
+}) => {
+  await page
+    .getByRole('slider', { name: 'Bird size', exact: true })
+    .press('End');
+  await page.getByRole('button', { name: /Flip bird/ }).click();
+  await page.getByText('Fine-tune placement', { exact: true }).click();
+  await page
+    .getByRole('slider', { name: 'Rotate bird', exact: true })
+    .press('ArrowRight');
+  await page
+    .getByRole('slider', { name: 'Horizontal', exact: true })
+    .press('ArrowRight');
+  await page
+    .getByRole('slider', { name: 'Vertical', exact: true })
+    .press('ArrowLeft');
+  const before = await clockDraft(page);
+  const source = await birdPoint(page, 3),
+    destination = await birdPoint(page, 9);
+  await page.mouse.move(source.x, source.y);
+  await page.mouse.down();
+  await page.mouse.move(destination.x, destination.y, { steps: 12 });
+  await expect(page.locator('.bird-drag-preview')).toContainText(
+    'Swap with hour 9',
+  );
+  await expect(page.locator('#clock [data-hour="8"]')).toHaveClass(
+    /drop-target/,
+  );
+  await expect(page.getByRole('tooltip')).toBeHidden();
+  await page.screenshot({ path: 'test-results/bird-drag-desktop.png' });
+  await page.mouse.up();
+  const after = await clockDraft(page);
+  expect(after.slices[8]).toMatchObject({
+    bird: 'osprey',
+    scale: 1.5,
+    rotation: 5,
+    x: 1,
+    y: -1,
+    flip: true,
+  });
+  expect(after.slices[2]).toMatchObject({
+    bird: 'common-loon',
+    scale: 1,
+    rotation: 0,
+    x: 0,
+    y: 0,
+    flip: false,
+  });
+  expect(after.slices.map((s) => s.wood)).toEqual(
+    before.slices.map((s) => s.wood),
+  );
+  expect(after.slices.map((s) => s.grain)).toEqual(
+    before.slices.map((s) => s.grain),
+  );
+  await expect(
+    page.getByRole('button', { name: 'Change bird for hour 9' }),
+  ).toContainText('Osprey');
+  await expect(page.locator('.bird-drag-preview')).toBeHidden();
+  await expect(page.locator('.drag-source, .drop-target')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Undo last change' }).click();
+  expect(await clockDraft(page)).toEqual(before);
+  await page.getByRole('button', { name: 'Redo last change' }).click();
+  expect(await clockDraft(page)).toEqual(after);
+  await page.reload();
+  expect(await clockDraft(page)).toEqual(after);
+});
+
+test('cancelled and same-hour drags leave the design intact, and clicks still select', async ({
+  page,
+}) => {
+  const before = await clockDraft(page);
+  const source = await birdPoint(page, 3),
+    destination = await birdPoint(page, 9);
+  for (const end of [
+    { x: 8, y: 8 },
+    { x: source.x + 15, y: source.y },
+    destination,
+  ]) {
+    await page.mouse.move(source.x, source.y);
+    await page.mouse.down();
+    await page.mouse.move(end.x, end.y, { steps: 10 });
+    if (end === destination) await page.keyboard.press('Escape');
+    await page.mouse.up();
+    expect(await clockDraft(page)).toEqual(before);
+    await expect(page.locator('.bird-drag-preview')).toBeHidden();
+    await expect(
+      page.getByRole('button', { name: 'Undo last change' }),
+    ).toBeDisabled();
+  }
+  await page.mouse.click(destination.x, destination.y);
+  await expect(
+    page.getByRole('button', { name: 'Change bird for hour 9' }),
+  ).toBeVisible();
+  expect(await clockDraft(page)).toEqual(before);
+});
+
+test('keyboard swapping wraps between twelve and one and is undoable', async ({
+  page,
+}) => {
+  const before = await clockDraft(page);
+  await page.locator('#clock [data-hour="2"]').focus();
+  await page.keyboard.press('Home');
+  await page.keyboard.press('Shift+ArrowRight');
+  const after = await clockDraft(page);
+  expect(after.slices[0].bird).toBe('great-horned-owl');
+  expect(after.slices[11].bird).toBe('northern-flicker');
+  expect(after.slices.map((s) => s.wood)).toEqual(
+    before.slices.map((s) => s.wood),
+  );
+  await expect(page.locator('#clock [data-hour="0"]')).toBeFocused();
+  await page.getByRole('button', { name: 'Undo last change' }).click();
+  expect(await clockDraft(page)).toEqual(before);
+});
+
+test.describe('touch bird dragging', () => {
+  test.use({
+    viewport: { width: 390, height: 844 },
+    hasTouch: true,
+    isMobile: true,
+  });
+  test('touch drags swap birds on a round clock and cancellation is harmless', async ({
+    page,
+  }) => {
+    await page
+      .getByRole('combobox', { name: 'Clock shape', exact: true })
+      .selectOption('circle');
+    await page.locator('#clock').scrollIntoViewIfNeeded();
+    const before = await clockDraft(page);
+    const source = await birdPoint(page, 3),
+      destination = await birdPoint(page, 9);
+    const cdp = await page.context().newCDPSession(page);
+    const touch = (type, point) =>
+      cdp.send('Input.dispatchTouchEvent', {
+        type,
+        touchPoints: point ? [{ ...point, id: 1 }] : [],
+      });
+    await touch('touchStart', source);
+    await touch('touchMove', destination);
+    await expect(page.locator('.bird-drag-preview')).toContainText(
+      'Swap with hour 9',
+    );
+    await page.screenshot({ path: 'test-results/bird-drag-touch.png' });
+    await touch('touchEnd');
+    const after = await clockDraft(page);
+    expect(after.slices[8].bird).toBe('osprey');
+    expect(after.slices[2].bird).toBe('common-loon');
+    expect(after.slices.map((s) => s.wood)).toEqual(
+      before.slices.map((s) => s.wood),
+    );
+    await touch('touchStart', destination);
+    await touch('touchMove', source);
+    await touch('touchCancel');
+    expect(await clockDraft(page)).toEqual(after);
+    await expect(page.locator('.bird-drag-preview')).toBeHidden();
+    await page.getByRole('button', { name: 'Undo last change' }).click();
+    expect(await clockDraft(page)).toEqual(before);
+    await cdp.detach();
+  });
+});
+
 test('clock tooltips support hover, keyboard navigation and dismissal', async ({
   page,
 }) => {
