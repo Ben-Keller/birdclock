@@ -81,7 +81,7 @@ export function defaultConfig() {
       hands: true,
       seconds: false,
       time: '10:05',
-      live: false,
+      live: true,
       background: '#f4f0e6',
     },
   };
@@ -234,13 +234,14 @@ export function validateConfig(input, birdIds) {
     rimColor: hex(f.rimColor, d.face.rimColor),
     handColor: hex(f.handColor, d.face.handColor),
     hubColor: hex(f.hubColor, d.face.hubColor),
-    hands: f.hands !== false,
+    // Older drafts and imports now show hands using the current local time.
+    hands: true,
     seconds: !!f.seconds,
     time:
       typeof f.time === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(f.time)
         ? f.time
         : '10:05',
-    live: !!f.live,
+    live: true,
     background: hex(f.background, d.face.background),
   };
   return d;

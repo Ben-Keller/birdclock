@@ -254,19 +254,20 @@ test('uploaded rectangular artwork downloads and travels in a JSON backup', asyn
   ).toContainText('My custom bird');
 });
 
-test('name, wood and bird swaps remain editable and recover on refresh', async ({
+test('wood changes support undo and bird swaps recover on refresh', async ({
   page,
 }) => {
-  await page.getByRole('textbox', { name: 'Design name' }).fill('Autumn birds');
-  await page.getByRole('textbox', { name: 'Design name' }).press('Tab');
-  await page.getByRole('button', { name: 'Undo last change' }).click();
-  await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
-    'Twelve woodland hours',
-  );
-  await page.getByRole('button', { name: 'Redo last change' }).click();
   await page
     .getByRole('button', { name: 'Choose Mahogany for hour 3' })
     .click();
+  await page.getByRole('button', { name: 'Undo last change' }).click();
+  await expect(
+    page.getByRole('button', { name: 'Choose Maple for hour 3' }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Redo last change' }).click();
+  await expect(
+    page.getByRole('button', { name: 'Choose Mahogany for hour 3' }),
+  ).toHaveAttribute('aria-pressed', 'true');
   await page.getByRole('button', { name: 'Change bird for hour 3' }).click();
   await page
     .getByRole('button', { name: 'Choose Common loon', exact: true })
@@ -276,8 +277,9 @@ test('name, wood and bird swaps remain editable and recover on refresh', async (
     /Osprey/,
   );
   await page.reload();
-  await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
-    'Autumn birds',
+  await expect(page.locator('#clock [data-hour="8"]')).toHaveAttribute(
+    'aria-label',
+    /Osprey/,
   );
   await expect(
     page.getByRole('button', { name: 'Choose Mahogany for hour 3' }),
@@ -301,9 +303,8 @@ test('opening a shared link keeps the previous draft available through undo', as
   page,
 }) => {
   await page
-    .getByRole('textbox', { name: 'Design name' })
-    .fill('My earlier clock');
-  await page.getByRole('textbox', { name: 'Design name' }).press('Tab');
+    .getByRole('button', { name: 'Choose Mahogany for hour 3' })
+    .click();
   const shared = await page.evaluate(async () => {
     const { defaultConfig, encodeConfig } = await import('/src/model.js');
     const config = defaultConfig();
@@ -312,20 +313,20 @@ test('opening a shared link keeps the previous draft available through undo', as
   });
   await page.goto('about:blank');
   await page.goto(`/#design=${shared}`);
-  await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
-    'Shared birds',
-  );
+  await expect(
+    page.getByRole('button', { name: 'Choose Maple for hour 3' }),
+  ).toHaveAttribute('aria-pressed', 'true');
   await expect(
     page.getByRole('button', { name: 'Undo last change' }),
   ).toBeEnabled();
   await page.getByRole('button', { name: 'Undo last change' }).click();
-  await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
-    'My earlier clock',
-  );
+  await expect(
+    page.getByRole('button', { name: 'Choose Mahogany for hour 3' }),
+  ).toHaveAttribute('aria-pressed', 'true');
   await page.reload();
-  await expect(page.getByRole('textbox', { name: 'Design name' })).toHaveValue(
-    'My earlier clock',
-  );
+  await expect(
+    page.getByRole('button', { name: 'Choose Mahogany for hour 3' }),
+  ).toHaveAttribute('aria-pressed', 'true');
   expect(
     await page.evaluate(() => localStorage.getItem('woodland-hours.saved.v1')),
   ).toBeNull();
@@ -393,13 +394,8 @@ test('desktop preview, dialog keyboard focus and fullscreen live hands work toge
   await expect(
     page.getByRole('button', { name: 'Download bird', exact: true }),
   ).toBeFocused();
-  await page.getByRole('tab', { name: 'The details' }).click();
-  await page.getByRole('checkbox', { name: 'Use the current time' }).check();
-  await page
-    .getByRole('combobox', { name: 'Second hand' })
-    .selectOption('true');
   await page.getByRole('button', { name: 'View clock fullscreen' }).click();
-  const hand = page.locator('.fullscreen-clock .clock-hands path').nth(2);
+  const hand = page.locator('.fullscreen-clock .clock-hands path').nth(1);
   const before = await hand.getAttribute('transform');
   await expect.poll(() => hand.getAttribute('transform')).not.toBe(before);
 });

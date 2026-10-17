@@ -76,10 +76,14 @@ test('imports normalize bounds and reject unsafe artwork', () => {
   c.slices[0].x = 10000;
   c.face.handColor = 'url(javascript:alert(1))';
   c.face.time = '99:99';
+  c.face.hands = false;
+  c.face.live = false;
   const v = validateConfig(c, ids);
   assert.equal(v.slices[0].x, 65);
   assert.equal(v.face.handColor, defaultConfig().face.handColor);
   assert.equal(v.face.time, '10:05');
+  assert.equal(v.face.hands, true);
+  assert.equal(v.face.live, true);
   c.customBirds = [
     { id: 'custom-1', asset: 'https://untrusted.example/bird.svg' },
   ];
@@ -128,10 +132,10 @@ test('SVGs have 12 editable hours and isolated pattern/filter IDs', () => {
   assert.ok(second.every((id) => !first.has(id)));
   for (const m of a.matchAll(/url\(#([^)]+)\)/g))
     assert.ok(first.has(m[1]), m[1]);
-  assert.match(
-    handsMarkup(c.face, new Date(), 'test-'),
-    /url\(#test-handShadow\)/,
-  );
+  const hands = handsMarkup(c.face, new Date(2026, 9, 17, 10, 15, 30), 'test-');
+  assert.match(hands, /url\(#test-handShadow\)/);
+  assert.match(hands, /rotate\(307\.5 520 520\)/);
+  assert.match(hands, /rotate\(93 520 520\)/);
 });
 test('catalogue and packaged textures/fonts are complete local assets', () => {
   assert.equal(birds.length, 32);
