@@ -126,7 +126,14 @@ for (const source of ['default', 'saved', 'shared']) {
       const expected =
         source === 'default'
           ? []
-          : config.slices.map((slice) => `${slice.bird}.webp`);
+          : config.slices
+              .filter(
+                (slice) =>
+                  !defaultConfig().slices.some(
+                    (initial) => initial.bird === slice.bird,
+                  ),
+              )
+              .map((slice) => `${slice.bird}.webp`);
       expect([...requests].sort()).toEqual(expected.sort());
       await expect(page.locator('#clock [data-hour="0"]')).toHaveAttribute(
         'aria-label',

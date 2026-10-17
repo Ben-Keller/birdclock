@@ -37,7 +37,7 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 - Automatic session and local-browser saving, portable JSON import/export, configuration links, and 2,400 px PNG image export.
 - Individual bird downloads in PNG, JPEG, WebP, and SVG; ZIP collections for the birds on your clock or the entire library, including uploaded artwork.
 
-The original arrangement keeps Osprey at 3 and Common loon at 9. The later twelve-bird list is the default; Mourning dove is available in the expanded library.
+The default arrangement keeps Osprey at 3 and Common loon at 9, with Wood duck at 5 and Mourning dove at 7, both on Maple. Pileated woodpecker occupies hour 11 after swapping with Wood duck.
 
 ## Explore the birds
 

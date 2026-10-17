@@ -168,19 +168,20 @@ test('combined library filters and normalized search preserve the clock when dow
   await page.getByRole('button', { name: 'Change bird for hour 3' }).click();
   await page
     .getByRole('combobox', { name: 'Bird group' })
-    .selectOption('Songbirds');
+    .selectOption('Waterbirds');
   await page
     .getByRole('combobox', { name: 'Region', exact: true })
-    .selectOption('New Zealand');
-  await expect(page.locator('.bird-card')).toHaveCount(3);
+    .selectOption('North America');
+  await expect(page.locator('.bird-card')).toHaveCount(4);
   await page
     .getByRole('combobox', { name: 'On your clock' })
     .selectOption('used');
-  await expect(page.locator('.bird-card')).toHaveCount(1);
-  await expect(page.locator('.bird-card')).toContainText(
-    'New Zealand bellbird',
-  );
-  await page.getByRole('searchbox', { name: 'Search birds' }).fill('tui');
+  await expect(page.locator('.bird-card')).toHaveCount(2);
+  await expect(page.locator('.bird-card')).toContainText([
+    'Common loon',
+    'Wood duck',
+  ]);
+  await page.getByRole('searchbox', { name: 'Search birds' }).fill('mallard');
   await expect(page.locator('.bird-card')).toHaveCount(0);
   await page
     .locator('.empty-state')
@@ -713,14 +714,16 @@ test('clock tooltips support hover, keyboard navigation and dismissal', async ({
   await expect(tooltip).toBeHidden();
   await expect(page.locator('#clock [data-hour="3"]')).toBeFocused();
   await page.keyboard.press('ArrowRight');
-  await expect(tooltip).toContainText('5 o’clock: Pileated woodpecker');
+  await expect(tooltip).toContainText('5 o’clock: Wood duck');
   expect(
     await page.evaluate(() => localStorage.getItem('woodland-hours.draft.v1')),
   ).toBe(draft);
 
-  await page.getByRole('button', { name: 'Choose Maple for hour 5' }).click();
+  await page
+    .getByRole('button', { name: 'Choose Mahogany for hour 5' })
+    .click();
   await page.locator('#clock [data-hour="4"] .slice-hit').hover();
-  await expect(tooltip).toHaveText('5 o’clock: Pileated woodpecker, Maple');
+  await expect(tooltip).toHaveText('5 o’clock: Wood duck, Mahogany');
   await page.getByRole('button', { name: 'Save & share' }).click();
   await expect(tooltip).toBeHidden();
   await page.getByRole('button', { name: 'Close dialog' }).click();
