@@ -29,16 +29,24 @@ Raw results: [before](performance/2026-10-17-before.json) and [after](performanc
 
 A separate Chrome DevTools trace of the old live site, using its Slow 4G preset and 4× CPU throttling, measured LCP at 5.25 s and a critical dependency chain ending at 8.47 s. The clock texture was not requested until 3.47 s. With the same DevTools preset after deployment, LCP was 1.86 s and the critical chain ended at 3.57 s. These settings differ from the repeatable script, so the two comparisons should not be mixed. The remaining stylesheet was assigned zero estimated render-blocking savings; a 60 ms unattributed reflow had no identified application call site.
 
+## Clock thumbnail follow-up
+
+The first pass's clock-ready metric measured SVG controls being inserted, not the completion of the bird image downloads. That distinction hid a visible delay after the empty clock appeared.
+
+The clock, selected-bird card, and picker now use dedicated 128 px WebPs, each under 7 kB. The default twelve total 59,078 bytes instead of 184,814 bytes (68% smaller). A small build-inlined script starts requests directly from the document head, using the same configuration validation for default, saved, and shared designs. It requests only the current twelve catalogue birds. Custom artwork stays embedded in its saved design. Fullscreen still uses larger previews; downloads and PNG exports keep original artwork.
+
+The benchmark now records the first clock-artwork request, the last image response, and the later of image completion and SVG insertion. The last metric indicates when both the clock DOM and downloaded artwork are available; it is not a directly measured paint or decode event. A normal LCP measurement alone does not tell us when every SVG bird has appeared.
+
 ## Changes
 
 - Bundled and minified startup JavaScript, with the catalogue included and shared modules preloaded. Optional field-guide and bird-download code loads when opened.
 - Minified CSS and content-hashed script/style URLs, so updated code does not reuse an old cached asset URL.
-- 256 px display illustrations and 384 px variants for enlarged birds. Original bird and wood files remain unchanged and are used for downloads and 2,400 px PNG exports.
+- 128 px clock/picker thumbnails (under 7 kB each); 256/384 px previews load in fullscreen. Original bird and wood files remain unchanged and are used for downloads and 2,400 px PNG exports.
 - Compact wood previews, early texture preloads, and a 96 px logo instead of loading a full-size illustration in the header.
 - WOFF2 fonts with separate Latin and extended-Latin subsets; extended glyphs load when visible.
 - Reserved clock space during startup and selection updates that preserve the rendered SVG instead of rebuilding it.
 - Recovery UI for failed optional module downloads, with saved designs retained through a reload.
 
-The browser suite enforces a 450 kB startup resource budget even on the uncompressed development server, verifies that original images/fonts and optional panel assets are absent from startup requests, and checks that exports retain original dimensions and WebP bytes. `npm run build:check` verifies that committed production files match their source.
+The browser suite now enforces a 280 kB startup resource budget even on the uncompressed development server, verifies that original images/fonts and optional panel assets are absent from startup requests, and checks that exports retain original dimensions and WebP bytes. `npm run build:check` verifies that committed production files match their source.
 
 GitHub Pages controls its own HTTP caching headers (observed `max-age=600`). No service worker or extra hosting service is required.

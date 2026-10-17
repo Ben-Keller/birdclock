@@ -146,6 +146,11 @@ test('catalogue and packaged textures/fonts are complete local assets', () => {
     assert.ok(
       fs.statSync(new URL('../' + b.asset, import.meta.url)).size > 1000,
     );
+    const thumbnail = fs.readFileSync(
+      new URL('../' + b.clockPreview, import.meta.url),
+    );
+    assert.equal(thumbnail.subarray(8, 12).toString(), 'WEBP');
+    assert.ok(thumbnail.length > 0 && thumbnail.length < 7000, b.id);
     for (const preview of [b.preview, b.previewLarge]) {
       assert.ok(preview.startsWith('assets/previews/'));
       const bytes = fs.readFileSync(new URL('../' + preview, import.meta.url));

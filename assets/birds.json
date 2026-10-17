@@ -7,7 +7,8 @@
     "group": "Woodland",
     "asset": "assets/birds/northern-flicker.webp",
     "preview": "assets/previews/birds/northern-flicker.webp",
-    "previewLarge": "assets/previews/birds-large/northern-flicker.webp"
+    "previewLarge": "assets/previews/birds-large/northern-flicker.webp",
+    "clockPreview": "assets/previews/clock/northern-flicker.webp"
   },
   {
     "id": "american-goldfinch",
@@ -17,7 +18,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/american-goldfinch.webp",
     "preview": "assets/previews/birds/american-goldfinch.webp",
-    "previewLarge": "assets/previews/birds-large/american-goldfinch.webp"
+    "previewLarge": "assets/previews/birds-large/american-goldfinch.webp",
+    "clockPreview": "assets/previews/clock/american-goldfinch.webp"
   },
   {
     "id": "osprey",
@@ -27,7 +29,8 @@
     "group": "Raptors",
     "asset": "assets/birds/osprey.webp",
     "preview": "assets/previews/birds/osprey.webp",
-    "previewLarge": "assets/previews/birds-large/osprey.webp"
+    "previewLarge": "assets/previews/birds-large/osprey.webp",
+    "clockPreview": "assets/previews/clock/osprey.webp"
   },
   {
     "id": "annas-hummingbird",
@@ -37,7 +40,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/annas-hummingbird.webp",
     "preview": "assets/previews/birds/annas-hummingbird.webp",
-    "previewLarge": "assets/previews/birds-large/annas-hummingbird.webp"
+    "previewLarge": "assets/previews/birds-large/annas-hummingbird.webp",
+    "clockPreview": "assets/previews/clock/annas-hummingbird.webp"
   },
   {
     "id": "pileated-woodpecker",
@@ -47,7 +51,8 @@
     "group": "Woodland",
     "asset": "assets/birds/pileated-woodpecker.webp",
     "preview": "assets/previews/birds/pileated-woodpecker.webp",
-    "previewLarge": "assets/previews/birds-large/pileated-woodpecker.webp"
+    "previewLarge": "assets/previews/birds-large/pileated-woodpecker.webp",
+    "clockPreview": "assets/previews/clock/pileated-woodpecker.webp"
   },
   {
     "id": "bittern",
@@ -57,7 +62,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/bittern.webp",
     "preview": "assets/previews/birds/bittern.webp",
-    "previewLarge": "assets/previews/birds-large/bittern.webp"
+    "previewLarge": "assets/previews/birds-large/bittern.webp",
+    "clockPreview": "assets/previews/clock/bittern.webp"
   },
   {
     "id": "bellbird",
@@ -67,7 +73,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/bellbird.webp",
     "preview": "assets/previews/birds/bellbird.webp",
-    "previewLarge": "assets/previews/birds-large/bellbird.webp"
+    "previewLarge": "assets/previews/birds-large/bellbird.webp",
+    "clockPreview": "assets/previews/clock/bellbird.webp"
   },
   {
     "id": "kokako",
@@ -77,7 +84,8 @@
     "group": "Woodland",
     "asset": "assets/birds/kokako.webp",
     "preview": "assets/previews/birds/kokako.webp",
-    "previewLarge": "assets/previews/birds-large/kokako.webp"
+    "previewLarge": "assets/previews/birds-large/kokako.webp",
+    "clockPreview": "assets/previews/clock/kokako.webp"
   },
   {
     "id": "common-loon",
@@ -87,7 +95,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/common-loon.webp",
     "preview": "assets/previews/birds/common-loon.webp",
-    "previewLarge": "assets/previews/birds-large/common-loon.webp"
+    "previewLarge": "assets/previews/birds-large/common-loon.webp",
+    "clockPreview": "assets/previews/clock/common-loon.webp"
   },
   {
     "id": "bald-eagle",
@@ -97,7 +106,8 @@
     "group": "Raptors",
     "asset": "assets/birds/bald-eagle.webp",
     "preview": "assets/previews/birds/bald-eagle.webp",
-    "previewLarge": "assets/previews/birds-large/bald-eagle.webp"
+    "previewLarge": "assets/previews/birds-large/bald-eagle.webp",
+    "clockPreview": "assets/previews/clock/bald-eagle.webp"
   },
   {
     "id": "wood-duck",
@@ -107,7 +117,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/wood-duck.webp",
     "preview": "assets/previews/birds/wood-duck.webp",
-    "previewLarge": "assets/previews/birds-large/wood-duck.webp"
+    "previewLarge": "assets/previews/birds-large/wood-duck.webp",
+    "clockPreview": "assets/previews/clock/wood-duck.webp"
   },
   {
     "id": "great-horned-owl",
@@ -117,7 +128,8 @@
     "group": "Raptors",
     "asset": "assets/birds/great-horned-owl.webp",
     "preview": "assets/previews/birds/great-horned-owl.webp",
-    "previewLarge": "assets/previews/birds-large/great-horned-owl.webp"
+    "previewLarge": "assets/previews/birds-large/great-horned-owl.webp",
+    "clockPreview": "assets/previews/clock/great-horned-owl.webp"
   },
   {
     "id": "northern-cardinal",
@@ -127,7 +139,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/northern-cardinal.webp",
     "preview": "assets/previews/birds/northern-cardinal.webp",
-    "previewLarge": "assets/previews/birds-large/northern-cardinal.webp"
+    "previewLarge": "assets/previews/birds-large/northern-cardinal.webp",
+    "clockPreview": "assets/previews/clock/northern-cardinal.webp"
   },
   {
     "id": "blue-jay",
@@ -137,7 +150,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/blue-jay.webp",
     "preview": "assets/previews/birds/blue-jay.webp",
-    "previewLarge": "assets/previews/birds-large/blue-jay.webp"
+    "previewLarge": "assets/previews/birds-large/blue-jay.webp",
+    "clockPreview": "assets/previews/clock/blue-jay.webp"
   },
   {
     "id": "mourning-dove",
@@ -147,7 +161,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/mourning-dove.webp",
     "preview": "assets/previews/birds/mourning-dove.webp",
-    "previewLarge": "assets/previews/birds-large/mourning-dove.webp"
+    "previewLarge": "assets/previews/birds-large/mourning-dove.webp",
+    "clockPreview": "assets/previews/clock/mourning-dove.webp"
   },
   {
     "id": "black-capped-chickadee",
@@ -157,7 +172,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/black-capped-chickadee.webp",
     "preview": "assets/previews/birds/black-capped-chickadee.webp",
-    "previewLarge": "assets/previews/birds-large/black-capped-chickadee.webp"
+    "previewLarge": "assets/previews/birds-large/black-capped-chickadee.webp",
+    "clockPreview": "assets/previews/clock/black-capped-chickadee.webp"
   },
   {
     "id": "american-robin",
@@ -167,7 +183,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/american-robin.webp",
     "preview": "assets/previews/birds/american-robin.webp",
-    "previewLarge": "assets/previews/birds-large/american-robin.webp"
+    "previewLarge": "assets/previews/birds-large/american-robin.webp",
+    "clockPreview": "assets/previews/clock/american-robin.webp"
   },
   {
     "id": "eastern-bluebird",
@@ -177,7 +194,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/eastern-bluebird.webp",
     "preview": "assets/previews/birds/eastern-bluebird.webp",
-    "previewLarge": "assets/previews/birds-large/eastern-bluebird.webp"
+    "previewLarge": "assets/previews/birds-large/eastern-bluebird.webp",
+    "clockPreview": "assets/previews/clock/eastern-bluebird.webp"
   },
   {
     "id": "cedar-waxwing",
@@ -187,7 +205,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/cedar-waxwing.webp",
     "preview": "assets/previews/birds/cedar-waxwing.webp",
-    "previewLarge": "assets/previews/birds-large/cedar-waxwing.webp"
+    "previewLarge": "assets/previews/birds-large/cedar-waxwing.webp",
+    "clockPreview": "assets/previews/clock/cedar-waxwing.webp"
   },
   {
     "id": "tufted-titmouse",
@@ -197,7 +216,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/tufted-titmouse.webp",
     "preview": "assets/previews/birds/tufted-titmouse.webp",
-    "previewLarge": "assets/previews/birds-large/tufted-titmouse.webp"
+    "previewLarge": "assets/previews/birds-large/tufted-titmouse.webp",
+    "clockPreview": "assets/previews/clock/tufted-titmouse.webp"
   },
   {
     "id": "red-winged-blackbird",
@@ -207,7 +227,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/red-winged-blackbird.webp",
     "preview": "assets/previews/birds/red-winged-blackbird.webp",
-    "previewLarge": "assets/previews/birds-large/red-winged-blackbird.webp"
+    "previewLarge": "assets/previews/birds-large/red-winged-blackbird.webp",
+    "clockPreview": "assets/previews/clock/red-winged-blackbird.webp"
   },
   {
     "id": "baltimore-oriole",
@@ -217,7 +238,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/baltimore-oriole.webp",
     "preview": "assets/previews/birds/baltimore-oriole.webp",
-    "previewLarge": "assets/previews/birds-large/baltimore-oriole.webp"
+    "previewLarge": "assets/previews/birds-large/baltimore-oriole.webp",
+    "clockPreview": "assets/previews/clock/baltimore-oriole.webp"
   },
   {
     "id": "rose-breasted-grosbeak",
@@ -227,7 +249,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/rose-breasted-grosbeak.webp",
     "preview": "assets/previews/birds/rose-breasted-grosbeak.webp",
-    "previewLarge": "assets/previews/birds-large/rose-breasted-grosbeak.webp"
+    "previewLarge": "assets/previews/birds-large/rose-breasted-grosbeak.webp",
+    "clockPreview": "assets/previews/clock/rose-breasted-grosbeak.webp"
   },
   {
     "id": "american-kestrel",
@@ -237,7 +260,8 @@
     "group": "Raptors",
     "asset": "assets/birds/american-kestrel.webp",
     "preview": "assets/previews/birds/american-kestrel.webp",
-    "previewLarge": "assets/previews/birds-large/american-kestrel.webp"
+    "previewLarge": "assets/previews/birds-large/american-kestrel.webp",
+    "clockPreview": "assets/previews/clock/american-kestrel.webp"
   },
   {
     "id": "peregrine-falcon",
@@ -247,7 +271,8 @@
     "group": "Raptors",
     "asset": "assets/birds/peregrine-falcon.webp",
     "preview": "assets/previews/birds/peregrine-falcon.webp",
-    "previewLarge": "assets/previews/birds-large/peregrine-falcon.webp"
+    "previewLarge": "assets/previews/birds-large/peregrine-falcon.webp",
+    "clockPreview": "assets/previews/clock/peregrine-falcon.webp"
   },
   {
     "id": "barn-owl",
@@ -257,7 +282,8 @@
     "group": "Raptors",
     "asset": "assets/birds/barn-owl.webp",
     "preview": "assets/previews/birds/barn-owl.webp",
-    "previewLarge": "assets/previews/birds-large/barn-owl.webp"
+    "previewLarge": "assets/previews/birds-large/barn-owl.webp",
+    "clockPreview": "assets/previews/clock/barn-owl.webp"
   },
   {
     "id": "snowy-owl",
@@ -267,7 +293,8 @@
     "group": "Raptors",
     "asset": "assets/birds/snowy-owl.webp",
     "preview": "assets/previews/birds/snowy-owl.webp",
-    "previewLarge": "assets/previews/birds-large/snowy-owl.webp"
+    "previewLarge": "assets/previews/birds-large/snowy-owl.webp",
+    "clockPreview": "assets/previews/clock/snowy-owl.webp"
   },
   {
     "id": "common-raven",
@@ -277,7 +304,8 @@
     "group": "Woodland",
     "asset": "assets/birds/common-raven.webp",
     "preview": "assets/previews/birds/common-raven.webp",
-    "previewLarge": "assets/previews/birds-large/common-raven.webp"
+    "previewLarge": "assets/previews/birds-large/common-raven.webp",
+    "clockPreview": "assets/previews/clock/common-raven.webp"
   },
   {
     "id": "belted-kingfisher",
@@ -287,7 +315,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/belted-kingfisher.webp",
     "preview": "assets/previews/birds/belted-kingfisher.webp",
-    "previewLarge": "assets/previews/birds-large/belted-kingfisher.webp"
+    "previewLarge": "assets/previews/birds-large/belted-kingfisher.webp",
+    "clockPreview": "assets/previews/clock/belted-kingfisher.webp"
   },
   {
     "id": "atlantic-puffin",
@@ -297,7 +326,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/atlantic-puffin.webp",
     "preview": "assets/previews/birds/atlantic-puffin.webp",
-    "previewLarge": "assets/previews/birds-large/atlantic-puffin.webp"
+    "previewLarge": "assets/previews/birds-large/atlantic-puffin.webp",
+    "clockPreview": "assets/previews/clock/atlantic-puffin.webp"
   },
   {
     "id": "mallard",
@@ -307,7 +337,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/mallard.webp",
     "preview": "assets/previews/birds/mallard.webp",
-    "previewLarge": "assets/previews/birds-large/mallard.webp"
+    "previewLarge": "assets/previews/birds-large/mallard.webp",
+    "clockPreview": "assets/previews/clock/mallard.webp"
   },
   {
     "id": "tui",
@@ -317,7 +348,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/tui.webp",
     "preview": "assets/previews/birds/tui.webp",
-    "previewLarge": "assets/previews/birds-large/tui.webp"
+    "previewLarge": "assets/previews/birds-large/tui.webp",
+    "clockPreview": "assets/previews/clock/tui.webp"
   },
   {
     "id": "european-robin",
@@ -327,7 +359,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/european-robin.webp",
     "preview": "assets/previews/birds/european-robin.webp",
-    "previewLarge": "assets/previews/birds-large/european-robin.webp"
+    "previewLarge": "assets/previews/birds-large/european-robin.webp",
+    "clockPreview": "assets/previews/clock/european-robin.webp"
   },
   {
     "id": "eurasian-blue-tit",
@@ -337,7 +370,8 @@
     "group": "Songbirds",
     "asset": "assets/birds/eurasian-blue-tit.webp",
     "preview": "assets/previews/birds/eurasian-blue-tit.webp",
-    "previewLarge": "assets/previews/birds-large/eurasian-blue-tit.webp"
+    "previewLarge": "assets/previews/birds-large/eurasian-blue-tit.webp",
+    "clockPreview": "assets/previews/clock/eurasian-blue-tit.webp"
   },
   {
     "id": "common-kingfisher",
@@ -347,7 +381,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/common-kingfisher.webp",
     "preview": "assets/previews/birds/common-kingfisher.webp",
-    "previewLarge": "assets/previews/birds-large/common-kingfisher.webp"
+    "previewLarge": "assets/previews/birds-large/common-kingfisher.webp",
+    "clockPreview": "assets/previews/clock/common-kingfisher.webp"
   },
   {
     "id": "eurasian-hoopoe",
@@ -357,7 +392,8 @@
     "group": "Woodland",
     "asset": "assets/birds/eurasian-hoopoe.webp",
     "preview": "assets/previews/birds/eurasian-hoopoe.webp",
-    "previewLarge": "assets/previews/birds-large/eurasian-hoopoe.webp"
+    "previewLarge": "assets/previews/birds-large/eurasian-hoopoe.webp",
+    "clockPreview": "assets/previews/clock/eurasian-hoopoe.webp"
   },
   {
     "id": "lilac-breasted-roller",
@@ -367,7 +403,8 @@
     "group": "Woodland",
     "asset": "assets/birds/lilac-breasted-roller.webp",
     "preview": "assets/previews/birds/lilac-breasted-roller.webp",
-    "previewLarge": "assets/previews/birds-large/lilac-breasted-roller.webp"
+    "previewLarge": "assets/previews/birds-large/lilac-breasted-roller.webp",
+    "clockPreview": "assets/previews/clock/lilac-breasted-roller.webp"
   },
   {
     "id": "african-grey-parrot",
@@ -377,7 +414,8 @@
     "group": "Parrots",
     "asset": "assets/birds/african-grey-parrot.webp",
     "preview": "assets/previews/birds/african-grey-parrot.webp",
-    "previewLarge": "assets/previews/birds-large/african-grey-parrot.webp"
+    "previewLarge": "assets/previews/birds-large/african-grey-parrot.webp",
+    "clockPreview": "assets/previews/clock/african-grey-parrot.webp"
   },
   {
     "id": "grey-crowned-crane",
@@ -387,7 +425,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/grey-crowned-crane.webp",
     "preview": "assets/previews/birds/grey-crowned-crane.webp",
-    "previewLarge": "assets/previews/birds-large/grey-crowned-crane.webp"
+    "previewLarge": "assets/previews/birds-large/grey-crowned-crane.webp",
+    "clockPreview": "assets/previews/clock/grey-crowned-crane.webp"
   },
   {
     "id": "secretarybird",
@@ -397,7 +436,8 @@
     "group": "Raptors",
     "asset": "assets/birds/secretarybird.webp",
     "preview": "assets/previews/birds/secretarybird.webp",
-    "previewLarge": "assets/previews/birds-large/secretarybird.webp"
+    "previewLarge": "assets/previews/birds-large/secretarybird.webp",
+    "clockPreview": "assets/previews/clock/secretarybird.webp"
   },
   {
     "id": "mandarin-duck",
@@ -407,7 +447,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/mandarin-duck.webp",
     "preview": "assets/previews/birds/mandarin-duck.webp",
-    "previewLarge": "assets/previews/birds-large/mandarin-duck.webp"
+    "previewLarge": "assets/previews/birds-large/mandarin-duck.webp",
+    "clockPreview": "assets/previews/clock/mandarin-duck.webp"
   },
   {
     "id": "red-crowned-crane",
@@ -417,7 +458,8 @@
     "group": "Waterbirds",
     "asset": "assets/birds/red-crowned-crane.webp",
     "preview": "assets/previews/birds/red-crowned-crane.webp",
-    "previewLarge": "assets/previews/birds-large/red-crowned-crane.webp"
+    "previewLarge": "assets/previews/birds-large/red-crowned-crane.webp",
+    "clockPreview": "assets/previews/clock/red-crowned-crane.webp"
   },
   {
     "id": "indian-peafowl",
@@ -427,7 +469,8 @@
     "group": "Gamebirds",
     "asset": "assets/birds/indian-peafowl.webp",
     "preview": "assets/previews/birds/indian-peafowl.webp",
-    "previewLarge": "assets/previews/birds-large/indian-peafowl.webp"
+    "previewLarge": "assets/previews/birds-large/indian-peafowl.webp",
+    "clockPreview": "assets/previews/clock/indian-peafowl.webp"
   },
   {
     "id": "golden-pheasant",
@@ -437,7 +480,8 @@
     "group": "Gamebirds",
     "asset": "assets/birds/golden-pheasant.webp",
     "preview": "assets/previews/birds/golden-pheasant.webp",
-    "previewLarge": "assets/previews/birds-large/golden-pheasant.webp"
+    "previewLarge": "assets/previews/birds-large/golden-pheasant.webp",
+    "clockPreview": "assets/previews/clock/golden-pheasant.webp"
   },
   {
     "id": "rainbow-lorikeet",
@@ -447,7 +491,8 @@
     "group": "Parrots",
     "asset": "assets/birds/rainbow-lorikeet.webp",
     "preview": "assets/previews/birds/rainbow-lorikeet.webp",
-    "previewLarge": "assets/previews/birds-large/rainbow-lorikeet.webp"
+    "previewLarge": "assets/previews/birds-large/rainbow-lorikeet.webp",
+    "clockPreview": "assets/previews/clock/rainbow-lorikeet.webp"
   },
   {
     "id": "laughing-kookaburra",
@@ -457,7 +502,8 @@
     "group": "Woodland",
     "asset": "assets/birds/laughing-kookaburra.webp",
     "preview": "assets/previews/birds/laughing-kookaburra.webp",
-    "previewLarge": "assets/previews/birds-large/laughing-kookaburra.webp"
+    "previewLarge": "assets/previews/birds-large/laughing-kookaburra.webp",
+    "clockPreview": "assets/previews/clock/laughing-kookaburra.webp"
   },
   {
     "id": "galah",
@@ -467,7 +513,8 @@
     "group": "Parrots",
     "asset": "assets/birds/galah.webp",
     "preview": "assets/previews/birds/galah.webp",
-    "previewLarge": "assets/previews/birds-large/galah.webp"
+    "previewLarge": "assets/previews/birds-large/galah.webp",
+    "clockPreview": "assets/previews/clock/galah.webp"
   },
   {
     "id": "new-zealand-fantail",
@@ -477,6 +524,7 @@
     "group": "Songbirds",
     "asset": "assets/birds/new-zealand-fantail.webp",
     "preview": "assets/previews/birds/new-zealand-fantail.webp",
-    "previewLarge": "assets/previews/birds-large/new-zealand-fantail.webp"
+    "previewLarge": "assets/previews/birds-large/new-zealand-fantail.webp",
+    "clockPreview": "assets/previews/clock/new-zealand-fantail.webp"
   }
 ]

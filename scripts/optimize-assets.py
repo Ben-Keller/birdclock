@@ -12,17 +12,19 @@ ROOT = Path(__file__).resolve().parents[1]
 PREVIEWS = ROOT / 'assets/previews'
 
 
-def preview(source, target, width, quality=80):
+def preview(source, target, width, quality=80, method=4):
     target.parent.mkdir(parents=True, exist_ok=True)
     with Image.open(source) as image:
         image = image.convert('RGBA')
         image.thumbnail((width, width), Image.Resampling.LANCZOS)
-        image.save(target, 'WEBP', quality=quality, method=4)
+        image.save(target, 'WEBP', quality=quality, method=method)
 
 
 birds_path = ROOT / 'assets/birds.json'
 birds = json.loads(birds_path.read_text())
 for bird in birds:
+    bird['clockPreview'] = f"assets/previews/clock/{bird['id']}.webp"
+    preview(ROOT / bird['asset'], ROOT / bird['clockPreview'], 128, 65, 6)
     bird['preview'] = f"assets/previews/birds/{bird['id']}.webp"
     preview(ROOT / bird['asset'], ROOT / bird['preview'], 256)
     bird['previewLarge'] = f"assets/previews/birds-large/{bird['id']}.webp"

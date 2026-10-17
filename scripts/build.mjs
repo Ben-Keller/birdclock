@@ -48,7 +48,29 @@ const css = (
 ).code;
 const cssName = `dist/styles-${createHash('sha256').update(css).digest('hex').slice(0, 12)}.css`;
 const template = await readFile(path.join(root, 'src/index.html'), 'utf8');
+const catalogue = JSON.parse(
+  await readFile(path.join(root, 'assets/birds.json'), 'utf8'),
+);
+const artworkPreload = await build({
+  absWorkingDir: root,
+  entryPoints: ['src/preload.js'],
+  bundle: true,
+  format: 'iife',
+  target: 'es2022',
+  minify: true,
+  legalComments: 'none',
+  write: false,
+  define: {
+    CLOCK_THUMBNAILS: JSON.stringify(
+      Object.fromEntries(catalogue.map((bird) => [bird.id, bird.clockPreview])),
+    ),
+  },
+});
 const html = template
+  .replace(
+    '<!-- clock-artwork-preloads -->',
+    `<script>${artworkPreload.outputFiles[0].text.trim()}</script>`,
+  )
   .replace('href="styles.css"', `href="${cssName}"`)
   .replace('src="src/app.js"', `src="${entry}"`)
   .replace(

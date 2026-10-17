@@ -56,8 +56,28 @@ try {
     const result = await page.evaluate(() => {
       const resources = performance.getEntriesByType('resource');
       const navigation = performance.getEntriesByType('navigation')[0];
+      const birdURLs = new Set(
+        [...document.querySelectorAll('#clock .bird-image')].map(
+          (image) => new URL(image.getAttribute('href'), location.href).href,
+        ),
+      );
+      const birdResources = resources.filter((item) => birdURLs.has(item.name));
       return {
         ...window.loadMetrics,
+        clockWithArtworkReady: Math.max(
+          window.loadMetrics.clockReady,
+          ...birdResources.map((item) => item.responseEnd),
+        ),
+        clockArtworkDownloaded: Math.max(
+          ...birdResources.map((item) => item.responseEnd),
+        ),
+        clockArtworkBytes: birdResources.reduce(
+          (sum, item) => sum + item.encodedBodySize,
+          0,
+        ),
+        clockArtworkStart: Math.min(
+          ...birdResources.map((item) => item.startTime),
+        ),
         fcp: performance.getEntriesByName('first-contentful-paint')[0]
           ?.startTime,
         load: navigation.loadEventEnd,
@@ -65,11 +85,14 @@ try {
           navigation.transferSize +
           resources.reduce((sum, item) => sum + item.transferSize, 0),
         requests: resources.filter((item) => item.transferSize > 0).length + 1,
-        resources: resources.map(({ name, transferSize, responseEnd }) => ({
-          name,
-          transferSize,
-          responseEnd,
-        })),
+        resources: resources.map(
+          ({ name, transferSize, startTime, responseEnd }) => ({
+            name,
+            transferSize,
+            startTime,
+            responseEnd,
+          }),
+        ),
       };
     });
     runs.push(result);
@@ -83,6 +106,10 @@ try {
     'fcp',
     'lcp',
     'clockReady',
+    'clockWithArtworkReady',
+    'clockArtworkDownloaded',
+    'clockArtworkBytes',
+    'clockArtworkStart',
     'load',
     'bytes',
     'requests',

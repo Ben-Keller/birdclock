@@ -152,7 +152,7 @@ function renderPanel() {
         <button class="settings-randomize" data-action="shuffle-birds" aria-label="Randomize birds" title="Randomize all twelve birds">${controlIcon('shuffle')}<span>Randomize</span></button>
       </div>
         <button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}">
-          <img src="${esc(bird.preview || bird.asset)}" decoding="async" alt="${esc(bird.name)}">
+          <img src="${esc(bird.clockPreview || bird.preview || bird.asset)}" decoding="async" alt="${esc(bird.name)}">
           <span>
             <span class="name">${esc(bird.name)}</span>
             <span class="latin">${esc(bird.scientificName)}</span>
@@ -401,7 +401,7 @@ function renderBirdGrid() {
     ? birds
         .map((b) => {
           const used = config.slices.findIndex((s) => s.bird === b.id);
-          return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(b.preview || b.asset)}" alt="" loading="lazy" decoding="async" width="128" height="128"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button></article>`;
+          return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(b.clockPreview || b.preview || b.asset)}" alt="" loading="lazy" decoding="async" width="128" height="128"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button></article>`;
         })
         .join('')
     : '<div class="empty-state"><p>No birds match these filters.</p><button class="quiet-link" data-action="clear-bird-filters">Clear filters</button></div>';
