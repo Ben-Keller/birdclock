@@ -437,7 +437,7 @@ async function clockDraft(page) {
   );
 }
 
-test('reset view restores the original clock, keeps uploads and supports undo, redo and reload', async ({
+test('reset view preserves the customized design, uploaded birds and edit history', async ({
   page,
 }) => {
   const original = await clockDraft(page);
@@ -474,29 +474,37 @@ test('reset view restores the original clock, keeps uploads and supports undo, r
     page.getByRole('button', { name: 'Change bird for hour 3' }),
   ).toContainText('My bird');
   const customized = await clockDraft(page);
+  await page.locator('#clock-view').focus();
+  await page.locator('#clock-view').press('ArrowRight');
+  await page.locator('#clock-view').press('ArrowUp');
   await page.getByRole('button', { name: 'Reset view', exact: true }).click();
   const restored = await clockDraft(page);
-  expect(restored).toEqual({
-    ...original,
-    customBirds: customized.customBirds,
-  });
+  expect(restored).toEqual(customized);
+  expect(
+    await page
+      .locator('#clock')
+      .evaluate((el) => [
+        el.style.getPropertyValue('--view-pitch'),
+        el.style.getPropertyValue('--view-yaw'),
+      ]),
+  ).toEqual(['0deg', '0deg']);
   await expect(
     page.getByRole('button', { name: 'Reset view', exact: true }),
   ).toBeFocused();
   await expect(
     page.getByRole('button', { name: 'Change bird for hour 3' }),
-  ).toContainText('Osprey');
+  ).toContainText('My bird');
   await page.getByRole('button', { name: 'Undo last change' }).click();
-  expect(await clockDraft(page)).toEqual(customized);
+  expect(await clockDraft(page)).toEqual(original);
   await expect(
     page.getByRole('button', { name: 'Change bird for hour 3' }),
-  ).toContainText('My bird');
+  ).toContainText('Osprey');
   await page.getByRole('button', { name: 'Redo last change' }).click();
   expect(await clockDraft(page)).toEqual(restored);
   await page.reload();
   await expect(
     page.getByRole('button', { name: 'Change bird for hour 3' }),
-  ).toContainText('Osprey');
+  ).toContainText('My bird');
   expect(await clockDraft(page)).toEqual(restored);
   await page.getByRole('button', { name: 'Change bird for hour 3' }).click();
   await expect(

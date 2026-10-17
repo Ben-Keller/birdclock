@@ -16,12 +16,19 @@ import { openBirdDownloads } from './bird-downloads.js';
 import { attachClockTooltips } from './clock-tooltip.js';
 import { attachBirdDrag } from './clock-drag.js';
 import { openBirdExplorer } from './bird-explorer.js';
+import { attachClockView, clockViewMarkup } from './clock-view.js';
 const $ = (s, root = document) => root.querySelector(s),
   $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const clockTooltip = attachClockTooltips($('#clock'), $('#clock-tooltip'));
 const clockDrag = attachBirdDrag($('#clock'), {
   onStart: () => clockTooltip.hide(),
   onSwap: swapBirds,
+});
+const clockView = attachClockView($('#clock-view'), $('#clock'), {
+  onStart: () => {
+    clockDrag.cancel();
+    clockTooltip.hide();
+  },
 });
 const DRAFT = 'woodland-hours.draft.v1';
 let local, session;
@@ -42,6 +49,7 @@ let catalogue = [],
   future = [],
   rangeBefore = null,
   modalKind = '',
+  modalCleanup = null,
   lastFocus = null,
   toastTimer,
   libraryQuery = '',
@@ -100,10 +108,12 @@ function commit(fn, message) {
 }
 function renderClock() {
   clockDrag.cancel();
+  clockView.cancel();
   clockTooltip.hide();
   const wrap = $('#clock');
   const hadFocus = wrap.contains(document.activeElement);
-  wrap.innerHTML = clockSVG(config, allBirds(), { selected });
+  wrap.innerHTML = clockViewMarkup(config, allBirds(), { selected });
+  clockView.refresh();
   if (hadFocus)
     $(`[data-hour="${selected}"]`, wrap)?.focus({ preventScroll: true });
 }
@@ -246,7 +256,10 @@ function swapBirds(from, to) {
   );
 }
 function showModal(kind, html) {
+  modalCleanup?.();
+  modalCleanup = null;
   clockDrag.cancel();
+  clockView.cancel();
   clockTooltip.hide();
   if (!modal.open) lastFocus = document.activeElement;
   modalKind = kind;
@@ -261,6 +274,8 @@ function closeModal() {
   modal.close();
 }
 modal.addEventListener('close', () => {
+  modalCleanup?.();
+  modalCleanup = null;
   document.body.style.overflow = '';
   modalKind = '';
   delete modal.dataset.kind;
@@ -716,13 +731,8 @@ document.addEventListener('keydown', (e) => {
 $('#undo-button').onclick = undo;
 $('#redo-button').onclick = redo;
 $('#reset-view-button').onclick = () => {
-  commit(() => {
-    const customBirds = config.customBirds;
-    config = defaultConfig();
-    config.customBirds = customBirds;
-    selected = 2;
-  }, 'Original clock restored. You can undo this.');
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  clockView.reset();
+  clockTooltip.hide();
 };
 $('#export-button').onclick = openExport;
 function startFresh() {
@@ -737,8 +747,8 @@ function startFresh() {
     'Start fresh',
   );
 }
-$('#focus-button').onclick = () =>
-  openBirdExplorer({
+$('#focus-button').onclick = () => {
+  modalCleanup = openBirdExplorer({
     config,
     birds: allBirds(),
     selected,
@@ -746,6 +756,7 @@ $('#focus-button').onclick = () =>
     modalHeader,
     isOpen: () => modal.open && modalKind === 'fullscreen',
   });
+};
 async function init() {
   try {
     const r = await fetch('assets/birds.json');

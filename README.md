@@ -32,7 +32,7 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 - Keep adjacent woods different, including the 12-to-1 join. Manual selection adjusts as few other pieces as possible. Shuffle produces four pieces of each wood with no matching neighbors.
 - Twelve-sided triangular face or round face, hour-marker style, and wood-grain intensity. Clock hands always show the current local time, including when reopening older drafts or importing configurations.
 - One panel for hour placement, clock appearance, and randomizing birds or woods, plus undo/redo and a fullscreen clock view.
-- **Reset view**, beside fullscreen, restores the original twelve birds, woods, placements, and clock appearance. Uploaded artwork stays in the library; the reset can be undone or redone.
+- **Reset view**, beside fullscreen, returns the 3D clock to its straight-on viewpoint without changing the design. Drag the empty space around the clock to tilt it; focus the view and use arrow keys for the same control, or Home to reset. The board has textured wooden edges for both clock shapes. Camera angles are temporary and do not affect saves, shares, or image exports. **Save & share → Start fresh** still restores the original design.
 - A fullscreen bird field guide: choose a clock slice or browse all 48 species to read sourced descriptions, see occurrence maps, compare sizes, and explore habitat, diet, nesting, movement, taxonomy, and conservation.
 - Automatic session and local-browser saving, portable JSON import/export, configuration links, and 2,400 px PNG image export.
 - Individual bird downloads in PNG, JPEG, WebP, and SVG; ZIP collections for the birds on your clock or the entire library, including uploaded artwork.
@@ -41,7 +41,7 @@ The original arrangement keeps Osprey at 3 and Common loon at 9. The later twelv
 
 ## Explore the birds
 
-Open **View clock fullscreen**, then click a slice to open its bird profile. Arrow keys move between hours; Enter moves focus into the profile. Previous/next buttons and **Browse the collection** also work without changing your design or undo history. On phones, choosing a slice scrolls to the profile while the close button stays visible.
+Open **View clock fullscreen**, then click a slice to open its bird profile. Arrow keys move between hours; Enter moves focus into the profile. Previous/next buttons and **Browse the collection** also work without changing your design or undo history. Drag around the fullscreen clock to tilt it; its reset button returns to the front. On phones, choosing a slice scrolls to the profile while the close button stays visible.
 
 Each of the 48 species has an original short introduction and two-paragraph description, measurements where supported, natural-history facts, and linked sources with a review date. Length comparisons use the American robin as a reference (or American goldfinch for the robin). Conservation labels include their geographic scope and assessment system; regional labels are not presented as global IUCN assessments. Uploaded artwork has no invented species profile.
 
@@ -78,6 +78,7 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 - `src/app.js`: interaction, storage, importing, sharing, and exporting.
 - `src/model.js`: configuration validation and wood arrangement rules.
 - `src/clock.js`: reusable SVG clock renderer.
+- `src/clock-view.js`: 3D board geometry and pointer/keyboard perspective controls.
 - `src/bird-explorer.js`: fullscreen field guide, map views, comparisons, and profile loading.
 - `src/downloads.js`: shared image conversion, file downloads, and collection metadata.
 - `src/bird-downloads.js`: accessible bird download panel and progress/error handling.

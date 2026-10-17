@@ -14,7 +14,8 @@ export function attachClockTooltips(clock, tooltip) {
     if (
       !slice ||
       slice === dismissedSlice ||
-      clock.classList.contains('dragging-bird')
+      clock.classList.contains('dragging-bird') ||
+      clock.closest('.orbiting')
     )
       return;
     hide();

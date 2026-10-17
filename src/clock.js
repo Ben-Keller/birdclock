@@ -75,7 +75,7 @@ export function clockSVG(
     ),
   );
   parts.push(
-    `</defs>${background ? `<rect width="1040" height="1040" fill="${f.background}"/>` : ''}<path d="${outline(f.shape, 500 + f.rim)}" fill="${f.rimColor}" filter="url(#clockShadow)"/>`,
+    `</defs>${background ? `<rect width="1040" height="1040" fill="${f.background}"/>` : ''}<path class="clock-rim" d="${outline(f.shape, 500 + f.rim)}" fill="${f.rimColor}" filter="url(#clockShadow)"/>`,
   );
   config.slices.forEach((s, i) => {
     const w = WOODS.find((w) => w.id === s.wood),

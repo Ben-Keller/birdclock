@@ -1,4 +1,5 @@
-import { clockSVG, escapeHTML as esc } from './clock.js';
+import { escapeHTML as esc } from './clock.js';
+import { attachClockView, clockViewMarkup } from './clock-view.js';
 
 let profileRequest;
 export function loadBirdProfiles() {
@@ -130,7 +131,7 @@ export function openBirdExplorer({
   showModal(
     'fullscreen',
     `${modalHeader('', 'Bird field guide')}
-    <div class="bird-explorer"><div class="explorer-clock-pane"><p id="explorer-help">Choose a slice to meet its bird.<span class="sr-only"> Use arrow keys to move between hours. Press Enter to read the profile.</span></p><div class="fullscreen-clock">${clockSVG(config, birds, { selected, label: 'Explore the birds on your clock', helpId: 'explorer-help' })}</div><div class="explorer-navigation"><button class="mini-button" type="button" data-explorer-step="-1" aria-label="Previous bird on the clock">←</button><p id="explorer-current"></p><button class="mini-button" type="button" data-explorer-step="1" aria-label="Next bird on the clock">→</button></div><label class="explorer-browse">Browse the collection<select id="explorer-bird" aria-label="Browse the bird collection">${[
+    <div class="bird-explorer"><div class="explorer-clock-pane" tabindex="0" role="group" aria-label="Clock perspective" aria-describedby="explorer-help"><p id="explorer-help">Choose a slice to meet its bird.<span class="sr-only"> Drag the space around the clock to change perspective. With the view focused, arrow keys tilt and Home resets the view. With a slice focused, arrow keys move between hours and Enter opens its profile.</span></p><div class="fullscreen-clock">${clockViewMarkup(config, birds, { selected, label: 'Explore the birds on your clock', helpId: 'explorer-help' })}</div><div class="explorer-navigation"><button class="mini-button" type="button" data-explorer-step="-1" aria-label="Previous bird on the clock">←</button><p id="explorer-current"></p><button class="mini-button" type="button" data-explorer-step="1" aria-label="Next bird on the clock">→</button><button class="mini-button" type="button" data-view-reset aria-label="Reset clock perspective" title="Reset view">↺</button></div><span class="sr-only" data-view-status role="status"></span><label class="explorer-browse">Browse the collection<select id="explorer-bird" aria-label="Browse the bird collection">${[
       ...birds,
     ]
       .sort((a, b) => a.name.localeCompare(b.name))
@@ -144,6 +145,10 @@ export function openBirdExplorer({
   );
   const root = document.querySelector('.bird-explorer');
   const article = root.querySelector('#bird-profile');
+  const clockView = attachClockView(
+    root.querySelector('.explorer-clock-pane'),
+    root.querySelector('.fullscreen-clock'),
+  );
   const active = () => root.isConnected && isOpen();
   function updateSelection() {
     root.querySelector('#explorer-bird').value = currentId;
@@ -203,6 +208,7 @@ export function openBirdExplorer({
     }
   }
   root.addEventListener('click', (event) => {
+    if (event.target.closest('[data-view-reset]')) return clockView.reset();
     const slice = event.target.closest('.clock-slice');
     if (slice) return choose(+slice.dataset.hour, true);
     const step = event.target.closest('[data-explorer-step]');
@@ -272,4 +278,5 @@ export function openBirdExplorer({
   });
   updateSelection();
   fetchProfiles();
+  return () => clockView.destroy();
 }

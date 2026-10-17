@@ -259,6 +259,59 @@ main {
   margin: auto;
   padding: 17px 14px 10px;
 }
+.clock-wrap,
+.fullscreen-clock {
+  --clock-depth: clamp(12px, 2.5vw, 24px);
+  --view-pitch: 0deg;
+  --view-yaw: 0deg;
+  perspective: 1400px;
+}
+.clock-object {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% calc(var(--clock-depth) / -2);
+  transform: rotateX(var(--view-pitch)) rotateY(var(--view-yaw));
+}
+.clock-face,
+.clock-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+.clock-face {
+  transform: translateZ(0);
+}
+.clock-back {
+  background: #865338 url('assets/woods/mahogany.webp') center / cover;
+  transform: translateZ(calc(-1 * var(--clock-depth))) rotateY(180deg);
+}
+.clock-edge {
+  position: absolute;
+  height: var(--clock-depth);
+  background-size: auto 100%;
+  border-block: 1px solid #493425;
+  filter: brightness(var(--edge-light, 0.85));
+}
+.clock-orbit-surface {
+  touch-action: none;
+  cursor: grab;
+}
+.clock-orbit-surface:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: -5px;
+}
+.clock-orbit-surface.orbiting,
+.clock-orbit-surface.orbiting * {
+  cursor: grabbing !important;
+}
+.clock-orbit-surface.orbiting .clock-slice {
+  pointer-events: none;
+}
+.clock-orbit-surface.orbiting .slice-highlight {
+  opacity: 0;
+}
 .clock-wrap svg {
   width: 100%;
   height: auto;

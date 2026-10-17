@@ -52,7 +52,20 @@
     <main>
       <h1 class="sr-only">Design your bird clock</h1>
       <section class="workspace" aria-label="Clock design workspace">
-        <div class="preview-column">
+        <div
+          class="preview-column"
+          id="clock-view"
+          tabindex="0"
+          role="group"
+          aria-label="Clock perspective"
+          aria-describedby="clock-view-help"
+        >
+          <p id="clock-view-help" class="sr-only">
+            Drag the empty space around the clock to change its perspective.
+            With this view focused, use arrow keys to tilt and Home to return to
+            the front.
+          </p>
+          <span class="sr-only" data-view-status role="status"></span>
           <div class="preview-top">
             <div class="undo-controls">
               <button
@@ -73,7 +86,7 @@
                 id="reset-view-button"
                 class="icon-button"
                 aria-label="Reset view"
-                title="Reset to the original clock (Undo available)"
+                title="Reset perspective to the front"
                 disabled
               >
                 <svg
