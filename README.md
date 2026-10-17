@@ -34,6 +34,7 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 - Two always-visible sections: **Bird** contains bird selection, paired composition sliders, and icon buttons for flip and reset; **Wood & clock** contains compact wood swatches and clock appearance controls. Randomize actions sit in the section headings, with undo/redo and a fullscreen clock view always available.
 - **Reset view**, beside fullscreen, returns the 3D clock to its straight-on viewpoint without changing the design. Drag the empty space around the clock to tilt it; focus the view and use arrow keys for the same control, or Home to reset. The board has textured wooden edges for both clock shapes. Camera angles are temporary and do not affect saves, shares, or image exports. **Save & share → Start fresh** still restores the original design.
 - A fullscreen bird field guide: choose a clock slice or browse all 48 species to read sourced descriptions, see occurrence maps, compare sizes, and explore habitat, diet, nesting, movement, taxonomy, and conservation.
+- **Listen** beside the selected bird or in its fullscreen profile plays a short, real recording. Playback supports pause/resume and stops when switching birds or closing the profile. Audio loads only on demand.
 - Automatic session and local-browser saving, portable JSON import/export, configuration links, and 2,400 px PNG image export.
 - Individual bird downloads in PNG, JPEG, WebP, and SVG; ZIP collections for the birds on your clock or the entire library, including uploaded artwork.
 
@@ -46,6 +47,14 @@ Open **View clock fullscreen**, then click a slice to open its bird profile. Arr
 Each of the 48 species has an original short introduction and two-paragraph description, measurements where supported, natural-history facts, and linked sources with a review date. Length comparisons use the American robin as a reference (or American goldfinch for the robin). Conservation labels include their geographic scope and assessment system; regional labels are not presented as global IUCN assessments. Uploaded artwork has no invented species profile.
 
 Maps show published GBIF occurrence records, not range boundaries, abundance, or current sightings. The regional/world buttons change the framing. Records span all years and may include captive, introduced, or misidentified birds, with uneven reporting coverage. Profiles, map tiles, and the Natural Earth base map are bundled locally; opening the field guide does not contact an external map service. Follow a source link for the original account or live GBIF map.
+
+## Listen to the birds
+
+46 of the 48 species have locally hosted recordings sourced from Wikimedia Commons, Xeno-canto, iNaturalist, and their credited contributors. Snowy owl and secretarybird currently show an unavailable message; uploaded artwork has no invented recording. Labels distinguish songs, calls, and other vocalizations, including the captive Golden pheasant recording.
+
+Use **Listen** in the Bird controls or a fullscreen profile. Only one recording plays at a time, with no autoplay or hourly chime. Files are mono MP3 excerpts of up to 12 seconds and under 100 kB each. No audio or full credit manifest is fetched before pressing Play, and playback requires no API key or third-party request. The ⓘ link opens the [recording credits](assets/calls/credits.html), with recordist, original source, license, and editing details for every clip. Credits also appear under the player after the first playback request.
+
+See `ASSETS.md` for license and curation notes. To reproduce the clips, install FFmpeg (including `ffprobe`) and run `npm run audio:prepare -- --download`, then `npm run build`. Downloads are limited to the curated manifest; original files are cached outside the repository. Existing source hashes are checked before processing.
 
 ## Download bird artwork
 
@@ -87,6 +96,10 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 - `src/clock.js`: reusable SVG clock renderer.
 - `src/clock-view.js`: 3D board geometry and pointer/keyboard perspective controls.
 - `src/bird-explorer.js`: fullscreen field guide, map views, comparisons, and profile loading.
+- `src/bird-audio.js`: shared on-demand player, lifecycle cleanup, and recording attribution.
+- `assets/bird-audio-sources.json`: curated recording sources, licenses, original hashes, and excerpt offsets.
+- `assets/bird-audio.json`, `assets/bird-audio-index.json`, `assets/calls`: generated credits, tiny availability index, and locally hosted playback clips.
+- `scripts/prepare-bird-audio.py`: reproducible, license-checked clip preparation with FFmpeg.
 - `src/file-utils.js`: small file/image helpers shared by the editor and exports.
 - `src/downloads.js`: on-demand image conversion and collection metadata.
 - `src/bird-downloads.js`: accessible bird download panel and progress/error handling.
@@ -101,6 +114,7 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 - `tests/*.test.js`: model and export tests, including independent ZIP validation with Python.
 - `tests/browser/studio.spec.js`: real-browser checks for downloads, uploads, saves, editor interactions, and mobile layout.
 - `tests/browser/explorer.spec.js`: all profiles and map assets, keyboard exploration, loading recovery, unchanged drafts, and responsive layout.
+- `tests/browser/audio.spec.js`: real playback, cancellation, retry, lazy loading, source credits, and decoding every recording.
 
 ## Development checks
 

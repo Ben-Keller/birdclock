@@ -91,3 +91,7 @@ Raw results: [throttled cold](performance/2026-10-17-first-frame-mobile.json), [
 The browser suite now enforces a 350 kB total startup budget, including the HTML document, even on the uncompressed development server, verifies that original images/fonts and optional panel assets are absent from startup requests, and checks that exports retain original dimensions and WebP bytes. `npm run build:check` verifies that committed production files match their source.
 
 GitHub Pages controls its own HTTP caching headers (observed `max-age=600`). No service worker or extra hosting service is required.
+
+## On-demand recordings
+
+Bird playback adds no audio or credit-manifest requests to startup, or when browsing fullscreen profiles. A tiny availability/type/duration index is bundled with the editor after the independent first clock frame. The first Play gesture creates one media element, fetches that bird's local MP3, and fetches the credit manifest; subsequent plays reuse the manifest. Every clip is below 100 kB; the 46 files total 3,929,000 bytes on disk, which is not a startup download. Switching birds, closing the profile, or hiding the page stops and releases the active media element. Browser tests enforce these request boundaries and the existing 350 kB total startup budget.

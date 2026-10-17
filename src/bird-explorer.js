@@ -1,5 +1,10 @@
 import { escapeHTML as esc } from './clock.js';
 import { attachClockView, clockViewMarkup } from './clock-view.js';
+import {
+  birdAudioMarkup,
+  refreshBirdAudio,
+  stopBirdAudio,
+} from './bird-audio.js';
 
 let profileRequest;
 export function loadBirdProfiles() {
@@ -101,6 +106,7 @@ export function birdProfileMarkup(bird, profile, data, birds) {
   const measurements = profile.measurements;
   return `${hero}
     <p class="profile-lead">${esc(profile.shortDescription)}</p>
+    ${birdAudioMarkup(bird)}
     ${measurements.length ? `<dl class="profile-measurements">${measurements.map((m) => `<div><dt>${esc(m.label)}</dt><dd>${measurementText(m)}</dd>${m.note ? `<small>${esc(m.note)}</small>` : ''}</div>`).join('')}</dl>` : ''}
     <div class="profile-story">${profile.longDescription.map((text) => `<p>${esc(text)}</p>`).join('')}</div>
     <section class="profile-section" aria-labelledby="bird-map-heading"><div class="profile-section-head"><h3 id="bird-map-heading">Where it’s found</h3><div class="map-controls" role="group" aria-label="Map view"><button type="button" data-map-view="regional" aria-pressed="true">Regional</button><button type="button" data-map-view="world" aria-pressed="false">World</button></div></div>
@@ -168,6 +174,7 @@ export function openBirdExplorer({
   }
   function renderProfile({ focus = false } = {}) {
     if (!active()) return;
+    stopBirdAudio();
     if (!data) {
       focusWhenReady = focus;
       return;
@@ -182,6 +189,7 @@ export function openBirdExplorer({
       birds,
     );
     article.setAttribute('aria-busy', 'false');
+    refreshBirdAudio();
     article.scrollTop = 0;
     root.querySelector('#explorer-announcement').textContent =
       `${bird.name} profile opened`;
@@ -278,5 +286,8 @@ export function openBirdExplorer({
   });
   updateSelection();
   fetchProfiles();
-  return () => clockView.destroy();
+  return () => {
+    stopBirdAudio();
+    clockView.destroy();
+  };
 }

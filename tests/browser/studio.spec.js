@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
+import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 
 const errors = new WeakMap();
 test.beforeEach(async ({ page }) => {
@@ -70,23 +73,33 @@ async function imageInfo(page, bytes, mime) {
 }
 
 function readZip(bytes) {
-  return JSON.parse(
-    execFileSync(
-      'python3',
-      [
-        '-c',
-        `
-import io, json, sys, zipfile
-with zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read())) as archive:
+  // Large synchronous stdin writes can stall on macOS. Give the independent
+  // Python validator a file instead, and always bound its execution time.
+  const directory = mkdtempSync(path.join(tmpdir(), 'birdclock-zip-test-'));
+  const archivePath = path.join(directory, 'birds.zip');
+  writeFileSync(archivePath, bytes);
+  try {
+    return JSON.parse(
+      execFileSync(
+        'python3',
+        [
+          '-c',
+          `
+import json, sys, zipfile
+with zipfile.ZipFile(sys.argv[1]) as archive:
     assert archive.testzip() is None
     index = json.loads(archive.read('birds.json'))
     assert all(archive.read(bird['file']) for bird in index['birds'])
     print(json.dumps({'names': archive.namelist(), 'index': index}))
 `,
-      ],
-      { input: bytes },
-    ).toString(),
-  );
+          archivePath,
+        ],
+        { timeout: 15000 },
+      ).toString(),
+    );
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
 }
 
 for (const [format, extension, mime] of [

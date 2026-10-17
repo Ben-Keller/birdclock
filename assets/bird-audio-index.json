@@ -1,0 +1,186 @@
+{
+  "northern-flicker": {
+    "kind": "Call",
+    "duration": 12.0
+  },
+  "american-goldfinch": {
+    "kind": "Call",
+    "duration": 9.291
+  },
+  "osprey": {
+    "kind": "Calls",
+    "duration": 12.0
+  },
+  "annas-hummingbird": {
+    "kind": "Song",
+    "duration": 12.0
+  },
+  "pileated-woodpecker": {
+    "kind": "Call",
+    "duration": 4.964
+  },
+  "bittern": {
+    "kind": "Booming call",
+    "duration": 12.0
+  },
+  "bellbird": {
+    "kind": "Call",
+    "duration": 3.743
+  },
+  "kokako": {
+    "kind": "Song",
+    "duration": 12.0
+  },
+  "common-loon": {
+    "kind": "Tremolo call",
+    "duration": 12.0
+  },
+  "bald-eagle": {
+    "kind": "Calls",
+    "duration": 2.455
+  },
+  "wood-duck": {
+    "kind": "Calls",
+    "duration": 12.0
+  },
+  "great-horned-owl": {
+    "kind": "Hoots",
+    "duration": 12.0
+  },
+  "northern-cardinal": {
+    "kind": "Song",
+    "duration": 12.0
+  },
+  "blue-jay": {
+    "kind": "Calls",
+    "duration": 12.0
+  },
+  "mourning-dove": {
+    "kind": "Vocalization",
+    "duration": 4.011
+  },
+  "black-capped-chickadee": {
+    "kind": "Calls",
+    "duration": 11.578
+  },
+  "american-robin": {
+    "kind": "Vocalization",
+    "duration": 12.0
+  },
+  "eastern-bluebird": {
+    "kind": "Song",
+    "duration": 12.0
+  },
+  "cedar-waxwing": {
+    "kind": "Calls",
+    "duration": 12.0
+  },
+  "tufted-titmouse": {
+    "kind": "Vocalization",
+    "duration": 12.0
+  },
+  "red-winged-blackbird": {
+    "kind": "Vocalization",
+    "duration": 8.073
+  },
+  "baltimore-oriole": {
+    "kind": "Song",
+    "duration": 12.0
+  },
+  "rose-breasted-grosbeak": {
+    "kind": "Song",
+    "duration": 12.0
+  },
+  "american-kestrel": {
+    "kind": "Flight call",
+    "duration": 11.909
+  },
+  "barn-owl": {
+    "kind": "Screech call",
+    "duration": 7.49
+  },
+  "common-raven": {
+    "kind": "Call",
+    "duration": 12.0
+  },
+  "belted-kingfisher": {
+    "kind": "Calls",
+    "duration": 12.0
+  },
+  "atlantic-puffin": {
+    "kind": "Call",
+    "duration": 12.0
+  },
+  "mallard": {
+    "kind": "Call",
+    "duration": 12.0
+  },
+  "tui": {
+    "kind": "Calls",
+    "duration": 12.0
+  },
+  "european-robin": {
+    "kind": "Song",
+    "duration": 12.0
+  },
+  "eurasian-blue-tit": {
+    "kind": "Calls",
+    "duration": 12.0
+  },
+  "eurasian-hoopoe": {
+    "kind": "Call",
+    "duration": 7.117
+  },
+  "common-kingfisher": {
+    "kind": "Flight call",
+    "duration": 12.0
+  },
+  "lilac-breasted-roller": {
+    "kind": "Flight call",
+    "duration": 11.992
+  },
+  "african-grey-parrot": {
+    "kind": "Vocalization",
+    "duration": 12.0
+  },
+  "indian-peafowl": {
+    "kind": "Call",
+    "duration": 7.934
+  },
+  "laughing-kookaburra": {
+    "kind": "Vocalization",
+    "duration": 12.0
+  },
+  "galah": {
+    "kind": "Call",
+    "duration": 12.0
+  },
+  "new-zealand-fantail": {
+    "kind": "Calls",
+    "duration": 11.976
+  },
+  "peregrine-falcon": {
+    "kind": "Flight call",
+    "duration": 9.911
+  },
+  "grey-crowned-crane": {
+    "kind": "Call",
+    "duration": 12.0
+  },
+  "mandarin-duck": {
+    "kind": "Flight call",
+    "duration": 1.704
+  },
+  "red-crowned-crane": {
+    "kind": "Vocalization",
+    "duration": 11.98
+  },
+  "rainbow-lorikeet": {
+    "kind": "Vocalization",
+    "duration": 12.0
+  },
+  "golden-pheasant": {
+    "kind": "Vocalization (captive)",
+    "duration": 11.948
+  }
+}

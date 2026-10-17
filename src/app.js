@@ -14,6 +14,12 @@ import { clockSVG, handsMarkup, escapeHTML as esc } from './clock.js';
 import { download, safeFilename, dataURL, canvasBlob } from './file-utils.js';
 import { attachClockTooltips } from './clock-tooltip.js';
 import { attachBirdDrag } from './clock-drag.js';
+import {
+  birdAudioMarkup,
+  refreshBirdAudio,
+  stopBirdAudio,
+  toggleBirdAudio,
+} from './bird-audio.js';
 import initialCatalogue from '../assets/birds.json' with { type: 'json' };
 import { attachClockView, clockViewMarkup } from './clock-view.js';
 import {
@@ -175,6 +181,7 @@ function renderPanel() {
           </span>
           <span class="arrow" aria-hidden="true">↗</span>
         </button>
+        ${birdAudioMarkup(bird)}
         <fieldset class="composition-controls">
           <legend class="sr-only">Bird composition</legend>
           <div class="slider-grid">
@@ -213,6 +220,7 @@ function renderPanel() {
           ${range('Wood grain', 'face.grain', f.grain, 0, 1, 0.05, 'pct')}
         </div>
     </section>`;
+  refreshBirdAudio(bird.id);
   if (focusKey)
     panel
       .querySelector(`[${focusKey}="${CSS.escape(focusValue)}"]`)
@@ -300,6 +308,7 @@ function swapBirds(from, to) {
   );
 }
 function showModal(kind, html) {
+  stopBirdAudio();
   modalRevision++;
   modalCleanup?.();
   modalCleanup = null;
@@ -316,9 +325,11 @@ function showModal(kind, html) {
   document.body.style.overflow = 'hidden';
 }
 function closeModal() {
+  stopBirdAudio();
   modal.close();
 }
 modal.addEventListener('close', () => {
+  stopBirdAudio();
   modalRevision++;
   modalCleanup?.();
   modalCleanup = null;
@@ -637,6 +648,7 @@ document.addEventListener('click', (e) => {
   const a = e.target.closest('[data-action]');
   if (!a) return;
   const action = a.dataset.action;
+  if (action === 'bird-audio') return toggleBirdAudio(a);
   if (action === 'bird-downloads')
     openDownloadPanel(a.dataset.scope || 'single');
   if (action === 'reload-studio') location.reload();

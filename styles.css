@@ -522,6 +522,85 @@ main {
   font-size: 20px;
   color: var(--muted);
 }
+.bird-audio {
+  margin: 8px 0 14px;
+  font-size: 11px;
+}
+.audio-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+}
+.audio-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 83px;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 500;
+}
+.audio-play:hover,
+.audio-play[aria-pressed='true'] {
+  background: #e5e8dc;
+  border-color: #8a907b;
+}
+.audio-kind {
+  color: var(--muted);
+}
+.audio-source {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 17px;
+  text-decoration: none;
+}
+.audio-progress {
+  width: 100%;
+  height: 3px;
+  margin-top: 7px;
+  accent-color: var(--green);
+}
+.audio-status,
+.audio-credit,
+.audio-unavailable {
+  margin: 5px 0 0;
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.audio-status {
+  color: #8b432f;
+}
+.audio-credit a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+.audio-credit span {
+  display: block;
+}
+.bird-profile .bird-audio {
+  margin: 20px 0 25px;
+  padding: 12px 0;
+  border-block: 1px solid var(--line);
+}
+.bird-profile .audio-play,
+.bird-profile .audio-kind {
+  font-size: 12px;
+}
+.bird-profile .audio-credit {
+  font-size: 11px;
+}
 .wood-options {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
