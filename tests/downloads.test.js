@@ -22,7 +22,7 @@ test('download selection preserves hour order and exports repeated birds only on
   assert.equal(selection.length, 11);
   assert.equal(selection[0].id, 'osprey');
   assert.equal(new Set(selection.map((bird) => bird.id)).size, 11);
-  assert.equal(birdsForDownload(config, birds, 'library').length, 32);
+  assert.equal(birdsForDownload(config, birds, 'library').length, birds.length);
   assert.equal(
     birdsForDownload(config, birds, 'single', 'common-loon')[0].name,
     'Common loon',

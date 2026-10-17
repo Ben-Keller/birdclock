@@ -25,7 +25,7 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 ## What you can customize
 
 - Each of 12 hours: bird, maple/mahogany/cherry, bird size, position, rotation, and flip.
-- Choose among 32 realistic-style bird illustrations, with search and filters. Upload up to eight personal PNG, JPEG, or WebP images per design.
+- Choose among 48 realistic-style bird illustrations. Combine bird-group, region, and clock-use filters; search common names, scientific names, regions, and groups, with accents and punctuation handled automatically. Upload up to eight personal PNG, JPEG, or WebP images per design.
 - Keep all birds different, or allow repeats. Choosing a bird already used swaps the two hours when uniqueness is enabled.
 - Keep adjacent woods different, including the 12-to-1 join. Manual selection adjusts as few other pieces as possible. Shuffle produces four pieces of each wood with no matching neighbors.
 - Twelve-sided triangular face or round face, hour-marker style, and wood-grain intensity. Clock hands always show the current local time, including when reopening older drafts or importing configurations.
@@ -69,7 +69,8 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 - `src/downloads.js`: shared image conversion, file downloads, and collection metadata.
 - `src/bird-downloads.js`: accessible bird download panel and progress/error handling.
 - `src/zip.js`: small ZIP writer; no external runtime dependencies.
-- `assets/birds.json`: 32-bird catalogue; add entries and corresponding artwork to extend it.
+- `assets/birds.json`: 48-bird catalogue; add entries and corresponding artwork to extend it.
+- `assets/bird-generation-2026-10.json`: prompt set and species references for the 16 new illustrations.
 - `assets/birds`, `assets/woods`, `assets/fonts`: bundled artwork, textures, and fonts.
 - `tests/*.test.js`: model and export tests, including independent ZIP validation with Python.
 - `tests/browser/studio.spec.js`: real-browser checks for downloads, uploads, saves, editor interactions, and mobile layout.

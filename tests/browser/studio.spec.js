@@ -151,13 +151,56 @@ test('clock and entire-library ZIPs are valid and include the correct species an
     page.getByRole('button', { name: 'Download ZIP' }),
   );
   expect(library.name).toBe('woodland-hours-library-webp.zip');
-  expect(readZip(library.bytes).index.birds).toHaveLength(32);
+  expect(readZip(library.bytes).index.birds).toHaveLength(48);
 });
 
-test('library download does not change the clock and supports every bird', async ({
+test('combined library filters and normalized search preserve the clock when downloading', async ({
   page,
 }) => {
   await page.getByRole('button', { name: 'Change bird for hour 3' }).click();
+  await page
+    .getByRole('combobox', { name: 'Bird group' })
+    .selectOption('Songbirds');
+  await page
+    .getByRole('combobox', { name: 'Region', exact: true })
+    .selectOption('New Zealand');
+  await expect(page.locator('.bird-card')).toHaveCount(3);
+  await page
+    .getByRole('combobox', { name: 'On your clock' })
+    .selectOption('used');
+  await expect(page.locator('.bird-card')).toHaveCount(1);
+  await expect(page.locator('.bird-card')).toContainText(
+    'New Zealand bellbird',
+  );
+  await page.getByRole('searchbox', { name: 'Search birds' }).fill('tui');
+  await expect(page.locator('.bird-card')).toHaveCount(0);
+  await page
+    .locator('.empty-state')
+    .getByRole('button', { name: 'Clear filters' })
+    .click();
+  await expect(page.locator('.bird-card')).toHaveCount(48);
+  await expect(
+    page.getByRole('searchbox', { name: 'Search birds' }),
+  ).toBeFocused();
+  await page
+    .getByRole('combobox', { name: 'Bird group' })
+    .selectOption('Parrots');
+  await page
+    .getByRole('combobox', { name: 'Region', exact: true })
+    .selectOption('Africa');
+  await page
+    .getByRole('combobox', { name: 'On your clock' })
+    .selectOption('unused');
+  await expect(page.locator('.bird-card')).toHaveCount(1);
+  await expect(page.locator('.bird-card')).toContainText('African grey parrot');
+  await page
+    .getByRole('button', { name: 'Clear filters', exact: true })
+    .click();
+  await page
+    .getByRole('searchbox', { name: 'Search birds' })
+    .fill('  annas hummingbird  ');
+  await expect(page.locator('.bird-card')).toHaveCount(1);
+  await expect(page.locator('.bird-card')).toContainText('Anna’s hummingbird');
   await page.getByRole('searchbox', { name: 'Search birds' }).fill('Kokako');
   await expect(page.locator('.bird-card')).toHaveCount(1);
   await page
@@ -220,6 +263,16 @@ test('uploaded rectangular artwork downloads and travels in a JSON backup', asyn
   await expect(
     page.getByRole('button', { name: 'Change bird for hour 3' }),
   ).toContainText('My custom bird');
+  await page.getByRole('button', { name: 'Change bird for hour 3' }).click();
+  await page
+    .getByRole('combobox', { name: 'Bird group' })
+    .selectOption('Custom');
+  await page
+    .getByRole('combobox', { name: 'On your clock' })
+    .selectOption('used');
+  await expect(page.locator('.bird-card')).toHaveCount(1);
+  await expect(page.locator('.bird-card')).toContainText('My custom bird');
+  await page.getByRole('button', { name: 'Close dialog' }).click();
   await page
     .getByRole('button', { name: 'Download bird', exact: true })
     .click();
@@ -349,6 +402,7 @@ test('mobile editor, bird library and download panel fit without horizontal over
   });
   await page.getByRole('button', { name: 'Change bird for hour 3' }).click();
   await noOverflow();
+  await page.screenshot({ path: 'test-results/mobile-library.png' });
   await page
     .getByRole('button', { name: 'Download Osprey', exact: true })
     .click();

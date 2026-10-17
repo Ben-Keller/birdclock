@@ -254,5 +254,133 @@
     "region": "New Zealand",
     "group": "Songbirds",
     "asset": "assets/birds/tui.webp"
+  },
+  {
+    "id": "european-robin",
+    "name": "European robin",
+    "scientificName": "Erithacus rubecula",
+    "region": "Europe",
+    "group": "Songbirds",
+    "asset": "assets/birds/european-robin.webp"
+  },
+  {
+    "id": "eurasian-blue-tit",
+    "name": "Eurasian blue tit",
+    "scientificName": "Cyanistes caeruleus",
+    "region": "Europe",
+    "group": "Songbirds",
+    "asset": "assets/birds/eurasian-blue-tit.webp"
+  },
+  {
+    "id": "common-kingfisher",
+    "name": "Common kingfisher",
+    "scientificName": "Alcedo atthis",
+    "region": "Europe",
+    "group": "Waterbirds",
+    "asset": "assets/birds/common-kingfisher.webp"
+  },
+  {
+    "id": "eurasian-hoopoe",
+    "name": "Eurasian hoopoe",
+    "scientificName": "Upupa epops",
+    "region": "Europe",
+    "group": "Woodland",
+    "asset": "assets/birds/eurasian-hoopoe.webp"
+  },
+  {
+    "id": "lilac-breasted-roller",
+    "name": "Lilac-breasted roller",
+    "scientificName": "Coracias caudatus",
+    "region": "Africa",
+    "group": "Woodland",
+    "asset": "assets/birds/lilac-breasted-roller.webp"
+  },
+  {
+    "id": "african-grey-parrot",
+    "name": "African grey parrot",
+    "scientificName": "Psittacus erithacus",
+    "region": "Africa",
+    "group": "Parrots",
+    "asset": "assets/birds/african-grey-parrot.webp"
+  },
+  {
+    "id": "grey-crowned-crane",
+    "name": "Grey crowned crane",
+    "scientificName": "Balearica regulorum",
+    "region": "Africa",
+    "group": "Waterbirds",
+    "asset": "assets/birds/grey-crowned-crane.webp"
+  },
+  {
+    "id": "secretarybird",
+    "name": "Secretarybird",
+    "scientificName": "Sagittarius serpentarius",
+    "region": "Africa",
+    "group": "Raptors",
+    "asset": "assets/birds/secretarybird.webp"
+  },
+  {
+    "id": "mandarin-duck",
+    "name": "Mandarin duck",
+    "scientificName": "Aix galericulata",
+    "region": "Asia",
+    "group": "Waterbirds",
+    "asset": "assets/birds/mandarin-duck.webp"
+  },
+  {
+    "id": "red-crowned-crane",
+    "name": "Red-crowned crane",
+    "scientificName": "Grus japonensis",
+    "region": "Asia",
+    "group": "Waterbirds",
+    "asset": "assets/birds/red-crowned-crane.webp"
+  },
+  {
+    "id": "indian-peafowl",
+    "name": "Indian peafowl",
+    "scientificName": "Pavo cristatus",
+    "region": "Asia",
+    "group": "Gamebirds",
+    "asset": "assets/birds/indian-peafowl.webp"
+  },
+  {
+    "id": "golden-pheasant",
+    "name": "Golden pheasant",
+    "scientificName": "Chrysolophus pictus",
+    "region": "Asia",
+    "group": "Gamebirds",
+    "asset": "assets/birds/golden-pheasant.webp"
+  },
+  {
+    "id": "rainbow-lorikeet",
+    "name": "Rainbow lorikeet",
+    "scientificName": "Trichoglossus moluccanus",
+    "region": "Australasia",
+    "group": "Parrots",
+    "asset": "assets/birds/rainbow-lorikeet.webp"
+  },
+  {
+    "id": "laughing-kookaburra",
+    "name": "Laughing kookaburra",
+    "scientificName": "Dacelo novaeguineae",
+    "region": "Australasia",
+    "group": "Woodland",
+    "asset": "assets/birds/laughing-kookaburra.webp"
+  },
+  {
+    "id": "galah",
+    "name": "Galah",
+    "scientificName": "Eolophus roseicapilla",
+    "region": "Australasia",
+    "group": "Parrots",
+    "asset": "assets/birds/galah.webp"
+  },
+  {
+    "id": "new-zealand-fantail",
+    "name": "New Zealand fantail",
+    "scientificName": "Rhipidura fuliginosa",
+    "region": "New Zealand",
+    "group": "Songbirds",
+    "asset": "assets/birds/new-zealand-fantail.webp"
   }
 ]

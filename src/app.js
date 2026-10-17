@@ -38,7 +38,7 @@ let catalogue = [],
   lastFocus = null,
   toastTimer,
   libraryQuery = '',
-  libraryGroup = 'All birds';
+  libraryFilters = { group: '', region: '', use: '' };
 const modal = $('#modal');
 const allBirds = () => [...catalogue, ...config.customBirds];
 const birdById = (id) => allBirds().find((b) => b.id === id);
@@ -241,32 +241,76 @@ modal.addEventListener('click', (e) => {
 });
 const modalHeader = (eyebrow, title) =>
   `<div class="modal-head"><div>${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ''}<h2 id="modal-title" tabindex="-1">${title}</h2></div><button class="modal-close" data-action="close" aria-label="Close dialog">×</button></div>`;
+const searchText = (value) =>
+  value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/[’']/g, '')
+    .replace(/[^\p{Letter}\p{Number}]+/gu, ' ')
+    .trim();
+const libraryFilter = (label, key, options) =>
+  `<label class="library-filter">${label}<select data-library-filter="${key}">${options.map(([value, name]) => `<option value="${esc(value)}">${esc(name)}</option>`).join('')}</select></label>`;
 function openLibrary() {
   libraryQuery = '';
-  libraryGroup = 'All birds';
+  libraryFilters = { group: '', region: '', use: '' };
+  const birds = allBirds();
+  const optionsFor = (key) =>
+    [...new Set(birds.map((bird) => bird[key]).filter(Boolean))]
+      .sort((a, b) => a.localeCompare(b))
+      .map((value) => [value, value]);
   showModal(
     'library',
-    `${modalHeader(`THE BIRD LIBRARY / HOUR ${selected + 1}`, 'Find your next feathered friend.')}<div class="modal-body"><div class="library-tools"><label class="search-field"><span class="sr-only">Search birds</span><input id="bird-search" type="search" placeholder="Search a bird, place, or scientific name…" aria-label="Search birds"></label><select id="bird-filter" aria-label="Filter birds"><option>All birds</option><option>Songbirds</option><option>Woodland</option><option>Raptors</option><option>Waterbirds</option><option>New Zealand</option><option>Custom</option></select></div><div class="library-meta"><span id="library-count" role="status"></span><button class="quiet-link" data-action="bird-downloads" data-scope="library">Download bird files ↓</button></div><div class="bird-grid" id="bird-grid"></div><div class="library-bottom"><span>${config.uniqueBirds ? 'Already on your clock? Selecting it swaps the two hours.' : 'Birds may appear at more than one hour.'}</span><button class="quiet-link" data-action="upload-bird">Add your own image ↗</button></div></div>`,
+    `${modalHeader(`THE BIRD LIBRARY / HOUR ${selected + 1}`, 'Find your next feathered friend.')}
+    <div class="modal-body">
+      <div class="library-tools">
+        <label class="search-field"><span class="sr-only">Search birds</span><input id="bird-search" type="search" placeholder="Search birds, places, or scientific names…" aria-label="Search birds"></label>
+        <button class="quiet-link" data-action="clear-bird-filters" id="clear-bird-filters" disabled>Clear filters</button>
+      </div>
+      <div class="library-filters">
+        ${libraryFilter('Bird group', 'group', [['', 'All groups'], ...optionsFor('group')])}
+        ${libraryFilter('Region', 'region', [['', 'All regions'], ...optionsFor('region')])}
+        ${libraryFilter('On your clock', 'use', [
+          ['', 'All birds'],
+          ['used', 'Already on clock'],
+          ['unused', 'Not on clock'],
+        ])}
+      </div>
+      <div class="library-meta"><span id="library-count" role="status"></span><button class="quiet-link" data-action="bird-downloads" data-scope="library">Download bird files ↓</button></div>
+      <div class="bird-grid" id="bird-grid"></div>
+      <div class="library-bottom"><span>${config.uniqueBirds ? 'Already on your clock? Selecting it swaps the two hours.' : 'Birds may appear at more than one hour.'}</span><button class="quiet-link" data-action="upload-bird">Add your own image ↗</button></div>
+    </div>`,
   );
   renderBirdGrid();
 }
+function clearBirdFilters() {
+  libraryQuery = '';
+  libraryFilters = { group: '', region: '', use: '' };
+  $('#bird-search').value = '';
+  $$('[data-library-filter]').forEach((select) => (select.value = ''));
+  renderBirdGrid();
+  $('#bird-search').focus();
+}
 function renderBirdGrid() {
-  const q = libraryQuery
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/\p{Diacritic}/gu, ''),
-    birds = allBirds().filter(
-      (b) =>
-        (libraryGroup === 'All birds' ||
-          b.group === libraryGroup ||
-          b.region === libraryGroup) &&
-        `${b.name} ${b.scientificName} ${b.region}`
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/\p{Diacritic}/gu, '')
-          .includes(q),
+  const words = searchText(libraryQuery).split(' ').filter(Boolean);
+  const all = allBirds();
+  const usedIds = new Set(config.slices.map((slice) => slice.bird));
+  const birds = all.filter((bird) => {
+    const text = searchText(
+      `${bird.name} ${bird.scientificName} ${bird.region} ${bird.group}`,
     );
-  $('#library-count').textContent = `${birds.length} birds to explore`;
+    return (
+      (!libraryFilters.group || bird.group === libraryFilters.group) &&
+      (!libraryFilters.region || bird.region === libraryFilters.region) &&
+      (!libraryFilters.use ||
+        usedIds.has(bird.id) === (libraryFilters.use === 'used')) &&
+      words.every((word) => text.includes(word))
+    );
+  });
+  $('#library-count').textContent = `${birds.length} of ${all.length} birds`;
+  $('#clear-bird-filters').disabled =
+    !libraryQuery && !Object.values(libraryFilters).some(Boolean);
+  $('#bird-grid').scrollTop = 0;
   $('#bird-grid').innerHTML = birds.length
     ? birds
         .map((b) => {
@@ -274,7 +318,7 @@ function renderBirdGrid() {
           return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(b.asset)}" alt="" loading="lazy"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button><button class="bird-card-download" data-action="bird-downloads" data-download-bird="${esc(b.id)}" aria-label="Download ${esc(b.name)}">Download <span aria-hidden="true">↓</span></button></article>`;
         })
         .join('')
-    : '<p class="empty-state">No birds found. Try another name or filter.</p>';
+    : '<div class="empty-state"><p>No birds match these filters.</p><button class="quiet-link" data-action="clear-bird-filters">Clear filters</button></div>';
 }
 function openExport() {
   showModal(
@@ -518,6 +562,7 @@ document.addEventListener('click', (e) => {
   if (action === 'start-fresh') startFresh();
   if (action === 'about') openAbout();
   if (action === 'library') openLibrary();
+  if (action === 'clear-bird-filters') clearBirdFilters();
   if (action === 'flip')
     commit(
       () => (config.slices[selected].flip = !config.slices[selected].flip),
@@ -568,8 +613,8 @@ document.addEventListener('input', (e) => {
 });
 document.addEventListener('change', (e) => {
   const el = e.target;
-  if (el.id === 'bird-filter') {
-    libraryGroup = el.value;
+  if (el.dataset.libraryFilter) {
+    libraryFilters[el.dataset.libraryFilter] = el.value;
     renderBirdGrid();
     return;
   }

@@ -1,0 +1,168 @@
+{
+  "date": "2026-10-17",
+  "method": "Built-in imagegen; one generated transparent image per bird, converted to 600 × 600 WebP for the app.",
+  "promptTemplate": "Use case: illustration-story.\nAsset type: a single isolated bird illustration for a wooden bird-clock configurator.\nStyle/medium: realistic natural-history plate illustration, very fine colored-pencil and soft gouache detail, crisp delicate feather edges, softly modeled volume, natural accurate proportions, restrained colors with realistic species accents. Match a polished classic field-guide cutout, not a photo, not cartoon, not an icon.\nScene/backdrop: completely transparent alpha background, no paper or colored backdrop.\nComposition: square canvas, a SINGLE entire bird centered and filling about 88% of the available canvas; preserve the full beak, crest, tail, both feet and all toes with 5% clear margin. Only bird, no perch, branch, ground, scenery, shadow, frame, lettering, labels, symbols or watermark. Closed wings unless specified; clean separated silhouette suitable for placing over wood grain.\n\nSubject: {subject}\nSpecies: {name} ({scientificName}). Deliver only the single transparent bird asset.",
+  "metadataNote": "Region is a primary browsing association, not a complete range map. Groups are informal library categories. Reference links verify names and species context; no source artwork was copied.",
+  "birds": [
+    {
+      "id": "european-robin",
+      "name": "European robin",
+      "scientificName": "Erithacus rubecula",
+      "region": "Europe",
+      "group": "Songbirds",
+      "subject": "Adult European robin: orange-red face and breast, olive-brown back, pale belly, slim dark legs, small round body. Compact three-quarter standing pose facing right.",
+      "asset": "assets/birds/european-robin.webp",
+      "reference": "https://www.bto.org/learn/about-birds/birdfacts/robin"
+    },
+    {
+      "id": "eurasian-blue-tit",
+      "name": "Eurasian blue tit",
+      "scientificName": "Cyanistes caeruleus",
+      "region": "Europe",
+      "group": "Songbirds",
+      "subject": "Adult Eurasian blue tit: cobalt-blue crown, wings and tail, white cheeks with dark eye stripe, yellow breast, greenish back. Compact three-quarter standing pose facing left.",
+      "asset": "assets/birds/eurasian-blue-tit.webp",
+      "reference": "https://www.allaboutbirds.org/guide/Eurasian_Blue_Tit/"
+    },
+    {
+      "id": "common-kingfisher",
+      "name": "Common kingfisher",
+      "scientificName": "Alcedo atthis",
+      "region": "Europe",
+      "group": "Waterbirds",
+      "subject": "Adult common kingfisher: electric turquoise-blue back and head, copper-orange breast, white throat and neck patch, long straight dark pointed bill, tiny orange feet. Upright three-quarter standing pose facing right.",
+      "asset": "assets/birds/common-kingfisher.webp",
+      "reference": "https://birdnet.cornell.edu/taxonomy/species/Alcedo%20atthis"
+    },
+    {
+      "id": "eurasian-hoopoe",
+      "name": "Eurasian hoopoe",
+      "scientificName": "Upupa epops",
+      "region": "Europe",
+      "group": "Woodland",
+      "subject": "Adult Eurasian hoopoe: warm cinnamon head and breast, raised fan-shaped crest tipped black, black-and-white striped wings, slender curved bill. Whole bird standing in three-quarter view facing left, crest and tail completely visible.",
+      "asset": "assets/birds/eurasian-hoopoe.webp",
+      "reference": "https://ebird.org/species/hoopoe?siteLanguage=en_ZA"
+    },
+    {
+      "id": "lilac-breasted-roller",
+      "name": "Lilac-breasted roller",
+      "scientificName": "Coracias caudatus",
+      "region": "Africa",
+      "group": "Woodland",
+      "subject": "Adult lilac-breasted roller: lilac-pink throat and breast, turquoise belly, blue folded wings, warm tan back and long slender tail tips. Whole bird standing in three-quarter view facing right.",
+      "asset": "assets/birds/lilac-breasted-roller.webp",
+      "reference": "https://datazone.birdlife.org/species/factsheet/lilac-breasted-roller-coracias-caudatus"
+    },
+    {
+      "id": "african-grey-parrot",
+      "name": "African grey parrot",
+      "scientificName": "Psittacus erithacus",
+      "region": "Africa",
+      "group": "Parrots",
+      "subject": "Adult African grey parrot: finely scalloped silver-grey feathers, pale facial skin around a light yellow eye, black hooked bill, vivid short red tail, grasping grey feet. Compact three-quarter upright pose facing left.",
+      "asset": "assets/birds/african-grey-parrot.webp",
+      "reference": "https://datazone.birdlife.org/species/factsheet/grey-parrot-psittacus-erithacus"
+    },
+    {
+      "id": "grey-crowned-crane",
+      "name": "Grey crowned crane",
+      "scientificName": "Balearica regulorum",
+      "region": "Africa",
+      "group": "Waterbirds",
+      "subject": "Adult grey crowned crane: delicate golden bristle crown, black forehead, white cheek patch, small red throat wattle, grey body, white wing panels and long dark legs. Elegant whole-body standing three-quarter pose, wings folded, facing right; include every toe and entire crown.",
+      "asset": "assets/birds/grey-crowned-crane.webp",
+      "reference": "https://datazone.birdlife.org/species/factsheet/grey-crowned-crane-balearica-regulorum"
+    },
+    {
+      "id": "secretarybird",
+      "name": "Secretarybird",
+      "scientificName": "Sagittarius serpentarius",
+      "region": "Africa",
+      "group": "Raptors",
+      "subject": "Adult secretarybird: pale-grey eagle-like head and body, swept black quill crest, orange-red bare skin around the eye, black flight feathers and thigh feathers, very long pale legs, long tail. Whole-body standing three-quarter pose facing left, folded wings; entire legs and feet visible.",
+      "asset": "assets/birds/secretarybird.webp",
+      "reference": "https://www.birdlife.org/news/2009/06/24/list-of-birds-of-prey/"
+    },
+    {
+      "id": "mandarin-duck",
+      "name": "Mandarin duck",
+      "scientificName": "Aix galericulata",
+      "region": "Asia",
+      "group": "Waterbirds",
+      "subject": "Adult male mandarin duck in ornate breeding plumage: red bill, broad white eye crescent, rust-orange cheek whiskers and upright orange sail feathers, purple chest, cream flanks, dark green crown. Compact whole-body standing profile facing right with two small orange webbed feet, no water.",
+      "asset": "assets/birds/mandarin-duck.webp",
+      "reference": "https://www.bto.org/learn/about-birds/birdfacts/mandarin-duck"
+    },
+    {
+      "id": "red-crowned-crane",
+      "name": "Red-crowned crane",
+      "scientificName": "Grus japonensis",
+      "region": "Asia",
+      "group": "Waterbirds",
+      "subject": "Adult red-crowned crane: long graceful white body, black neck and secondary wing feathers, bare red crown patch, long dark legs and long pointed bill. Whole-body standing three-quarter pose facing left with wings folded, neck gently curved, every foot visible.",
+      "asset": "assets/birds/red-crowned-crane.webp",
+      "reference": "https://birdnet.cornell.edu/taxonomy/species/Grus%20japonensis"
+    },
+    {
+      "id": "indian-peafowl",
+      "name": "Indian peafowl",
+      "scientificName": "Pavo cristatus",
+      "region": "Asia",
+      "group": "Gamebirds",
+      "subject": "Adult male Indian peafowl: iridescent cobalt-blue neck and breast, delicate upright head crest, green scaled back, folded emerald train with distinct bronze-blue eyespots trailing diagonally behind. Whole-body three-quarter standing pose facing right, train CLOSED not fanned, entire head feet and tail visible.",
+      "asset": "assets/birds/indian-peafowl.webp",
+      "reference": "https://birdnet.cornell.edu/taxonomy/species/Pavo%20cristatus"
+    },
+    {
+      "id": "golden-pheasant",
+      "name": "Golden pheasant",
+      "scientificName": "Chrysolophus pictus",
+      "region": "Asia",
+      "group": "Gamebirds",
+      "subject": "Adult male golden pheasant: golden-yellow swept crest, orange-and-black banded neck cape, rich scarlet belly, green upper back and blue wing coverts, long mottled brown tail. Whole-body standing three-quarter pose facing left, tail diagonal so the whole bird fits clearly.",
+      "asset": "assets/birds/golden-pheasant.webp",
+      "reference": "https://birdnet.cornell.edu/taxonomy/species/Chrysolophus%20pictus"
+    },
+    {
+      "id": "rainbow-lorikeet",
+      "name": "Rainbow lorikeet",
+      "scientificName": "Trichoglossus moluccanus",
+      "region": "Australasia",
+      "group": "Parrots",
+      "subject": "Adult rainbow lorikeet: deep blue head and belly, bright red-orange bill, orange and yellow breast, emerald-green back and folded wings, long green tail, grey grasping feet. Whole-body three-quarter standing pose facing right.",
+      "asset": "assets/birds/rainbow-lorikeet.webp",
+      "reference": "https://australian.museum/learn/animals/birds/rainbow-lorikeet/"
+    },
+    {
+      "id": "laughing-kookaburra",
+      "name": "Laughing kookaburra",
+      "scientificName": "Dacelo novaeguineae",
+      "region": "Australasia",
+      "group": "Woodland",
+      "subject": "Adult laughing kookaburra: large cream-white head, broad brown eye stripe, sturdy long dark upper bill and pale lower bill, cream-white breast, brown back and wings with subtle blue patches, rufous-and-black barred tail. Whole-body three-quarter standing pose facing left.",
+      "asset": "assets/birds/laughing-kookaburra.webp",
+      "reference": "https://www.nzbirdsonline.org.nz/species/laughing-kookaburra"
+    },
+    {
+      "id": "galah",
+      "name": "Galah",
+      "scientificName": "Eolophus roseicapilla",
+      "region": "Australasia",
+      "group": "Parrots",
+      "subject": "Adult galah cockatoo: warm rose-pink face breast and belly, pale blush-white folded crest, soft silver-grey back wings and tail, pale hooked beak and grey feet. Whole-body three-quarter standing pose facing right.",
+      "asset": "assets/birds/galah.webp",
+      "reference": "https://birdlife.org.au/bird-profiles/galah/"
+    },
+    {
+      "id": "new-zealand-fantail",
+      "name": "New Zealand fantail",
+      "scientificName": "Rhipidura fuliginosa",
+      "region": "New Zealand",
+      "group": "Songbirds",
+      "subject": "Adult pied New Zealand fantail: grey-brown upperparts, warm buff belly, white eyebrow and throat, dark breast band, broad fully spread black-and-white fan tail. Lively whole-body three-quarter standing pose facing left, tail fan fully visible behind, tiny fine bill and dark feet.",
+      "asset": "assets/birds/new-zealand-fantail.webp",
+      "reference": "https://www.nzbirdsonline.org.nz/species/new-zealand-fantail"
+    }
+  ]
+}

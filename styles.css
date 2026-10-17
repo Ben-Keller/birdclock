@@ -761,7 +761,10 @@ dialog::backdrop {
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-bottom: 17px;
+  margin-bottom: 12px;
+}
+.library-tools > .quiet-link {
+  flex-shrink: 0;
 }
 .search-field {
   position: relative;
@@ -775,17 +778,34 @@ dialog::backdrop {
   padding: 11px 13px;
   font-size: 12px;
 }
-.library-tools select {
+.library-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.library-filter {
+  min-width: 0;
+  font-size: 10px;
+  color: var(--muted);
+}
+.library-filter select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
   border: 1px solid var(--line);
   background: #fffdf7;
   padding: 10px;
   border-radius: 5px;
-  max-width: 170px;
+  color: var(--ink);
+  font-size: 11px;
 }
 .library-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   font-size: 10px;
   color: var(--muted);
   margin-bottom: 13px;
@@ -860,6 +880,9 @@ dialog::backdrop {
   grid-column: 1/-1;
   color: var(--muted);
   font-size: 12px;
+}
+.empty-state .quiet-link {
+  margin-top: 14px;
 }
 .export-layout {
   display: grid;
@@ -1157,8 +1180,15 @@ dialog::backdrop {
     flex-direction: column;
     align-items: stretch;
   }
-  .library-tools select {
-    max-width: 100%;
+  .library-tools > .quiet-link {
+    align-self: flex-end;
+  }
+  .library-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .library-filter:last-child {
+    grid-column: 1 / -1;
   }
   .bird-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

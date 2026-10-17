@@ -22,6 +22,7 @@ The browser suite uses Playwright with an isolated headless Chrome session. It s
 - Actual PNG, JPEG, WebP, and SVG downloads decoded back into images: native dimensions, nonempty pixels, transparent corners or white JPEG backgrounds, file signatures, unchanged WebP bytes, and embedded SVG artwork.
 - Clock and full-library ZIP downloads, every archived image, species count, and hour assignments.
 - Bird downloads without changing the clock, failed network request recovery, custom rectangular uploads, JSON export/import, and restoration after reload.
+- Combined bird-group, region, and clock-use filters; empty-result recovery; accent and punctuation tolerant search; filtering uploaded artwork.
 - Encoder fallback detection, cancellation when the download dialog closes, dialog keyboard focus, and fullscreen live-hand updates.
 - Wood-selection undo/redo, bird swapping, automatic draft restoration, shared-link undo recovery, and the existing 2,400 px clock PNG export.
 - Responsive editor, library, and download panel layout with screenshot artifacts in `test-results/`.

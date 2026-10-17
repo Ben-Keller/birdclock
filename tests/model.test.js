@@ -138,8 +138,8 @@ test('SVGs have 12 editable hours and isolated pattern/filter IDs', () => {
   assert.match(hands, /rotate\(93 520 520\)/);
 });
 test('catalogue and packaged textures/fonts are complete local assets', () => {
-  assert.equal(birds.length, 32);
-  assert.equal(new Set(ids).size, 32);
+  assert.equal(birds.length, 48);
+  assert.equal(new Set(ids).size, 48);
   for (const b of birds) {
     assert.ok(b.name && b.scientificName && b.region && b.group);
     assert.ok(/^assets\/birds\/[a-z0-9-]+\.webp$/.test(b.asset));
