@@ -12,20 +12,22 @@ npm run perf -- https://ben-keller.github.io/birdclock/ /tmp/birdclock-performan
 
 The script takes the median of three fresh Chrome contexts at 390 × 844, 2× device pixel ratio, 4× CPU slowdown, 150 ms latency, and 200,000 bytes/second download throughput. HTTP cache is disabled. Connection and CDN conditions can still vary. The full JSON includes each run and resource timings.
 
-## Before deployment
+## Published GitHub Pages results
 
-| Measurement              | Previous live site | Optimized local build |
-| ------------------------ | -----------------: | --------------------: |
-| Largest contentful paint |             3.18 s |                1.23 s |
-| Clock controls ready     |             1.92 s |                1.18 s |
-| Page load event          |             7.13 s |                2.43 s |
-| Transferred bytes        |          1,343,165 |               407,285 |
-| Network requests         |                 33 |                    27 |
-| Cumulative layout shift  |             0.0012 |                     0 |
+| Measurement              | Previous live site | Optimized live site |
+| ------------------------ | -----------------: | ------------------: |
+| Largest contentful paint |             3.18 s |              1.02 s |
+| Clock controls ready     |             1.92 s |              0.92 s |
+| Page load event          |             7.13 s |              2.99 s |
+| Transferred bytes        |          1,343,165 |             346,035 |
+| Network requests         |                 33 |                  27 |
+| Cumulative layout shift  |             0.0012 |                   0 |
 
-The local server does not compress text resources. These preliminary numbers compare different servers; the published build will also be measured on GitHub Pages.
+The optimized site transferred 74% less data, reached LCP 68% sooner, and completed loading 58% sooner in this comparison. Individual optimized load times ranged from 2.41 to 4.54 seconds. First contentful paint varied from 0.86 to 1.08 seconds after the change; its median was 1.02 seconds versus 0.83 seconds before, so it did not improve in this run. No layout shift was recorded in the median optimized run.
 
-A separate Chrome DevTools trace of the old live site, using its Slow 4G preset and 4× CPU throttling, measured LCP at 5.25 s and a critical dependency chain ending at 8.47 s. The clock texture was not requested until 3.47 s. These settings differ from the repeatable script, so the results should not be mixed.
+Raw results: [before](performance/2026-10-17-before.json) and [after](performance/2026-10-17-after.json). The before commit is `c4f1a0b`; the optimized commit is `b99304a`.
+
+A separate Chrome DevTools trace of the old live site, using its Slow 4G preset and 4× CPU throttling, measured LCP at 5.25 s and a critical dependency chain ending at 8.47 s. The clock texture was not requested until 3.47 s. With the same DevTools preset after deployment, LCP was 1.86 s and the critical chain ended at 3.57 s. These settings differ from the repeatable script, so the two comparisons should not be mixed. The remaining stylesheet was assigned zero estimated render-blocking savings; a 60 ms unattributed reflow had no identified application call site.
 
 ## Changes
 

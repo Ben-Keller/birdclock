@@ -1,0 +1,450 @@
+{
+  "url": "https://ben-keller.github.io/birdclock/",
+  "measuredAt": "2026-10-17T17:03:26.129Z",
+  "conditions": {
+    "viewport": "390\u00d7844 @2x",
+    "cpuSlowdown": 4,
+    "latencyMs": 150,
+    "downloadBytesPerSecond": 200000,
+    "cache": "disabled; fresh context per run"
+  },
+  "median": {
+    "fcp": 1016,
+    "lcp": 1016,
+    "clockReady": 916.2000000029802,
+    "load": 2987.4000000059605,
+    "bytes": 346035,
+    "requests": 27,
+    "cls": 0,
+    "longTasks": 0
+  },
+  "runs": [
+    {
+      "lcp": 2176,
+      "cls": 0.0011960359818673873,
+      "longTasks": 0,
+      "clockReady": 2111.5,
+      "fcp": 1084,
+      "load": 4537.30000000447,
+      "bytes": 346035,
+      "requests": 27,
+      "resources": [
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-QZQGSM2W.js",
+          "transferSize": 972,
+          "responseEnd": 2032.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-4RXG2F7F.js",
+          "transferSize": 2048,
+          "responseEnd": 2091.2000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/maple.webp",
+          "transferSize": 5282,
+          "responseEnd": 802.8000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-PA4T5X5K.js",
+          "transferSize": 4654,
+          "responseEnd": 840.2000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/cherry.webp",
+          "transferSize": 9252,
+          "responseEnd": 2289.5
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/mahogany.webp",
+          "transferSize": 9412,
+          "responseEnd": 2293.8000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/styles-9b7761a0d6db.css",
+          "transferSize": 7094,
+          "responseEnd": 823.6000000014901
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-400.woff2",
+          "transferSize": 23256,
+          "responseEnd": 2451.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-400.woff2",
+          "transferSize": 24096,
+          "responseEnd": 2354
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/app-VRTYUYQJ.js",
+          "transferSize": 12483,
+          "responseEnd": 915.2000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 4292,
+          "responseEnd": 2069.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-500.woff2",
+          "transferSize": 24784,
+          "responseEnd": 2473.60000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/american-goldfinch.webp",
+          "transferSize": 14786,
+          "responseEnd": 3382.8000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/northern-flicker.webp",
+          "transferSize": 17264,
+          "responseEnd": 4461.60000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/pileated-woodpecker.webp",
+          "transferSize": 12574,
+          "responseEnd": 3592.60000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/annas-hummingbird.webp",
+          "transferSize": 15852,
+          "responseEnd": 4018.60000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/osprey.webp",
+          "transferSize": 19770,
+          "responseEnd": 4155.80000000447
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/common-loon.webp",
+          "transferSize": 12074,
+          "responseEnd": 4290.20000000298
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/kokako.webp",
+          "transferSize": 13118,
+          "responseEnd": 4335.60000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bellbird.webp",
+          "transferSize": 15026,
+          "responseEnd": 4387.30000000447
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bittern.webp",
+          "transferSize": 17224,
+          "responseEnd": 4419.30000000447
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bald-eagle.webp",
+          "transferSize": 17646,
+          "responseEnd": 4491.10000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/wood-duck.webp",
+          "transferSize": 14894,
+          "responseEnd": 4448.5
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/great-horned-owl.webp",
+          "transferSize": 18186,
+          "responseEnd": 4523.5
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-500.woff2",
+          "transferSize": 23640,
+          "responseEnd": 4536.10000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 4292,
+          "responseEnd": 4723.60000000149
+        }
+      ]
+    },
+    {
+      "lcp": 1016,
+      "cls": 0,
+      "longTasks": 40,
+      "clockReady": 916.2000000029802,
+      "fcp": 1016,
+      "load": 2405.89999999851,
+      "bytes": 346035,
+      "requests": 27,
+      "resources": [
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-QZQGSM2W.js",
+          "transferSize": 972,
+          "responseEnd": 674.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-4RXG2F7F.js",
+          "transferSize": 2048,
+          "responseEnd": 659.8000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-PA4T5X5K.js",
+          "transferSize": 4654,
+          "responseEnd": 718
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/maple.webp",
+          "transferSize": 5282,
+          "responseEnd": 747.1000000014901
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/cherry.webp",
+          "transferSize": 9252,
+          "responseEnd": 1222.1000000014901
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/mahogany.webp",
+          "transferSize": 9412,
+          "responseEnd": 1243
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/styles-9b7761a0d6db.css",
+          "transferSize": 7094,
+          "responseEnd": 801.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-400.woff2",
+          "transferSize": 24096,
+          "responseEnd": 996.8000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-400.woff2",
+          "transferSize": 23256,
+          "responseEnd": 1004.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 4292,
+          "responseEnd": 1251.2000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/app-VRTYUYQJ.js",
+          "transferSize": 12483,
+          "responseEnd": 897.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/american-goldfinch.webp",
+          "transferSize": 14786,
+          "responseEnd": 1574
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/northern-flicker.webp",
+          "transferSize": 17264,
+          "responseEnd": 1654.6000000014901
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/osprey.webp",
+          "transferSize": 19770,
+          "responseEnd": 2209.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/pileated-woodpecker.webp",
+          "transferSize": 12574,
+          "responseEnd": 2023.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/annas-hummingbird.webp",
+          "transferSize": 15852,
+          "responseEnd": 2090
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bittern.webp",
+          "transferSize": 17224,
+          "responseEnd": 2172.39999999851
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bellbird.webp",
+          "transferSize": 15026,
+          "responseEnd": 2121.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/kokako.webp",
+          "transferSize": 13118,
+          "responseEnd": 2059.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/common-loon.webp",
+          "transferSize": 12074,
+          "responseEnd": 2179.89999999851
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bald-eagle.webp",
+          "transferSize": 17646,
+          "responseEnd": 2286.60000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/wood-duck.webp",
+          "transferSize": 14894,
+          "responseEnd": 2367.89999999851
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/great-horned-owl.webp",
+          "transferSize": 18186,
+          "responseEnd": 2405.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-500.woff2",
+          "transferSize": 24784,
+          "responseEnd": 1437.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-500.woff2",
+          "transferSize": 23640,
+          "responseEnd": 1409.6000000014901
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 4292,
+          "responseEnd": 2584.60000000149
+        }
+      ]
+    },
+    {
+      "lcp": 912,
+      "cls": 0,
+      "longTasks": 0,
+      "clockReady": 868.7000000029802,
+      "fcp": 856,
+      "load": 2987.4000000059605,
+      "bytes": 346035,
+      "requests": 27,
+      "resources": [
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-QZQGSM2W.js",
+          "transferSize": 972,
+          "responseEnd": 489
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-4RXG2F7F.js",
+          "transferSize": 2048,
+          "responseEnd": 550.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/maple.webp",
+          "transferSize": 5282,
+          "responseEnd": 648.1000000014901
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/chunk-PA4T5X5K.js",
+          "transferSize": 4654,
+          "responseEnd": 656.4000000059605
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/styles-9b7761a0d6db.css",
+          "transferSize": 7094,
+          "responseEnd": 691.6000000014901
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-400.woff2",
+          "transferSize": 23256,
+          "responseEnd": 903.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/cherry.webp",
+          "transferSize": 9252,
+          "responseEnd": 1203
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/woods/mahogany.webp",
+          "transferSize": 9412,
+          "responseEnd": 1351.9000000059605
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-400.woff2",
+          "transferSize": 24096,
+          "responseEnd": 918
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 4292,
+          "responseEnd": 1036.4000000059605
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/dist/app-VRTYUYQJ.js",
+          "transferSize": 12483,
+          "responseEnd": 806.4000000059605
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/inter-500.woff2",
+          "transferSize": 24784,
+          "responseEnd": 1231.5
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/northern-flicker.webp",
+          "transferSize": 17264,
+          "responseEnd": 1917.1000000014901
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/american-goldfinch.webp",
+          "transferSize": 14786,
+          "responseEnd": 1756.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/pileated-woodpecker.webp",
+          "transferSize": 12574,
+          "responseEnd": 1902.3000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/annas-hummingbird.webp",
+          "transferSize": 15852,
+          "responseEnd": 1966.4000000059605
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bellbird.webp",
+          "transferSize": 15026,
+          "responseEnd": 2036.2000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/osprey.webp",
+          "transferSize": 19770,
+          "responseEnd": 2064.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bittern.webp",
+          "transferSize": 17224,
+          "responseEnd": 2072.9000000059605
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/kokako.webp",
+          "transferSize": 13118,
+          "responseEnd": 1989.7000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/common-loon.webp",
+          "transferSize": 12074,
+          "responseEnd": 2102
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/wood-duck.webp",
+          "transferSize": 14894,
+          "responseEnd": 2259.2000000029802
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/bald-eagle.webp",
+          "transferSize": 17646,
+          "responseEnd": 2266.60000000149
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/previews/birds/great-horned-owl.webp",
+          "transferSize": 18186,
+          "responseEnd": 2986.8000000044703
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/fonts/cormorant-500.woff2",
+          "transferSize": 23640,
+          "responseEnd": 1284.5
+        },
+        {
+          "name": "https://ben-keller.github.io/birdclock/assets/brand-bird.webp",
+          "transferSize": 4292,
+          "responseEnd": 3160.3000000044703
+        }
+      ]
+    }
+  ],
+  "commit": "b99304a6ab10b190c6e3803860ea57a9fbf2fe2a"
+}
