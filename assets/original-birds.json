@@ -1,0 +1,98 @@
+[
+  {
+    "id": "northern-flicker",
+    "name": "Northern flicker",
+    "scientificName": "Colaptes auratus",
+    "region": "North America",
+    "group": "Woodland",
+    "asset": "assets/birds/northern-flicker.webp"
+  },
+  {
+    "id": "american-goldfinch",
+    "name": "American goldfinch",
+    "scientificName": "Spinus tristis",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/american-goldfinch.webp"
+  },
+  {
+    "id": "osprey",
+    "name": "Osprey",
+    "scientificName": "Pandion haliaetus",
+    "region": "Worldwide",
+    "group": "Raptors",
+    "asset": "assets/birds/osprey.webp"
+  },
+  {
+    "id": "annas-hummingbird",
+    "name": "Anna’s hummingbird",
+    "scientificName": "Calypte anna",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/annas-hummingbird.webp"
+  },
+  {
+    "id": "pileated-woodpecker",
+    "name": "Pileated woodpecker",
+    "scientificName": "Dryocopus pileatus",
+    "region": "North America",
+    "group": "Woodland",
+    "asset": "assets/birds/pileated-woodpecker.webp"
+  },
+  {
+    "id": "bittern",
+    "name": "Australasian bittern",
+    "scientificName": "Botaurus poiciloptilus",
+    "region": "Australasia",
+    "group": "Waterbirds",
+    "asset": "assets/birds/bittern.webp"
+  },
+  {
+    "id": "bellbird",
+    "name": "New Zealand bellbird",
+    "scientificName": "Anthornis melanura",
+    "region": "New Zealand",
+    "group": "Songbirds",
+    "asset": "assets/birds/bellbird.webp"
+  },
+  {
+    "id": "kokako",
+    "name": "Kōkako",
+    "scientificName": "Callaeas wilsoni",
+    "region": "New Zealand",
+    "group": "Woodland",
+    "asset": "assets/birds/kokako.webp"
+  },
+  {
+    "id": "common-loon",
+    "name": "Common loon",
+    "scientificName": "Gavia immer",
+    "region": "North America",
+    "group": "Waterbirds",
+    "asset": "assets/birds/common-loon.webp"
+  },
+  {
+    "id": "bald-eagle",
+    "name": "Bald eagle",
+    "scientificName": "Haliaeetus leucocephalus",
+    "region": "North America",
+    "group": "Raptors",
+    "asset": "assets/birds/bald-eagle.webp"
+  },
+  {
+    "id": "wood-duck",
+    "name": "Wood duck",
+    "scientificName": "Aix sponsa",
+    "region": "North America",
+    "group": "Waterbirds",
+    "asset": "assets/birds/wood-duck.webp"
+  },
+  {
+    "id": "great-horned-owl",
+    "name": "Great horned owl",
+    "scientificName": "Bubo virginianus",
+    "region": "North America",
+    "group": "Raptors",
+    "asset": "assets/birds/great-horned-owl.webp"
+  }
+]

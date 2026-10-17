@@ -1,0 +1,162 @@
+[
+  {
+    "id": "northern-cardinal",
+    "name": "Northern cardinal",
+    "scientificName": "Cardinalis cardinalis",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/northern-cardinal.webp"
+  },
+  {
+    "id": "blue-jay",
+    "name": "Blue jay",
+    "scientificName": "Cyanocitta cristata",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/blue-jay.webp"
+  },
+  {
+    "id": "mourning-dove",
+    "name": "Mourning dove",
+    "scientificName": "Zenaida macroura",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/mourning-dove.webp"
+  },
+  {
+    "id": "black-capped-chickadee",
+    "name": "Black-capped chickadee",
+    "scientificName": "Poecile atricapillus",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/black-capped-chickadee.webp"
+  },
+  {
+    "id": "american-robin",
+    "name": "American robin",
+    "scientificName": "Turdus migratorius",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/american-robin.webp"
+  },
+  {
+    "id": "eastern-bluebird",
+    "name": "Eastern bluebird",
+    "scientificName": "Sialia sialis",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/eastern-bluebird.webp"
+  },
+  {
+    "id": "cedar-waxwing",
+    "name": "Cedar waxwing",
+    "scientificName": "Bombycilla cedrorum",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/cedar-waxwing.webp"
+  },
+  {
+    "id": "tufted-titmouse",
+    "name": "Tufted titmouse",
+    "scientificName": "Baeolophus bicolor",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/tufted-titmouse.webp"
+  },
+  {
+    "id": "red-winged-blackbird",
+    "name": "Red-winged blackbird",
+    "scientificName": "Agelaius phoeniceus",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/red-winged-blackbird.webp"
+  },
+  {
+    "id": "baltimore-oriole",
+    "name": "Baltimore oriole",
+    "scientificName": "Icterus galbula",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/baltimore-oriole.webp"
+  },
+  {
+    "id": "rose-breasted-grosbeak",
+    "name": "Rose-breasted grosbeak",
+    "scientificName": "Pheucticus ludovicianus",
+    "region": "North America",
+    "group": "Songbirds",
+    "asset": "assets/birds/rose-breasted-grosbeak.webp"
+  },
+  {
+    "id": "american-kestrel",
+    "name": "American kestrel",
+    "scientificName": "Falco sparverius",
+    "region": "North America",
+    "group": "Raptors",
+    "asset": "assets/birds/american-kestrel.webp"
+  },
+  {
+    "id": "peregrine-falcon",
+    "name": "Peregrine falcon",
+    "scientificName": "Falco peregrinus",
+    "region": "North America",
+    "group": "Raptors",
+    "asset": "assets/birds/peregrine-falcon.webp"
+  },
+  {
+    "id": "barn-owl",
+    "name": "Barn owl",
+    "scientificName": "Tyto alba",
+    "region": "North America",
+    "group": "Raptors",
+    "asset": "assets/birds/barn-owl.webp"
+  },
+  {
+    "id": "snowy-owl",
+    "name": "Snowy owl",
+    "scientificName": "Bubo scandiacus",
+    "region": "North America",
+    "group": "Raptors",
+    "asset": "assets/birds/snowy-owl.webp"
+  },
+  {
+    "id": "common-raven",
+    "name": "Common raven",
+    "scientificName": "Corvus corax",
+    "region": "North America",
+    "group": "Woodland",
+    "asset": "assets/birds/common-raven.webp"
+  },
+  {
+    "id": "belted-kingfisher",
+    "name": "Belted kingfisher",
+    "scientificName": "Megaceryle alcyon",
+    "region": "North America",
+    "group": "Waterbirds",
+    "asset": "assets/birds/belted-kingfisher.webp"
+  },
+  {
+    "id": "atlantic-puffin",
+    "name": "Atlantic puffin",
+    "scientificName": "Fratercula arctica",
+    "region": "North Atlantic",
+    "group": "Waterbirds",
+    "asset": "assets/birds/atlantic-puffin.webp"
+  },
+  {
+    "id": "mallard",
+    "name": "Mallard",
+    "scientificName": "Anas platyrhynchos",
+    "region": "North America",
+    "group": "Waterbirds",
+    "asset": "assets/birds/mallard.webp"
+  },
+  {
+    "id": "tui",
+    "name": "Tūī",
+    "scientificName": "Prosthemadera novaeseelandiae",
+    "region": "New Zealand",
+    "group": "Songbirds",
+    "asset": "assets/birds/tui.webp"
+  }
+]

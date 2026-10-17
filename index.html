@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f0e6" />
+    <meta
+      name="description"
+      content="Design your own wooden bird clock. Choose from 32 illustrated birds, mix three natural woods, and save your favorite designs."
+    />
+    <title>Woodland Hours — Bird Clock Studio</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preload"
+      href="assets/fonts/cormorant-400.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/inter-400.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#editor">Skip to clock controls</a>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Woodland Hours home"
+        ><svg viewBox="0 0 36 36" aria-hidden="true">
+          <path
+            d="M18 2 26 4 32 10 34 18 32 26 26 32 18 34 10 32 4 26 2 18 4 10 10 4Z"
+          />
+          <path d="M18 8V18L25 22" /></svg
+        ><span>Woodland Hours<small>A LITTLE TIME, WELL SPENT.</small></span></a
+      >
+      <nav aria-label="Design actions">
+        <span id="save-status" class="save-status"
+          ><i></i>Saved in this browser</span
+        ><button class="button ghost" id="saved-button">
+          My designs <span id="saved-count">0</span></button
+        ><button class="button primary" id="export-button">
+          Save & share <span aria-hidden="true">↗</span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">THE BIRD CLOCK STUDIO <span> / </span> NO. 01</p>
+          <h1>Twelve hours. <em>Entirely yours.</em></h1>
+          <p>A bird for every hour. A different grain for every piece.</p>
+        </div>
+        <a class="quiet-link" href="#" id="about-button"
+          >A note on the studio <span aria-hidden="true">↗</span></a
+        >
+      </section>
+      <section class="workspace" aria-label="Clock design workspace">
+        <div class="preview-column">
+          <div class="preview-top">
+            <div class="preview-label">
+              <span class="status-dot"></span>YOUR CLOCK, AS IT TAKES SHAPE
+            </div>
+            <div class="undo-controls">
+              <button
+                id="undo-button"
+                class="icon-button"
+                aria-label="Undo last change"
+                title="Undo (Ctrl/⌘ Z)"
+              >
+                ↶</button
+              ><button
+                id="redo-button"
+                class="icon-button"
+                aria-label="Redo last change"
+                title="Redo (Ctrl/⌘ Shift Z)"
+              >
+                ↷</button
+              ><span></span
+              ><button
+                id="focus-button"
+                class="icon-button"
+                aria-label="View clock fullscreen"
+                title="View fullscreen"
+              >
+                ⛶
+              </button>
+            </div>
+          </div>
+          <div class="clock-stage" id="clock-stage">
+            <div id="clock" class="clock-wrap">
+              <p class="loading">Opening the studio…</p>
+            </div>
+          </div>
+          <div class="preview-caption">
+            <span class="tiny-clock" aria-hidden="true">◷</span>
+            <p>Select any slice to make it your own.</p>
+            <button id="shuffle-button" class="quiet-link">
+              Shuffle woods <span aria-hidden="true">⤨</span>
+            </button>
+          </div>
+          <div class="design-name-row">
+            <div>
+              <p class="eyebrow">YOUR CURRENT DESIGN</p>
+              <input
+                id="design-name"
+                aria-label="Design name"
+                maxlength="80"
+                value="Twelve woodland hours"
+              />
+            </div>
+            <div id="wood-summary" class="wood-summary"></div>
+          </div>
+        </div>
+        <aside
+          class="editor"
+          id="editor"
+          aria-label="Clock customization controls"
+        >
+          <div
+            class="editor-tabs"
+            role="tablist"
+            aria-label="Customization sections"
+          >
+            <button
+              class="active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel"
+              id="tab-slice"
+              data-tab="slice"
+            >
+              The hours</button
+            ><button
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel"
+              id="tab-face"
+              data-tab="face"
+              tabindex="-1"
+            >
+              The details</button
+            ><button
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel"
+              id="tab-register"
+              data-tab="register"
+              tabindex="-1"
+            >
+              Overview
+            </button>
+          </div>
+          <div id="panel" role="tabpanel" aria-labelledby="tab-slice"></div>
+        </aside>
+      </section>
+      <section class="material-note">
+        <div class="material-mark" aria-hidden="true">✳</div>
+        <div>
+          <h2>Made of small, thoughtful choices.</h2>
+          <p>
+            Thirty-two birds, three natural woods, and a little room to play.
+            Your designs stay in your browser until you choose to share them.
+          </p>
+        </div>
+        <div class="material-mini" aria-label="Maple, mahogany and cherry">
+          <span style="background-image: url('assets/woods/maple.webp')"></span
+          ><span
+            style="background-image: url('assets/woods/mahogany.webp')"
+          ></span
+          ><span
+            style="background-image: url('assets/woods/cherry.webp')"
+          ></span>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span
+        >WOODLAND HOURS <span class="footer-divider">/</span> A clock of your
+        own.</span
+      >
+      <div>
+        <button id="import-button">Import design</button
+        ><button id="reset-button">Start fresh</button
+        ><a
+          href="https://www.figma.com/design/bzVcOwpc5U64Vq2yZNm1SD"
+          target="_blank"
+          rel="noopener"
+          >Original design ↗</a
+        >
+      </div>
+    </footer>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div id="modal-content"></div>
+    </dialog>
+    <input
+      type="file"
+      id="json-input"
+      accept=".json,application/json"
+      hidden
+    /><input
+      type="file"
+      id="bird-input"
+      accept="image/png,image/jpeg,image/webp"
+      hidden
+    />
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <noscript
+      ><p class="noscript">
+        Please enable JavaScript to customize your bird clock.
+      </p></noscript
+    >
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
