@@ -1,6 +1,7 @@
 export function attachClockTooltips(clock, tooltip) {
   let activeSlice = null,
     dismissedSlice = null,
+    hoverDismissed = false,
     hideTimer;
 
   function hide() {
@@ -44,7 +45,7 @@ export function attachClockTooltips(clock, tooltip) {
   }
 
   clock.addEventListener('pointerover', (event) => {
-    if (event.pointerType === 'touch') return;
+    if (event.pointerType === 'touch' || hoverDismissed) return;
     const slice = event.target.closest('.clock-slice');
     if (!slice || slice.contains(event.relatedTarget)) return;
     show(slice);
@@ -66,9 +67,18 @@ export function attachClockTooltips(clock, tooltip) {
   });
   tooltip.addEventListener('pointerenter', () => clearTimeout(hideTimer));
   tooltip.addEventListener('pointerleave', scheduleHide);
+  document.addEventListener('pointermove', (event) => {
+    if (!hoverDismissed || event.pointerType === 'touch') return;
+    hoverDismissed = false;
+    if (clock.contains(event.target))
+      show(event.target.closest('.clock-slice'));
+  });
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape' || tooltip.hidden) return;
     dismissedSlice = activeSlice;
+    // Hiding the tooltip can expose another slice under a stationary pointer.
+    // Wait for pointer movement before showing another hover tooltip.
+    hoverDismissed = true;
     hide();
     event.preventDefault();
   });

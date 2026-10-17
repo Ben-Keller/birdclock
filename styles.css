@@ -469,9 +469,6 @@ main {
   font-size: 20px;
   color: var(--muted);
 }
-.control-section {
-  margin-top: 24px;
-}
 .wood-options {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -523,9 +520,6 @@ main {
   line-height: 1.7;
   margin-top: 10px;
 }
-.composition-heading {
-  margin-top: 28px;
-}
 .range-row {
   margin-top: 15px;
 }
@@ -566,34 +560,61 @@ main {
   color: var(--green);
   background: #eceee6;
 }
-.advanced {
-  margin-top: 21px;
+.settings-section + .settings-section {
+  margin-top: 14px;
 }
-.advanced summary {
-  font-size: 10px;
-  cursor: pointer;
-  color: var(--muted);
-  list-style: none;
+.settings-section > summary {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+  cursor: pointer;
+  list-style: none;
 }
-.advanced summary:after {
-  content: '+';
-}
-.advanced[open] summary:after {
-  content: '−';
-}
-.advanced summary::-webkit-details-marker {
+.settings-section > summary::-webkit-details-marker {
   display: none;
 }
-.clock-details {
-  margin-top: 32px;
+.settings-section > summary::after {
+  content: '+';
+  color: var(--muted);
+  font-size: 20px;
+  font-weight: 300;
 }
-.clock-details .field-label {
-  font-family: var(--sans);
-  font-weight: 400;
+.settings-section[open] > summary::after {
+  content: '−';
 }
-.clock-details .select-field {
+.settings-section > summary:hover .settings-title {
+  color: var(--green);
+}
+.settings-title {
+  display: block;
+  font: 26px/1.2 var(--serif);
+}
+.settings-context {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.settings-body {
+  padding: 8px 0 18px;
+}
+.composition-controls {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+  margin: 26px 0 0;
+}
+.composition-controls legend {
+  padding: 0;
+  margin: 0;
+}
+.clock-appearance {
+  margin-top: 26px;
+}
+.clock-appearance .select-field {
   margin-top: 0;
 }
 .two-controls {

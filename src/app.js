@@ -125,61 +125,81 @@ function render() {
   $('#reset-view-button').disabled = !catalogue.length;
 }
 function renderPanel() {
-  const s = config.slices[selected],
+  const panel = $('#panel'),
+    expanded = new Set($$('details[open]', panel).map((section) => section.id)),
+    active = panel.contains(document.activeElement)
+      ? document.activeElement
+      : null,
+    focusKey = ['data-key', 'data-action', 'data-wood'].find((key) =>
+      active?.hasAttribute(key),
+    ),
+    focusValue = focusKey ? active.getAttribute(focusKey) : null,
+    s = config.slices[selected],
     bird = birdById(s.bird),
+    wood = WOODS.find((w) => w.id === s.wood),
     f = config.face;
-  $('#panel').innerHTML = `
-    <div class="field-label">THE BIRD <span>Hour ${selected + 1}</span></div>
-    <button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}">
-      <img src="${esc(bird.asset)}" alt="${esc(bird.name)}">
-      <span>
-        <span class="name">${esc(bird.name)}</span>
-        <span class="latin">${esc(bird.scientificName)}</span>
-        <span class="change">Explore ${allBirds().length} birds</span>
-      </span>
-      <span class="arrow" aria-hidden="true">↗</span>
-    </button>
-    <section class="control-section">
-      <div class="field-label">THE WOOD</div>
-      <div class="wood-options">
-        ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
+  panel.innerHTML = `
+    <details id="bird-settings" class="settings-section" ${expanded.has('bird-settings') ? 'open' : ''}>
+      <summary aria-label="Bird customization"><span><span class="settings-title">Bird</span><span class="settings-context">${esc(bird.name)} · Hour ${selected + 1}</span></span></summary>
+      <div class="settings-body">
+        <button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}">
+          <img src="${esc(bird.asset)}" alt="${esc(bird.name)}">
+          <span>
+            <span class="name">${esc(bird.name)}</span>
+            <span class="latin">${esc(bird.scientificName)}</span>
+            <span class="change">Explore ${allBirds().length} birds</span>
+          </span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </button>
+        <fieldset class="composition-controls">
+          <legend class="field-label">Composition</legend>
+          ${range('Bird size', 'slice.scale', s.scale, 0.55, 1.5, 0.05, 'pct')}
+          ${range('Rotate bird', 'slice.rotation', s.rotation, -180, 180, 5, 'deg')}
+          <div class="two-controls">
+            ${range('Horizontal', 'slice.x', s.x, -65, 65, 1, 'px')}
+            ${range('Vertical', 'slice.y', s.y, -65, 65, 1, 'px')}
+          </div>
+          <div class="inline-actions">
+            <button class="mini-button ${s.flip ? 'active' : ''}" data-action="flip" aria-pressed="${s.flip}">⇄ Flip bird</button>
+            <button class="mini-button" data-action="reset-bird">Reset placement</button>
+          </div>
+        </fieldset>
+        <div class="inline-actions">
+          <button class="mini-button" data-action="shuffle-birds">Randomize birds</button>
+        </div>
       </div>
-    </section>
-    <div class="field-label composition-heading">THE COMPOSITION</div>
-    ${range('Bird size', 'slice.scale', s.scale, 0.55, 1.5, 0.05, 'pct')}
-    <div class="inline-actions">
-      <button class="mini-button ${s.flip ? 'active' : ''}" data-action="flip" aria-pressed="${s.flip}">⇄ Flip bird</button>
-      <button class="mini-button" data-action="reset-bird">Reset placement</button>
-    </div>
-    <details class="advanced">
-      <summary>Fine-tune placement</summary>
-      ${range('Rotate bird', 'slice.rotation', s.rotation, -180, 180, 5, 'deg')}
-      <div class="two-controls">
-        ${range('Horizontal', 'slice.x', s.x, -65, 65, 1, 'px')}
-        ${range('Vertical', 'slice.y', s.y, -65, 65, 1, 'px')}
-      </div>
-      <p class="hint">Artwork stays inside its slice. Rotate and move it to find the right fit.</p>
     </details>
-    <section class="clock-details" aria-labelledby="clock-details-heading">
-      <h3 id="clock-details-heading" class="field-label">THE CLOCK <span>All twelve hours</span></h3>
-      <div class="two-controls">
-        ${selectField('Clock shape', 'face.shape', f.shape, [
-          ['polygon', 'Twelve-sided'],
-          ['circle', 'Round'],
-        ])}
-        ${selectField('Hour markers', 'face.numbers', f.numbers, [
-          ['arabic', 'Numbers'],
-          ['roman', 'Roman numerals'],
-          ['dots', 'Small dots'],
-          ['none', 'Birds only'],
-        ])}
+    <details id="wood-clock-settings" class="settings-section" ${expanded.has('wood-clock-settings') ? 'open' : ''}>
+      <summary aria-label="Wood and clock customization"><span><span class="settings-title">Wood &amp; clock</span><span class="settings-context">${esc(wood.name)} · Hour ${selected + 1}</span></span></summary>
+      <div class="settings-body">
+        <div class="wood-options">
+          ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
+        </div>
+        <div class="clock-appearance">
+          <div class="field-label">Clock appearance <span>All twelve hours</span></div>
+          <div class="two-controls">
+            ${selectField('Clock shape', 'face.shape', f.shape, [
+              ['polygon', 'Twelve-sided'],
+              ['circle', 'Round'],
+            ])}
+            ${selectField('Hour markers', 'face.numbers', f.numbers, [
+              ['arabic', 'Numbers'],
+              ['roman', 'Roman numerals'],
+              ['dots', 'Small dots'],
+              ['none', 'Birds only'],
+            ])}
+          </div>
+          ${range('Wood grain', 'face.grain', f.grain, 0, 1, 0.05, 'pct')}
+        </div>
+        <div class="inline-actions">
+          <button class="mini-button" data-action="shuffle-woods">Randomize woods</button>
+        </div>
       </div>
-      ${range('Wood grain', 'face.grain', f.grain, 0, 1, 0.05, 'pct')}
-      <div class="inline-actions">
-        <button class="mini-button" data-action="shuffle-birds">Randomize birds</button>
-        <button class="mini-button" data-action="shuffle-woods">Randomize woods</button>
-      </div>
-    </section>`;
+    </details>`;
+  if (focusKey)
+    panel
+      .querySelector(`[${focusKey}="${CSS.escape(focusValue)}"]`)
+      ?.focus({ preventScroll: true });
 }
 function chooseHour(i) {
   selected = (i + 12) % 12;
@@ -714,6 +734,7 @@ document.addEventListener('keydown', (e) => {
     } else if (['Enter', ' '].includes(e.key)) {
       e.preventDefault();
       chooseHour(+e.target.closest('.clock-slice').dataset.hour);
+      $('#bird-settings').open = true;
       $('.bird-choice')?.focus();
     }
     return;
