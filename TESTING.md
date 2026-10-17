@@ -39,12 +39,14 @@ The browser suite uses Playwright with an isolated headless Chrome session. It s
 - Reset view preserves the customized design, uploaded artwork, and existing edit history; only the camera returns to the front.
 - Perspective dragging on desktop and emulated touch, keyboard tilt/reset, cancelled gestures, projected slice selection and bird swaps, both clock shapes, and fullscreen profile selection after tilting.
 
-- Real audio playback, pause/resume, completion, single-player behavior, stopping on selection/dialog changes, retry after network errors, cancellation of delayed responses, and usable credit links when the metadata request fails. No recording or full credit manifest is fetched before Play. Every packaged MP3 is decoded in Chrome and checked for non-silent mono samples.
+- Real audio playback, pause/resume, completion, single-player behavior, stopping on selection/dialog changes, retry after network errors, cancellation of delayed responses, and usable credit links when the metadata request fails. No recording or full credit manifest is fetched before a clock-slice activation or Listen. Every packaged MP3 is decoded in Chrome and checked for non-silent mono samples.
 - Audio source/index/clip consistency, SHA-256 hashes, explicit gaps, source/recordist/license attribution, excerpt size limits, and no invented audio for uploaded artwork.
+
+- Clock-slice clicks and touch taps start playback, repeated clicks keep one player active, keyboard Enter/Space activates audio, and hover/focus/dragging stay silent. Fullscreen playback starts even while profile data is pending and continues when the profile renders.
 
 ## Browser verification
 
-All 22 unit tests and 42 browser scenarios passed on October 17, 2026, with syntax and formatting checks passing too. The browser suite ran locally in headless Google Chrome on macOS. Desktop and mobile-width screenshots have been inspected, including tilted clocks in both shapes, field-guide maps and profiles at 390 px, and editor layout checks at 320 px.
+All 22 unit tests and 46 browser scenarios passed on October 17, 2026, with syntax and formatting checks passing too. The browser suite ran locally in headless Google Chrome on macOS. Desktop and mobile-width screenshots have been inspected, including tilted clocks in both shapes, field-guide maps and profiles at 390 px, and editor layout checks at 320 px.
 
 The independent Python ZIP validator uses a temporary file and a bounded timeout, avoiding a macOS stall with large synchronous stdin pipes. Audio controls and credits were also inspected at 1440, 390, and 320 px.
 

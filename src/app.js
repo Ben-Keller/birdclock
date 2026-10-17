@@ -16,6 +16,7 @@ import { attachClockTooltips } from './clock-tooltip.js';
 import { attachBirdDrag } from './clock-drag.js';
 import {
   birdAudioMarkup,
+  playBirdAudio,
   refreshBirdAudio,
   stopBirdAudio,
   toggleBirdAudio,
@@ -226,7 +227,7 @@ function renderPanel() {
       .querySelector(`[${focusKey}="${CSS.escape(focusValue)}"]`)
       ?.focus({ preventScroll: true });
 }
-function chooseHour(i) {
+function chooseHour(i, { play = false } = {}) {
   selected = (i + 12) % 12;
   clockDrag.cancel();
   clockTooltip.hide();
@@ -237,6 +238,7 @@ function chooseHour(i) {
     slice.setAttribute('tabindex', active ? '0' : '-1');
   });
   renderPanel();
+  if (play) playBirdAudio(config.slices[selected].bird);
 }
 function setValue(key, value) {
   if (key.startsWith('slice.'))
@@ -632,7 +634,7 @@ async function uploadBird(file) {
 document.addEventListener('click', (e) => {
   const slice = e.target.closest('.clock-slice');
   if (slice && $('#clock').contains(slice)) {
-    chooseHour(+slice.dataset.hour);
+    chooseHour(+slice.dataset.hour, { play: true });
     return;
   }
   const wood = e.target.closest('[data-wood]');
@@ -764,7 +766,9 @@ document.addEventListener('keydown', (e) => {
       $(`[data-hour="${selected}"]`, $('#clock')).focus();
     } else if (['Enter', ' '].includes(e.key)) {
       e.preventDefault();
-      chooseHour(+e.target.closest('.clock-slice').dataset.hour);
+      chooseHour(+e.target.closest('.clock-slice').dataset.hour, {
+        play: true,
+      });
       $('.bird-choice')?.focus();
     }
     return;

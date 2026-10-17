@@ -2,6 +2,7 @@ import { escapeHTML as esc } from './clock.js';
 import { attachClockView, clockViewMarkup } from './clock-view.js';
 import {
   birdAudioMarkup,
+  playBirdAudio,
   refreshBirdAudio,
   stopBirdAudio,
 } from './bird-audio.js';
@@ -137,7 +138,7 @@ export function openBirdExplorer({
   showModal(
     'fullscreen',
     `${modalHeader('', 'Bird field guide')}
-    <div class="bird-explorer"><div class="explorer-clock-pane" tabindex="0" role="group" aria-label="Clock perspective" aria-describedby="explorer-help"><p id="explorer-help">Choose a slice to meet its bird.<span class="sr-only"> Drag the space around the clock to change perspective. With the view focused, arrow keys tilt and Home resets the view. With a slice focused, arrow keys move between hours and Enter opens its profile.</span></p><div class="fullscreen-clock">${clockViewMarkup(config, birds, { selected, detailedBirds: true, label: 'Explore the birds on your clock', helpId: 'explorer-help' })}</div><div class="explorer-navigation"><button class="mini-button" type="button" data-explorer-step="-1" aria-label="Previous bird on the clock">←</button><p id="explorer-current"></p><button class="mini-button" type="button" data-explorer-step="1" aria-label="Next bird on the clock">→</button><button class="mini-button" type="button" data-view-reset aria-label="Reset clock perspective" title="Reset view">↺</button></div><span class="sr-only" data-view-status role="status"></span><label class="explorer-browse">Browse the collection<select id="explorer-bird" aria-label="Browse the bird collection">${[
+    <div class="bird-explorer"><div class="explorer-clock-pane" tabindex="0" role="group" aria-label="Clock perspective" aria-describedby="explorer-help"><p id="explorer-help">Choose a slice to hear and explore its bird.<span class="sr-only"> Drag the space around the clock to change perspective. With the view focused, arrow keys tilt and Home resets the view. With a slice focused, arrow keys move between hours and Enter or Space opens its profile and plays its recording.</span></p><div class="fullscreen-clock">${clockViewMarkup(config, birds, { selected, detailedBirds: true, label: 'Explore the birds on your clock', helpId: 'explorer-help' })}</div><div class="explorer-navigation"><button class="mini-button" type="button" data-explorer-step="-1" aria-label="Previous bird on the clock">←</button><p id="explorer-current"></p><button class="mini-button" type="button" data-explorer-step="1" aria-label="Next bird on the clock">→</button><button class="mini-button" type="button" data-view-reset aria-label="Reset clock perspective" title="Reset view">↺</button></div><span class="sr-only" data-view-status role="status"></span><label class="explorer-browse">Browse the collection<select id="explorer-bird" aria-label="Browse the bird collection">${[
       ...birds,
     ]
       .sort((a, b) => a.name.localeCompare(b.name))
@@ -174,7 +175,7 @@ export function openBirdExplorer({
   }
   function renderProfile({ focus = false } = {}) {
     if (!active()) return;
-    stopBirdAudio();
+    refreshBirdAudio(currentId);
     if (!data) {
       focusWhenReady = focus;
       return;
@@ -197,11 +198,12 @@ export function openBirdExplorer({
     if (focus && matchMedia('(max-width: 800px)').matches)
       article.scrollIntoView({ block: 'start', behavior: 'instant' });
   }
-  function choose(index, focus = false) {
+  function choose(index, { focus = false, play = false } = {}) {
     hour = (index + 12) % 12;
     currentId = config.slices[hour].bird;
     updateSelection();
     renderProfile({ focus });
+    if (play) playBirdAudio(currentId);
   }
   async function fetchProfiles() {
     article.setAttribute('aria-busy', 'true');
@@ -218,7 +220,7 @@ export function openBirdExplorer({
   root.addEventListener('click', (event) => {
     if (event.target.closest('[data-view-reset]')) return clockView.reset();
     const slice = event.target.closest('.clock-slice');
-    if (slice) return choose(+slice.dataset.hour, true);
+    if (slice) return choose(+slice.dataset.hour, { focus: true, play: true });
     const step = event.target.closest('[data-explorer-step]');
     if (step)
       return choose((hour < 0 ? selected : hour) + +step.dataset.explorerStep);
@@ -281,7 +283,7 @@ export function openBirdExplorer({
         .focus({ preventScroll: true });
     } else if (['Enter', ' '].includes(event.key)) {
       event.preventDefault();
-      choose(index, true);
+      choose(index, { focus: true, play: true });
     }
   });
   updateSelection();

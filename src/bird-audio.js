@@ -135,6 +135,13 @@ export function toggleBirdAudio(button) {
   if (!recordings[id]) return;
   if (id === currentId && state === 'loading') return stopBirdAudio();
   if (id === currentId && state === 'playing') return audio.pause();
+  playBirdAudio(id);
+}
+
+export function playBirdAudio(id) {
+  if (!recordings[id]) return stopBirdAudio();
+  // Selecting an already-playing slice should not pause it or overlap clips.
+  if (id === currentId && ['playing', 'loading'].includes(state)) return;
   if (id !== currentId || state !== 'paused') {
     stopBirdAudio();
     currentId = id;

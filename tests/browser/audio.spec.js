@@ -15,7 +15,6 @@ test.beforeEach(async ({ page }) => {
     window.__players = [];
     window.Audio = function (...args) {
       const player = new NativeAudio(...args);
-      player.muted = true;
       window.__players.push(player);
       return player;
     };
@@ -94,7 +93,7 @@ test('selection, modal transitions, and fullscreen closing stop the previous rec
   ).toBeVisible();
   await page.locator('#clock [data-hour="4"] .slice-hit').click();
   await expect(
-    page.getByRole('button', { name: 'Play Wood duck recording' }),
+    page.getByRole('button', { name: 'Pause Wood duck recording' }),
   ).toBeVisible();
   expect(
     await page.evaluate(
@@ -102,10 +101,6 @@ test('selection, modal transitions, and fullscreen closing stop the previous rec
         window.__players[0].paused && !window.__players[0].getAttribute('src'),
     ),
   ).toBe(true);
-  await page.getByRole('button', { name: 'Play Wood duck recording' }).click();
-  await expect(
-    page.getByRole('button', { name: 'Pause Wood duck recording' }),
-  ).toBeVisible();
   await page.getByRole('button', { name: 'View clock fullscreen' }).click();
   const profile = page.locator('#bird-profile');
   await expect(
@@ -230,12 +225,170 @@ test('cancelled loading cannot start playing when its response arrives late', as
     ),
   ).toBe(true);
   await page.locator('#clock [data-hour="6"] .slice-hit').click();
-  await page
-    .getByRole('button', { name: 'Play Mourning dove recording' })
-    .click();
   await expect(
     page.getByRole('button', { name: 'Pause Mourning dove recording' }),
   ).toBeVisible();
+});
+
+test('clock clicks play automatically without toggling or overlapping recordings', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await expect(page.locator('#clock')).not.toHaveAttribute('inert');
+  expect(await page.evaluate(() => window.__players.length)).toBe(0);
+  const osprey = page.locator('#clock [data-hour="2"] .slice-hit');
+  await osprey.click();
+  await expect(
+    page.getByRole('button', { name: 'Pause Osprey recording' }),
+  ).toBeVisible();
+  expect(await page.evaluate(() => window.__players[0].muted)).toBe(false);
+  await osprey.click();
+  await expect(
+    page.getByRole('button', { name: 'Pause Osprey recording' }),
+  ).toBeVisible();
+  expect(await page.evaluate(() => window.__players.length)).toBe(1);
+  await page.getByRole('button', { name: 'Pause Osprey recording' }).click();
+  await expect(
+    page.getByRole('button', { name: 'Resume Osprey recording' }),
+  ).toBeVisible();
+  await osprey.click();
+  await expect(
+    page.getByRole('button', { name: 'Pause Osprey recording' }),
+  ).toBeVisible();
+  expect(await page.evaluate(() => window.__players.length)).toBe(1);
+  await page.locator('#clock [data-hour="4"] .slice-hit').click();
+  await expect(
+    page.getByRole('button', { name: 'Pause Wood duck recording' }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(() => window.__players.filter((p) => !p.paused).length),
+  ).toBe(1);
+  expect(
+    await page.evaluate(
+      () =>
+        window.__players[0].paused && !window.__players[0].getAttribute('src'),
+    ),
+  ).toBe(true);
+});
+
+test('fullscreen slice playback starts before profile data arrives and survives its render', async ({
+  page,
+}) => {
+  let release;
+  const held = new Promise((resolve) => (release = resolve));
+  await page.route('**/assets/bird-profiles.json', async (route) => {
+    await held;
+    await route.fulfill({
+      contentType: 'application/json',
+      body: await fs.readFile('assets/bird-profiles.json', 'utf8'),
+    });
+  });
+  await page.goto('/');
+  await page.getByRole('button', { name: 'View clock fullscreen' }).click();
+  await expect(page.getByText('Opening the field guide…')).toBeVisible();
+  expect(await page.evaluate(() => window.__players.length)).toBe(0);
+  try {
+    await page.locator('.fullscreen-clock [data-hour="4"] .slice-hit').click();
+    await expect
+      .poll(() => page.evaluate(() => window.__players[0]?.currentTime || 0))
+      .toBeGreaterThan(0);
+  } finally {
+    release();
+  }
+  const profile = page.locator('#bird-profile');
+  await expect(
+    profile.getByRole('button', { name: 'Pause Wood duck recording' }),
+  ).toBeVisible();
+  expect(await page.evaluate(() => window.__players.length)).toBe(1);
+  await page.locator('.fullscreen-clock [data-hour="6"] .slice-hit').click();
+  await expect(
+    profile.getByRole('button', { name: 'Pause Mourning dove recording' }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(() => window.__players.filter((p) => !p.paused).length),
+  ).toBe(1);
+  await page.keyboard.press('Escape');
+  await expect
+    .poll(() => page.evaluate(() => window.__players.every((p) => p.paused)))
+    .toBe(true);
+});
+
+test('dragging and focus stay silent; keyboard activation plays the bird', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await expect(page.locator('#clock')).not.toHaveAttribute('inert');
+  const slice = page.locator('#clock [data-hour="2"]');
+  await slice.hover();
+  await slice.focus();
+  await slice.press('ArrowRight');
+  expect(await page.evaluate(() => window.__players.length)).toBe(0);
+  await page.keyboard.press('Tab');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-fonts-ready',
+    'true',
+  );
+  await page.evaluate(() => document.fonts.ready);
+  const source = await page
+    .locator('#clock [data-hour="2"] .bird-image')
+    .boundingBox();
+  const target = await page
+    .locator('#clock [data-hour="8"] .bird-image')
+    .boundingBox();
+  await page.mouse.move(
+    source.x + source.width / 2,
+    source.y + source.height / 2,
+  );
+  await page.mouse.down();
+  await page.mouse.move(
+    target.x + target.width / 2,
+    target.y + target.height / 2,
+    { steps: 12 },
+  );
+  await expect(page.locator('.bird-drag-preview')).toContainText(
+    'Swap with hour 9',
+  );
+  await page.mouse.up();
+  await expect(
+    page.getByRole('button', { name: 'Change bird for hour 9' }),
+  ).toContainText('Osprey');
+  expect(await page.evaluate(() => window.__players.length)).toBe(0);
+  await page.locator('#clock [data-hour="8"]').focus();
+  await page.keyboard.press('Enter');
+  await expect(
+    page.getByRole('button', { name: 'Pause Osprey recording' }),
+  ).toBeVisible();
+  await page.getByRole('button', { name: 'View clock fullscreen' }).click();
+  await expect(page.locator('#bird-profile-title')).toHaveText('Osprey');
+  await page.locator('.fullscreen-clock [data-hour="4"]').focus();
+  await page.keyboard.press('Space');
+  await expect(
+    page
+      .locator('#bird-profile')
+      .getByRole('button', { name: 'Pause Wood duck recording' }),
+  ).toBeVisible();
+});
+
+test.describe('touch playback', () => {
+  test.use({
+    hasTouch: true,
+    isMobile: true,
+    viewport: { width: 390, height: 844 },
+  });
+  test('tapping a clock bird plays its call', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('#clock')).not.toHaveAttribute('inert');
+    await page.locator('#clock [data-hour="4"] .slice-hit').tap();
+    await expect(
+      page.getByRole('button', { name: 'Pause Wood duck recording' }),
+    ).toBeVisible();
+    expect(
+      await page.evaluate(
+        () => window.__players.filter((p) => !p.paused).length,
+      ),
+    ).toBe(1);
+  });
 });
 
 test('every shipped MP3 decodes to non-silent audio in the browser', async ({
