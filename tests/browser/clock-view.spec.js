@@ -53,7 +53,6 @@ test.beforeEach(async ({ page }) => {
 test('background orbit changes perspective while tilted slices still select and swap', async ({
   page,
 }) => {
-  await page.locator('#bird-settings > summary').click();
   const original = await draft(page);
   const width = (await page.locator('#clock .clock-face').boundingBox()).width;
   await orbit(page);
@@ -84,7 +83,6 @@ test('background orbit changes perspective while tilted slices still select and 
   expect(await angles(page)).toEqual(tilted);
   await page.locator('#undo-button').click();
   expect(await draft(page)).toBe(original);
-  await page.locator('#wood-clock-settings > summary').click();
   await page
     .getByRole('combobox', { name: 'Clock shape' })
     .selectOption('circle');

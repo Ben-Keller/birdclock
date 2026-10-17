@@ -8,11 +8,9 @@ test.beforeEach(async ({ page }) => {
   errors.set(page, messages);
   page.on('pageerror', (error) => messages.push(error.message));
   await page.goto('/');
-  await expect(page.locator('#bird-settings')).not.toHaveAttribute('open');
-  await expect(page.locator('#wood-clock-settings')).not.toHaveAttribute(
-    'open',
-  );
-  await expandSettings(page);
+  await expect(page.locator('#panel details, #panel summary')).toHaveCount(0);
+  await expect(page.getByRole('slider', { name: 'Bird size' })).toBeVisible();
+  await expect(page.getByRole('slider', { name: 'Wood grain' })).toBeVisible();
   await expect(
     page.getByRole('button', { name: 'Change bird for hour 3' }),
   ).toBeVisible();
@@ -20,12 +18,6 @@ test.beforeEach(async ({ page }) => {
 test.afterEach(async ({ page }) => {
   expect(errors.get(page)).toEqual([]);
 });
-
-async function expandSettings(page) {
-  await page.locator('#bird-settings > summary').click();
-  await page.locator('#wood-clock-settings > summary').click();
-  await page.locator('#clock').scrollIntoViewIfNeeded();
-}
 
 async function openBirdFiles(page, scope = 'single') {
   await page.getByRole('button', { name: 'Save & share' }).click();
@@ -314,7 +306,7 @@ test('uploaded rectangular artwork downloads and travels in a JSON backup', asyn
     page.getByRole('button', { name: 'Change bird for hour 3' }),
   ).toContainText('My custom bird');
   await page.reload();
-  await expandSettings(page);
+  await expect(page.locator('#reset-view-button')).toBeEnabled();
   await expect(
     page.getByRole('button', { name: 'Change bird for hour 3' }),
   ).toContainText('My custom bird');
@@ -343,7 +335,7 @@ test('wood changes support undo and bird swaps recover on refresh', async ({
     /Osprey/,
   );
   await page.reload();
-  await expandSettings(page);
+  await expect(page.locator('#reset-view-button')).toBeEnabled();
   await expect(page.locator('#clock [data-hour="8"]')).toHaveAttribute(
     'aria-label',
     /Osprey/,
@@ -380,7 +372,7 @@ test('opening a shared link keeps the previous draft available through undo', as
   });
   await page.goto('about:blank');
   await page.goto(`/#design=${shared}`);
-  await expandSettings(page);
+  await expect(page.locator('#reset-view-button')).toBeEnabled();
   await expect(
     page.getByRole('button', { name: 'Choose Maple for hour 3' }),
   ).toHaveAttribute('aria-pressed', 'true');
@@ -392,7 +384,7 @@ test('opening a shared link keeps the previous draft available through undo', as
     page.getByRole('button', { name: 'Choose Mahogany for hour 3' }),
   ).toHaveAttribute('aria-pressed', 'true');
   await page.reload();
-  await expandSettings(page);
+  await expect(page.locator('#reset-view-button')).toBeEnabled();
   await expect(
     page.getByRole('button', { name: 'Choose Mahogany for hour 3' }),
   ).toHaveAttribute('aria-pressed', 'true');
@@ -517,7 +509,7 @@ test('reset view preserves the customized design, uploaded birds and edit histor
   await page.getByRole('button', { name: 'Redo last change' }).click();
   expect(await clockDraft(page)).toEqual(restored);
   await page.reload();
-  await expandSettings(page);
+  await expect(page.locator('#reset-view-button')).toBeEnabled();
   await expect(
     page.getByRole('button', { name: 'Change bird for hour 3' }),
   ).toContainText('My bird');
@@ -592,7 +584,7 @@ test('dragging birds swaps their placement, preserves woods, and supports undo a
   await page.getByRole('button', { name: 'Redo last change' }).click();
   expect(await clockDraft(page)).toEqual(after);
   await page.reload();
-  await expandSettings(page);
+  await expect(page.locator('#reset-view-button')).toBeEnabled();
   expect(await clockDraft(page)).toEqual(after);
 });
 
