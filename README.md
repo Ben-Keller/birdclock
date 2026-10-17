@@ -32,10 +32,19 @@ Open `http://localhost:8080`. Serve the folder over HTTP; opening `index.html` d
 - Keep adjacent woods different, including the 12-to-1 join. Manual selection adjusts as few other pieces as possible. Shuffle produces four pieces of each wood with no matching neighbors.
 - Twelve-sided triangular face or round face, hour-marker style, and wood-grain intensity. Clock hands always show the current local time, including when reopening older drafts or importing configurations.
 - One panel for hour placement, clock appearance, and randomizing birds or woods, plus undo/redo and a fullscreen clock view.
+- A fullscreen bird field guide: choose a clock slice or browse all 48 species to read sourced descriptions, see occurrence maps, compare sizes, and explore habitat, diet, nesting, movement, taxonomy, and conservation.
 - Automatic session and local-browser saving, portable JSON import/export, configuration links, and 2,400 px PNG image export.
 - Individual bird downloads in PNG, JPEG, WebP, and SVG; ZIP collections for the birds on your clock or the entire library, including uploaded artwork.
 
 The original arrangement keeps Osprey at 3 and Common loon at 9. The later twelve-bird list is the default; Mourning dove is available in the expanded library.
+
+## Explore the birds
+
+Open **View clock fullscreen**, then click a slice to open its bird profile. Arrow keys move between hours; Enter moves focus into the profile. Previous/next buttons and **Browse the collection** also work without changing your design or undo history. On phones, choosing a slice scrolls to the profile while the close button stays visible.
+
+Each of the 48 species has an original short introduction and two-paragraph description, measurements where supported, natural-history facts, and linked sources with a review date. Length comparisons use the American robin as a reference (or American goldfinch for the robin). Conservation labels include their geographic scope and assessment system; regional labels are not presented as global IUCN assessments. Uploaded artwork has no invented species profile.
+
+Maps show published GBIF occurrence records, not range boundaries, abundance, or current sightings. The regional/world buttons change the framing. Records span all years and may include captive, introduced, or misidentified birds, with uneven reporting coverage. Profiles, map tiles, and the Natural Earth base map are bundled locally; opening the field guide does not contact an external map service. Follow a source link for the original account or live GBIF map.
 
 ## Download bird artwork
 
@@ -68,14 +77,19 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 - `src/app.js`: interaction, storage, importing, sharing, and exporting.
 - `src/model.js`: configuration validation and wood arrangement rules.
 - `src/clock.js`: reusable SVG clock renderer.
+- `src/bird-explorer.js`: fullscreen field guide, map views, comparisons, and profile loading.
 - `src/downloads.js`: shared image conversion, file downloads, and collection metadata.
 - `src/bird-downloads.js`: accessible bird download panel and progress/error handling.
 - `src/zip.js`: small ZIP writer; no external runtime dependencies.
 - `assets/birds.json`: 48-bird catalogue; add entries and corresponding artwork to extend it.
+- `assets/bird-profiles.json`: sourced short/long descriptions, metadata, measurements, conservation, and map references for all 48 birds.
+- `assets/maps`: local GBIF occurrence tiles, provenance manifest, and Natural Earth base map.
+- `scripts/update-bird-maps.py`: manual map refresh with exact species matching; see `ASSETS.md` before refreshing.
 - `assets/bird-generation-2026-10.json`: prompt set and species references for the 16 new illustrations.
 - `assets/birds`, `assets/woods`, `assets/fonts`: bundled artwork, textures, and fonts.
 - `tests/*.test.js`: model and export tests, including independent ZIP validation with Python.
 - `tests/browser/studio.spec.js`: real-browser checks for downloads, uploads, saves, editor interactions, and mobile layout.
+- `tests/browser/explorer.spec.js`: all profiles and map assets, keyboard exploration, loading recovery, unchanged drafts, and responsive layout.
 
 ## Development checks
 

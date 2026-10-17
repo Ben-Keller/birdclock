@@ -15,6 +15,7 @@ import { download, safeFilename, dataURL, canvasBlob } from './downloads.js';
 import { openBirdDownloads } from './bird-downloads.js';
 import { attachClockTooltips } from './clock-tooltip.js';
 import { attachBirdDrag } from './clock-drag.js';
+import { openBirdExplorer } from './bird-explorer.js';
 const $ = (s, root = document) => root.querySelector(s),
   $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const clockTooltip = attachClockTooltips($('#clock'), $('#clock-tooltip'));
@@ -250,6 +251,7 @@ function showModal(kind, html) {
   clockTooltip.hide();
   if (!modal.open) lastFocus = document.activeElement;
   modalKind = kind;
+  modal.dataset.kind = kind;
   $('#modal-content').innerHTML = html;
   if (!modal.open) modal.showModal();
   modal.scrollTop = 0;
@@ -262,6 +264,7 @@ function closeModal() {
 modal.addEventListener('close', () => {
   document.body.style.overflow = '';
   modalKind = '';
+  delete modal.dataset.kind;
   if (lastFocus?.isConnected) lastFocus.focus({ preventScroll: true });
   else $('.bird-choice')?.focus({ preventScroll: true });
 });
@@ -727,10 +730,14 @@ function startFresh() {
   );
 }
 $('#focus-button').onclick = () =>
-  showModal(
-    'fullscreen',
-    `${modalHeader('YOUR CLOCK', esc(config.name))}<div class="modal-body fullscreen-clock">${clockSVG(config, allBirds(), { interactive: false })}</div>`,
-  );
+  openBirdExplorer({
+    config,
+    birds: allBirds(),
+    selected,
+    showModal,
+    modalHeader,
+    isOpen: () => modal.open && modalKind === 'fullscreen',
+  });
 async function init() {
   try {
     const r = await fetch('assets/birds.json');

@@ -1,0 +1,1136 @@
+{
+  "retrieved": "2026-10-17",
+  "provider": "GBIF.org",
+  "kind": "Occurrence records, all years; not a range map",
+  "birds": {
+    "northern-flicker": {
+      "taxonKey": 2478259,
+      "matchedName": "Colaptes auratus",
+      "family": "Picidae",
+      "order": "Piciformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2478259&style=green.point",
+      "source": "https://www.gbif.org/species/2478259",
+      "asset": "assets/maps/northern-flicker.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/northern-flicker-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2478259&style=green.point"
+        }
+      ]
+    },
+    "american-goldfinch": {
+      "taxonKey": 5231640,
+      "matchedName": "Spinus tristis",
+      "family": "Fringillidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=5231640&style=green.point",
+      "source": "https://www.gbif.org/species/5231640",
+      "asset": "assets/maps/american-goldfinch.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/american-goldfinch-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=5231640&style=green.point"
+        }
+      ]
+    },
+    "osprey": {
+      "taxonKey": 2480726,
+      "matchedName": "Pandion haliaetus",
+      "family": "Pandionidae",
+      "order": "Accipitriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2480726&style=green.point",
+      "source": "https://www.gbif.org/species/2480726",
+      "asset": "assets/maps/osprey.png",
+      "regionalTiles": []
+    },
+    "annas-hummingbird": {
+      "taxonKey": 2476674,
+      "matchedName": "Calypte anna",
+      "family": "Trochilidae",
+      "order": "Apodiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2476674&style=green.point",
+      "source": "https://www.gbif.org/species/2476674",
+      "asset": "assets/maps/annas-hummingbird.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/annas-hummingbird-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2476674&style=green.point"
+        }
+      ]
+    },
+    "pileated-woodpecker": {
+      "taxonKey": 5228824,
+      "matchedName": "Dryocopus pileatus",
+      "family": "Picidae",
+      "order": "Piciformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=5228824&style=green.point",
+      "source": "https://www.gbif.org/species/5228824",
+      "asset": "assets/maps/pileated-woodpecker.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/pileated-woodpecker-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=5228824&style=green.point"
+        }
+      ]
+    },
+    "bittern": {
+      "taxonKey": 2480912,
+      "matchedName": "Botaurus poiciloptilus",
+      "family": "Ardeidae",
+      "order": "Pelecaniformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2480912&style=green.point",
+      "source": "https://www.gbif.org/species/2480912",
+      "asset": "assets/maps/bittern.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/bittern-2-3-2.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=2480912&style=green.point"
+        }
+      ]
+    },
+    "bellbird": {
+      "taxonKey": 2487200,
+      "matchedName": "Anthornis melanura",
+      "family": "Meliphagidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2487200&style=green.point",
+      "source": "https://www.gbif.org/species/2487200",
+      "asset": "assets/maps/bellbird.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/bellbird-3-7-4.png",
+          "zoom": 3,
+          "x": 7,
+          "y": 4,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/4@2x.png?taxonKey=2487200&style=green.point"
+        },
+        {
+          "asset": "assets/maps/bellbird-3-7-5.png",
+          "zoom": 3,
+          "x": 7,
+          "y": 5,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/5@2x.png?taxonKey=2487200&style=green.point"
+        }
+      ]
+    },
+    "kokako": {
+      "taxonKey": 6175601,
+      "matchedName": "Callaeas wilsoni",
+      "family": "Callaeatidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=6175601&style=green.point",
+      "source": "https://www.gbif.org/species/6175601",
+      "asset": "assets/maps/kokako.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/kokako-3-7-4.png",
+          "zoom": 3,
+          "x": 7,
+          "y": 4,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/4@2x.png?taxonKey=6175601&style=green.point"
+        },
+        {
+          "asset": "assets/maps/kokako-3-7-5.png",
+          "zoom": 3,
+          "x": 7,
+          "y": 5,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/5@2x.png?taxonKey=6175601&style=green.point"
+        }
+      ]
+    },
+    "common-loon": {
+      "taxonKey": 2481962,
+      "matchedName": "Gavia immer",
+      "family": "Gaviidae",
+      "order": "Gaviiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2481962&style=green.point",
+      "source": "https://www.gbif.org/species/2481962",
+      "asset": "assets/maps/common-loon.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/common-loon-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2481962&style=green.point"
+        }
+      ]
+    },
+    "bald-eagle": {
+      "taxonKey": 2480446,
+      "matchedName": "Haliaeetus leucocephalus",
+      "family": "Accipitridae",
+      "order": "Accipitriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2480446&style=green.point",
+      "source": "https://www.gbif.org/species/2480446",
+      "asset": "assets/maps/bald-eagle.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/bald-eagle-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2480446&style=green.point"
+        }
+      ]
+    },
+    "wood-duck": {
+      "taxonKey": 2498387,
+      "matchedName": "Aix sponsa",
+      "family": "Anatidae",
+      "order": "Anseriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2498387&style=green.point",
+      "source": "https://www.gbif.org/species/2498387",
+      "asset": "assets/maps/wood-duck.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/wood-duck-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2498387&style=green.point"
+        }
+      ]
+    },
+    "great-horned-owl": {
+      "taxonKey": 5959118,
+      "matchedName": "Bubo virginianus",
+      "family": "Strigidae",
+      "order": "Strigiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=5959118&style=green.point",
+      "source": "https://www.gbif.org/species/5959118",
+      "asset": "assets/maps/great-horned-owl.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/great-horned-owl-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=5959118&style=green.point"
+        }
+      ]
+    },
+    "northern-cardinal": {
+      "taxonKey": 2490384,
+      "matchedName": "Cardinalis cardinalis",
+      "family": "Cardinalidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2490384&style=green.point",
+      "source": "https://www.gbif.org/species/2490384",
+      "asset": "assets/maps/northern-cardinal.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/northern-cardinal-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2490384&style=green.point"
+        }
+      ]
+    },
+    "blue-jay": {
+      "taxonKey": 2482593,
+      "matchedName": "Cyanocitta cristata",
+      "family": "Corvidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2482593&style=green.point",
+      "source": "https://www.gbif.org/species/2482593",
+      "asset": "assets/maps/blue-jay.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/blue-jay-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2482593&style=green.point"
+        }
+      ]
+    },
+    "mourning-dove": {
+      "taxonKey": 2495347,
+      "matchedName": "Zenaida macroura",
+      "family": "Columbidae",
+      "order": "Columbiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2495347&style=green.point",
+      "source": "https://www.gbif.org/species/2495347",
+      "asset": "assets/maps/mourning-dove.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/mourning-dove-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2495347&style=green.point"
+        }
+      ]
+    },
+    "black-capped-chickadee": {
+      "taxonKey": 2487805,
+      "matchedName": "Poecile atricapillus",
+      "family": "Paridae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2487805&style=green.point",
+      "source": "https://www.gbif.org/species/2487805",
+      "asset": "assets/maps/black-capped-chickadee.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/black-capped-chickadee-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2487805&style=green.point"
+        }
+      ]
+    },
+    "american-robin": {
+      "taxonKey": 9510564,
+      "matchedName": "Turdus migratorius",
+      "family": "Turdidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=9510564&style=green.point",
+      "source": "https://www.gbif.org/species/9510564",
+      "asset": "assets/maps/american-robin.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/american-robin-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9510564&style=green.point"
+        }
+      ]
+    },
+    "eastern-bluebird": {
+      "taxonKey": 2490941,
+      "matchedName": "Sialia sialis",
+      "family": "Turdidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2490941&style=green.point",
+      "source": "https://www.gbif.org/species/2490941",
+      "asset": "assets/maps/eastern-bluebird.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/eastern-bluebird-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2490941&style=green.point"
+        }
+      ]
+    },
+    "cedar-waxwing": {
+      "taxonKey": 2484609,
+      "matchedName": "Bombycilla cedrorum",
+      "family": "Bombycillidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2484609&style=green.point",
+      "source": "https://www.gbif.org/species/2484609",
+      "asset": "assets/maps/cedar-waxwing.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/cedar-waxwing-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2484609&style=green.point"
+        }
+      ]
+    },
+    "tufted-titmouse": {
+      "taxonKey": 2487887,
+      "matchedName": "Baeolophus bicolor",
+      "family": "Paridae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2487887&style=green.point",
+      "source": "https://www.gbif.org/species/2487887",
+      "asset": "assets/maps/tufted-titmouse.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/tufted-titmouse-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2487887&style=green.point"
+        }
+      ]
+    },
+    "red-winged-blackbird": {
+      "taxonKey": 9409198,
+      "matchedName": "Agelaius phoeniceus",
+      "family": "Icteridae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=9409198&style=green.point",
+      "source": "https://www.gbif.org/species/9409198",
+      "asset": "assets/maps/red-winged-blackbird.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/red-winged-blackbird-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9409198&style=green.point"
+        }
+      ]
+    },
+    "baltimore-oriole": {
+      "taxonKey": 2484340,
+      "matchedName": "Icterus galbula",
+      "family": "Icteridae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2484340&style=green.point",
+      "source": "https://www.gbif.org/species/2484340",
+      "asset": "assets/maps/baltimore-oriole.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/baltimore-oriole-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2484340&style=green.point"
+        }
+      ]
+    },
+    "rose-breasted-grosbeak": {
+      "taxonKey": 2490494,
+      "matchedName": "Pheucticus ludovicianus",
+      "family": "Cardinalidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2490494&style=green.point",
+      "source": "https://www.gbif.org/species/2490494",
+      "asset": "assets/maps/rose-breasted-grosbeak.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/rose-breasted-grosbeak-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2490494&style=green.point"
+        }
+      ]
+    },
+    "american-kestrel": {
+      "taxonKey": 9685907,
+      "matchedName": "Falco sparverius",
+      "family": "Falconidae",
+      "order": "Falconiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=9685907&style=green.point",
+      "source": "https://www.gbif.org/species/9685907",
+      "asset": "assets/maps/american-kestrel.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/american-kestrel-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9685907&style=green.point"
+        }
+      ]
+    },
+    "peregrine-falcon": {
+      "taxonKey": 2481047,
+      "matchedName": "Falco peregrinus",
+      "family": "Falconidae",
+      "order": "Falconiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2481047&style=green.point",
+      "source": "https://www.gbif.org/species/2481047",
+      "asset": "assets/maps/peregrine-falcon.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/peregrine-falcon-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2481047&style=green.point"
+        }
+      ]
+    },
+    "barn-owl": {
+      "taxonKey": 9568884,
+      "matchedName": "Tyto furcata",
+      "family": "Tytonidae",
+      "order": "Strigiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=9568884&style=green.point",
+      "source": "https://www.gbif.org/species/9568884",
+      "asset": "assets/maps/barn-owl.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/barn-owl-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9568884&style=green.point"
+        }
+      ]
+    },
+    "snowy-owl": {
+      "taxonKey": 5959143,
+      "matchedName": "Bubo scandiacus",
+      "family": "Strigidae",
+      "order": "Strigiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=5959143&style=green.point",
+      "source": "https://www.gbif.org/species/5959143",
+      "asset": "assets/maps/snowy-owl.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/snowy-owl-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=5959143&style=green.point"
+        }
+      ]
+    },
+    "common-raven": {
+      "taxonKey": 2482492,
+      "matchedName": "Corvus corax",
+      "family": "Corvidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2482492&style=green.point",
+      "source": "https://www.gbif.org/species/2482492",
+      "asset": "assets/maps/common-raven.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/common-raven-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2482492&style=green.point"
+        }
+      ]
+    },
+    "belted-kingfisher": {
+      "taxonKey": 2475472,
+      "matchedName": "Megaceryle alcyon",
+      "family": "Alcedinidae",
+      "order": "Coraciiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2475472&style=green.point",
+      "source": "https://www.gbif.org/species/2475472",
+      "asset": "assets/maps/belted-kingfisher.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/belted-kingfisher-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2475472&style=green.point"
+        }
+      ]
+    },
+    "atlantic-puffin": {
+      "taxonKey": 2481353,
+      "matchedName": "Fratercula arctica",
+      "family": "Alcidae",
+      "order": "Charadriiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2481353&style=green.point",
+      "source": "https://www.gbif.org/species/2481353",
+      "asset": "assets/maps/atlantic-puffin.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/atlantic-puffin-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2481353&style=green.point"
+        },
+        {
+          "asset": "assets/maps/atlantic-puffin-1-1-0.png",
+          "zoom": 1,
+          "x": 1,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/1/0@2x.png?taxonKey=2481353&style=green.point"
+        }
+      ]
+    },
+    "mallard": {
+      "taxonKey": 9761484,
+      "matchedName": "Anas platyrhynchos",
+      "family": "Anatidae",
+      "order": "Anseriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=9761484&style=green.point",
+      "source": "https://www.gbif.org/species/9761484",
+      "asset": "assets/maps/mallard.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/mallard-1-0-0.png",
+          "zoom": 1,
+          "x": 0,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9761484&style=green.point"
+        }
+      ]
+    },
+    "tui": {
+      "taxonKey": 2487029,
+      "matchedName": "Prosthemadera novaeseelandiae",
+      "family": "Meliphagidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2487029&style=green.point",
+      "source": "https://www.gbif.org/species/2487029",
+      "asset": "assets/maps/tui.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/tui-3-7-4.png",
+          "zoom": 3,
+          "x": 7,
+          "y": 4,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/4@2x.png?taxonKey=2487029&style=green.point"
+        },
+        {
+          "asset": "assets/maps/tui-3-7-5.png",
+          "zoom": 3,
+          "x": 7,
+          "y": 5,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/5@2x.png?taxonKey=2487029&style=green.point"
+        }
+      ]
+    },
+    "european-robin": {
+      "taxonKey": 2492462,
+      "matchedName": "Erithacus rubecula",
+      "family": "Muscicapidae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2492462&style=green.point",
+      "source": "https://www.gbif.org/species/2492462",
+      "asset": "assets/maps/european-robin.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/european-robin-2-1-0.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/0@2x.png?taxonKey=2492462&style=green.point"
+        },
+        {
+          "asset": "assets/maps/european-robin-2-1-1.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2492462&style=green.point"
+        },
+        {
+          "asset": "assets/maps/european-robin-2-2-0.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/0@2x.png?taxonKey=2492462&style=green.point"
+        },
+        {
+          "asset": "assets/maps/european-robin-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2492462&style=green.point"
+        }
+      ]
+    },
+    "eurasian-blue-tit": {
+      "taxonKey": 2487879,
+      "matchedName": "Cyanistes caeruleus",
+      "family": "Paridae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2487879&style=green.point",
+      "source": "https://www.gbif.org/species/2487879",
+      "asset": "assets/maps/eurasian-blue-tit.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/eurasian-blue-tit-2-1-0.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/0@2x.png?taxonKey=2487879&style=green.point"
+        },
+        {
+          "asset": "assets/maps/eurasian-blue-tit-2-1-1.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2487879&style=green.point"
+        },
+        {
+          "asset": "assets/maps/eurasian-blue-tit-2-2-0.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/0@2x.png?taxonKey=2487879&style=green.point"
+        },
+        {
+          "asset": "assets/maps/eurasian-blue-tit-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2487879&style=green.point"
+        }
+      ]
+    },
+    "common-kingfisher": {
+      "taxonKey": 2475532,
+      "matchedName": "Alcedo atthis",
+      "family": "Alcedinidae",
+      "order": "Coraciiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2475532&style=green.point",
+      "source": "https://www.gbif.org/species/2475532",
+      "asset": "assets/maps/common-kingfisher.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/common-kingfisher-2-1-0.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/0@2x.png?taxonKey=2475532&style=green.point"
+        },
+        {
+          "asset": "assets/maps/common-kingfisher-2-1-1.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2475532&style=green.point"
+        },
+        {
+          "asset": "assets/maps/common-kingfisher-2-2-0.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/0@2x.png?taxonKey=2475532&style=green.point"
+        },
+        {
+          "asset": "assets/maps/common-kingfisher-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2475532&style=green.point"
+        }
+      ]
+    },
+    "eurasian-hoopoe": {
+      "taxonKey": 2498415,
+      "matchedName": "Upupa epops",
+      "family": "Upupidae",
+      "order": "Bucerotiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2498415&style=green.point",
+      "source": "https://www.gbif.org/species/2498415",
+      "asset": "assets/maps/eurasian-hoopoe.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/eurasian-hoopoe-2-1-0.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/0@2x.png?taxonKey=2498415&style=green.point"
+        },
+        {
+          "asset": "assets/maps/eurasian-hoopoe-2-1-1.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2498415&style=green.point"
+        },
+        {
+          "asset": "assets/maps/eurasian-hoopoe-2-2-0.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 0,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/0@2x.png?taxonKey=2498415&style=green.point"
+        },
+        {
+          "asset": "assets/maps/eurasian-hoopoe-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2498415&style=green.point"
+        }
+      ]
+    },
+    "lilac-breasted-roller": {
+      "taxonKey": 2475360,
+      "matchedName": "Coracias caudatus",
+      "family": "Coraciidae",
+      "order": "Coraciiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2475360&style=green.point",
+      "source": "https://www.gbif.org/species/2475360",
+      "asset": "assets/maps/lilac-breasted-roller.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/lilac-breasted-roller-2-1-1.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2475360&style=green.point"
+        },
+        {
+          "asset": "assets/maps/lilac-breasted-roller-2-1-2.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/2@2x.png?taxonKey=2475360&style=green.point"
+        },
+        {
+          "asset": "assets/maps/lilac-breasted-roller-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2475360&style=green.point"
+        },
+        {
+          "asset": "assets/maps/lilac-breasted-roller-2-2-2.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=2475360&style=green.point"
+        }
+      ]
+    },
+    "african-grey-parrot": {
+      "taxonKey": 2480181,
+      "matchedName": "Psittacus erithacus",
+      "family": "Psittacidae",
+      "order": "Psittaciformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2480181&style=green.point",
+      "source": "https://www.gbif.org/species/2480181",
+      "asset": "assets/maps/african-grey-parrot.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/african-grey-parrot-2-1-1.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2480181&style=green.point"
+        },
+        {
+          "asset": "assets/maps/african-grey-parrot-2-1-2.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/2@2x.png?taxonKey=2480181&style=green.point"
+        },
+        {
+          "asset": "assets/maps/african-grey-parrot-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2480181&style=green.point"
+        },
+        {
+          "asset": "assets/maps/african-grey-parrot-2-2-2.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=2480181&style=green.point"
+        }
+      ]
+    },
+    "grey-crowned-crane": {
+      "taxonKey": 5228229,
+      "matchedName": "Balearica regulorum",
+      "family": "Gruidae",
+      "order": "Gruiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=5228229&style=green.point",
+      "source": "https://www.gbif.org/species/5228229",
+      "asset": "assets/maps/grey-crowned-crane.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/grey-crowned-crane-2-1-1.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=5228229&style=green.point"
+        },
+        {
+          "asset": "assets/maps/grey-crowned-crane-2-1-2.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/2@2x.png?taxonKey=5228229&style=green.point"
+        },
+        {
+          "asset": "assets/maps/grey-crowned-crane-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=5228229&style=green.point"
+        },
+        {
+          "asset": "assets/maps/grey-crowned-crane-2-2-2.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=5228229&style=green.point"
+        }
+      ]
+    },
+    "secretarybird": {
+      "taxonKey": 5229409,
+      "matchedName": "Sagittarius serpentarius",
+      "family": "Sagittariidae",
+      "order": "Accipitriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=5229409&style=green.point",
+      "source": "https://www.gbif.org/species/5229409",
+      "asset": "assets/maps/secretarybird.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/secretarybird-2-1-1.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=5229409&style=green.point"
+        },
+        {
+          "asset": "assets/maps/secretarybird-2-1-2.png",
+          "zoom": 2,
+          "x": 1,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/2@2x.png?taxonKey=5229409&style=green.point"
+        },
+        {
+          "asset": "assets/maps/secretarybird-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=5229409&style=green.point"
+        },
+        {
+          "asset": "assets/maps/secretarybird-2-2-2.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=5229409&style=green.point"
+        }
+      ]
+    },
+    "mandarin-duck": {
+      "taxonKey": 2498388,
+      "matchedName": "Aix galericulata",
+      "family": "Anatidae",
+      "order": "Anseriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2498388&style=green.point",
+      "source": "https://www.gbif.org/species/2498388",
+      "asset": "assets/maps/mandarin-duck.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/mandarin-duck-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2498388&style=green.point"
+        },
+        {
+          "asset": "assets/maps/mandarin-duck-2-2-2.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=2498388&style=green.point"
+        },
+        {
+          "asset": "assets/maps/mandarin-duck-2-3-1.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/1@2x.png?taxonKey=2498388&style=green.point"
+        },
+        {
+          "asset": "assets/maps/mandarin-duck-2-3-2.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=2498388&style=green.point"
+        }
+      ]
+    },
+    "red-crowned-crane": {
+      "taxonKey": 2474944,
+      "matchedName": "Grus japonensis",
+      "family": "Gruidae",
+      "order": "Gruiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2474944&style=green.point",
+      "source": "https://www.gbif.org/species/2474944",
+      "asset": "assets/maps/red-crowned-crane.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/red-crowned-crane-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2474944&style=green.point"
+        },
+        {
+          "asset": "assets/maps/red-crowned-crane-2-2-2.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=2474944&style=green.point"
+        },
+        {
+          "asset": "assets/maps/red-crowned-crane-2-3-1.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/1@2x.png?taxonKey=2474944&style=green.point"
+        }
+      ]
+    },
+    "indian-peafowl": {
+      "taxonKey": 9451184,
+      "matchedName": "Pavo cristatus",
+      "family": "Phasianidae",
+      "order": "Galliformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=9451184&style=green.point",
+      "source": "https://www.gbif.org/species/9451184",
+      "asset": "assets/maps/indian-peafowl.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/indian-peafowl-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=9451184&style=green.point"
+        },
+        {
+          "asset": "assets/maps/indian-peafowl-2-2-2.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=9451184&style=green.point"
+        },
+        {
+          "asset": "assets/maps/indian-peafowl-2-3-1.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/1@2x.png?taxonKey=9451184&style=green.point"
+        },
+        {
+          "asset": "assets/maps/indian-peafowl-2-3-2.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=9451184&style=green.point"
+        }
+      ]
+    },
+    "golden-pheasant": {
+      "taxonKey": 5228034,
+      "matchedName": "Chrysolophus pictus",
+      "family": "Phasianidae",
+      "order": "Galliformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=5228034&style=green.point",
+      "source": "https://www.gbif.org/species/5228034",
+      "asset": "assets/maps/golden-pheasant.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/golden-pheasant-2-2-1.png",
+          "zoom": 2,
+          "x": 2,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=5228034&style=green.point"
+        },
+        {
+          "asset": "assets/maps/golden-pheasant-2-3-1.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 1,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/1@2x.png?taxonKey=5228034&style=green.point"
+        },
+        {
+          "asset": "assets/maps/golden-pheasant-2-3-2.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=5228034&style=green.point"
+        }
+      ]
+    },
+    "rainbow-lorikeet": {
+      "taxonKey": 6170530,
+      "matchedName": "Trichoglossus moluccanus",
+      "family": "Psittacidae",
+      "order": "Psittaciformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=6170530&style=green.point",
+      "source": "https://www.gbif.org/species/6170530",
+      "asset": "assets/maps/rainbow-lorikeet.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/rainbow-lorikeet-2-3-2.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=6170530&style=green.point"
+        }
+      ]
+    },
+    "laughing-kookaburra": {
+      "taxonKey": 2475648,
+      "matchedName": "Dacelo novaeguineae",
+      "family": "Alcedinidae",
+      "order": "Coraciiformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2475648&style=green.point",
+      "source": "https://www.gbif.org/species/2475648",
+      "asset": "assets/maps/laughing-kookaburra.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/laughing-kookaburra-2-3-2.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=2475648&style=green.point"
+        }
+      ]
+    },
+    "galah": {
+      "taxonKey": 2479598,
+      "matchedName": "Eolophus roseicapilla",
+      "family": "Psittacidae",
+      "order": "Psittaciformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=2479598&style=green.point",
+      "source": "https://www.gbif.org/species/2479598",
+      "asset": "assets/maps/galah.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/galah-2-3-2.png",
+          "zoom": 2,
+          "x": 3,
+          "y": 2,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=2479598&style=green.point"
+        }
+      ]
+    },
+    "new-zealand-fantail": {
+      "taxonKey": 5231730,
+      "matchedName": "Rhipidura fuliginosa",
+      "family": "Rhipiduridae",
+      "order": "Passeriformes",
+      "url": "https://api.gbif.org/v2/map/occurrence/density/0/0/0@2x.png?taxonKey=5231730&style=green.point",
+      "source": "https://www.gbif.org/species/5231730",
+      "asset": "assets/maps/new-zealand-fantail.png",
+      "regionalTiles": [
+        {
+          "asset": "assets/maps/new-zealand-fantail-3-7-4.png",
+          "zoom": 3,
+          "x": 7,
+          "y": 4,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/4@2x.png?taxonKey=5231730&style=green.point"
+        },
+        {
+          "asset": "assets/maps/new-zealand-fantail-3-7-5.png",
+          "zoom": 3,
+          "x": 7,
+          "y": 5,
+          "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/5@2x.png?taxonKey=5231730&style=green.point"
+        }
+      ]
+    }
+  }
+}

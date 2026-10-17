@@ -201,8 +201,8 @@
   },
   {
     "id": "barn-owl",
-    "name": "Barn owl",
-    "scientificName": "Tyto alba",
+    "name": "American barn owl",
+    "scientificName": "Tyto furcata",
     "region": "North America",
     "group": "Raptors",
     "asset": "assets/birds/barn-owl.webp"

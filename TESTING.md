@@ -28,9 +28,14 @@ The browser suite uses Playwright with an isolated headless Chrome session. It s
 - Responsive editor, library, and download panel layout with screenshot artifacts in `test-results/`.
 - Clock tooltips: hover persistence, keyboard navigation, Escape dismissal, updated wood names, and viewport bounds.
 - Mouse and emulated touch bird swaps, placement preservation, unchanged wood patterns, same-hour/outside/cancelled drops, undo/redo, reload persistence, and keyboard swaps across hours 12 and 1.
+- Complete profile coverage for all 48 species, sourced measurements and metadata, taxonomy/map consistency, valid bundled PNGs, threat-status distinctions, and an escaped custom-artwork fallback.
+- Fullscreen profiles for every bird, local regional/world maps, keyboard and pointer selection, unchanged editor drafts and undo history, retry after failed profile loading, and late-response isolation after closing the dialog.
+- Desktop and mobile field-guide layout, visible mobile close control, and collection browsing without altering the clock.
 
 ## Browser verification
 
-All 17 unit tests and 19 browser scenarios passed on October 17, 2026, with syntax and formatting checks passing too. The browser suite ran locally in headless Google Chrome on macOS. Desktop and mobile-width screenshots have been inspected, including layout checks at 390 px and 320 px. This replaces the earlier package's unverified browser pass.
+All 20 unit tests and 25 browser scenarios passed on October 17, 2026, with syntax and formatting checks passing too. The browser suite ran locally in headless Google Chrome on macOS. Desktop and mobile-width screenshots have been inspected, including field-guide maps and profiles at 390 px, and editor layout checks at 320 px.
+
+Research was checked against the linked species accounts. Automated tests validate coverage and consistency, not biological truth or future source changes. Map snapshots and research review dates are recorded separately; updating maps does not update the conservation assessments.
 
 Safari, Firefox, physical mobile devices, operating-system download prompts, and real storage-quota exhaustion have not been tested. Browser tests exercise mobile viewport layout and Chrome's emulated touch input, not a physical phone. WebP originals download directly; custom images requiring WebP encoding produce a useful error if the browser lacks that encoder. Clipboard access and browser storage remain subject to each browser's permissions.

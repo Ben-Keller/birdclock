@@ -1,0 +1,5203 @@
+{
+  "version": 1,
+  "researchedAt": "2026-10-17",
+  "mapDate": "2026-10-17",
+  "measurementNote": "Adult reference values from the cited sources; ranges can reflect sex and geographic variation. Single values are approximate. Illustrations are not to scale.",
+  "mapNote": "GBIF occurrence records, all years. Records can include introduced, captive or misidentified birds and reflect uneven reporting. They are not range boundaries or population estimates.",
+  "profiles": {
+    "northern-flicker": {
+      "shortDescription": "A woodpecker that often feeds at your feet, revealing a white rump and colored wing feathers as it flies.",
+      "longDescription": [
+        "Flickers spend much of their feeding time on the ground, probing for ants with a curved bill and collecting them with a long tongue. Their brown plumage carries dark spots and bars. Birds in eastern North America usually show yellow flight-feather shafts; western birds show red shafts, with mixed forms where the populations meet.",
+        "They still rely on trees for nesting and communication. A hollow trunk can become a nest, while a resonant branch becomes a sounding board for drumming. Open ground beside mature trees gives this bird both feeding space and shelter."
+      ],
+      "taxonomy": {
+        "family": "Picidae",
+        "order": "Piciformes"
+      },
+      "habitat": [
+        "Open woodland",
+        "Forest edges",
+        "Parks"
+      ],
+      "diet": [
+        "Ants",
+        "Beetles",
+        "Fruit and seeds"
+      ],
+      "nesting": "Excavated tree cavity",
+      "movement": "Northern populations move south for winter.",
+      "range": "North America, including parts of Mexico and the Caribbean.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 28,
+          "max": 31,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 42,
+          "max": 51,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 110,
+          "max": 160,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Northern_Flicker/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Northern_Flicker/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Northern_Flicker/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Northern_Flicker/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2478259",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/northern-flicker.png",
+        "taxonKey": 2478259,
+        "url": "https://www.gbif.org/species/2478259",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/northern-flicker-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2478259&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "american-goldfinch": {
+      "shortDescription": "A small seed specialist whose summer males turn bright yellow, then become much subtler in winter.",
+      "longDescription": [
+        "Goldfinches work through thistles and other seed-bearing plants with small, pointed bills. A notched tail, contrasting wings and an undulating flight help identify them outside the breeding season, when the brilliant yellow of the male gives way to quieter colors. Females are less vividly colored throughout the year.",
+        "Their nesting season begins relatively late, when plants provide both seeds and soft fibers. Even the chicks receive a largely seed-based diet. A patch of native flowering plants left to set seed can be as important to these birds as a feeder."
+      ],
+      "taxonomy": {
+        "family": "Fringillidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Weedy fields",
+        "Open woodland",
+        "Gardens"
+      ],
+      "diet": [
+        "Seeds"
+      ],
+      "nesting": "Cup nest in a shrub or small tree",
+      "movement": "Partial migrant; many shift south in winter.",
+      "range": "Temperate North America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 11,
+          "max": 13,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 19,
+          "max": 22,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 11,
+          "max": 20,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/American_Goldfinch/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/American_Goldfinch/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/American_Goldfinch/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/American_Goldfinch/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/5231640",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/american-goldfinch.png",
+        "taxonKey": 5231640,
+        "url": "https://www.gbif.org/species/5231640",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/american-goldfinch-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=5231640&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "osprey": {
+      "shortDescription": "A fish-catching raptor with long wings, a dark eye stripe and a dramatic feet-first plunge.",
+      "longDescription": [
+        "An osprey searches over open water, pauses above a fish, then drops with its feet extended. Its reversible outer toe and gripping foot pads help secure slippery prey. In flight it often turns a captured fish head-first, reducing resistance as it carries the catch toward a feeding perch or nest.",
+        "Pairs build conspicuous stick nests on exposed trees, poles and purpose-built platforms. The recovery of many North American populations after pesticide restrictions shows how protecting both feeding waters and nesting places can help a specialized predator return."
+      ],
+      "taxonomy": {
+        "family": "Pandionidae",
+        "order": "Accipitriformes"
+      },
+      "habitat": [
+        "Coasts",
+        "Lakes",
+        "Rivers"
+      ],
+      "diet": [
+        "Fish"
+      ],
+      "nesting": "Large stick nest in a tree or on a platform",
+      "movement": "Many northern populations migrate long distances.",
+      "range": "Near suitable waters on every continent except Antarctica.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 54,
+          "max": 58,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 150,
+          "max": 180,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 1400,
+          "max": 2000,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Osprey/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Osprey/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Osprey/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Osprey/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2480726",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/osprey.png",
+        "taxonKey": 2480726,
+        "url": "https://www.gbif.org/species/2480726",
+        "focusBounds": [
+          -180,
+          -55,
+          180,
+          80
+        ],
+        "regionalTiles": []
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "annas-hummingbird": {
+      "shortDescription": "A tiny Pacific-coast hummingbird whose male flashes a rose-colored crown and throat in the light.",
+      "longDescription": [
+        "Anna’s hummingbirds hover at flowers and also catch small insects. Their iridescent plumage changes with the viewing angle: a dark-looking head can suddenly shine pink when it catches the sun. Males advertise with high climbs and steep dives, ending with a sound made by their tail feathers.",
+        "Unlike many northern hummingbirds, they often remain through winter. They can lower their metabolism in torpor during cold conditions. Gardens and flowering introduced trees have helped the species expand beyond its earlier California and Baja California breeding range."
+      ],
+      "taxonomy": {
+        "family": "Trochilidae",
+        "order": "Apodiformes"
+      },
+      "habitat": [
+        "Coastal scrub",
+        "Open woodland",
+        "Gardens"
+      ],
+      "diet": [
+        "Nectar",
+        "Small insects"
+      ],
+      "nesting": "Tiny cup on a tree or shrub branch",
+      "movement": "Mostly resident, with local seasonal movements.",
+      "range": "Western North America, especially the Pacific coast.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 10,
+          "max": 10,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 12,
+          "max": 12,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 3,
+          "max": 6,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Annas_Hummingbird/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Annas_Hummingbird/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Annas_Hummingbird/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Annas_Hummingbird/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2476674",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/annas-hummingbird.png",
+        "taxonKey": 2476674,
+        "url": "https://www.gbif.org/species/2476674",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/annas-hummingbird-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2476674&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "pileated-woodpecker": {
+      "shortDescription": "A large, red-crested woodpecker that leaves deep rectangular feeding holes in decaying wood.",
+      "longDescription": [
+        "The pileated woodpecker uses its heavy bill to open fallen logs and standing dead trees, often seeking carpenter ants. White face and neck stripes stand out against a mostly black body. Its loud calls and forceful drumming can reveal its presence before the bird comes into view.",
+        "Old trees are more than a food supply. Pairs excavate substantial nest cavities, and abandoned holes later provide shelter for other birds and mammals. Retaining dead wood where it is safe to do so preserves a network of homes within the forest."
+      ],
+      "taxonomy": {
+        "family": "Picidae",
+        "order": "Piciformes"
+      },
+      "habitat": [
+        "Mature forest",
+        "Woodland with dead trees"
+      ],
+      "diet": [
+        "Carpenter ants",
+        "Other insects",
+        "Fruit and nuts"
+      ],
+      "nesting": "Large cavity excavated in a tree",
+      "movement": "Resident; pairs defend territories year-round.",
+      "range": "Forested parts of North America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 40,
+          "max": 49,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 66,
+          "max": 75,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 250,
+          "max": 350,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Pileated_Woodpecker/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Pileated_Woodpecker/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Pileated_Woodpecker/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Pileated_Woodpecker/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/5228824",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/pileated-woodpecker.png",
+        "taxonKey": 5228824,
+        "url": "https://www.gbif.org/species/5228824",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/pileated-woodpecker-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=5228824&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "bittern": {
+      "shortDescription": "A secretive wetland heron, more often discovered by its deep booming call than by sight.",
+      "longDescription": [
+        "The Australasian bittern blends into reeds with streaked brown and buff feathers. When alarmed it can freeze with its bill pointing upward, extending the lines of the surrounding vegetation. Males produce low booming calls during the breeding season, making sound an important clue to this otherwise concealed bird.",
+        "It hunts fish and other small animals in shallow wetland habitats. Birds may use several wetlands as water levels change. Drainage and deteriorating wetland quality reduce the places where bitterns can feed and breed; protecting connected wetland habitat is central to their conservation."
+      ],
+      "taxonomy": {
+        "family": "Ardeidae",
+        "order": "Pelecaniformes"
+      },
+      "habitat": [
+        "Freshwater marshes",
+        "Reedbeds",
+        "Wet pasture"
+      ],
+      "diet": [
+        "Fish",
+        "Aquatic invertebrates",
+        "Frogs"
+      ],
+      "nesting": "Platform among dense wetland vegetation",
+      "movement": "Local and sometimes longer movements between wetlands.",
+      "range": "Australia, New Zealand and New Caledonia.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 74,
+          "max": 74,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 900,
+          "max": 1400,
+          "unit": "g",
+          "note": "Female about 900 g; male about 1,400 g"
+        }
+      ],
+      "conservation": {
+        "label": "Endangered",
+        "system": "IUCN Red List (reported by BirdLife)",
+        "scope": "Global",
+        "url": "https://birdlife.org.au/bird-profiles/australasian-bittern/",
+        "note": "",
+        "code": "EN"
+      },
+      "sources": [
+        {
+          "label": "New Zealand Birds Online",
+          "url": "https://www.nzbirdsonline.org.nz/species/australasian-bittern",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "New Zealand conservation"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2480912",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        },
+        {
+          "label": "BirdLife · global conservation",
+          "url": "https://birdlife.org.au/bird-profiles/australasian-bittern/",
+          "supports": [
+            "Global conservation"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/bittern.png",
+        "taxonKey": 2480912,
+        "url": "https://www.gbif.org/species/2480912",
+        "focusBounds": [
+          110,
+          -49,
+          180,
+          -8
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/bittern-2-3-2.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=2480912&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17",
+      "regionalConservation": {
+        "label": "Nationally Critical",
+        "system": "New Zealand Threat Classification",
+        "scope": "New Zealand",
+        "url": "https://www.nzbirdsonline.org.nz/species/australasian-bittern",
+        "note": ""
+      }
+    },
+    "bellbird": {
+      "shortDescription": "An olive-green honeyeater whose ringing song is a familiar voice of New Zealand forest.",
+      "longDescription": [
+        "Bellbirds use a brush-tipped tongue to collect nectar, but their menu also includes fruit, insects and honeydew. Males are greener and darker around the head; females are browner, with a pale cheek stripe. Their clear musical phrases can carry through a forest even when the bird remains hidden.",
+        "By visiting flowers they move pollen, and by eating fruit they disperse seeds. These two jobs link bellbirds closely to forest regeneration. They occur in native woodland as well as suitable planted areas, although their abundance varies greatly between regions and islands."
+      ],
+      "taxonomy": {
+        "family": "Meliphagidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Native forest",
+        "Scrub",
+        "Wooded gardens"
+      ],
+      "diet": [
+        "Nectar",
+        "Fruit",
+        "Insects"
+      ],
+      "nesting": "Cup nest in dense vegetation",
+      "movement": "Resident, with local feeding movements.",
+      "range": "New Zealand and several offshore island groups.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 20,
+          "max": 20,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 26,
+          "max": 34,
+          "unit": "g",
+          "note": "Female about 26 g; male about 34 g"
+        }
+      ],
+      "conservation": {
+        "label": "Not Threatened",
+        "system": "New Zealand Threat Classification",
+        "scope": "New Zealand",
+        "url": "https://www.nzbirdsonline.org.nz/species/bellbird",
+        "note": "Island subspecies have separate assessments."
+      },
+      "sources": [
+        {
+          "label": "New Zealand Birds Online",
+          "url": "https://www.nzbirdsonline.org.nz/species/bellbird",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "New Zealand conservation"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2487200",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/bellbird.png",
+        "taxonKey": 2487200,
+        "url": "https://www.gbif.org/species/2487200",
+        "focusBounds": [
+          164,
+          -49,
+          180,
+          -32
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/bellbird-3-7-4.png",
+            "zoom": 3,
+            "x": 7,
+            "y": 4,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/4@2x.png?taxonKey=2487200&style=green.point"
+          },
+          {
+            "asset": "assets/maps/bellbird-3-7-5.png",
+            "zoom": 3,
+            "x": 7,
+            "y": 5,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/5@2x.png?taxonKey=2487200&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "kokako": {
+      "shortDescription": "A blue-gray forest songbird with blue wattles, strong legs and resonant, far-carrying duets.",
+      "longDescription": [
+        "This illustration represents the North Island kōkako. Its dark face mask and blue wattles distinguish it from the South Island species. Rather than making long flights, it often bounds through branches using its strong legs, occasionally gliding between trees. Pairs advertise their territories with elaborate song.",
+        "Introduced mammal predators have made sustained conservation management essential. Predator control and carefully planned translocations support recovering populations. Tall, varied native forest supplies food and nest sites, but habitat alone is insufficient when rats and possums remain abundant."
+      ],
+      "taxonomy": {
+        "family": "Callaeatidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Tall native forest"
+      ],
+      "diet": [
+        "Leaves",
+        "Fruit",
+        "Flowers and invertebrates"
+      ],
+      "nesting": "Cup nest high in a tree",
+      "movement": "Resident; defends a year-round territory.",
+      "range": "Managed forests and restoration sites in New Zealand’s North Island and nearby islands.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 38,
+          "max": 38,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 218,
+          "max": 233,
+          "unit": "g",
+          "note": "Female about 218 g; male about 233 g"
+        }
+      ],
+      "conservation": {
+        "label": "Nationally Increasing",
+        "system": "New Zealand Threat Classification",
+        "scope": "New Zealand",
+        "url": "https://www.nzbirdsonline.org.nz/species/north-island-kokako",
+        "note": "A threatened species recovering with sustained predator control and translocations."
+      },
+      "sources": [
+        {
+          "label": "New Zealand Birds Online",
+          "url": "https://www.nzbirdsonline.org.nz/species/north-island-kokako",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "New Zealand conservation"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/6175601",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/kokako.png",
+        "taxonKey": 6175601,
+        "url": "https://www.gbif.org/species/6175601",
+        "focusBounds": [
+          164,
+          -49,
+          180,
+          -32
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/kokako-3-7-4.png",
+            "zoom": 3,
+            "x": 7,
+            "y": 4,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/4@2x.png?taxonKey=6175601&style=green.point"
+          },
+          {
+            "asset": "assets/maps/kokako-3-7-5.png",
+            "zoom": 3,
+            "x": 7,
+            "y": 5,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/5@2x.png?taxonKey=6175601&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17",
+      "taxonomyNote": "This profile describes the North Island kōkako, Callaeas wilsoni."
+    },
+    "common-loon": {
+      "shortDescription": "A powerful diving bird with a patterned summer coat and calls that carry across northern lakes.",
+      "longDescription": [
+        "Loons chase fish underwater, propelled by feet set far back on the body. This arrangement makes them effective swimmers but awkward on land. Breeding adults have striking black-and-white plumage; winter birds are grayer and less conspicuous along coasts and on large bodies of open water.",
+        "The nest sits close to the water, allowing easy access without a long walk. Taking flight is another challenge: loons need an extended run over the surface. Clear water, healthy fish populations and quiet shorelines support their demanding aquatic way of life."
+      ],
+      "taxonomy": {
+        "family": "Gaviidae",
+        "order": "Gaviiformes"
+      },
+      "habitat": [
+        "Northern lakes",
+        "Coastal waters"
+      ],
+      "diet": [
+        "Fish",
+        "Aquatic invertebrates"
+      ],
+      "nesting": "Ground nest beside the water",
+      "movement": "Breeds on northern lakes; winters mainly on coastal waters.",
+      "range": "Northern North America and parts of the North Atlantic region.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 66,
+          "max": 91,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 104,
+          "max": 131,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 2500,
+          "max": 6100,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Common_Loon/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Common_Loon/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Common_Loon/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Common_Loon/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2481962",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/common-loon.png",
+        "taxonKey": 2481962,
+        "url": "https://www.gbif.org/species/2481962",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/common-loon-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2481962&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "bald-eagle": {
+      "shortDescription": "A large waterside eagle whose white adult head and tail contrast with a dark brown body.",
+      "longDescription": [
+        "Bald eagles catch fish, scavenge and sometimes take food from other predators. Young birds lack the crisp white head and tail of adults, so age changes their appearance substantially. Broad wings and a heavy bill help distinguish them from the slimmer osprey, with which they often share fishing waters.",
+        "Pairs use substantial nests, adding sticks over successive seasons. Protection and restrictions on persistent pesticides helped reverse severe twentieth-century declines. Mature shoreline trees and dependable food remain valuable, even for populations that now tolerate some human activity nearby."
+      ],
+      "taxonomy": {
+        "family": "Accipitridae",
+        "order": "Accipitriformes"
+      },
+      "habitat": [
+        "Coasts",
+        "Large lakes",
+        "Forested waterways"
+      ],
+      "diet": [
+        "Fish",
+        "Carrion",
+        "Birds and other animals"
+      ],
+      "nesting": "Large stick nest, usually in a tall tree",
+      "movement": "Variable; many move to accessible winter food supplies.",
+      "range": "North America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 71,
+          "max": 96,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 204,
+          "max": 204,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 3000,
+          "max": 6300,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Bald_Eagle/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Bald_Eagle/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Bald_Eagle/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Bald_Eagle/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2480446",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/bald-eagle.png",
+        "taxonKey": 2480446,
+        "url": "https://www.gbif.org/species/2480446",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/bald-eagle-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2480446&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "wood-duck": {
+      "shortDescription": "A woodland duck with an ornate male plumage, a crested silhouette and a habit of nesting in trees.",
+      "longDescription": [
+        "Wood ducks favor sheltered waters threaded with branches and vegetation. The male combines iridescent colors with crisp white lines, while the female has a distinctive pale eye patch. Strong claws allow both sexes to grip bark and perch on limbs, an unusual ability among familiar ducks.",
+        "The young leave their elevated nest by jumping to the ground and following their mother toward water. Suitable natural cavities can be scarce, so well-managed nest boxes have helped the species. Nearby vegetation provides cover while the family feeds on plant material and small animals."
+      ],
+      "taxonomy": {
+        "family": "Anatidae",
+        "order": "Anseriformes"
+      },
+      "habitat": [
+        "Wooded swamps",
+        "Beaver ponds",
+        "Sheltered streams"
+      ],
+      "diet": [
+        "Seeds and acorns",
+        "Fruit",
+        "Aquatic insects"
+      ],
+      "nesting": "Tree cavity or nest box near water",
+      "movement": "Partial migrant; northern birds generally move south.",
+      "range": "North America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 47,
+          "max": 54,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 66,
+          "max": 73,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 454,
+          "max": 862,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Wood_Duck/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Wood_Duck/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Wood_Duck/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Wood_Duck/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2498387",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/wood-duck.png",
+        "taxonKey": 2498387,
+        "url": "https://www.gbif.org/species/2498387",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/wood-duck-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2498387&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "great-horned-owl": {
+      "shortDescription": "A large owl with feather tufts, yellow eyes and a deep hooting voice.",
+      "longDescription": [
+        "Great horned owls hunt a remarkably broad range of prey, from small rodents to sizeable birds and mammals. The apparent horns are feather tufts. Soft plumage helps quiet their flight, while sensitive hearing and large eyes assist hunting in dim light.",
+        "They use landscapes that combine shelter with open hunting ground, including forests, wetlands and settled areas. A pair’s duet can include two noticeably different pitches: the smaller male has the deeper voice. Their adaptability helps explain why they occupy so many different habitats."
+      ],
+      "taxonomy": {
+        "family": "Strigidae",
+        "order": "Strigiformes"
+      },
+      "habitat": [
+        "Woodland",
+        "Open country",
+        "Suburban edges"
+      ],
+      "diet": [
+        "Mammals",
+        "Birds",
+        "Other small animals"
+      ],
+      "nesting": "Often reuses a large nest made by another bird",
+      "movement": "Mostly resident.",
+      "range": "Widespread in the Americas.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 46,
+          "max": 63,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 101,
+          "max": 145,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 910,
+          "max": 2500,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Great_Horned_Owl/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Great_Horned_Owl/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Great_Horned_Owl/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Great_Horned_Owl/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/5959118",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/great-horned-owl.png",
+        "taxonKey": 5959118,
+        "url": "https://www.gbif.org/species/5959118",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/great-horned-owl-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=5959118&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "northern-cardinal": {
+      "shortDescription": "A crested garden bird with a strong seed-cracking bill; males remain red even in winter.",
+      "longDescription": [
+        "Both sexes have a raised crest and a stout reddish bill. The male is mostly red, while the female is warm brown with red highlights in the wings and tail. Cardinals search low vegetation and the ground for seeds and fruit, adding insects and feeding them to their young.",
+        "They do not make a regular seasonal migration. Dense shrubs provide cover and nesting sites close to open feeding areas. Both males and females sing, and pairs can exchange phrases; their clear whistles often reveal birds concealed in tangled foliage."
+      ],
+      "taxonomy": {
+        "family": "Cardinalidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Thickets",
+        "Woodland edges",
+        "Gardens"
+      ],
+      "diet": [
+        "Seeds",
+        "Fruit",
+        "Insects"
+      ],
+      "nesting": "Cup nest concealed in dense shrubs",
+      "movement": "Resident.",
+      "range": "Eastern and central North America, extending into Mexico and Central America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 21,
+          "max": 23,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 25,
+          "max": 31,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 42,
+          "max": 48,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Northern_Cardinal/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Northern_Cardinal/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Northern_Cardinal/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Northern_Cardinal/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2490384",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/northern-cardinal.png",
+        "taxonKey": 2490384,
+        "url": "https://www.gbif.org/species/2490384",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/northern-cardinal-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2490384&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "blue-jay": {
+      "shortDescription": "A crested blue, white and black corvid with a loud voice and an appetite for acorns.",
+      "longDescription": [
+        "Blue jays forage in trees and on the ground, taking nuts, seeds and animal food. They store acorns, moving some away from the parent tree. Their varied calls include convincing imitations of hawks, while their crest and bold markings make them conspicuous when perched in the open.",
+        "Their seasonal movements are unusually variable. Large flocks may migrate along coasts and the Great Lakes, but other birds stay through winter. Family relationships and a flexible diet help jays use woodland edges, parks and neighborhoods with mature trees."
+      ],
+      "taxonomy": {
+        "family": "Corvidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Woodland edges",
+        "Oak woods",
+        "Parks"
+      ],
+      "diet": [
+        "Acorns and other nuts",
+        "Seeds",
+        "Insects and small animals"
+      ],
+      "nesting": "Cup nest in a tree",
+      "movement": "Some migrate; others remain, with individual variation.",
+      "range": "Eastern and central North America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 25,
+          "max": 30,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 34,
+          "max": 43,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 70,
+          "max": 100,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Blue_Jay/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Blue_Jay/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Blue_Jay/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Blue_Jay/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2482593",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/blue-jay.png",
+        "taxonKey": 2482593,
+        "url": "https://www.gbif.org/species/2482593",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/blue-jay-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2482593&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "mourning-dove": {
+      "shortDescription": "A softly colored dove with a pointed tail, a low coo and whistling wings at takeoff.",
+      "longDescription": [
+        "Mourning doves collect seeds from bare ground, storing a meal in the crop before digesting it at a safer perch. Their slender shape and long, tapered tail are useful identification clues. The familiar mournful voice comes from the bird, but the sharp whistle during takeoff comes from its wings.",
+        "Open feeding areas alongside trees or shrubs suit this species well. Wires and exposed branches serve as resting places between feeding trips. Although often quiet and inconspicuous, these doves are strong, direct fliers and widespread inhabitants of human-shaped landscapes."
+      ],
+      "taxonomy": {
+        "family": "Columbidae",
+        "order": "Columbiformes"
+      },
+      "habitat": [
+        "Open country",
+        "Farmland",
+        "Gardens"
+      ],
+      "diet": [
+        "Seeds"
+      ],
+      "nesting": "Loose platform of twigs, often in a tree",
+      "movement": "Partial migrant; northern birds commonly move south.",
+      "range": "North and Central America and the Caribbean.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 23,
+          "max": 34,
+          "unit": "cm",
+          "note": "Male length as reported by Cornell"
+        },
+        {
+          "label": "Wingspan",
+          "min": 45,
+          "max": 45,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 86,
+          "max": 170,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Mourning_Dove/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Mourning_Dove/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Mourning_Dove/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Mourning_Dove/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2495347",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/mourning-dove.png",
+        "taxonKey": 2495347,
+        "url": "https://www.gbif.org/species/2495347",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/mourning-dove-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2495347&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "black-capped-chickadee": {
+      "shortDescription": "A tiny, inquisitive woodland bird with a black cap, white cheeks and a busy flocking life.",
+      "longDescription": [
+        "Black-capped chickadees investigate branches, bark and feeders for insects and seeds. Their contrasting head pattern stays recognizable throughout the year. Food stored in scattered hiding places helps them through lean periods, and their ability to remember these caches supports survival in cold woodland.",
+        "Outside breeding time they often travel in small groups joined by other species. Listening for their calls can reveal an entire mixed feeding flock. Tree cavities provide nest sites; soft or decaying wood and suitable boxes give these small birds sheltered places to raise young."
+      ],
+      "taxonomy": {
+        "family": "Paridae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Woodland",
+        "Forest edges",
+        "Gardens"
+      ],
+      "diet": [
+        "Insects",
+        "Seeds",
+        "Berries"
+      ],
+      "nesting": "Tree cavity or nest box",
+      "movement": "Mostly resident.",
+      "range": "Northern North America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 12,
+          "max": 15,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 16,
+          "max": 21,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 9,
+          "max": 14,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Black-capped_Chickadee/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Black-capped_Chickadee/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Black-capped_Chickadee/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Black-capped_Chickadee/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2487805",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/black-capped-chickadee.png",
+        "taxonKey": 2487805,
+        "url": "https://www.gbif.org/species/2487805",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/black-capped-chickadee-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2487805&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "american-robin": {
+      "shortDescription": "A familiar orange-breasted thrush that switches between searching lawns and gathering fruit in trees.",
+      "longDescription": [
+        "American robins run and pause on short grass while hunting earthworms and other invertebrates. Their diet shifts toward fruit later in the year. A gray-brown back, warm breast and yellow bill distinguish the adult; the spotted young hint at its place among the thrushes.",
+        "Seeing a robin does not always announce the start of spring. Many remain in northern areas through winter but spend more time in wooded places, gathering at fruit sources and communal roosts. The female builds a substantial cup nest strengthened with mud."
+      ],
+      "taxonomy": {
+        "family": "Turdidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Lawns",
+        "Woodland",
+        "Parks"
+      ],
+      "diet": [
+        "Earthworms and insects",
+        "Fruit"
+      ],
+      "nesting": "Mud-reinforced cup in a tree or on a structure",
+      "movement": "Variable migration and winter movements following food.",
+      "range": "North America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 20,
+          "max": 28,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 31,
+          "max": 40,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 77,
+          "max": 85,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/American_Robin/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/American_Robin/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/American_Robin/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/American_Robin/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/9510564",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/american-robin.png",
+        "taxonKey": 9510564,
+        "url": "https://www.gbif.org/species/9510564",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/american-robin-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9510564&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "eastern-bluebird": {
+      "shortDescription": "A small thrush that watches for insects from a low perch, with blue wings and a warm-colored breast.",
+      "longDescription": [
+        "Eastern bluebirds use open areas with scattered trees, fences or other hunting perches. They scan the ground, drop onto an insect and return to a lookout. Males have vivid blue upperparts; females are grayer, with blue remaining in the wings and tail.",
+        "They require an existing cavity to nest and readily use suitable boxes. In colder months, fruit becomes an important food. Nest-box projects can help where natural holes are limited, especially when open feeding habitat and native fruiting plants are also available nearby."
+      ],
+      "taxonomy": {
+        "family": "Turdidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Meadows",
+        "Orchards",
+        "Open woodland"
+      ],
+      "diet": [
+        "Insects",
+        "Berries"
+      ],
+      "nesting": "Tree cavity or nest box",
+      "movement": "Partial migrant; northern populations move south.",
+      "range": "Eastern North America south into Central America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 16,
+          "max": 21,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 25,
+          "max": 32,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 28,
+          "max": 32,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Eastern_Bluebird/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Eastern_Bluebird/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Eastern_Bluebird/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Eastern_Bluebird/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2490941",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/eastern-bluebird.png",
+        "taxonKey": 2490941,
+        "url": "https://www.gbif.org/species/2490941",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/eastern-bluebird-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2490941&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "cedar-waxwing": {
+      "shortDescription": "A smooth-plumaged, masked bird that gathers in fruiting trees and flashes a yellow-tipped tail.",
+      "longDescription": [
+        "Cedar waxwings often arrive as a flock, announcing themselves with thin, high calls. They specialize in fruit but also catch insects, sometimes making aerial sallies above water. A soft crest, black eye mask and subtle brown-to-yellow body distinguish them from other flocking birds.",
+        "The red tips on some wing feathers gave waxwings their name. Even the tail color can reflect diet: pigments from certain introduced berries can turn the usual yellow tip orange. Their movements follow patchy food supplies, so a heavily laden tree may suddenly attract a busy gathering."
+      ],
+      "taxonomy": {
+        "family": "Bombycillidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Open woodland",
+        "Fruiting trees",
+        "Riversides"
+      ],
+      "diet": [
+        "Fruit",
+        "Flying insects"
+      ],
+      "nesting": "Cup nest in a tree",
+      "movement": "Mobile flocks follow fruit; many migrate seasonally.",
+      "range": "North and Central America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 14,
+          "max": 17,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 22,
+          "max": 30,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 32,
+          "max": 32,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Cedar_Waxwing/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Cedar_Waxwing/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Cedar_Waxwing/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Cedar_Waxwing/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2484609",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/cedar-waxwing.png",
+        "taxonKey": 2484609,
+        "url": "https://www.gbif.org/species/2484609",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/cedar-waxwing-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2484609&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "tufted-titmouse": {
+      "shortDescription": "A small gray woodland bird with a pointed crest, dark eyes and a surprisingly carrying whistle.",
+      "longDescription": [
+        "Tufted titmice search leaves and branches for insects and make frequent visits to seed feeders. A large seed is often carried to a perch and opened with repeated bill strikes. They also cache food, storing individual items for later use rather than consuming every find immediately.",
+        "Pairs often remain on their territories outside the nesting season, sometimes accompanied by young birds. They use natural holes or old woodpecker cavities because they cannot excavate a substantial cavity themselves. Retaining suitable trees therefore benefits them as well as the birds that originally made the holes."
+      ],
+      "taxonomy": {
+        "family": "Paridae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Deciduous woodland",
+        "Parks",
+        "Gardens"
+      ],
+      "diet": [
+        "Insects",
+        "Seeds and nuts"
+      ],
+      "nesting": "Existing tree cavity or nest box",
+      "movement": "Resident.",
+      "range": "Eastern North America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 14,
+          "max": 16,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 20,
+          "max": 26,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 18,
+          "max": 26,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Tufted_Titmouse/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Tufted_Titmouse/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Tufted_Titmouse/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Tufted_Titmouse/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2487887",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/tufted-titmouse.png",
+        "taxonKey": 2487887,
+        "url": "https://www.gbif.org/species/2487887",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/tufted-titmouse-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2487887&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "red-winged-blackbird": {
+      "shortDescription": "A marshland singer whose black males display red shoulder patches; females are boldly streaked brown.",
+      "longDescription": [
+        "Male red-winged blackbirds sing from prominent reeds and fence posts, spreading the colored shoulder patches during displays. Females look very different, with dark streaking over brown plumage. Their nesting habitat often includes standing water and strong vegetation that supports a woven cup.",
+        "Summer territories can be vigorously defended, but winter brings a much more communal life. Birds gather into large roosting flocks, sometimes with other blackbirds and starlings, then spread out to feed. Insects are important during breeding; seeds and grain become more prominent at other times."
+      ],
+      "taxonomy": {
+        "family": "Icteridae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Marshes",
+        "Wet fields",
+        "Grassland"
+      ],
+      "diet": [
+        "Insects",
+        "Seeds and grain"
+      ],
+      "nesting": "Cup attached to wetland plants or low vegetation",
+      "movement": "Northern populations migrate; winter flocks can be large.",
+      "range": "North and Central America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 17,
+          "max": 23,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 31,
+          "max": 40,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 32,
+          "max": 77,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Red-winged_Blackbird/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Red-winged_Blackbird/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Red-winged_Blackbird/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Red-winged_Blackbird/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/9409198",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/red-winged-blackbird.png",
+        "taxonKey": 9409198,
+        "url": "https://www.gbif.org/species/9409198",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/red-winged-blackbird-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9409198&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "baltimore-oriole": {
+      "shortDescription": "A treetop singer known for orange-and-black males and finely woven hanging nests.",
+      "longDescription": [
+        "Baltimore orioles forage high in leafy trees, taking insects, fruit and nectar. Adult males are strongly orange and black; females and young males are more variable, often yellow-orange with subdued upperparts. The clear whistles may be easier to notice than a bird hidden in the canopy.",
+        "The female weaves a flexible nest suspended from slender branches. These seasonal travelers depend on habitats in several countries: open breeding woodland in the north and suitable wintering areas in the tropics. Their changing diet follows both the season and the demands of raising young."
+      ],
+      "taxonomy": {
+        "family": "Icteridae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Open deciduous woodland",
+        "River edges",
+        "Parks"
+      ],
+      "diet": [
+        "Insects",
+        "Fruit",
+        "Nectar"
+      ],
+      "nesting": "Hanging woven pouch in a tree",
+      "movement": "Long-distance migrant to Central and South America.",
+      "range": "Breeds in eastern North America; winters farther south in the Americas.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 17,
+          "max": 19,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 23,
+          "max": 30,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 30,
+          "max": 40,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Baltimore_Oriole/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Baltimore_Oriole/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Baltimore_Oriole/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Baltimore_Oriole/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2484340",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/baltimore-oriole.png",
+        "taxonKey": 2484340,
+        "url": "https://www.gbif.org/species/2484340",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/baltimore-oriole-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2484340&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "rose-breasted-grosbeak": {
+      "shortDescription": "A stout-billed woodland songbird with a rosy breast patch in males and a striped face in females.",
+      "longDescription": [
+        "Males combine a black head and back with white markings and a vivid rose-red breast. Females are heavily streaked brown with a pale eyebrow, but share the substantial triangular bill. Both sexes can visit feeders, while wild foods include insects, seeds and berries gathered from foliage.",
+        "Their song is a flowing series of whistles, and the short call is unusually sharp. Both parents participate in incubation. The open cup nest can look surprisingly slight from below, even though it supports a clutch and the growing young."
+      ],
+      "taxonomy": {
+        "family": "Cardinalidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Deciduous woodland",
+        "Forest edges",
+        "Thickets"
+      ],
+      "diet": [
+        "Insects",
+        "Fruit",
+        "Seeds"
+      ],
+      "nesting": "Open cup in a tree or shrub fork",
+      "movement": "Long-distance migrant to tropical America.",
+      "range": "Breeds in North America; winters in Central and northern South America.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 18,
+          "max": 21,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 29,
+          "max": 33,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 39,
+          "max": 49,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Rose-breasted_Grosbeak/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Rose-breasted_Grosbeak/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Rose-breasted_Grosbeak/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Rose-breasted_Grosbeak/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2490494",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/rose-breasted-grosbeak.png",
+        "taxonKey": 2490494,
+        "url": "https://www.gbif.org/species/2490494",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/rose-breasted-grosbeak-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2490494&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "american-kestrel": {
+      "shortDescription": "A small, colorful falcon that hunts from wires or hovers above open ground.",
+      "longDescription": [
+        "American kestrels scan low vegetation for insects and small vertebrates. Males have blue-gray wings contrasting with a rusty back; females are mostly rusty above with dark barring. Two dark facial stripes are useful clues for both sexes. A hovering bird adjusts its wings and tail to keep its view of the ground.",
+        "These falcons need nesting cavities but cannot excavate their own. Old woodpecker holes, building recesses and nest boxes can provide shelter. Population declines in parts of North America make the combination of safe nest sites and productive hunting habitat particularly valuable."
+      ],
+      "taxonomy": {
+        "family": "Falconidae",
+        "order": "Falconiformes"
+      },
+      "habitat": [
+        "Grassland",
+        "Farmland",
+        "Open country"
+      ],
+      "diet": [
+        "Large insects",
+        "Small mammals",
+        "Small birds"
+      ],
+      "nesting": "Existing cavity or nest box",
+      "movement": "Partial migrant; northern birds commonly move south.",
+      "range": "Widespread across the Americas.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 22,
+          "max": 31,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 51,
+          "max": 61,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 80,
+          "max": 165,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/American_Kestrel/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/American_Kestrel/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/American_Kestrel/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/American_Kestrel/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/9685907",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/american-kestrel.png",
+        "taxonKey": 9685907,
+        "url": "https://www.gbif.org/species/9685907",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/american-kestrel-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9685907&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "peregrine-falcon": {
+      "shortDescription": "A fast aerial hunter that pursues birds and nests on cliffs, bridges and tall buildings.",
+      "longDescription": [
+        "Peregrines hunt with speed, including steep dives from above their prey. Pointed wings and a dark facial stripe support identification, but viewing conditions and age change the details of their plumage. Cities can provide both abundant prey and structures resembling natural nesting cliffs.",
+        "Persistent pesticides caused catastrophic declines in several populations during the twentieth century. Restrictions, captive breeding and reintroduction helped the birds recover. Their story links a spectacular predator to the less visible health of the food webs on which it depends."
+      ],
+      "taxonomy": {
+        "family": "Falconidae",
+        "order": "Falconiformes"
+      },
+      "habitat": [
+        "Cliffs",
+        "Coasts",
+        "Cities"
+      ],
+      "diet": [
+        "Birds"
+      ],
+      "nesting": "Scrape on a cliff ledge or tall structure",
+      "movement": "Variable; Arctic breeders can migrate great distances.",
+      "range": "Every continent except Antarctica.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 36,
+          "max": 49,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 100,
+          "max": 110,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 530,
+          "max": 1600,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Peregrine_Falcon/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Peregrine_Falcon/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Peregrine_Falcon/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Peregrine_Falcon/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2481047",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/peregrine-falcon.png",
+        "taxonKey": 2481047,
+        "url": "https://www.gbif.org/species/2481047",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/peregrine-falcon-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2481047&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "barn-owl": {
+      "shortDescription": "A pale, heart-faced owl that searches open country for small mammals after dark.",
+      "longDescription": [
+        "American barn owls fly low over fields and meadows, locating prey with exceptionally sensitive hearing as well as vision. Their rounded facial disc helps gather sound. A pale underside can make a passing bird appear almost white, while the upperparts are warmer gray and cinnamon.",
+        "They roost and nest in sheltered cavities, including old buildings. Pellets containing undigested bones and fur reveal their diet. In the taxonomy adopted by Cornell, the former widespread barn owl was split in 2024; this North American catalogue bird is Tyto furcata, rather than Tyto alba."
+      ],
+      "taxonomy": {
+        "family": "Tytonidae",
+        "order": "Strigiformes"
+      },
+      "habitat": [
+        "Grassland",
+        "Farmland",
+        "Open habitats"
+      ],
+      "diet": [
+        "Small mammals"
+      ],
+      "nesting": "Tree cavity, building, cliff recess or nest box",
+      "movement": "Mostly resident, with dispersal by young birds.",
+      "range": "The Americas; distinct from Western and Eastern barn owls.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 32,
+          "max": 40,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 100,
+          "max": 125,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 400,
+          "max": 700,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/American_Barn_Owl/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/American_Barn_Owl/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/American_Barn_Owl/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/American_Barn_Owl/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/9568884",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/barn-owl.png",
+        "taxonKey": 9568884,
+        "url": "https://www.gbif.org/species/9568884",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/barn-owl-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9568884&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17",
+      "taxonomyNote": "American barn owl (Tyto furcata). Cornell recognized the split from the wider barn owl complex in 2024. Existing designs retain the same artwork ID."
+    },
+    "snowy-owl": {
+      "shortDescription": "A white Arctic owl that hunts in open country and may appear far south in winter.",
+      "longDescription": [
+        "Snowy owls breed on treeless tundra, where lemmings can be crucial prey. They hunt during the continuous daylight of the Arctic summer, so daylight activity is normal. Adult males can be almost entirely white, while females and younger birds usually carry more dark markings.",
+        "Winter movements vary among birds and years. Some remain far north; others use fields, dunes and other open landscapes farther south. Their remote, shifting distribution makes population monitoring difficult, and declines have led to a global Vulnerable assessment."
+      ],
+      "taxonomy": {
+        "family": "Strigidae",
+        "order": "Strigiformes"
+      },
+      "habitat": [
+        "Arctic tundra",
+        "Open fields",
+        "Coastal dunes"
+      ],
+      "diet": [
+        "Lemmings and other mammals",
+        "Birds"
+      ],
+      "nesting": "Ground scrape on a raised tundra site",
+      "movement": "Variable and sometimes irruptive winter movements.",
+      "range": "Arctic regions of North America and Eurasia, with winter movements south.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 52,
+          "max": 71,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 126,
+          "max": 145,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 1600,
+          "max": 2950,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Vulnerable",
+        "system": "IUCN Red List (reported by BirdLife)",
+        "scope": "Global",
+        "url": "https://datazone.birdlife.org/species/factsheet/snowy-owl-bubo-scandiacus",
+        "note": "",
+        "code": "VU"
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Snowy_Owl/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Snowy_Owl/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Snowy_Owl/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/5959143",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        },
+        {
+          "label": "BirdLife · global conservation",
+          "url": "https://datazone.birdlife.org/species/factsheet/snowy-owl-bubo-scandiacus",
+          "supports": [
+            "Global conservation"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/snowy-owl.png",
+        "taxonKey": 5959143,
+        "url": "https://www.gbif.org/species/5959143",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/snowy-owl-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=5959143&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "common-raven": {
+      "shortDescription": "A large black corvid with a deep croak, an adaptable diet and notably playful flight.",
+      "longDescription": [
+        "Common ravens live in an extraordinary variety of landscapes, from remote mountains to the edges of towns. They scavenge, hunt small animals and eat plant foods. A heavy bill, shaggy throat feathers and long, wedge-shaped tail help distinguish them from many smaller crows.",
+        "Pairs defend territories, while nonbreeding birds may gather where food is abundant. Rolls, dives and object play show another side of this capable scavenger. Their flexibility lets them use resources created by people, although this can also bring them into conflict with other wildlife and land users."
+      ],
+      "taxonomy": {
+        "family": "Corvidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Mountains",
+        "Woodland",
+        "Deserts and coasts"
+      ],
+      "diet": [
+        "Carrion",
+        "Small animals",
+        "Seeds and fruit"
+      ],
+      "nesting": "Large stick nest on a cliff, tree or structure",
+      "movement": "Mostly resident; young birds can range widely.",
+      "range": "Much of the Northern Hemisphere.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 56,
+          "max": 69,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 116,
+          "max": 118,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 689,
+          "max": 1625,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Common_Raven/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Common_Raven/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Common_Raven/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Common_Raven/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2482492",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/common-raven.png",
+        "taxonKey": 2482492,
+        "url": "https://www.gbif.org/species/2482492",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/common-raven-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2482492&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "belted-kingfisher": {
+      "shortDescription": "A shaggy-crested waterside hunter with a loud rattle and a heavy, straight bill.",
+      "longDescription": [
+        "Belted kingfishers watch the water from a perch or hover briefly before diving. Their large head and short legs give them a distinctive outline. Both sexes have a blue-gray breast band, but the female has an additional chestnut band, making her the more colorful bird.",
+        "A nest is hidden at the end of a tunnel dug into an exposed bank. Clear fishing water is only part of the habitat requirement: suitable soft banks matter too. The upward-sloping tunnel can help keep water from reaching the chamber."
+      ],
+      "taxonomy": {
+        "family": "Alcedinidae",
+        "order": "Coraciiformes"
+      },
+      "habitat": [
+        "Rivers",
+        "Lakes",
+        "Sheltered coasts"
+      ],
+      "diet": [
+        "Fish",
+        "Crayfish",
+        "Other aquatic animals"
+      ],
+      "nesting": "Tunnel excavated in an earthen bank",
+      "movement": "Partial migrant; moves where water freezes.",
+      "range": "North America, extending south during the nonbreeding season.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 28,
+          "max": 35,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 48,
+          "max": 58,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 140,
+          "max": 170,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Belted_Kingfisher/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Belted_Kingfisher/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Belted_Kingfisher/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Belted_Kingfisher/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2475472",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/belted-kingfisher.png",
+        "taxonKey": 2475472,
+        "url": "https://www.gbif.org/species/2475472",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/belted-kingfisher-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2475472&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "atlantic-puffin": {
+      "shortDescription": "A compact seabird with a colorful breeding-season bill and wings that work underwater as well as in air.",
+      "longDescription": [
+        "Atlantic puffins pursue small fish by swimming with their wings. The bill can hold several fish at once, allowing an adult to carry a meal back to its chick. On land the upright black-and-white bird looks very different from the swift, low-flying shape seen at sea.",
+        "Puffins return to island colonies to nest in burrows or crevices, then spend much of the year offshore. Ocean conditions affect the size and availability of their fish prey. Despite large colonies in some places, declines have placed the species in the global Vulnerable category."
+      ],
+      "taxonomy": {
+        "family": "Alcidae",
+        "order": "Charadriiformes"
+      },
+      "habitat": [
+        "North Atlantic ocean",
+        "Rocky breeding islands"
+      ],
+      "diet": [
+        "Small fish"
+      ],
+      "nesting": "Burrow or crevice in a breeding colony",
+      "movement": "Disperses at sea outside the breeding season.",
+      "range": "North Atlantic, including coasts and islands of North America and Europe.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 26,
+          "max": 29,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 53,
+          "max": 53,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 310,
+          "max": 550,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Vulnerable",
+        "system": "IUCN Red List (reported by BirdLife)",
+        "scope": "Global",
+        "url": "https://www.birdlife.org/news/2022/04/06/seabird-of-the-month-atlantic-puffin-fratercula-arctica/",
+        "note": "",
+        "code": "VU"
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Atlantic_Puffin/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Atlantic_Puffin/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Atlantic_Puffin/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2481353",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        },
+        {
+          "label": "BirdLife · global conservation",
+          "url": "https://www.birdlife.org/news/2022/04/06/seabird-of-the-month-atlantic-puffin-fratercula-arctica/",
+          "supports": [
+            "Global conservation"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/atlantic-puffin.png",
+        "taxonKey": 2481353,
+        "url": "https://www.gbif.org/species/2481353",
+        "focusBounds": [
+          -90,
+          30,
+          45,
+          80
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/atlantic-puffin-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=2481353&style=green.point"
+          },
+          {
+            "asset": "assets/maps/atlantic-puffin-1-1-0.png",
+            "zoom": 1,
+            "x": 1,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/1/0@2x.png?taxonKey=2481353&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "mallard": {
+      "shortDescription": "A familiar dabbling duck, recognizable by the male’s green head and the blue wing patch shared by both sexes.",
+      "longDescription": [
+        "Mallards feed by tipping forward in shallow water and by picking food from the shore. Their diet includes both plants and small animals, changing with local conditions and the breeding season. Females are mottled brown, a useful disguise while sitting on a concealed nest.",
+        "Pairs often form well before spring, but the female incubates and cares for the ducklings. Most domestic duck breeds descend from mallards, so park birds may show unusual colors or shapes. Wetland availability strongly influences where wild populations can feed and breed."
+      ],
+      "taxonomy": {
+        "family": "Anatidae",
+        "order": "Anseriformes"
+      },
+      "habitat": [
+        "Ponds",
+        "Marshes",
+        "Rivers and estuaries"
+      ],
+      "diet": [
+        "Aquatic plants",
+        "Seeds",
+        "Invertebrates"
+      ],
+      "nesting": "Concealed ground nest near water",
+      "movement": "Partial migrant; movements vary with winter conditions.",
+      "range": "Native across much of the Northern Hemisphere; introduced elsewhere.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 50,
+          "max": 65,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 82,
+          "max": 95,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 1000,
+          "max": 1300,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Low concern",
+        "system": "Cornell / Partners in Flight",
+        "scope": "North America",
+        "url": "https://www.allaboutbirds.org/guide/Mallard/lifehistory",
+        "note": "Regional summary; low concern does not mean every population is stable."
+      },
+      "sources": [
+        {
+          "label": "Cornell Lab · species overview",
+          "url": "https://www.allaboutbirds.org/guide/Mallard/overview",
+          "supports": [
+            "Identification",
+            "Behavior",
+            "Movement"
+          ]
+        },
+        {
+          "label": "Cornell Lab · life history",
+          "url": "https://www.allaboutbirds.org/guide/Mallard/lifehistory",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting",
+            "Conservation"
+          ]
+        },
+        {
+          "label": "Cornell Lab · measurements",
+          "url": "https://www.allaboutbirds.org/guide/Mallard/id",
+          "supports": [
+            "Length",
+            "Wingspan",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/9761484",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/mallard.png",
+        "taxonKey": 9761484,
+        "url": "https://www.gbif.org/species/9761484",
+        "focusBounds": [
+          -170,
+          5,
+          -45,
+          75
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/mallard-1-0-0.png",
+            "zoom": 1,
+            "x": 0,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/1/0/0@2x.png?taxonKey=9761484&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "tui": {
+      "shortDescription": "A dark, iridescent honeyeater with white throat tufts and a rich mix of musical and rasping sounds.",
+      "longDescription": [
+        "Tūī may appear black at first, but changing light reveals blue, green and bronze tones. The curled white throat feathers are especially distinctive. Their songs mix clear notes with clicks, coughs and wheezes, and their noisy wingbeats can announce a bird passing overhead.",
+        "Nectar and honeydew are major foods, supplemented by fruit and invertebrates. Tūī move between seasonal food sources and can commute between woodland and flowering gardens. As flower visitors and fruit eaters, they contribute to pollination and seed dispersal in New Zealand landscapes."
+      ],
+      "taxonomy": {
+        "family": "Meliphagidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Native forest",
+        "Scrub",
+        "Wooded gardens"
+      ],
+      "diet": [
+        "Nectar and honeydew",
+        "Fruit",
+        "Invertebrates"
+      ],
+      "nesting": "Cup nest in a tree or dense vegetation",
+      "movement": "Local movements follow flowering and fruiting plants.",
+      "range": "New Zealand and several offshore island groups.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 30,
+          "max": 30,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 90,
+          "max": 125,
+          "unit": "g",
+          "note": "Female about 90 g; male about 125 g"
+        }
+      ],
+      "conservation": {
+        "label": "Not Threatened",
+        "system": "New Zealand Threat Classification",
+        "scope": "New Zealand",
+        "url": "https://www.nzbirdsonline.org.nz/species/tui",
+        "note": "The Chatham Island subspecies is assessed separately as Nationally Vulnerable."
+      },
+      "sources": [
+        {
+          "label": "New Zealand Birds Online",
+          "url": "https://www.nzbirdsonline.org.nz/species/tui",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "New Zealand conservation"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2487029",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/tui.png",
+        "taxonKey": 2487029,
+        "url": "https://www.gbif.org/species/2487029",
+        "focusBounds": [
+          164,
+          -49,
+          180,
+          -32
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/tui-3-7-4.png",
+            "zoom": 3,
+            "x": 7,
+            "y": 4,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/4@2x.png?taxonKey=2487029&style=green.point"
+          },
+          {
+            "asset": "assets/maps/tui-3-7-5.png",
+            "zoom": 3,
+            "x": 7,
+            "y": 5,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/5@2x.png?taxonKey=2487029&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "european-robin": {
+      "shortDescription": "A small orange-breasted bird whose bright song and territorial behavior are familiar in European gardens.",
+      "longDescription": [
+        "Male and female European robins look alike, with a warm orange-red face and breast against brown upperparts. Young birds are spotted brown and lack the adult’s bright breast. Robins often follow disturbed soil, taking insects and worms exposed by larger animals or people working in a garden.",
+        "Their approachable appearance conceals a strongly territorial character. Song helps defend a patch through much of the year, including outside the breeding season. Sheltered recesses, dense cover and open-fronted nest boxes can provide nesting places close to feeding ground."
+      ],
+      "taxonomy": {
+        "family": "Muscicapidae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Woodland",
+        "Hedgerows",
+        "Gardens"
+      ],
+      "diet": [
+        "Invertebrates",
+        "Seeds",
+        "Fruit"
+      ],
+      "nesting": "Cup nest in a sheltered recess or low cover",
+      "movement": "Resident in much of western Europe; some northern birds migrate.",
+      "range": "Europe, western Asia and parts of North Africa.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 14,
+          "max": 14,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 20,
+          "max": 22,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 14,
+          "max": 21,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Green list",
+        "system": "Birds of Conservation Concern",
+        "scope": "United Kingdom",
+        "url": "https://www.rspb.org.uk/birds-and-wildlife/robin",
+        "note": "A regional assessment; local and global categories can differ."
+      },
+      "sources": [
+        {
+          "label": "RSPB",
+          "url": "https://www.rspb.org.uk/birds-and-wildlife/robin",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2492462",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/european-robin.png",
+        "taxonKey": 2492462,
+        "url": "https://www.gbif.org/species/2492462",
+        "focusBounds": [
+          -20,
+          25,
+          65,
+          72
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/european-robin-2-1-0.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/0@2x.png?taxonKey=2492462&style=green.point"
+          },
+          {
+            "asset": "assets/maps/european-robin-2-1-1.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2492462&style=green.point"
+          },
+          {
+            "asset": "assets/maps/european-robin-2-2-0.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/0@2x.png?taxonKey=2492462&style=green.point"
+          },
+          {
+            "asset": "assets/maps/european-robin-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2492462&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "eurasian-blue-tit": {
+      "shortDescription": "A small, acrobatic tit with a blue cap, white cheeks and a yellow underside.",
+      "longDescription": [
+        "Blue tits work the fine outer branches of trees, often hanging at awkward angles to reach insects. Their blue, yellow, green and white plumage packs a surprising amount of color into a small bird. In winter they commonly travel with other tits, keeping in touch through short calls.",
+        "The breeding season is closely linked to caterpillar availability. A large brood can require repeated food deliveries, so the timing of nesting matters. Tree cavities and nest boxes provide shelter; mature trees nearby supply the insects needed by growing chicks."
+      ],
+      "taxonomy": {
+        "family": "Paridae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Woodland",
+        "Hedgerows",
+        "Parks and gardens"
+      ],
+      "diet": [
+        "Insects and caterpillars",
+        "Seeds",
+        "Nuts"
+      ],
+      "nesting": "Tree hole or nest box",
+      "movement": "Mostly resident; local and some seasonal movements.",
+      "range": "Europe and western Asia.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 12,
+          "max": 12,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 18,
+          "max": 18,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 11,
+          "max": 11,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Green list",
+        "system": "Birds of Conservation Concern",
+        "scope": "United Kingdom",
+        "url": "https://www.rspb.org.uk/birds-and-wildlife/blue-tit",
+        "note": "A regional assessment; local and global categories can differ."
+      },
+      "sources": [
+        {
+          "label": "RSPB",
+          "url": "https://www.rspb.org.uk/birds-and-wildlife/blue-tit",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2487879",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        },
+        {
+          "label": "The Wildlife Trusts",
+          "url": "https://www.wildlifetrusts.org/wildlife-explorer/birds/tits-crests-and-warblers/blue-tit",
+          "supports": [
+            "Nesting",
+            "Diet",
+            "Measurements"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/eurasian-blue-tit.png",
+        "taxonKey": 2487879,
+        "url": "https://www.gbif.org/species/2487879",
+        "focusBounds": [
+          -20,
+          25,
+          65,
+          72
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/eurasian-blue-tit-2-1-0.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/0@2x.png?taxonKey=2487879&style=green.point"
+          },
+          {
+            "asset": "assets/maps/eurasian-blue-tit-2-1-1.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2487879&style=green.point"
+          },
+          {
+            "asset": "assets/maps/eurasian-blue-tit-2-2-0.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/0@2x.png?taxonKey=2487879&style=green.point"
+          },
+          {
+            "asset": "assets/maps/eurasian-blue-tit-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2487879&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "common-kingfisher": {
+      "shortDescription": "A small blue-and-orange fishing bird that often appears as a quick flash low over the water.",
+      "longDescription": [
+        "A common kingfisher watches from a waterside perch before diving for a small fish or aquatic invertebrate. Its blue color comes from microscopic feather structures rather than blue pigment. Both sexes are similarly patterned, but the female usually has orange-red coloring on the lower bill.",
+        "Clear, accessible water lets the bird see its prey. An exposed bank provides a place to excavate a nesting tunnel. Severe cold and damaged waterways can reduce feeding opportunities, so local conditions strongly affect a bird that may otherwise stay in the same area year-round."
+      ],
+      "taxonomy": {
+        "family": "Alcedinidae",
+        "order": "Coraciiformes"
+      },
+      "habitat": [
+        "Rivers",
+        "Canals",
+        "Lakes and ponds"
+      ],
+      "diet": [
+        "Small fish",
+        "Aquatic insects"
+      ],
+      "nesting": "Tunnel in a waterside bank",
+      "movement": "Resident in many areas; movement where waters freeze.",
+      "range": "Europe, much of Asia and parts of North Africa.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 16,
+          "max": 17,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 24,
+          "max": 26,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 34,
+          "max": 46,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Green list",
+        "system": "Birds of Conservation Concern",
+        "scope": "United Kingdom",
+        "url": "https://www.rspb.org.uk/birds-and-wildlife/kingfisher",
+        "note": "A regional assessment; local and global categories can differ."
+      },
+      "sources": [
+        {
+          "label": "RSPB",
+          "url": "https://www.rspb.org.uk/birds-and-wildlife/kingfisher",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2475532",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        },
+        {
+          "label": "Woodland Trust",
+          "url": "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/animals/birds/kingfisher/",
+          "supports": [
+            "Habitat",
+            "Diet"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/common-kingfisher.png",
+        "taxonKey": 2475532,
+        "url": "https://www.gbif.org/species/2475532",
+        "focusBounds": [
+          -20,
+          25,
+          65,
+          72
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/common-kingfisher-2-1-0.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/0@2x.png?taxonKey=2475532&style=green.point"
+          },
+          {
+            "asset": "assets/maps/common-kingfisher-2-1-1.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2475532&style=green.point"
+          },
+          {
+            "asset": "assets/maps/common-kingfisher-2-2-0.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/0@2x.png?taxonKey=2475532&style=green.point"
+          },
+          {
+            "asset": "assets/maps/common-kingfisher-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2475532&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "eurasian-hoopoe": {
+      "shortDescription": "A striking ground-feeding bird with a folding crest, a curved bill and black-and-white wings.",
+      "longDescription": [
+        "The hoopoe’s pink-brown body contrasts with broad black-and-white wing bars. Its crest can rise into a fan when the bird is alert. A long, downcurved bill is suited to searching the ground for invertebrates, making open areas with accessible soil valuable feeding places.",
+        "Seasonal movements bring hoopoes north into Europe, and a few overshoot to Britain in spring. Their unusual combination of crest, bill and patterned wings makes them distinctive even during a brief encounter. Nesting depends on a suitable cavity close to feeding habitat."
+      ],
+      "taxonomy": {
+        "family": "Upupidae",
+        "order": "Bucerotiformes"
+      },
+      "habitat": [
+        "Open wooded country",
+        "Short grass",
+        "Farmland"
+      ],
+      "diet": [
+        "Insects",
+        "Spiders"
+      ],
+      "nesting": "Cavity in a tree, wall or other sheltered site",
+      "movement": "Many European populations migrate toward Africa.",
+      "range": "Europe and Asia, with populations and wintering areas in parts of Africa.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 26,
+          "max": 28,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 42,
+          "max": 46,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 47,
+          "max": 87,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Least Concern",
+        "code": "LC",
+        "system": "IUCN Red List (reported by BirdLife)",
+        "scope": "Global",
+        "url": "https://datazone.birdlife.org/country/factsheet/India",
+        "note": "BirdLife lists Upupa epops under the name Common Hoopoe."
+      },
+      "sources": [
+        {
+          "label": "RSPB",
+          "url": "https://www.rspb.org.uk/birds-and-wildlife/hoopoe",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2498415",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        },
+        {
+          "label": "Cornell Lab · eBird",
+          "url": "https://ebird.org/species/hoopoe",
+          "supports": [
+            "Identification",
+            "Habitat",
+            "Diet"
+          ]
+        },
+        {
+          "label": "BirdLife DataZone · Upupa epops",
+          "url": "https://datazone.birdlife.org/country/factsheet/India",
+          "supports": [
+            "Global conservation"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/eurasian-hoopoe.png",
+        "taxonKey": 2498415,
+        "url": "https://www.gbif.org/species/2498415",
+        "focusBounds": [
+          -20,
+          25,
+          65,
+          72
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/eurasian-hoopoe-2-1-0.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/0@2x.png?taxonKey=2498415&style=green.point"
+          },
+          {
+            "asset": "assets/maps/eurasian-hoopoe-2-1-1.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2498415&style=green.point"
+          },
+          {
+            "asset": "assets/maps/eurasian-hoopoe-2-2-0.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 0,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/0@2x.png?taxonKey=2498415&style=green.point"
+          },
+          {
+            "asset": "assets/maps/eurasian-hoopoe-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2498415&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "lilac-breasted-roller": {
+      "shortDescription": "A colorful savanna bird that watches for prey from an exposed perch and performs rolling display flights.",
+      "longDescription": [
+        "The lilac breast, blue wings and elongated tail feathers make this roller conspicuous when perched in the open. It watches the ground from trees before dropping onto prey, and can also catch insects in flight. Savanna provides the combination of lookout points and open hunting space that it needs.",
+        "The name roller refers to its dramatic aerial displays. Birds climb and dive during courtship and territorial encounters. This species belongs to the same order as kingfishers, although its usual feeding grounds are dry open landscapes rather than waterside perches."
+      ],
+      "taxonomy": {
+        "family": "Coraciidae",
+        "order": "Coraciiformes"
+      },
+      "habitat": [
+        "Savanna",
+        "Open woodland"
+      ],
+      "diet": [
+        "Insects",
+        "Small lizards",
+        "Frogs"
+      ],
+      "nesting": "Tree cavity",
+      "movement": "Mainly resident, with some local movements.",
+      "range": "Eastern and southern Africa.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 36,
+          "max": 36,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 104,
+          "max": 104,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Least Concern",
+        "system": "IUCN Red List (reported by ZSL / London Zoo)",
+        "scope": "Global",
+        "url": "https://www.londonzoo.org/whats-here/animals/lilac-breasted-roller",
+        "note": "",
+        "code": "LC"
+      },
+      "sources": [
+        {
+          "label": "ZSL / London Zoo",
+          "url": "https://www.londonzoo.org/whats-here/animals/lilac-breasted-roller",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "Réserve Africaine de Sigean · measurements",
+          "url": "https://www.reserveafricainesigean.fr/en/animals/gaig-blau-de-clatell-verd/",
+          "supports": [
+            "Length",
+            "Mass"
+          ]
+        },
+        {
+          "label": "Biodiversity Explorer · species account",
+          "url": "https://www.biodiversityexplorer.info/birds/coraciidae/coracias_caudatus.htm",
+          "supports": [
+            "Habitat",
+            "Diet",
+            "Nesting"
+          ]
+        },
+        {
+          "label": "BirdLife International · country distribution",
+          "url": "https://datazone.birdlife.org/species/factsheet/lilac-breasted-roller-coracias-caudatus",
+          "supports": [
+            "Range",
+            "Movement"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2475360",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/lilac-breasted-roller.png",
+        "taxonKey": 2475360,
+        "url": "https://www.gbif.org/species/2475360",
+        "focusBounds": [
+          -20,
+          -38,
+          55,
+          20
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/lilac-breasted-roller-2-1-1.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2475360&style=green.point"
+          },
+          {
+            "asset": "assets/maps/lilac-breasted-roller-2-1-2.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/2@2x.png?taxonKey=2475360&style=green.point"
+          },
+          {
+            "asset": "assets/maps/lilac-breasted-roller-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2475360&style=green.point"
+          },
+          {
+            "asset": "assets/maps/lilac-breasted-roller-2-2-2.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=2475360&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "african-grey-parrot": {
+      "shortDescription": "A gray, red-tailed forest parrot with a varied voice and a highly social life.",
+      "longDescription": [
+        "Gray plumage with pale feather edges gives this parrot a finely scaled appearance. The short red tail provides a sharp contrast. Birds feed high in trees on fruit and seeds, gathering in communal roosts and splitting into smaller groups to forage.",
+        "Wild populations face severe pressure from forest loss and capture for trade. Familiarity as a captive bird should not be confused with security in the wild: the species is globally Endangered. Large trees provide nesting cavities, while forested landscapes support the foods and roosting sites used by flocks."
+      ],
+      "taxonomy": {
+        "family": "Psittacidae",
+        "order": "Psittaciformes"
+      },
+      "habitat": [
+        "Rainforest",
+        "Forest edges",
+        "Mangroves"
+      ],
+      "diet": [
+        "Fruit",
+        "Seeds",
+        "Oil-palm fruit"
+      ],
+      "nesting": "Cavity in a tall living tree",
+      "movement": "Local movements between feeding and roosting sites.",
+      "range": "Forested equatorial Africa and some Gulf of Guinea islands.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 33,
+          "max": 33,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 400,
+          "max": 400,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Endangered",
+        "system": "IUCN Red List (reported by World Parrot Trust)",
+        "scope": "Global",
+        "url": "https://parrots.org/encyclopedia/grey-parrot/",
+        "note": "",
+        "code": "EN"
+      },
+      "sources": [
+        {
+          "label": "World Parrot Trust",
+          "url": "https://parrots.org/encyclopedia/grey-parrot/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2480181",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/african-grey-parrot.png",
+        "taxonKey": 2480181,
+        "url": "https://www.gbif.org/species/2480181",
+        "focusBounds": [
+          -20,
+          -38,
+          55,
+          20
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/african-grey-parrot-2-1-1.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=2480181&style=green.point"
+          },
+          {
+            "asset": "assets/maps/african-grey-parrot-2-1-2.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/2@2x.png?taxonKey=2480181&style=green.point"
+          },
+          {
+            "asset": "assets/maps/african-grey-parrot-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2480181&style=green.point"
+          },
+          {
+            "asset": "assets/maps/african-grey-parrot-2-2-2.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=2480181&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "grey-crowned-crane": {
+      "shortDescription": "A tall gray crane with a golden crown, white wing panels and a red throat pouch.",
+      "longDescription": [
+        "The stiff crown feathers create an unmistakable outline above a gray body and contrasting face. Grey crowned cranes feed on both plants and animals, using grassland and agricultural areas as well as wetlands. Their local movements respond to changing water and food conditions.",
+        "Wetland loss, capture for trade, poisoning and collisions with power lines all affect this Endangered species. Conservation work combines protection of breeding sites with community involvement. Keeping wetlands functional supports cranes and the people who depend on the same water systems."
+      ],
+      "taxonomy": {
+        "family": "Gruidae",
+        "order": "Gruiformes"
+      },
+      "habitat": [
+        "Wetlands",
+        "Grasslands",
+        "Agricultural margins"
+      ],
+      "diet": [
+        "Grass shoots and seeds",
+        "Invertebrates",
+        "Small vertebrates"
+      ],
+      "nesting": "Nest among wetland vegetation",
+      "movement": "Nonmigratory, with local and seasonal movements.",
+      "range": "Eastern and southeastern Africa.",
+      "measurements": [
+        {
+          "label": "Height",
+          "min": 104,
+          "max": 104,
+          "unit": "cm",
+          "note": "Approximate adult height"
+        },
+        {
+          "label": "Mass",
+          "min": 3600,
+          "max": 3600,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Endangered",
+        "system": "IUCN Red List (reported by International Crane Foundation)",
+        "scope": "Global",
+        "url": "https://savingcranes.org/species/grey-crowned-crane/",
+        "note": "",
+        "code": "EN"
+      },
+      "sources": [
+        {
+          "label": "International Crane Foundation",
+          "url": "https://savingcranes.org/species/grey-crowned-crane/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/5228229",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/grey-crowned-crane.png",
+        "taxonKey": 5228229,
+        "url": "https://www.gbif.org/species/5228229",
+        "focusBounds": [
+          -20,
+          -38,
+          55,
+          20
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/grey-crowned-crane-2-1-1.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=5228229&style=green.point"
+          },
+          {
+            "asset": "assets/maps/grey-crowned-crane-2-1-2.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/2@2x.png?taxonKey=5228229&style=green.point"
+          },
+          {
+            "asset": "assets/maps/grey-crowned-crane-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=5228229&style=green.point"
+          },
+          {
+            "asset": "assets/maps/grey-crowned-crane-2-2-2.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=5228229&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "secretarybird": {
+      "shortDescription": "A long-legged bird of prey that walks through grasslands, hunting on foot beneath a crest of dark plumes.",
+      "longDescription": [
+        "The secretarybird combines a raptor’s hooked bill with exceptionally long legs and a distinctive loose crest. It spends much of its hunting time walking in open country. Short vegetation gives it room to see and pursue prey, while scattered trees provide elevated nesting and roosting places.",
+        "Although its range spans much of sub-Saharan Africa, it occurs at low densities and is globally Endangered. Habitat change, disturbance and collisions threaten populations. Protecting open landscapes requires attention to both productive grasslands and the infrastructure built across them."
+      ],
+      "taxonomy": {
+        "family": "Sagittariidae",
+        "order": "Accipitriformes"
+      },
+      "habitat": [
+        "Open grassland",
+        "Savanna"
+      ],
+      "diet": [
+        "Insects",
+        "Small vertebrates",
+        "Reptiles"
+      ],
+      "nesting": "Large stick nest in a tree",
+      "movement": "Mainly resident or locally mobile.",
+      "range": "Sub-Saharan Africa.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 125,
+          "max": 150,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 3500,
+          "max": 4000,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Endangered",
+        "system": "IUCN Red List (reported by BirdLife South Africa)",
+        "scope": "Global",
+        "url": "https://www.birdlife.org.za/red-data-book/red-list/secretarybird/",
+        "note": "",
+        "code": "EN"
+      },
+      "sources": [
+        {
+          "label": "BirdLife South Africa",
+          "url": "https://www.birdlife.org.za/red-data-book/red-list/secretarybird/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/5229409",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/secretarybird.png",
+        "taxonKey": 5229409,
+        "url": "https://www.gbif.org/species/5229409",
+        "focusBounds": [
+          -20,
+          -38,
+          55,
+          20
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/secretarybird-2-1-1.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/1@2x.png?taxonKey=5229409&style=green.point"
+          },
+          {
+            "asset": "assets/maps/secretarybird-2-1-2.png",
+            "zoom": 2,
+            "x": 1,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/1/2@2x.png?taxonKey=5229409&style=green.point"
+          },
+          {
+            "asset": "assets/maps/secretarybird-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=5229409&style=green.point"
+          },
+          {
+            "asset": "assets/maps/secretarybird-2-2-2.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=5229409&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "mandarin-duck": {
+      "shortDescription": "A woodland duck whose breeding males carry ornate orange sail feathers above the back.",
+      "longDescription": [
+        "Male mandarin ducks are strongly patterned, while females wear quieter gray-brown plumage with pale facial markings. Sheltered freshwater surrounded by trees provides feeding and resting places. The diet changes with the season, combining plant foods such as acorns with insects and other small animals.",
+        "Like the related wood duck, the mandarin nests in a tree cavity. Newly hatched ducklings jump down to follow the female toward water. Birds seen outside East Asia may belong to established introduced populations or be escapes, so a sighting does not necessarily indicate native range."
+      ],
+      "taxonomy": {
+        "family": "Anatidae",
+        "order": "Anseriformes"
+      },
+      "habitat": [
+        "Wooded lakes",
+        "Ponds",
+        "Slow rivers"
+      ],
+      "diet": [
+        "Seeds and acorns",
+        "Aquatic plants",
+        "Invertebrates"
+      ],
+      "nesting": "Tree cavity near water",
+      "movement": "Northern native populations migrate; others are resident.",
+      "range": "Native to East Asia; introduced populations occur elsewhere.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 43,
+          "max": 51,
+          "unit": "cm"
+        },
+        {
+          "label": "Wingspan",
+          "min": 67,
+          "max": 75,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 520,
+          "max": 630,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Least Concern",
+        "system": "IUCN Red List (reported by Dudley Zoo)",
+        "scope": "Global",
+        "url": "https://www.dudleyzoo.org.uk/animal/mandarin-duck/",
+        "note": "",
+        "code": "LC"
+      },
+      "sources": [
+        {
+          "label": "Dudley Zoo",
+          "url": "https://www.dudleyzoo.org.uk/animal/mandarin-duck/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2498388",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/mandarin-duck.png",
+        "taxonKey": 2498388,
+        "url": "https://www.gbif.org/species/2498388",
+        "focusBounds": [
+          65,
+          -5,
+          155,
+          60
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/mandarin-duck-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2498388&style=green.point"
+          },
+          {
+            "asset": "assets/maps/mandarin-duck-2-2-2.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=2498388&style=green.point"
+          },
+          {
+            "asset": "assets/maps/mandarin-duck-2-3-1.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/1@2x.png?taxonKey=2498388&style=green.point"
+          },
+          {
+            "asset": "assets/maps/mandarin-duck-2-3-2.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=2498388&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "red-crowned-crane": {
+      "shortDescription": "A large white-and-black crane with a red crown and two very different seasonal ways of life.",
+      "longDescription": [
+        "Red-crowned cranes breed in extensive East Asian wetlands. Mainland birds move to wintering areas farther south, while the population on Hokkaido remains in Japan. They take a broad diet of aquatic animals, insects and plant material, using marshes and nearby feeding grounds.",
+        "The red crown and contrasting black neck and wing feathers make adults distinctive. The species is currently listed as Vulnerable by the International Crane Foundation’s IUCN summary. Water diversion, wetland loss, disturbance and power lines continue to threaten the places cranes need across the year."
+      ],
+      "taxonomy": {
+        "family": "Gruidae",
+        "order": "Gruiformes"
+      },
+      "habitat": [
+        "Large wetlands",
+        "Marshes",
+        "Agricultural feeding areas"
+      ],
+      "diet": [
+        "Aquatic animals",
+        "Insects",
+        "Grasses and grain"
+      ],
+      "nesting": "Ground nest in a wetland",
+      "movement": "Mainland birds migrate; Hokkaido birds are resident.",
+      "range": "Northeastern China, the Russian Far East, Korea and Japan.",
+      "measurements": [
+        {
+          "label": "Height",
+          "min": 158,
+          "max": 158,
+          "unit": "cm",
+          "note": "Approximate adult height"
+        },
+        {
+          "label": "Mass",
+          "min": 7500,
+          "max": 7500,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Vulnerable",
+        "system": "IUCN Red List (reported by International Crane Foundation)",
+        "scope": "Global",
+        "url": "https://savingcranes.org/species/red-crowned-crane/",
+        "note": "",
+        "code": "VU"
+      },
+      "sources": [
+        {
+          "label": "International Crane Foundation",
+          "url": "https://savingcranes.org/species/red-crowned-crane/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2474944",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/red-crowned-crane.png",
+        "taxonKey": 2474944,
+        "url": "https://www.gbif.org/species/2474944",
+        "focusBounds": [
+          65,
+          -5,
+          155,
+          60
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/red-crowned-crane-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=2474944&style=green.point"
+          },
+          {
+            "asset": "assets/maps/red-crowned-crane-2-2-2.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=2474944&style=green.point"
+          },
+          {
+            "asset": "assets/maps/red-crowned-crane-2-3-1.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/1@2x.png?taxonKey=2474944&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "indian-peafowl": {
+      "shortDescription": "A large ground-feeding bird whose males display an elaborate fan of eye-spotted feathers.",
+      "longDescription": [
+        "The familiar peacock is the male Indian peafowl; females are peahens. The male’s blue neck and long ornamental train contrast with the female’s quieter brown and cream plumage. The train is formed by elongated upper-tail coverts, displayed above the shorter supporting tail.",
+        "Peafowl gather a mixed diet on the ground and use trees for roosting. They need cover, water and suitable feeding areas. Their popularity in gardens and collections has carried them far beyond their native range, so records around the world include introduced and escaped birds."
+      ],
+      "taxonomy": {
+        "family": "Phasianidae",
+        "order": "Galliformes"
+      },
+      "habitat": [
+        "Open forest",
+        "Scrub",
+        "Grassland edges"
+      ],
+      "diet": [
+        "Seeds and shoots",
+        "Insects",
+        "Small animals"
+      ],
+      "nesting": "Ground scrape in vegetation",
+      "movement": "Resident.",
+      "range": "Native to the Indian subcontinent, including Sri Lanka; introduced elsewhere.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 86,
+          "max": 212,
+          "unit": "cm",
+          "note": "Both sexes; long male train included"
+        },
+        {
+          "label": "Wingspan",
+          "min": 140,
+          "max": 160,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 2700,
+          "max": 6000,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Least Concern",
+        "code": "LC",
+        "system": "IUCN Red List (reported by State of India’s Birds)",
+        "scope": "Global",
+        "url": "https://stateofindiasbirds.in/species/compea/",
+        "note": ""
+      },
+      "sources": [
+        {
+          "label": "Animal Diversity Web / University of Michigan",
+          "url": "https://animaldiversity.org/accounts/Pavo_cristatus/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/9451184",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        },
+        {
+          "label": "San Diego Zoo Wildlife Alliance",
+          "url": "https://animals.sandiegozoo.org/animals/peafowl",
+          "supports": [
+            "Identification",
+            "Native range",
+            "Behavior"
+          ]
+        },
+        {
+          "label": "State of India’s Birds",
+          "url": "https://stateofindiasbirds.in/species/compea/",
+          "supports": [
+            "Global conservation"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/indian-peafowl.png",
+        "taxonKey": 9451184,
+        "url": "https://www.gbif.org/species/9451184",
+        "focusBounds": [
+          65,
+          -5,
+          155,
+          60
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/indian-peafowl-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=9451184&style=green.point"
+          },
+          {
+            "asset": "assets/maps/indian-peafowl-2-2-2.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/2@2x.png?taxonKey=9451184&style=green.point"
+          },
+          {
+            "asset": "assets/maps/indian-peafowl-2-3-1.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/1@2x.png?taxonKey=9451184&style=green.point"
+          },
+          {
+            "asset": "assets/maps/indian-peafowl-2-3-2.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=9451184&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "golden-pheasant": {
+      "shortDescription": "A Chinese woodland pheasant whose males have a golden crest, barred neck cape and long tail.",
+      "longDescription": [
+        "The male golden pheasant combines a bright crest and red body with a striking orange-and-black neck cape. Females are brown and more subtly patterned, with shorter tails. Dense shrub and bamboo cover suits a bird that spends much of its time close to the ground.",
+        "During courtship the male spreads its ornamental neck and tail feathers. Buds, seeds and insects provide food in its mountainous native landscape. The exceptionally colorful male is widely kept in collections; worldwide occurrence records therefore extend beyond the species’ natural Chinese range."
+      ],
+      "taxonomy": {
+        "family": "Phasianidae",
+        "order": "Galliformes"
+      },
+      "habitat": [
+        "Mountain woodland",
+        "Dense shrubs",
+        "Bamboo thickets"
+      ],
+      "diet": [
+        "Seeds",
+        "Buds",
+        "Insects"
+      ],
+      "nesting": "Ground nest in cover",
+      "movement": "Resident.",
+      "range": "Native to parts of central China; introduced populations occur elsewhere.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 61,
+          "max": 115,
+          "unit": "cm",
+          "note": "Both sexes; tail included. Males 100–115 cm, females 61–70 cm."
+        },
+        {
+          "label": "Wingspan",
+          "min": 65,
+          "max": 75,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 550,
+          "max": 1400,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Least Concern",
+        "system": "IUCN Red List (reported by Tokyo Zoological Park Society)",
+        "scope": "Global",
+        "url": "https://www.tokyo-zoo.net/en/ueno/encyclopedia/golden-pheasant/index.html",
+        "note": "",
+        "code": "LC"
+      },
+      "sources": [
+        {
+          "label": "Tokyo Zoological Park Society",
+          "url": "https://www.tokyo-zoo.net/en/ueno/encyclopedia/golden-pheasant/index.html",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/5228034",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/golden-pheasant.png",
+        "taxonKey": 5228034,
+        "url": "https://www.gbif.org/species/5228034",
+        "focusBounds": [
+          65,
+          -5,
+          155,
+          60
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/golden-pheasant-2-2-1.png",
+            "zoom": 2,
+            "x": 2,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/2/1@2x.png?taxonKey=5228034&style=green.point"
+          },
+          {
+            "asset": "assets/maps/golden-pheasant-2-3-1.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 1,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/1@2x.png?taxonKey=5228034&style=green.point"
+          },
+          {
+            "asset": "assets/maps/golden-pheasant-2-3-2.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=5228034&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "rainbow-lorikeet": {
+      "shortDescription": "A noisy, vividly colored parrot that gathers at flowering trees and communal evening roosts.",
+      "longDescription": [
+        "Rainbow lorikeets have blue heads, green upperparts and bright orange-yellow breasts. The sexes look alike. Fast-moving flocks travel between flowering trees, harvesting nectar and pollen while also taking fruit and other foods. Their loud calls can announce a flock long before it comes into view.",
+        "Eggs are laid in a tree hollow on a bed of decayed wood. Both parents feed the young, although only the female incubates. Introduced populations, especially around Perth, can compete aggressively with native hollow-nesting birds, so abundance outside the native range has ecological consequences."
+      ],
+      "taxonomy": {
+        "family": "Psittacidae",
+        "order": "Psittaciformes"
+      },
+      "habitat": [
+        "Woodland",
+        "Rainforest",
+        "Wooded cities"
+      ],
+      "diet": [
+        "Nectar and pollen",
+        "Fruit",
+        "Seeds and insects"
+      ],
+      "nesting": "Hollow limb, often in a eucalypt",
+      "movement": "Local movements follow flowering trees.",
+      "range": "Native to eastern Australia; introduced in other areas, including Perth.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 26,
+          "max": 26,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 100,
+          "max": 157,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Least Concern",
+        "system": "IUCN Red List (reported by BirdLife Australia)",
+        "scope": "Global",
+        "url": "https://birdlife.org.au/bird-profiles/rainbow-lorikeet/",
+        "note": "",
+        "code": "LC"
+      },
+      "sources": [
+        {
+          "label": "BirdLife Australia",
+          "url": "https://birdlife.org.au/bird-profiles/rainbow-lorikeet/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "World Parrot Trust · measurements",
+          "url": "https://parrots.org/encyclopedia/rainbow-lorikeet/",
+          "supports": [
+            "Length",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/6170530",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/rainbow-lorikeet.png",
+        "taxonKey": 6170530,
+        "url": "https://www.gbif.org/species/6170530",
+        "focusBounds": [
+          110,
+          -49,
+          180,
+          -8
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/rainbow-lorikeet-2-3-2.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=6170530&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "laughing-kookaburra": {
+      "shortDescription": "A large kingfisher whose rolling, laugh-like call advertises a territory rather than amusement.",
+      "longDescription": [
+        "Laughing kookaburras perch above the ground and drop onto prey, taking insects and a variety of small vertebrates. A heavy bill, brown eye stripe and barred tail distinguish this mostly brown-and-white bird. Despite its kingfisher relatives, it often hunts well away from open water.",
+        "Pairs may be helped by offspring from earlier years when raising young. The familiar chorus is a territorial signal shared by members of the group. Introductions beyond eastern Australia have affected local wildlife through predation and competition for nesting hollows."
+      ],
+      "taxonomy": {
+        "family": "Alcedinidae",
+        "order": "Coraciiformes"
+      },
+      "habitat": [
+        "Woodland",
+        "Forest",
+        "Tree-lined suburbs"
+      ],
+      "diet": [
+        "Insects and worms",
+        "Small mammals",
+        "Reptiles and amphibians"
+      ],
+      "nesting": "Tree hollow or arboreal termite mound",
+      "movement": "Resident.",
+      "range": "Native to eastern Australia; introduced in Tasmania, Western Australia and New Zealand.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 42,
+          "max": 42,
+          "unit": "cm"
+        }
+      ],
+      "conservation": {
+        "label": "Least Concern",
+        "system": "IUCN Red List (reported by BirdLife Australia)",
+        "scope": "Global",
+        "url": "https://birdlife.org.au/bird-profiles/laughing-kookaburra/",
+        "note": "",
+        "code": "LC"
+      },
+      "sources": [
+        {
+          "label": "BirdLife Australia",
+          "url": "https://birdlife.org.au/bird-profiles/laughing-kookaburra/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2475648",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/laughing-kookaburra.png",
+        "taxonKey": 2475648,
+        "url": "https://www.gbif.org/species/2475648",
+        "focusBounds": [
+          110,
+          -49,
+          180,
+          -8
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/laughing-kookaburra-2-3-2.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=2475648&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "galah": {
+      "shortDescription": "A pink-and-gray cockatoo that feeds in flocks on the ground and roosts noisily in trees.",
+      "longDescription": [
+        "The galah’s pink face and underparts contrast with gray wings and a paler crown. Large flocks search for grass and crop seeds, sometimes traveling widely to good feeding places. During hot parts of the day, birds may shelter in the foliage of trees and shrubs.",
+        "Pair bonds are lasting, and both parents incubate and care for the young. A tree hollow provides the nesting chamber. Changes to food and water availability have helped galahs become familiar around settlements, although suitable nesting trees remain an important part of their habitat."
+      ],
+      "taxonomy": {
+        "family": "Psittacidae",
+        "order": "Psittaciformes"
+      },
+      "habitat": [
+        "Open woodland",
+        "Farmland",
+        "Towns near water"
+      ],
+      "diet": [
+        "Grass seeds",
+        "Crop seeds"
+      ],
+      "nesting": "Tree hollow lined with leaves",
+      "movement": "Local or longer movements in search of food.",
+      "range": "Australia.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 35,
+          "max": 35,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 270,
+          "max": 400,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Least Concern",
+        "system": "IUCN Red List (reported by BirdLife Australia)",
+        "scope": "Global",
+        "url": "https://birdlife.org.au/bird-profiles/galah/",
+        "note": "",
+        "code": "LC"
+      },
+      "sources": [
+        {
+          "label": "BirdLife Australia",
+          "url": "https://birdlife.org.au/bird-profiles/galah/",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "Conservation where stated"
+          ]
+        },
+        {
+          "label": "World Parrot Trust · measurements",
+          "url": "https://parrots.org/encyclopedia/galah/",
+          "supports": [
+            "Length",
+            "Mass"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/2479598",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/galah.png",
+        "taxonKey": 2479598,
+        "url": "https://www.gbif.org/species/2479598",
+        "focusBounds": [
+          110,
+          -49,
+          180,
+          -8
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/galah-2-3-2.png",
+            "zoom": 2,
+            "x": 3,
+            "y": 2,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/2/3/2@2x.png?taxonKey=2479598&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    },
+    "new-zealand-fantail": {
+      "shortDescription": "A small, lively insect hunter whose spread tail and close approaches make it instantly memorable.",
+      "longDescription": [
+        "New Zealand fantails twist and turn after small flying insects, repeatedly spreading the long tail. The common pied form combines a pale eyebrow and patterned chest with contrasting tail feathers. A darker form also occurs, especially in the South Island.",
+        "Their apparent interest in people often has a practical explanation: movement disturbs insects that the bird can catch. Fantails use many habitats with trees and shrubs, from extensive native forest to suburban gardens. Their small size and active feeding style make them conspicuous even during a brief encounter."
+      ],
+      "taxonomy": {
+        "family": "Rhipiduridae",
+        "order": "Passeriformes"
+      },
+      "habitat": [
+        "Native forest",
+        "Scrub",
+        "Wooded gardens"
+      ],
+      "diet": [
+        "Flying insects",
+        "Other small invertebrates"
+      ],
+      "nesting": "Small cup nest on a branch",
+      "movement": "Mostly resident, with local dispersal.",
+      "range": "New Zealand, including the Chatham Islands.",
+      "measurements": [
+        {
+          "label": "Length",
+          "min": 16,
+          "max": 16,
+          "unit": "cm"
+        },
+        {
+          "label": "Mass",
+          "min": 8,
+          "max": 8,
+          "unit": "g"
+        }
+      ],
+      "conservation": {
+        "label": "Not Threatened",
+        "system": "New Zealand Threat Classification",
+        "scope": "New Zealand",
+        "url": "https://www.nzbirdsonline.org.nz/species/new-zealand-fantail",
+        "note": "The Chatham Island subspecies is assessed separately as Naturally Uncommon."
+      },
+      "sources": [
+        {
+          "label": "New Zealand Birds Online",
+          "url": "https://www.nzbirdsonline.org.nz/species/new-zealand-fantail",
+          "supports": [
+            "Natural history",
+            "Measurements",
+            "New Zealand conservation"
+          ]
+        },
+        {
+          "label": "GBIF · taxonomy and occurrence records",
+          "url": "https://www.gbif.org/species/5231730",
+          "supports": [
+            "Taxonomic family and order",
+            "Occurrence map"
+          ]
+        }
+      ],
+      "map": {
+        "asset": "assets/maps/new-zealand-fantail.png",
+        "taxonKey": 5231730,
+        "url": "https://www.gbif.org/species/5231730",
+        "focusBounds": [
+          164,
+          -49,
+          180,
+          -32
+        ],
+        "regionalTiles": [
+          {
+            "asset": "assets/maps/new-zealand-fantail-3-7-4.png",
+            "zoom": 3,
+            "x": 7,
+            "y": 4,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/4@2x.png?taxonKey=5231730&style=green.point"
+          },
+          {
+            "asset": "assets/maps/new-zealand-fantail-3-7-5.png",
+            "zoom": 3,
+            "x": 7,
+            "y": 5,
+            "url": "https://api.gbif.org/v2/map/occurrence/density/3/7/5@2x.png?taxonKey=5231730&style=green.point"
+          }
+        ]
+      },
+      "reviewedAt": "2026-10-17"
+    }
+  }
+}

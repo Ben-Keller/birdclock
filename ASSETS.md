@@ -13,3 +13,19 @@ Local typography: Cormorant Garamond and Inter, downloaded from Google Fonts. Th
 User-uploaded artwork remains in browser storage and exported JSON. Use images you have permission to share.
 
 The download panel can export a bird in PNG, JPEG, WebP, or SVG at its stored resolution. SVG files embed a PNG copy of the raster artwork and do not contain traced vector paths. JPEG uses a white background; PNG, WebP, and SVG retain any existing transparency. WebP originals are preserved byte-for-byte. ZIP collections include species names, file dimensions, and the hours assigned in the current design. Uploaded artwork is exported from its saved copy, resized to at most 512 px when uploaded.
+
+## Researched bird profiles
+
+`assets/bird-profiles.json` contains original summaries researched on October 17, 2026. Each profile links its sources and identifies which fields they support. References include the Cornell Lab of Ornithology, New Zealand Birds Online, RSPB, BirdLife, World Parrot Trust, International Crane Foundation, and zoological institutions. Source articles, photographs, audio, and licensed range polygons are not copied into the project.
+
+Measurements are adult reference values; ranges may reflect sex or geographic variation, and single values are approximate. Cranes have height measurements rather than bill-to-tail length. The peafowl length includes the male's train. Conservation categories retain their source system and geographic scope; the review date is not the original assessment date. The North American barn owl is identified as _Tyto furcata_ following the American barn owl split; its saved-design identifier remains `barn-owl`. Kōkako refers to the North Island species, _Callaeas wilsoni_.
+
+## Occurrence maps
+
+Local PNG layers in `assets/maps` are snapshots rendered by the [GBIF Maps API](https://techdocs.gbif.org/en/openapi/v2/maps), retrieved on October 17, 2026. `manifest.json` records exact species keys, source pages, map URLs, and regional tile coordinates. Each profile links back to its GBIF species page. Credits belong to GBIF and the contributing data publishers; their underlying records retain the licenses shown by GBIF. These rendered maps are an educational overview, not a licensed range dataset or a substitute for a citable occurrence-data download.
+
+`world.svg` is a Web Mercator rendering of the [Natural Earth 1:110m land polygons](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_land.geojson). Natural Earth data is [public domain](https://www.naturalearthdata.com/about/terms-of-use/). The SVG is simplified geographic context, with no claims about political boundaries.
+
+GBIF records span all years, have uneven reporting coverage, and can include captive, introduced, historical, or misidentified birds. Map density is not population abundance. Regional framing is editorial and does not define a native range; the text explains distribution separately. No maps are generated from the catalogue's broad region filter.
+
+To refresh occurrence maps, run `python3 scripts/update-bird-maps.py` with network access. The script uses Python's standard library, requires exact species matches, finishes downloading before replacing assets, and updates the manifest, map date, taxonomy, and map references. Empty GBIF tiles are omitted. Review the resulting taxonomy and geographic changes, run the data/browser tests, and inspect regional and world views before publishing. This does not re-research prose, measurements, conservation, or their review dates. Update those manually from the linked sources when needed.
