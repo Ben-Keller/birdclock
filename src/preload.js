@@ -1,7 +1,8 @@
 import { defaultConfig, decodeConfig, validateConfig } from './model.js';
+import { readCachedArtwork } from './display-assets.js';
 
-// Bundled into the document head at build time. Start just the current clock's
-// tiny images before the main module downloads, including saved/shared clocks.
+// Read the current design early. Embedded and cached birds need no requests;
+// preload only missing thumbnails for a new saved/shared arrangement.
 const thumbnails = CLOCK_THUMBNAILS;
 const ids = Object.keys(thumbnails);
 const readDraft = (storage) => {
@@ -23,8 +24,15 @@ if (!config) {
   } catch {}
 }
 config ||= defaultConfig();
+const cached = readCachedArtwork(ARTWORK_REVISION, ids);
+globalThis.__birdClockBoot = { config, cached };
 for (const id of new Set(config.slices.map((slice) => slice.bird))) {
-  if (!Object.hasOwn(thumbnails, id)) continue;
+  if (
+    !Object.hasOwn(thumbnails, id) ||
+    EMBEDDED_BIRDS.includes(id) ||
+    cached[id]
+  )
+    continue;
   const link = document.createElement('link');
   link.rel = 'preload';
   link.as = 'image';

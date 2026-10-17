@@ -16,6 +16,11 @@ import { attachClockTooltips } from './clock-tooltip.js';
 import { attachBirdDrag } from './clock-drag.js';
 import initialCatalogue from '../assets/birds.json' with { type: 'json' };
 import { attachClockView, clockViewMarkup } from './clock-view.js';
+import {
+  birdThumbnail,
+  cacheClockArtwork,
+  displayAssets,
+} from './display-assets.js';
 const $ = (s, root = document) => root.querySelector(s),
   $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const clockTooltip = attachClockTooltips($('#clock'), $('#clock-tooltip'));
@@ -42,6 +47,7 @@ try {
   session = storageAdapter(null);
 }
 let catalogue = [],
+  adoptInitialClock = true,
   config = defaultConfig(),
   selected = 2,
   history = [],
@@ -121,8 +127,17 @@ function renderClock() {
   clockTooltip.hide();
   const wrap = $('#clock');
   const hadFocus = wrap.contains(document.activeElement);
-  wrap.innerHTML = clockViewMarkup(config, allBirds(), { selected });
+  if (
+    !adoptInitialClock ||
+    !wrap.querySelector('.clock-object') ||
+    JSON.stringify(config) !==
+      JSON.stringify(globalThis.__birdClockBoot?.config)
+  ) {
+    wrap.innerHTML = clockViewMarkup(config, allBirds(), { selected });
+  }
+  adoptInitialClock = false;
   clockView.refresh();
+  cacheClockArtwork(config, allBirds());
   if (hadFocus)
     $(`[data-hour="${selected}"]`, wrap)?.focus({ preventScroll: true });
 }
@@ -152,7 +167,7 @@ function renderPanel() {
         <button class="settings-randomize" data-action="shuffle-birds" aria-label="Randomize birds" title="Randomize all twelve birds">${controlIcon('shuffle')}<span>Randomize</span></button>
       </div>
         <button class="bird-choice" data-action="library" aria-label="Change bird for hour ${selected + 1}">
-          <img src="${esc(bird.clockPreview || bird.preview || bird.asset)}" decoding="async" alt="${esc(bird.name)}">
+          <img src="${esc(birdThumbnail(bird))}" decoding="async" alt="${esc(bird.name)}">
           <span>
             <span class="name">${esc(bird.name)}</span>
             <span class="latin">${esc(bird.scientificName)}</span>
@@ -180,7 +195,7 @@ function renderPanel() {
         <button class="settings-randomize" data-action="shuffle-woods" aria-label="Randomize woods" title="Randomize all twelve woods">${controlIcon('shuffle')}<span>Randomize</span></button>
       </div>
         <div class="wood-options">
-          ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('assets/previews/woods/${w.id}.webp')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
+          ${WOODS.map((w) => `<button class="wood-option ${s.wood === w.id ? 'active' : ''}" data-wood="${w.id}" aria-label="Choose ${w.name} for hour ${selected + 1}" aria-pressed="${s.wood === w.id}"><span class="wood-swatch" style="--wood:${w.color};background-image:url('${esc(displayAssets().woods[w.id] || `assets/previews/woods/${w.id}.webp`)}')"></span><strong>${w.name}</strong>${s.wood === w.id ? '<span class="check" aria-hidden="true">✓</span>' : ''}</button>`).join('')}
         </div>
         <div class="clock-appearance">
           <div class="two-controls">
@@ -401,7 +416,7 @@ function renderBirdGrid() {
     ? birds
         .map((b) => {
           const used = config.slices.findIndex((s) => s.bird === b.id);
-          return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(b.clockPreview || b.preview || b.asset)}" alt="" loading="lazy" decoding="async" width="128" height="128"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button></article>`;
+          return `<article class="bird-card ${config.slices[selected].bird === b.id ? 'current' : ''}"><button class="bird-card-select" data-bird="${esc(b.id)}" aria-label="Choose ${esc(b.name)}" aria-pressed="${config.slices[selected].bird === b.id}">${used >= 0 ? `<span class="used">${used === selected ? 'Selected' : `Hour ${used + 1}`}</span>` : ''}<img src="${esc(birdThumbnail(b))}" alt="" loading="lazy" decoding="async" width="128" height="128"><strong>${esc(b.name)}</strong><small>${esc(b.region)}</small></button></article>`;
         })
         .join('')
     : '<div class="empty-state"><p>No birds match these filters.</p><button class="quiet-link" data-action="clear-bird-filters">Clear filters</button></div>';
@@ -858,6 +873,8 @@ async function init() {
     if (shared && priorDraft) pushHistory(priorDraft);
     startupButtons.forEach((button) => (button.disabled = false));
     render();
+    $('#clock').inert = false;
+    performance.mark('studio-interactive');
     autosave();
     if (shared) {
       toast(

@@ -31,6 +31,7 @@ for bird in birds:
     preview(ROOT / bird['asset'], ROOT / bird['previewLarge'], 384)
 birds_path.write_text(json.dumps(birds, ensure_ascii=False, indent=2) + '\n')
 for wood in ('maple', 'mahogany', 'cherry'):
+    preview(ROOT / f'assets/woods/{wood}.webp', PREVIEWS / f'clock-woods/{wood}.webp', 192, 65, 6)
     preview(ROOT / f'assets/woods/{wood}.webp', PREVIEWS / f'woods/{wood}.webp', 384, 78)
 preview(ROOT / 'assets/birds/american-goldfinch.webp', ROOT / 'assets/brand-bird.webp', 96)
 
@@ -49,3 +50,13 @@ for source in sorted((ROOT / 'assets/fonts').glob('*.ttf')):
         subsetter.subset(font)
         subset.save_font(font, str(source.with_name(source.stem + suffix + '.woff2')), options)
 print(f'Generated previews for {len(birds)} birds, three woods, the logo, and Latin/extended-Latin WOFF2 fonts.')
+
+# The initial clock only needs twelve numerals, so it never waits for a full font.
+options = subset.Options()
+options.flavor = 'woff2'
+options.layout_features = ['*']
+font = subset.load_font(str(ROOT / 'assets/fonts/cormorant-500.ttf'), options)
+subsetter = subset.Subsetter(options=options)
+subsetter.populate(text='0123456789IVX')
+subsetter.subset(font)
+subset.save_font(font, str(ROOT / 'assets/fonts/clock-numerals.woff2'), options)

@@ -1,4 +1,5 @@
 import { WOODS } from './model.js';
+import { displayAssets, birdThumbnail } from './display-assets.js';
 export const escapeHTML = (s) =>
   String(s).replace(
     /[&<>"']/g,
@@ -58,9 +59,10 @@ export function clockSVG(
     interactive = true,
     label = 'Your customizable bird clock',
     helpId = 'clock-controls-help',
-    textureData = {},
-    birdData = {},
     detailedBirds = false,
+    textureData = detailedBirds ? {} : displayAssets().woods,
+    birdData = {},
+    idPrefix = '',
     background = false,
   } = {},
 ) {
@@ -94,7 +96,7 @@ export function clockSVG(
       `<g class="clock-slice${selected === i ? ' selected' : ''}" data-hour="${i}" ${interactive ? `role="button" tabindex="${selected === i ? '0' : '-1'}" aria-label="${escapeHTML(label)}" aria-pressed="${selected === i}"` : ''}><path class="wood-base" d="${d}" fill="${w.color}"/><path d="${d}" fill="url(#grain-${i})" opacity="${f.grain}"/>${interactive ? `<path class="slice-highlight" d="${d}" fill="#fff6db" opacity="0"/>` : ''}<path d="${d}" fill="none" stroke="${f.rimColor}" stroke-width="${f.seam}"/>`,
     );
     parts.push(
-      `<g clip-path="url(#clip-${i})"><image class="bird-image" href="${escapeHTML(birdData[s.bird] || (detailedBirds && ((size > 190 && bird?.previewLarge) || bird?.preview)) || bird?.clockPreview || bird?.preview || bird?.asset || '')}" x="${x - size / 2}" y="${y - size / 2}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet" transform="translate(${x} ${y}) rotate(${s.rotation}) scale(${s.flip ? -1 : 1} 1) translate(${-x} ${-y})"/></g>`,
+      `<g clip-path="url(#clip-${i})"><image class="bird-image" href="${escapeHTML(birdData[s.bird] || (detailedBirds && ((size > 190 && bird?.previewLarge) || bird?.preview)) || birdThumbnail(bird))}" x="${x - size / 2}" y="${y - size / 2}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet" transform="translate(${x} ${y}) rotate(${s.rotation}) scale(${s.flip ? -1 : 1} 1) translate(${-x} ${-y})"/></g>`,
     );
     if (f.numbers === 'dots')
       parts.push(
@@ -102,7 +104,7 @@ export function clockSVG(
       );
     else if (f.numbers !== 'none')
       parts.push(
-        `<text x="${np[0]}" y="${np[1]}" dy=".33em" text-anchor="middle" fill="${w.ink}" font-family="Cormorant Garamond, Georgia, serif" font-size="${f.numberSize}" font-weight="500">${f.numbers === 'roman' ? roman[i] : hour}</text>`,
+        `<text x="${np[0]}" y="${np[1]}" dy=".33em" text-anchor="middle" fill="${w.ink}" font-family="Clock numerals, Cormorant Garamond, Georgia, serif" font-size="${f.numberSize}" font-weight="500">${f.numbers === 'roman' ? roman[i] : hour}</text>`,
       );
     if (interactive)
       parts.push(
@@ -111,7 +113,7 @@ export function clockSVG(
     parts.push('</g>');
   });
   parts.push(handsMarkup(f), '</svg>');
-  const prefix = 'clock-' + ++svgSequence + '-';
+  const prefix = idPrefix || 'clock-' + ++svgSequence + '-';
   return parts
     .join('')
     .replace('<svg ', `<svg data-prefix="${prefix}" `)

@@ -1,8 +1,15 @@
 import { clockSVG, escapeHTML, point } from './clock.js';
+import { displayAssets } from './display-assets.js';
 
 // A solid board built from a live SVG front and actual planes in CSS 3D space.
 // Exports continue to use clockSVG directly, independent of the viewing angle.
 export function clockViewMarkup(config, birds, options = {}) {
+  const textures =
+    options.textureData ||
+    (!options.detailedBirds && displayAssets().woods) ||
+    {};
+  const texture = (wood) =>
+    escapeHTML(textures[wood] || `assets/previews/woods/${wood}.webp`);
   const count = config.face.shape === 'circle' ? 96 : 12;
   const vertices = Array.from({ length: count }, (_, i) =>
     point(15 + (i * 360) / count, 500 + config.face.rim),
@@ -16,10 +23,10 @@ export function clockViewMarkup(config, birds, options = {}) {
       const b = vertices[(i + 1) % count];
       const angle = (Math.atan2(b[1] - a[1], b[0] - a[0]) * 180) / Math.PI;
       const wood = config.slices[Math.floor(i / (count / 12))].wood;
-      return `<div class="clock-edge" data-edge-angle="${angle}" aria-hidden="true" style="left:${percent((a[0] + b[0]) / 2)}%;top:${percent((a[1] + b[1]) / 2)}%;width:calc(${percent(Math.hypot(b[0] - a[0], b[1] - a[1]))}% + .4px);background-image:linear-gradient(#21170c33,#21170c55),url('assets/previews/woods/${escapeHTML(wood)}.webp');transform:translate(-50%,-50%) translateZ(calc(var(--clock-depth) / -2)) rotateZ(${angle}deg) rotateX(90deg)"></div>`;
+      return `<div class="clock-edge" data-edge-angle="${angle}" aria-hidden="true" style="left:${percent((a[0] + b[0]) / 2)}%;top:${percent((a[1] + b[1]) / 2)}%;width:calc(${percent(Math.hypot(b[0] - a[0], b[1] - a[1]))}% + .4px);background-image:linear-gradient(#21170c33,#21170c55),url('${texture(wood)}');transform:translate(-50%,-50%) translateZ(calc(var(--clock-depth) / -2)) rotateZ(${angle}deg) rotateX(90deg)"></div>`;
     })
     .join('');
-  return `<div class="clock-object"><div class="clock-back" aria-hidden="true" style="clip-path:polygon(${outline})"></div>${edges}<div class="clock-face">${clockSVG(config, birds, options)}</div></div>`;
+  return `<div class="clock-object"><div class="clock-back" aria-hidden="true" style="clip-path:polygon(${outline});background-image:url('${texture('mahogany')}')"></div>${edges}<div class="clock-face">${clockSVG(config, birds, options)}</div></div>`;
 }
 
 export function attachClockView(surface, clock, { onStart = () => {} } = {}) {

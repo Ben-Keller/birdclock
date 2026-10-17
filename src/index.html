@@ -11,30 +11,7 @@
     <title>Bird Clock — Design your own</title>
     <link rel="icon" href="assets/brand-bird.webp" type="image/webp" />
     <!-- clock-artwork-preloads -->
-    <!-- module-preloads -->
-    <link
-      rel="preload"
-      as="image"
-      href="assets/previews/woods/maple.webp"
-      fetchpriority="high"
-    />
-    <link rel="preload" as="image" href="assets/previews/woods/mahogany.webp" />
-    <link rel="preload" as="image" href="assets/previews/woods/cherry.webp" />
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="preload"
-      href="assets/fonts/cormorant-400.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="assets/fonts/inter-400.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
   </head>
   <body>
     <a class="skip-link" href="#editor">Skip to clock controls</a>
@@ -45,7 +22,7 @@
       </a>
       <nav aria-label="Design actions">
         <span id="save-status" class="save-status" role="status" hidden></span>
-        <button class="button primary" id="export-button">
+        <button class="button primary" id="export-button" disabled>
           Save & share <span aria-hidden="true">↗</span>
         </button>
       </nav>
@@ -71,6 +48,7 @@
             <div class="undo-controls">
               <button
                 id="undo-button"
+                disabled
                 class="icon-button"
                 aria-label="Undo last change"
                 title="Undo (Ctrl/⌘ Z)"
@@ -78,6 +56,7 @@
                 ↶</button
               ><button
                 id="redo-button"
+                disabled
                 class="icon-button"
                 aria-label="Redo last change"
                 title="Redo (Ctrl/⌘ Shift Z)"
@@ -106,6 +85,7 @@
                 </svg></button
               ><button
                 id="focus-button"
+                disabled
                 class="icon-button"
                 aria-label="View clock fullscreen"
                 title="View fullscreen"
@@ -120,9 +100,10 @@
               press Shift and Left or Right Arrow to swap with the neighboring
               hour.
             </p>
-            <div id="clock" class="clock-wrap">
+            <div id="clock" class="clock-wrap" data-booting inert>
               <p class="loading">Opening the studio…</p>
             </div>
+            <!-- clock-bootstrap -->
           </div>
         </div>
         <aside
@@ -155,6 +136,7 @@
         Please enable JavaScript to customize your bird clock.
       </p></noscript
     >
+    <!-- module-preloads -->
     <script type="module" src="src/app.js"></script>
   </body>
 </html>

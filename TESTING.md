@@ -34,14 +34,14 @@ The browser suite uses Playwright with an isolated headless Chrome session. It s
 - Complete profile coverage for all 48 species, sourced measurements and metadata, taxonomy/map consistency, valid bundled PNGs, threat-status distinctions, and an escaped custom-artwork fallback.
 - Fullscreen profiles for every bird, local regional/world maps, keyboard and pointer selection, unchanged editor drafts and undo history, retry after failed profile loading, and late-response isolation after closing the dialog.
 - Desktop and mobile field-guide layout, visible mobile close control, and collection browsing without altering the clock.
-- Clock thumbnails stay under 7 kB each and 60 kB for the default twelve; default, saved, and shared designs start their image requests before the app module arrives. Fullscreen uses larger previews and exports retain original artwork.
-- Startup payload stays below 280 kB even on the uncompressed local server, optional panels and original artwork are not fetched at startup, and a failed lazy panel offers a working reload without losing the saved design.
+- Clock thumbnails stay under 7 kB each and 60 kB for the default twelve; the complete default/saved/shared clock is visible before the app module arrives. A customized clock can render on return with image, font, and app requests blocked. The initial SVG is reused when editor handlers attach. Fullscreen uses larger previews and exports retain original artwork.
+- Startup payload, including the self-contained HTML document, stays below 350 kB even on the uncompressed local server, optional panels and original artwork are not fetched at startup, and a failed lazy panel offers a working reload without losing the saved design.
 - Reset view preserves the customized design, uploaded artwork, and existing edit history; only the camera returns to the front.
 - Perspective dragging on desktop and emulated touch, keyboard tilt/reset, cancelled gestures, projected slice selection and bird swaps, both clock shapes, and fullscreen profile selection after tilting.
 
 ## Browser verification
 
-All 20 unit tests and 35 browser scenarios passed on October 17, 2026, with syntax and formatting checks passing too. The browser suite ran locally in headless Google Chrome on macOS. Desktop and mobile-width screenshots have been inspected, including tilted clocks in both shapes, field-guide maps and profiles at 390 px, and editor layout checks at 320 px.
+All 20 unit tests and 36 browser scenarios passed on October 17, 2026, with syntax and formatting checks passing too. The browser suite ran locally in headless Google Chrome on macOS. Desktop and mobile-width screenshots have been inspected, including tilted clocks in both shapes, field-guide maps and profiles at 390 px, and editor layout checks at 320 px.
 
 Research was checked against the linked species accounts. Automated tests validate coverage and consistency, not biological truth or future source changes. Map snapshots and research review dates are recorded separately; updating maps does not update the conservation assessments.
 

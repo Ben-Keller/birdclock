@@ -3,6 +3,7 @@ import { writeFile } from 'node:fs/promises';
 
 const url = process.argv[2] || 'http://127.0.0.1:8080/';
 const output = process.argv[3];
+const unthrottled = process.argv.includes('--unthrottled');
 const browser = await chromium.launch({
   channel: process.env.PLAYWRIGHT_CHANNEL || 'chrome',
 });
@@ -19,14 +20,17 @@ try {
     const client = await context.newCDPSession(page);
     await client.send('Network.enable');
     await client.send('Network.setCacheDisabled', { cacheDisabled: true });
-    await client.send('Network.emulateNetworkConditions', {
-      offline: false,
-      latency: 150,
-      downloadThroughput: 200000,
-      uploadThroughput: 93750,
-      connectionType: 'cellular4g',
+    if (!unthrottled)
+      await client.send('Network.emulateNetworkConditions', {
+        offline: false,
+        latency: 150,
+        downloadThroughput: 200000,
+        uploadThroughput: 93750,
+        connectionType: 'cellular4g',
+      });
+    await client.send('Emulation.setCPUThrottlingRate', {
+      rate: unthrottled ? 1 : 4,
     });
-    await client.send('Emulation.setCPUThrottlingRate', { rate: 4 });
     await page.addInitScript(() => {
       window.loadMetrics = { lcp: 0, cls: 0, longTasks: 0, clockReady: 0 };
       new PerformanceObserver((list) => {
@@ -51,6 +55,10 @@ try {
     });
     await page.goto(url, { waitUntil: 'load', timeout: 60000 });
     await page.waitForSelector('#clock .clock-slice');
+    if (await page.evaluate(() => !!globalThis.__birdClockBoot))
+      await page.waitForFunction(
+        () => document.documentElement.dataset.fontsReady === 'true',
+      );
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(700);
     const result = await page.evaluate(() => {
@@ -62,20 +70,32 @@ try {
         ),
       );
       const birdResources = resources.filter((item) => birdURLs.has(item.name));
+      const clockFirstFrame =
+        performance.getEntriesByName('clock-first-frame')[0]?.startTime;
+      const inlineBirdBytes = [...birdURLs]
+        .filter((url) => url.startsWith('data:'))
+        .reduce((sum, url) => sum + atob(url.split(',')[1]).length, 0);
       return {
         ...window.loadMetrics,
-        clockWithArtworkReady: Math.max(
-          window.loadMetrics.clockReady,
-          ...birdResources.map((item) => item.responseEnd),
-        ),
+        clockFirstFrame: clockFirstFrame ?? null,
+        studioInteractive:
+          performance.getEntriesByName('studio-interactive')[0]?.startTime ??
+          null,
+        clockWithArtworkReady:
+          clockFirstFrame ??
+          Math.max(
+            window.loadMetrics.clockReady,
+            ...birdResources.map((item) => item.responseEnd),
+          ),
         clockArtworkDownloaded: Math.max(
+          ...(inlineBirdBytes ? [navigation.responseEnd] : []),
           ...birdResources.map((item) => item.responseEnd),
         ),
-        clockArtworkBytes: birdResources.reduce(
-          (sum, item) => sum + item.encodedBodySize,
-          0,
-        ),
+        clockArtworkBytes:
+          inlineBirdBytes +
+          birdResources.reduce((sum, item) => sum + item.encodedBodySize, 0),
         clockArtworkStart: Math.min(
+          ...(inlineBirdBytes ? [0] : []),
           ...birdResources.map((item) => item.startTime),
         ),
         fcp: performance.getEntriesByName('first-contentful-paint')[0]
@@ -106,6 +126,8 @@ try {
     'fcp',
     'lcp',
     'clockReady',
+    'clockFirstFrame',
+    'studioInteractive',
     'clockWithArtworkReady',
     'clockArtworkDownloaded',
     'clockArtworkBytes',
@@ -122,9 +144,9 @@ try {
     measuredAt: new Date().toISOString(),
     conditions: {
       viewport: '390×844 @2x',
-      cpuSlowdown: 4,
-      latencyMs: 150,
-      downloadBytesPerSecond: 200000,
+      cpuSlowdown: unthrottled ? 1 : 4,
+      latencyMs: unthrottled ? 0 : 150,
+      downloadBytesPerSecond: unthrottled ? null : 200000,
       cache: 'disabled; fresh context per run',
     },
     median,

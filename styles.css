@@ -333,7 +333,7 @@ main {
   transform: translateZ(0);
 }
 .clock-back {
-  background: #865338 url('assets/previews/woods/mahogany.webp') center / cover;
+  background: #865338 center / cover;
   transform: translateZ(calc(-1 * var(--clock-depth))) rotateY(180deg);
 }
 .clock-edge {
@@ -370,6 +370,9 @@ main {
 #clock {
   touch-action: none;
   user-select: none;
+}
+#clock[data-booting] {
+  visibility: hidden;
 }
 #clock .clock-slice {
   cursor: grab;

@@ -76,10 +76,12 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 
 - `src/index.html`, `styles.css`: editable interface template and responsive styling.
 - `index.html`, `dist`: generated, optimized production files served by GitHub Pages.
-- `scripts/build.mjs`: bundles/minifies scripts, splits optional panels, and generates cache-busting filenames and preload links.
+- `scripts/build.mjs`: bundles/minifies scripts, embeds the first clock frame and styling, splits optional panels/fonts, and generates content-hashed filenames.
 - `scripts/optimize-assets.py`: creates display previews and WOFF2 font subsets; originals remain untouched.
 - `scripts/measure-performance.mjs`: repeatable three-run cold mobile load benchmark.
-- `src/preload.js`: early, build-inlined clock thumbnail preloads for the current saved/shared/default design.
+- `src/preload.js`: early design restoration and preloading of missing artwork for saved/shared designs.
+- `src/boot-clock.js`: self-contained first clock frame, displayed before the editor downloads.
+- `src/display-assets.js`: embedded artwork and a versioned, bounded cache for customized clocks.
 - `src/app.js`: interaction, storage, importing, sharing, and exporting.
 - `src/model.js`: configuration validation and wood arrangement rules.
 - `src/clock.js`: reusable SVG clock renderer.
@@ -95,7 +97,7 @@ Uploaded images are resized to at most 512 px and encoded locally. If browser st
 - `scripts/update-bird-maps.py`: manual map refresh with exact species matching; see `ASSETS.md` before refreshing.
 - `assets/bird-generation-2026-10.json`: prompt set and species references for the 16 new illustrations.
 - `assets/birds`, `assets/woods`, `assets/fonts`: original artwork, textures, fonts, and font subsets.
-- `assets/previews`: 128 px WebP thumbnails for the clock and picker (under 7 kB each), 256/384 px birds for fullscreen, and compact wood textures. Downloads and clock PNG exports use the original assets.
+- `assets/previews`: 128 px WebP thumbnails for the clock and picker (under 7 kB each), 256/384 px birds for fullscreen, and compact wood textures. Default clock artwork, 192 px wood textures, and a tiny numeral font are embedded in the page; the editor and other fonts follow the first clock frame. Downloads and clock PNG exports use the original assets.
 - `tests/*.test.js`: model and export tests, including independent ZIP validation with Python.
 - `tests/browser/studio.spec.js`: real-browser checks for downloads, uploads, saves, editor interactions, and mobile layout.
 - `tests/browser/explorer.spec.js`: all profiles and map assets, keyboard exploration, loading recovery, unchanged drafts, and responsive layout.

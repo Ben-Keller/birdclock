@@ -53,6 +53,14 @@ All twelve bird images finished downloading **before the clock DOM was inserted 
 
 Raw results: [thumbnail baseline](performance/2026-10-17-clock-thumbnails-before.json) and [thumbnail result](performance/2026-10-17-clock-thumbnails-after.json). A separate DevTools Slow 4G trace also confirmed requests for the new clock-specific WebPs and reduced LCP from 6.09 to 2.76 s, but that single trace uses different conditions from the three-run benchmark.
 
+## Self-contained first clock frame
+
+The default clock now renders directly from the HTML response using embedded 128 px birds, compact 192 px wood textures, a 4 kB numeral-only font, and inline styling. It does not wait for the editor module, external stylesheets, full web fonts, or separate clock-image requests. The clock is revealed after its images decode, and the editor adopts that SVG instead of replacing it. Larger field-guide illustrations and original exports are unchanged.
+
+A bounded, versioned artwork cache stores only additional catalogue thumbnails used in a customized clock. Return visits can paint that exact arrangement without refetching its birds. A first visit to an uncached shared arrangement still needs its missing thumbnails; those requests start in the document head. Blocked/full browser storage is handled without affecting saved-design or editing behavior.
+
+The benchmark's `clockFirstFrame` mark is taken two animation frames after decoded artwork is revealed; `studioInteractive` separately records when editing becomes available. Browser tests also hold the editor module indefinitely and block image/font requests to verify that the complete cached clock is visible and correctly arranged, rather than treating an empty SVG as ready. Full web-font requests are asserted to start after the first clock frame. Use `--unthrottled` after the output path to measure without synthetic network/CPU slowdown.
+
 ## Changes
 
 - Bundled and minified startup JavaScript, with the catalogue included and shared modules preloaded. Optional field-guide and bird-download code loads when opened.
@@ -63,6 +71,6 @@ Raw results: [thumbnail baseline](performance/2026-10-17-clock-thumbnails-before
 - Reserved clock space during startup and selection updates that preserve the rendered SVG instead of rebuilding it.
 - Recovery UI for failed optional module downloads, with saved designs retained through a reload.
 
-The browser suite now enforces a 280 kB startup resource budget even on the uncompressed development server, verifies that original images/fonts and optional panel assets are absent from startup requests, and checks that exports retain original dimensions and WebP bytes. `npm run build:check` verifies that committed production files match their source.
+The browser suite now enforces a 350 kB total startup budget, including the HTML document, even on the uncompressed development server, verifies that original images/fonts and optional panel assets are absent from startup requests, and checks that exports retain original dimensions and WebP bytes. `npm run build:check` verifies that committed production files match their source.
 
 GitHub Pages controls its own HTTP caching headers (observed `max-age=600`). No service worker or extra hosting service is required.
